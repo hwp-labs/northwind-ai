@@ -5,7 +5,7 @@ import {
   FAQPostCard,
   MonthlyPostCard,
 } from "@/features/post-cards/components/cards";
-import { PageProps } from "@/types";
+import { PageParams } from "@/types";
 
 export const metadata: Metadata = {
   title: "Post Cards",
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 
 export default async function PreviewPostCardsPage({
   searchParams,
-}: PageProps) {
+}: PageParams) {
   const searchParamsAsync = await searchParams;
-  const tabIndex = Number(searchParamsAsync.tabIndex) || 0;
-  const page = Number(searchParamsAsync.page) || 0;
+  const tabIndex = Number(searchParamsAsync.tabIndex || 0);
+  const page = Number(searchParamsAsync.page || 0);
   //
   return (
     <main

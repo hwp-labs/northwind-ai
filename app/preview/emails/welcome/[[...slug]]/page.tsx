@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 //
 import { WelcomeEmail } from "@/components/emails/welcome-email";
-import { PageProps } from "@/types";
+import { PageParams } from "@/types";
 
 import mockData from "@/lib/supabase/services/contacts/data.json";
 
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default async function PreviewWelcomeEmailPage({
   searchParams,
-}: PageProps) {
-  const displayNameAsync = (await searchParams).displayName;
-  const name = displayNameAsync || mockData.name;
+}: PageParams) {
+  const searchParamsAsync = await searchParams;
+  const name = searchParamsAsync.displayName || mockData.name;
   //
   return <WelcomeEmail data={{ ...mockData, name }} />;
 }

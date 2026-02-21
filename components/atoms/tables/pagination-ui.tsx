@@ -10,7 +10,7 @@ import { Label } from "@/components/shadcn/ui/label";
 
 const Container = ({ children }: PropsWithChildren) => {
   return (
-    <div className="flex items-center justify-between px-4">{children}</div>
+    <div className="flex-row-cb px-4">{children}</div>
   );
 };
 

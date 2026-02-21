@@ -16,6 +16,7 @@ import {
 import { Indicator } from "../indicator";
 import { ColorVariantType } from "@/types";
 import { UNKNOWN, HYPHENS } from "@/constants";
+import { Skeleton } from "@/components/shadcn/ui/skeleton";
 
 const Container = ({ children }: PropsWithChildren) => {
   return (
@@ -93,11 +94,7 @@ interface CellAmountProps extends PropsWithChildren {
 }
 
 const CellAmount = ({ children, variant }: CellAmountProps) => {
-  return (
-    <TableCell className={`text-right`}>
-      {children}
-    </TableCell>
-  );
+  return <TableCell className={`text-right`}>{children}</TableCell>;
 };
 
 const CellBadge = ({ children }: PropsWithChildren) => {
@@ -110,10 +107,21 @@ const CellBadge = ({ children }: PropsWithChildren) => {
   );
 };
 
+const TBodySkeleton = () => {
+  return (
+    <TableRow>
+      <TableCell colSpan={9}>
+        <Skeleton className="h-[320px] bg-white/20" />
+      </TableCell>
+    </TableRow>
+  );
+};
+
 export const TableUI = {
   Container,
   HeaderRow,
   CellAvatarBio,
   CellAmount,
   CellBadge,
+  TBodySkeleton,
 };

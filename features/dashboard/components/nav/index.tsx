@@ -14,7 +14,7 @@ export const Nav = () => {
   const { totaled } = useNav();
   //
   return (
-    <nav className="flex-center-center hidden gap-8 text-sm lg:flex">
+    <nav className="flex-center-center hidden gap-8 text-sm md:flex">
       {DASHBOARD_MENU.map((item, i) => {
         const props = item as MenuItem;
 

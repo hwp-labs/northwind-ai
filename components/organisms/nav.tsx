@@ -10,7 +10,7 @@ export const Nav = () => {
   const pathname = usePathname();
   //
   return (
-    <nav className="flex-center-center hidden gap-8 lg:flex text-sm">
+    <nav className="flex-center-center hidden gap-8 md:flex text-sm">
       {MENU.map((item, i) => {
         const active =
           item.path === "/"

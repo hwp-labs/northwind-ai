@@ -16,17 +16,17 @@ export const VisitorsTableAction = ({ id }: { id: PrimaryKeyType }) => {
 
   const handleAction = async (value: string) => {
     if (value !== "delete") return;
-    if (confirm(`Confirm delete ?`)) {
+    if (confirm(`Confirm delete?`)) {
       setLoading(true);
 
       const { data, error } = await deleteAction({
-        // path: PROTECTED_PATH.industries,
+        path: PROTECTED_PATH.industries,
         table: TABLE,
         id,
       });
 
       if (error) toast.error(error);
-      if (data) toast.success("Deleted successfully");
+      if (data) toast.success(`Row id ${id} deleted successfully`);
 
       setLoading(false);
     }
