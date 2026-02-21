@@ -11,11 +11,11 @@ export const ValuePropositionCards = () => {
       <h1 className="text-center font-[Raleway] text-[24px] leading-9 font-medium text-white lg:text-4xl lg:leading-12">
         {COPY.prompt}
       </h1>
-      <ul className="flex-row-cc mt-10 flex-wrap gap-8">
+      <ul className="flex-row-cc mt-10 flex-wrap gap-8 items-stretch ">
         {COPY.valueProposition.map(({ Icon, ...item }, i) => (
           <li
             key={i}
-            className="flex flex-col gap-2 rounded-xl border p-8 pb-6 text-left sm:w-[450px]"
+            className="flex flex-col gap-2 rounded-xl border p-8 pb-6 text-left sm:w-[450px] debug_ "
           >
             <div className="_flex-row-cs grid gap-4">
               <Button
@@ -28,7 +28,7 @@ export const ValuePropositionCards = () => {
                 {item.title}
               </h2>
             </div>
-            <p className="text-muted-foreground font-[Montserrat] text-sm leading-6 lg:text-sm">
+            <p className="text-muted-foreground font-[Montserrat] text-sm leading-6 lg:text-sm flex-1 debug_">
               {item.description}
             </p>
             <div className="debug_ mt-4 flex lg:ml-auto">

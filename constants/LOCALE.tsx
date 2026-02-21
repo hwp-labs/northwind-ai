@@ -53,20 +53,20 @@ export const COPY = {
     {
       Icon: IconPigFilled,
       title: "Save Time & Money",
-      description: `Instantly reduce operational costs by up to 40% and save hours on repetitive tasks and virtual workflows. 
+      description: `Reduce operational costs by up to 40% and save hours on repetitive tasks. 
             AI agents run 24/7, and free up time for you and your team to focus on innovation and leads generation.`,
     },
     {
       Icon: IconMoodSmileFilled,
       title: "Improve Quality of Service",
-      description: `Autonomously deliver professional and reliable service.
-            AI-powered automation ensures 99% accuracy across internal business processes, learning and adapting as your business grows.`,
+      description: <>Deliver fast and reliable services with AI-powered automation. AI agents ensure 99% accuracy across 
+      internal business processes, <span className="_font-medium text-white">learning and adapting</span> as your business grows.</>,
     },
     {
       Icon: IconStarFilled,
       title: "Satisfy Your Customers",
-      description: `Continuously convert 10x more sales leads. 
-          AI agents provide seamless multi-channel integration and scenario-based engagement that exceed customer expectations, build trust and nurtures loyalty.`,
+      description: `AI agents provide seamless multi-channel integration and personalized experiences that 
+      exceed customer expectations, build trust and loyalty, and converts 10x more sales leads.`,
     },
   ],
 };

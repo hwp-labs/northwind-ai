@@ -13,6 +13,14 @@
   .flex-row-cs {
     @apply flex items-center justify-start;
   }
+  
+  .flex-start-center {
+    @apply flex items-start justify-center;
+  }
+
+  .flex-row-sc {
+    @apply flex items-start justify-center;
+  }
 
   .flex-center-end {
     @apply flex items-center justify-end;
@@ -66,7 +74,7 @@
   .flex-col-cc {
     @apply flex flex-col items-center justify-center;
   }
-  
+
   .flex-col-start-between {
     @apply flex flex-col items-start justify-between;
   }
@@ -82,5 +90,4 @@
   .flex-col-eb {
     @apply flex flex-col items-end justify-between;
   }
-
 }
