@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "date": "Sunday, March 1st",
+    "time": "6 PM",
+    "appName": "Northwind AI",
+    "guestName": null
+  },
+  {
+    "id": 2,
+    "date": "Wednesday, April 1st",
+    "time": "6 PM",
+    "appName": "Jobsavvy",
+    "guestName": "@SonOfVerdansk"
+  },
+  {
+    "id": 3,
+    "date": "Friday, May 1st",
+    "time": "6 PM",
+    "appName": "Exxpo CBT",
+    "guestName": "@DayneKORA"
+  },
+  {
+    "id": 4,
+    "date": "Monday, June 1st",
+    "time": "6 PM",
+    "appName": "PrepMyApp",
+    "guestName": "@BenedictEsimaje"
+  },
+  {
+    "id": 5,
+    "date": "Wednesday, July 1st",
+    "time": "6 PM",
+    "appName": "SmartCoop",
+    "guestName": "@smartcoop-mpcs"
+  }
+]

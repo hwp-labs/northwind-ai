@@ -15,10 +15,10 @@ export const COPY = {
       business. Cool?
     </>
   ),
-  automate: `Automate SME virtual workflows and Point-of-Sale (POS) systems with ${APP.name}`,
+  automate: `Automate virtual workflows and Point-of-Sale (POS) systems with ${APP.name}`,
   automateRichText: (
     <>
-      Automate SME virtual workflows and Point-of-Sale (POS) systems with{" "}
+      Automate virtual workflows and Point-of-Sale (POS) systems with{" "}
       <strong className="font-semibold">{APP.name}</strong>
     </>
   ),
@@ -66,7 +66,7 @@ export const COPY = {
       Icon: IconStarFilled,
       title: "Satisfy Your Customers",
       description: `AI agents provide seamless multi-channel integration and personalized experiences that 
-      exceed customer expectations, build trust and loyalty, and converts 10x more sales leads.`,
+      exceed customer expectations, builds trust and loyalty, and converts 10x more sales leads.`,
     },
   ],
 };

@@ -24,7 +24,7 @@ export const Header = () => {
         <figure className="flex-row-cs gap-3">
           <Avatar className="size-[32px]">
             <AvatarImage
-              src={auth ? "https://github.com/2gbeh.png" : undefined}
+              src={auth ? "/images/photo-etugbeh" : undefined}
               alt=""
             />
             <AvatarFallback className="text-xs">

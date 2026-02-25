@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 //
 import { CardBuilder } from "../card-builder";
 import { MONTH_SHORT } from "@/utils/moment-util";
+import clsx from "clsx";
 
 interface Props {
   page?: number;
@@ -28,7 +29,7 @@ export const MonthlyPostCard = ({ page }: Props) => {
   //
   return (
     <>
-      <CardBuilder.Header />
+      <CardBuilder.Header noBorder />
       <CardBuilder.Container className="bg-white">
         <figure className="mt-5">
           <div className="relative z-2 mx-auto size-[120px]">
@@ -43,9 +44,14 @@ export const MonthlyPostCard = ({ page }: Props) => {
               width={48}
               className="absolute top-2 -left-11"
             />
-            {renderAttachment(i)}
+            {renderImgAttachment(i)}
           </div>
-          <figcaption className="from-bot bg-gradient-to-b bg-clip-text text-center font-[Raleway] text-[340px] leading-72 font-bold text-transparent uppercase">
+          <figcaption
+            className={clsx(
+              "bg-clip-text text-center font-[Raleway] text-[340px] leading-72 font-bold text-transparent uppercase",
+              "from-bot bg-gradient-to-b",
+            )}
+          >
             {displayMonth}
           </figcaption>
         </figure>
@@ -56,7 +62,7 @@ export const MonthlyPostCard = ({ page }: Props) => {
   );
 };
 
-const renderAttachment = (i: number) =>
+const renderImgAttachment = (i: number) =>
   ({
     2: (
       <img

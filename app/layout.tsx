@@ -6,7 +6,12 @@ import { ToasterClient } from "@/components/organisms/toaster-client";
 import { ServiceWorker } from "@/components/organisms/service-worker";
 import { MOCK } from "@/constants/MOCK";
 import { METADATA, VIEWPORT } from "@/constants/META";
-import { fontPoppins, fontMontserrat, fontRaleway } from "@/constants/FONT";
+import {
+  fontPoppins,
+  fontMontserrat,
+  fontRaleway,
+  fontSatisfy,
+} from "@/constants/FONT";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = METADATA;
@@ -24,6 +29,7 @@ export default function RootLayout({
           fontPoppins.variable,
           fontMontserrat.variable,
           fontRaleway.variable,
+          fontSatisfy.variable,
           "font-[Poppins] antialiased",
         )}
       >

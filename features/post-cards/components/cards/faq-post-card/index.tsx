@@ -14,18 +14,18 @@ interface Props {
   page?: number;
 }
 
-export const FAQPostCard = ({ page }: Props) => {
-  const i = (page || 1) - 1;
+export const FAQPostCard = ({ page = 1 }: Props) => {
+  const i = page - 1;
   const item = (data[i] || data[0]) as Data;
   //
   return (
     <>
       <CardBuilder.Header />
       <CardBuilder.Container className="debug_">
-        <div className="debug_ flex-col-cc relative z-2 size-[430px] w-full">
+        <section className="debug_ flex-row-cc relative z-2 size-[430px] w-full">
           <div className="grid max-w-sm gap-2 rounded-2xl bg-white pt-6 pb-6 shadow-2xl">
             <figure className="grid gap-4">
-              <div className="mx-auto_ relative flex h-[80px] items-center justify-center">
+              <div className="mx-auto_ flex-row-cc relative h-[80px]">
                 <img
                   src={`/uploads/faq/${item.icon}`}
                   alt=""
@@ -39,21 +39,21 @@ export const FAQPostCard = ({ page }: Props) => {
             </figure>
             <ul className="grid gap-2.5 px-6">
               {item.value
-                .filter((v) => !v.startsWith("#"))
-                .map((v, i) => (
-                  <li key={i} className="flex gap-2.5">
+                .filter((text) => !text.startsWith("#"))
+                .map((text, i) => (
+                  <li key={i} className="flex gap-2.5 text-[13px] font-normal">
                     <i className="min-w-[16px] pt-0.5">
                       <IconCircleCheckFilled
                         size={16}
                         color={APP.colors.brand}
                       />
                     </i>
-                    <p className="text-[13px] font-normal">{v}</p>
+                    {text}
                   </li>
                 ))}
             </ul>
           </div>
-        </div>
+        </section>
         <CardBuilder.Description centered />
         <CardBuilder.CTA />
       </CardBuilder.Container>

@@ -4,6 +4,7 @@ import {
   DefaultPostCard,
   FAQPostCard,
   MonthlyPostCard,
+  PodcastPostCard
 } from "@/features/post-cards/components/cards";
 import { PageParams } from "@/types";
 
@@ -28,6 +29,7 @@ export default async function PreviewPostCardsPage({
           <DefaultPostCard />,
           <FAQPostCard page={page} />,
           <MonthlyPostCard page={page} />,
+          <PodcastPostCard page={page} />,
         ][tabIndex]
       }
     </main>
