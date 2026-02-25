@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+//
 import {
   SubmitButtonGrid,
   SubmitButton,
@@ -8,6 +10,7 @@ import { ControlledFormFieldset } from "@/components/atoms/forms/controlled-form
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
 import { ControlledFieldInputPassword } from "@/components/atoms/forms/controlled-field-input-password";
 import { ControlledFieldSwitch } from "@/components/atoms/forms/controlled-field-switch";
+import { PATH } from "@/constants/PATH";
 //
 import { useLoginFormWidget } from "./hook";
 
@@ -16,36 +19,47 @@ export const LoginFormWidget = () => {
     useLoginFormWidget();
   //
   return (
-    <ControlledFormFieldset
-      form={form}
-      onSubmit={form.handleSubmit(onSubmit)}
-      disabled={submitting}
-      h1="Welcome back"
-      p="Enter your log in details below"
-    >
-      <ControlledFieldInput
-        control={form.control}
-        label="Email"
-        type="email"
-        name="email"
-        placeholder="Ex. person@domain.com"
-      />
-      <ControlledFieldInputPassword control={form.control} name="password" />
-      <SubmitButtonGrid>
-        <ControlledFieldSwitch
+    <>
+      <ControlledFormFieldset
+        form={form}
+        onSubmit={form.handleSubmit(onSubmit)}
+        disabled={submitting}
+        h1="Welcome back"
+        p="Enter your log in details below"
+      >
+        <ControlledFieldInput
           control={form.control}
-          name="remember_me"
-          label="Keep me signed in"
+          label="Email"
+          type="email"
+          name="email"
+          placeholder="Ex. person@domain.com"
         />
-        <SubmitButton
-          submitting={submitting}
-          submittingText="Sign in..."
-          success={success}
-          successText="Signed in!"
+        <ControlledFieldInputPassword control={form.control} name="password" />
+        <SubmitButtonGrid>
+          <ControlledFieldSwitch
+            control={form.control}
+            name="remember_me"
+            label="Keep me signed in"
+          />
+          <SubmitButton
+            submitting={submitting}
+            submittingText="Sign in..."
+            success={success}
+            successText="Signed in!"
+          >
+            Sign in
+          </SubmitButton>
+        </SubmitButtonGrid>
+      </ControlledFormFieldset>
+      <section className="flex-row-cc font-medium_ text-muted-foreground mt-6 gap-1.5 text-sm">
+        Don&apos;t have an account?
+        <Link
+          href={PATH.register}
+          className="underline_ text-white underline-offset-2"
         >
-          Sign in
-        </SubmitButton>
-      </SubmitButtonGrid>
-    </ControlledFormFieldset>
+          Sign up
+        </Link>
+      </section>
+    </>
   );
 };
