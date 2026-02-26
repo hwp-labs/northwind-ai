@@ -1,36 +1,42 @@
 [
   {
     "id": 1,
-    "date": "Sunday, March 1st",
-    "time": "6 PM",
+    "date": "2026-03-01",
+    "dateText": "Sunday, March 1st",
+    "timeText": "8 PM",
     "appName": "Northwind AI",
-    "guestName": null
+    "notionUrl": "https://notion.so/Podcast-1-Northwind-AI-7876a7cc633c827e86de01df6f295bc1",
+    "spaceUrl": "https://x.com/i/spaces/1nxnRYRXOgjxO"
   },
   {
     "id": 2,
-    "date": "Wednesday, April 1st",
-    "time": "6 PM",
+    "date": "2026-04-01",
+    "dateText": "Wednesday, April 1st",
+    "timeText": "8 PM",
     "appName": "Jobsavvy",
     "guestName": "@SonOfVerdansk"
   },
   {
     "id": 3,
-    "date": "Friday, May 1st",
-    "time": "6 PM",
+    "date": "2026-05-01",
+    "dateText": "Friday, May 1st",
+    "timeText": "8 PM",
     "appName": "Exxpo CBT",
     "guestName": "@DayneKORA"
   },
   {
     "id": 4,
-    "date": "Monday, June 1st",
-    "time": "6 PM",
+    "date": "2026-06-01",
+    "dateText": "Monday, June 1st",
+    "timeText": "8 PM",
     "appName": "PrepMyApp",
     "guestName": "@BenedictEsimaje"
   },
   {
     "id": 5,
-    "date": "Wednesday, July 1st",
-    "time": "6 PM",
+    "date": "2026-07-01",
+    "dateText": "Wednesday, July 1st",
+    "timeText": "8 PM",
     "appName": "SmartCoop",
     "guestName": "@smartcoop-mpcs"
   }

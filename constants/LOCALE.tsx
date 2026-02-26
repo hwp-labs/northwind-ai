@@ -59,8 +59,14 @@ export const COPY = {
     {
       Icon: IconMoodSmileFilled,
       title: "Improve Quality of Service",
-      description: <>Deliver fast and reliable services with AI-powered automation. AI agents ensure 99% accuracy across 
-      internal business processes, <span className="_font-medium text-white">learning and adapting</span> as your business grows.</>,
+      description: (
+        <>
+          Deliver fast and reliable services with AI-powered automation. AI
+          agents ensure 99% accuracy across internal business processes,{" "}
+          <span className="_font-medium text-white">learning and adapting</span>{" "}
+          as your business grows.
+        </>
+      ),
     },
     {
       Icon: IconStarFilled,
@@ -69,6 +75,15 @@ export const COPY = {
       exceed customer expectations, builds trust and loyalty, and converts 10x more sales leads.`,
     },
   ],
+  podcastSummary:
+    "An open discussion on %'s system design, core features, GTM, tech stack, data models, APIs, KPIs, and more.",
+  podcastSummaryRichText: (appName: string) => (
+    <>
+      An open discussion on {appName}'s system design, core features, GTM,
+      <br />
+      tech stack, data models, APIs, KPIs, and more 💃
+    </>
+  ),
 };
 
 export const ERROR_COPY = {

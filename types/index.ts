@@ -29,7 +29,7 @@ export interface ControlledInput<T extends FieldValues> extends BaseInput {
 }
 
 export interface PageParams<T extends string | string[] = string> {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: T }>;
   searchParams: Promise<{ [key: string]: T | undefined }>;
 }
 

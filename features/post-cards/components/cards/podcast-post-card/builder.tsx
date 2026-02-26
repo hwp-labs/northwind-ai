@@ -1,0 +1,27 @@
+"use client";
+
+import { useState } from "react";
+import { CalendarClockIcon } from "lucide-react";
+import clsx from "clsx";
+import { PodcastItem } from "./types";
+
+export const Datetime = ({ dateText, timeText }: PodcastItem) => {
+  const [tonight, setTonight] = useState(false);
+  //
+  return (
+    <section
+      className={clsx("flex-row-cs gap-0 text-sm", tonight ? "ml-12" : "ml-6")}
+    >
+      <span
+        className="text-foreground flex-row-cs ml-2 -rotate-4 cursor-default gap-2 bg-[#071228] px-2 py-2 font-black tracking-wide"
+        onClick={() => setTonight((prev) => !prev)}
+      >
+        <CalendarClockIcon size={16} />
+        {tonight ? "Tonight bro.. 👀" : dateText}
+      </span>
+      <span className="bg-foreground -mt-4 -rotate-4 px-2 py-2 font-black tracking-wide text-[#071228]">
+        {timeText}
+      </span>
+    </section>
+  );
+};
