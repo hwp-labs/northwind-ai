@@ -12,7 +12,6 @@ export type CreateListenerDto = Required<Omit<ListenerEntity, keyof BaseEntity>>
 
 export const listenerSchema = z
   .object({
-    podcast_id: z.string(),
     display_name: zodUtil.text({ msg: "Display name is required" }),
   })
 

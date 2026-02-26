@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/shadcn/ui/select";
-import useQueryParams from "@/hooks/use-query-params";
+import { useQueryParams } from "@/hooks/use-query-params";
 
 export const Pager = () => {
   const query = useQueryParams();

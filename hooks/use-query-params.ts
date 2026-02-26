@@ -1,4 +1,9 @@
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import {
+  useRouter,
+  useSearchParams,
+  usePathname,
+  useParams,
+} from "next/navigation";
 
 type Query = Record<string, unknown>;
 type QueryOptions = {
@@ -6,17 +11,22 @@ type QueryOptions = {
   scroll?: boolean;
 };
 
-export default function useQueryParams() {
+export function useQueryParams() {
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams();
   const searchParams = useSearchParams();
-  const params = new URLSearchParams(searchParams.toString());
+
+  const slug = (params?.slug as string[]) ?? [];
+  const urlSearchParams = new URLSearchParams(searchParams.toString());
+
+  const getSlug = (i: number, defaultValue: unknown) => slug[i] || defaultValue;
 
   const get = (query: Query) => {
     const obj: Record<string, string> = {};
 
-    Object.entries(query).forEach(([key, fallbackValue]) => {
-      obj[key] = searchParams.get(key) || String(fallbackValue);
+    Object.entries(query).forEach(([key, defaultValue]) => {
+      obj[key] = searchParams.get(key) || String(defaultValue);
     });
 
     return obj;
@@ -24,25 +34,25 @@ export default function useQueryParams() {
 
   const add = (query: Query, options?: QueryOptions) => {
     Object.entries(query).forEach(([key, value]) =>
-      params.set(key, String(value)),
+      urlSearchParams.set(key, String(value)),
     );
 
-    const href = `${pathname}?${params.toString()}`;
+    const href = `${pathname}?${urlSearchParams.toString()}`;
     const { scroll = true, replace = false } = options || {};
     replace ? router.replace(href, { scroll }) : router.push(href, { scroll });
   };
 
   const remove = (query: string | string[], options?: QueryOptions) => {
     if (Array.isArray(query)) {
-      query.forEach((key) => params.delete(key));
+      query.forEach((key) => urlSearchParams.delete(key));
     } else {
-      params.delete(query);
+      urlSearchParams.delete(query);
     }
 
-    const href = `${pathname}?${params.toString()}`;
+    const href = `${pathname}?${urlSearchParams.toString()}`;
     const { scroll = true, replace = false } = options || {};
     replace ? router.replace(href, { scroll }) : router.push(href, { scroll });
   };
 
-  return { get, add, remove };
+  return { slug, getSlug, get, add, remove };
 }

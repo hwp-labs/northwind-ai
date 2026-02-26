@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { CalendarClockIcon } from "lucide-react";
 import clsx from "clsx";
-import { PodcastItem } from "./types";
+// 
+import { PodcastItem } from "../types";
 
 export const Datetime = ({ dateText, timeText }: PodcastItem) => {
   const [tonight, setTonight] = useState(false);

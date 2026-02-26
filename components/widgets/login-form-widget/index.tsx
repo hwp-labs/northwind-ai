@@ -15,7 +15,7 @@ import { PATH } from "@/constants/PATH";
 import { useLoginFormWidget } from "./hook";
 
 export const LoginFormWidget = () => {
-  const { form, submitting, success, setSuccess, onSubmit, onSubmitted } =
+  const { form, submitting, success, onSubmit } =
     useLoginFormWidget();
   //
   return (

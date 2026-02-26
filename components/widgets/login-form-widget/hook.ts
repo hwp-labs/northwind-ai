@@ -23,8 +23,6 @@ export function useLoginFormWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const onSubmitted = async () => {};
-
   const onSubmit = async (formData: LoginSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
     setSubmitting(true);
@@ -52,8 +50,6 @@ export function useLoginFormWidget() {
     form,
     submitting,
     success,
-    setSuccess,
     onSubmit,
-    onSubmitted,
   };
 }

@@ -1,18 +1,22 @@
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 //
+import { useQueryParams } from "@/hooks/use-query-params";
 import { useToast } from "@/hooks/use-toast";
-import { signInAction } from "@/lib/supabase/services/auth/actions/authActions";
-import { listenerSchema, ListenerSchema } from "@/lib/supabase/services/listeners/types";
+import { createListenerAction } from "@/lib/supabase/services/listeners/actions/createListenerAction";
 import { sleep } from "@/utils";
-import { PROTECTED_PATH, PATH } from "@/constants/PATH";
+import {
+  listenerSchema,
+  ListenerSchema,
+} from "@/lib/supabase/services/listeners/types";
+import { PodcastItem } from "@/features/post-cards/components/cards/podcast-post-card/types";
 //
-import { M, defaultValues, prepareListenerPayload } from "./utils";
+import { M, defaultValues } from "./utils";
+import data from "@/features/post-cards/components/cards/podcast-post-card/data.json";
 
 export function useListenerFormWidget() {
-  const router = useRouter();
+  const { getSlug } = useQueryParams();
   const toast = useToast();
   const form = useForm<ListenerSchema>({
     resolver: zodResolver(listenerSchema),
@@ -23,7 +27,9 @@ export function useListenerFormWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const onSubmitted = async () => {};
+  const id = Number(getSlug(0, 1));
+  const i = id - 1;
+  const item = (data[i] || data[0]) as PodcastItem;
 
   const onSubmit = async (formData: ListenerSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
@@ -31,8 +37,11 @@ export function useListenerFormWidget() {
     if (M.action) {
       await sleep();
     } else {
-      const payload = prepareListenerPayload(formData);
-      const { error } = await signInAction(payload);
+      const payload = {
+        podcast_id: id,
+        display_name: formData.display_name,
+      };
+      const { error } = await createListenerAction(payload);
 
       if (error) {
         toast.error(error);
@@ -41,19 +50,18 @@ export function useListenerFormWidget() {
       }
     }
 
+    // form.reset()
     setSubmitting(false);
     setSuccess(true);
     await sleep(1.5);
-    setSuccess(false);
-    M.router ? null : router.replace(PROTECTED_PATH.visitors);
+    // setSuccess(false);
+    M.router || !item.spaceUrl ? null : window.open(item.spaceUrl);
   };
 
   return {
     form,
     submitting,
     success,
-    setSuccess,
     onSubmit,
-    onSubmitted,
   };
 }

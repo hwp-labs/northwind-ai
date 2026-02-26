@@ -44,9 +44,9 @@ export default async function PodcastPage({ params }: PageParams<string[]>) {
         <section className="px-8">
           <ListenerFormWidget />
         </section>
-        <footer className="flex-row-cb gap-2 bg-[#8c5ae1] p-5 text-sm">
+        <footer className="flex-row-cb gap-2 bg-[#8c5ae1] px-8 py-5 text-sm">
           <Host />
-          <Listeners />
+          <Joined />
         </footer>
       </div>
     </main>
@@ -116,7 +116,7 @@ const Host = () => {
   );
 };
 
-const Listeners = () => {
+const Joined = () => {
   return (
     <figure className="flex-row-cs gap-2">
       <AvatarGroup count={2}>
@@ -143,7 +143,7 @@ const Listeners = () => {
           </Avatar>
         ))}
       </AvatarGroup>
-      <figcaption className="font-medium">5 Listeners</figcaption>
+      <figcaption className="font-medium">5 Joined</figcaption>
     </figure>
   );
 };
