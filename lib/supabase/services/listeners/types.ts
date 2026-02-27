@@ -12,7 +12,7 @@ export type CreateListenerDto = Required<Omit<ListenerEntity, keyof BaseEntity>>
 
 export const listenerSchema = z
   .object({
-    display_name: zodUtil.text({ msg: "Display name is required" }),
+    display_name: zodUtil.personName("Display name"),
   })
 
 export type ListenerSchema = z.infer<typeof listenerSchema>;

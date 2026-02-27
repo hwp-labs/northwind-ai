@@ -6,6 +6,8 @@ export { z } from "zod";
 export const zodUtil = {
   text: (args?: { min?: number; msg?: string }) =>
     z.string().min(args?.min || 2, args?.msg || "Field is required"),
+  personName: (label: string, minLen = 2) =>
+    z.string().min(1, `${label} is required`).min(minLen, `${label} too short`),
   email: () =>
     z.string().min(1, "Email is required").email("Invalid email address"),
   tel: () =>

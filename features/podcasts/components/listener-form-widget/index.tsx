@@ -9,16 +9,17 @@ import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-
 import { useListenerFormWidget } from "./hook";
 
 export const ListenerFormWidget = () => {
-  const { form, submitting, success, onSubmit } = useListenerFormWidget();
+  const { form, submitting, success, onSubmit, isOngoing } =
+    useListenerFormWidget();
   //
   return (
     <FormProvider {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         autoComplete="off"
-        className="text-background rounded-t-2xl bg-white px-4 sm:px-5 pt-4 sm:pt-5 sm:pb-4 pb-3"
+        className="text-background rounded-t-2xl bg-white px-4 pt-4 pb-3 sm:px-5 sm:pt-5 sm:pb-4"
       >
-        <FieldSet disabled={submitting} className="flex flex-row gap-2">
+        <FieldSet disabled={submitting} className="flex flex-row items-start gap-2">
           <ControlledFieldInput
             control={form.control}
             type="search"
@@ -30,7 +31,7 @@ export const ListenerFormWidget = () => {
             success={success}
             successText="Nice!"
           >
-            Attend
+            {isOngoing ? "Attend" : "RSVP"}
           </SubmitButton>
         </FieldSet>
       </form>

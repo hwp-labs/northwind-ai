@@ -21,13 +21,13 @@ export type CreateContactDto = Required<Omit<ContactEntity, keyof BaseEntity>>;
 
 export const contactSchema = z
   .object({
-    name: zodUtil.text({ msg: "Contact name is required" }),
+    name: zodUtil.personName("Contact name"),
     email: zodUtil.email(),
     telephone: zodUtil.tel(),
-    business_name: zodUtil.text({ min: 3, msg: "Business name is required" }),
+    business_name: zodUtil.personName("Business name", 5),
     industry_id: z.string(),
     industry_other: z.string().nullable().optional(),
-    location: zodUtil.text({ msg: "Location is required" }),
+    location: zodUtil.personName("Location"),
     state_id: z.string(),
     subscribed: z.boolean().optional(),
   })

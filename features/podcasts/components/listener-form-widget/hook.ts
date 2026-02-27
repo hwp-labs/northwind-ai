@@ -28,6 +28,7 @@ export function useListenerFormWidget() {
   const [success, setSuccess] = useState(false);
 
   const item = PodcastHelper.GetSlugItem(getSlug(0, 1));
+  const isOngoing = PodcastHelper.IsOngoing(item);
 
   const onSubmit = async (formData: ListenerSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
@@ -54,9 +55,7 @@ export function useListenerFormWidget() {
     setSuccess(true);
     await sleep(1.5);
     // setSuccess(false);
-    M.router || PodcastHelper.IsOngoing(item)
-      ? window.open(item.spaceUrl)
-      : null;
+    M.router || isOngoing ? window.open(item.spaceUrl) : null;
   };
 
   return {
@@ -64,5 +63,6 @@ export function useListenerFormWidget() {
     submitting,
     success,
     onSubmit,
+    isOngoing,
   };
 }
