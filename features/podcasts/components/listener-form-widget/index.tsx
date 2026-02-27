@@ -19,12 +19,15 @@ export const ListenerFormWidget = () => {
         autoComplete="off"
         className="text-background rounded-t-2xl bg-white px-4 pt-4 pb-3 sm:px-5 sm:pt-5 sm:pb-4"
       >
-        <FieldSet disabled={submitting} className="flex flex-row items-start gap-2">
+        <FieldSet
+          disabled={submitting}
+          className="flex flex-row items-start gap-2"
+        >
           <ControlledFieldInput
             control={form.control}
             type="search"
-            name="display_name"
-            placeholder="Display name"
+            name="username"
+            placeholder="Email or telephone"
           />
           <SubmitButton
             submitting={submitting}

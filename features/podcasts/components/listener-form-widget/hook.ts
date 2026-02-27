@@ -39,7 +39,7 @@ export function useListenerFormWidget() {
     } else {
       const payload = {
         podcast_id: item.id,
-        display_name: formData.display_name,
+        username: formData.username,
       };
       const { error } = await createListenerAction(payload, PATH.podcast);
 

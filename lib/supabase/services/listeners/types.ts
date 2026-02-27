@@ -5,14 +5,23 @@ export const TABLE = "listeners";
 
 export interface ListenerEntity extends BaseEntity {
   podcast_id: PrimaryKeyType;
-  display_name: string;
+  username: string;
 }
 
-export type CreateListenerDto = Required<Omit<ListenerEntity, keyof BaseEntity>>;
+export type CreateListenerDto = Required<
+  Omit<ListenerEntity, keyof BaseEntity>
+>;
 
-export const listenerSchema = z
-  .object({
-    display_name: zodUtil.personName("Display name"),
-  })
+export const listenerSchema = z.object({
+  username: z.string().refine(
+    (val) =>
+      z.email().safeParse(val).success ||
+      z
+        .string()
+        .regex(/^\+?[0-9]{10,15}$/)
+        .safeParse(val).success,
+    { message: "Entry must be a valid Email or telephone" },
+  ),
+});
 
 export type ListenerSchema = z.infer<typeof listenerSchema>;

@@ -5,8 +5,8 @@ export const M = MOCK.podcast;
 
 export const defaultValues: ListenerSchema = M.formData
   ? {
-      display_name: "Emanuel",
+      username: process.env.NEXT_PUBLIC_SUPABASE_AUTH_USER!,
     }
   : {
-      display_name: "",
+      username: "",
     };
