@@ -48,7 +48,7 @@ export const AvatarGroup = ({
       {count ? (
         <div
           className={clsx(
-            "flex-row-cc bg-background text-foreground z-1 rounded-full text-[10px] font-medium ring-1 ring-[#8c5ae1]",
+            "flex-row-cc bg-background text-[#ccc] z-1 rounded-full text-xs font-medium ring-1 ring-[#8c5ae1]",
             {
               "size-[24px]": size === 24,
               "size-[32px]": size === 32,

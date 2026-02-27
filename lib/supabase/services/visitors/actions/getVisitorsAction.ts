@@ -10,7 +10,7 @@ type ResponseDto = VisitorEntity[];
 export async function getVisitorsAction(
   req?: RequestDto,
 ): Promise<ApiResponse<ResponseDto>> {
-  const { page, pageSize, sortBy, orderBy, filterByScreen } = {
+  const { id, page, pageSize, sortBy, orderBy, filterByScreen } = {
     ...defaultApiQueryParams,
     ...req,
   };

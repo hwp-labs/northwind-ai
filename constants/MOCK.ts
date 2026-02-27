@@ -36,7 +36,7 @@ export const MOCK = {
   podcast: {
     formData: 0,
     action: 0,
-    router: 0,
+    router: 1,
   },
   sendWelcomeEmail: {
     skip: 0,

@@ -16,7 +16,7 @@ export const ListenerFormWidget = () => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         autoComplete="off"
-        className="text-background rounded-t-4xl bg-white px-6 py-5 lg:rounded-t-2xl"
+        className="text-background rounded-t-4xl bg-white px-6 pt-5 pb-4 lg:rounded-t-2xl"
       >
         <FieldSet disabled={submitting} className="flex flex-row gap-2">
           <ControlledFieldInput
@@ -27,11 +27,10 @@ export const ListenerFormWidget = () => {
           />
           <SubmitButton
             submitting={submitting}
-            submittingText="Joining..."
             success={success}
-            successText="Joined!"
+            successText="Nice!"
           >
-            Join
+            Attend
           </SubmitButton>
         </FieldSet>
       </form>

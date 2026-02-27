@@ -10,10 +10,11 @@ import {
   listenerSchema,
   ListenerSchema,
 } from "@/lib/supabase/services/listeners/types";
-import { PodcastItem } from "@/features/post-cards/components/cards/podcast-post-card/types";
+import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { PATH } from "@/constants/PATH";
+import data from "@/lib/supabase/services/podcasts/data.json";
 //
 import { M, defaultValues } from "./utils";
-import data from "@/features/post-cards/components/cards/podcast-post-card/data.json";
 
 export function useListenerFormWidget() {
   const { getSlug } = useQueryParams();
@@ -29,10 +30,11 @@ export function useListenerFormWidget() {
 
   const id = Number(getSlug(0, 1));
   const i = id - 1;
-  const item = (data[i] || data[0]) as PodcastItem;
+  const item = (data[i] || data[0]) as PodcastDto;
 
   const onSubmit = async (formData: ListenerSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
+    setSuccess(false);
     setSubmitting(true);
     if (M.action) {
       await sleep();
@@ -41,7 +43,7 @@ export function useListenerFormWidget() {
         podcast_id: id,
         display_name: formData.display_name,
       };
-      const { error } = await createListenerAction(payload);
+      const { error } = await createListenerAction(payload, PATH.podcast);
 
       if (error) {
         toast.error(error);

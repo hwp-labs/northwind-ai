@@ -1,11 +1,10 @@
 import clsx from "clsx";
 //
 import { CardBuilder } from "../../card-builder";
-// 
-import { PodcastPostCardBuilder } from "./ui/builder";
-import { Datetime } from "./ui/datetime";
-import { PodcastItem } from "./types";
-import data from "./data.json";
+import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
+import data from "@/lib/supabase/services/podcasts/data.json";
+//
+import { CardBuilder as PodcastPostCardBuilder } from "./card-builder";
 
 interface Props {
   page?: number;
@@ -13,7 +12,7 @@ interface Props {
 
 export const PodcastPostCard = ({ page = 1 }: Props) => {
   const i = page - 1;
-  const item = (data[i] || data[0]) as PodcastItem;
+  const item = (data[i] || data[0]) as PodcastDto;
   //
   return (
     <>
@@ -25,7 +24,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           alt=""
         />
         <div className="debug_ absolute bottom-16 left-8 z-1">
-          <Datetime {...item} />
+          <PodcastPostCardBuilder.Datetime {...item} />
           <PodcastPostCardBuilder.Venue {...item} />
           <ul
             className={clsx(
@@ -35,7 +34,10 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           >
             <PodcastPostCardBuilder.Speaker label="host" value="@2gbeh" />
             {item.guestName ? (
-              <PodcastPostCardBuilder.Speaker label="guest" value={item.guestName} />
+              <PodcastPostCardBuilder.Speaker
+                label="guest"
+                value={item.guestName}
+              />
             ) : null}
           </ul>
           <PodcastPostCardBuilder.Hero {...item} />

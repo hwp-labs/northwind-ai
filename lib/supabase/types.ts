@@ -13,6 +13,7 @@ export interface ApiResponse<T> {
 }
 
 export interface ApiQueryParams<T = {}> {
+  id: number | null;
   page?: number;
   pageSize?: number;
   sortBy?: keyof (BaseEntity & T);
@@ -20,6 +21,7 @@ export interface ApiQueryParams<T = {}> {
 }
 
 export const defaultApiQueryParams: Required<ApiQueryParams> = {
+  id: null,
   page: 1,
   pageSize: 10,
   sortBy: "id",

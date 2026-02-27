@@ -3,12 +3,13 @@ import { FaTwitter } from "react-icons/fa6";
 import { MapPinHouseIcon } from "lucide-react";
 //
 import { OptionItem } from "@/types";
+import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
-//
-import { PodcastItem } from "../types";
+// 
+import { CardBuilderDatetime as Datetime } from "./card-builder-datetime";
 
-const Venue = ({ id }: PodcastItem) => {
+const Venue = ({ id }: PodcastDto) => {
   return (
     <section className="flex-col-sc ml-8">
       <div className="text-foreground flex-row-cs ml-4 -rotate-4 gap-2.5 bg-[#071228] px-4 py-2 font-black tracking-wide">
@@ -47,7 +48,7 @@ const Speaker = ({ label, value }: OptionItem) => (
   </li>
 );
 
-const Hero = ({ appName, guestName }: PodcastItem) => (
+const Hero = ({ appName, guestName }: PodcastDto) => (
   <section
     className={guestName ? "mt-10" : "mt-6"}
     style={{
@@ -65,7 +66,7 @@ const Hero = ({ appName, guestName }: PodcastItem) => (
   </section>
 );
 
-const PoweredBy = ({ notionUrl }: PodcastItem) => (
+const PoweredBy = ({ notionUrl }: PodcastDto) => (
   <footer className="absolute right-8 bottom-5 z-1">
     <a
       href={notionUrl || "#"}
@@ -79,7 +80,8 @@ const PoweredBy = ({ notionUrl }: PodcastItem) => (
   </footer>
 );
 
-export const PodcastPostCardBuilder = {
+export const CardBuilder = {
+  Datetime,
   Venue,
   Speaker,
   Hero,

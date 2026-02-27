@@ -1,4 +1,4 @@
-export interface PodcastItem {
+export interface PodcastDto {
   id: number;
   date: string;
   dateText: string;
