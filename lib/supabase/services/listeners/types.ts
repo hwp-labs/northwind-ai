@@ -13,15 +13,7 @@ export type CreateListenerDto = Required<
 >;
 
 export const listenerSchema = z.object({
-  username: z.string().refine(
-    (val) =>
-      z.email().safeParse(val).success ||
-      z
-        .string()
-        .regex(/^\+?[0-9]{10,15}$/)
-        .safeParse(val).success,
-    { message: "Entry must be a valid Email or telephone" },
-  ),
+  username: zodUtil.emailOrTel(),
 });
 
 export type ListenerSchema = z.infer<typeof listenerSchema>;

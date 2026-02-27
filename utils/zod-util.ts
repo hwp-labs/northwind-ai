@@ -16,6 +16,16 @@ export const zodUtil = {
       .min(10, { message: "Telephone number is too short" })
       .max(15, { message: "Telephone number is too long" })
       .regex(/^\+?[0-9]+$/, { message: "Invalid telephone number" }),
+  emailOrTel: (message = "Entry must be a valid Email or telephone") =>
+    z.string().refine(
+      (val) =>
+        z.email().safeParse(val).success ||
+        z
+          .string()
+          .regex(/^\+?[0-9]{10,15}$/)
+          .safeParse(val).success,
+      { message },
+    ),
   password: () =>
     z
       .string()

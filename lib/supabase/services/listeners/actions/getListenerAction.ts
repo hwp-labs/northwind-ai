@@ -15,7 +15,7 @@ export async function getListenerByPodcastIdAction({
     .from(TABLE)
     .select("*")
     .eq("podcast_id", podcast_id)
-    .ilike("username", `%${username}%`)
+    .ilike("username", username)
 
   return { data, error: error?.message };
 }
