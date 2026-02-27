@@ -1,23 +1,16 @@
 import { Metadata } from "next";
 //
 import { PageParams } from "@/types";
-import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { COPY } from "@/constants/LOCALE";
-import data from "@/lib/supabase/services/podcasts/data.json";
 //
 import { Header, Host, Guests } from "@/features/podcasts/components/card";
 import { ListenerFormWidget } from "@/features/podcasts/components/listener-form-widget";
 
-async function getPodcastItem(paramsAsync: Promise<{ slug: string[] }>) {
-  const params = await paramsAsync;
-  const i = Number(params.slug?.[0] || 1) - 1;
-  return (data[i] || data[0]) as PodcastDto;
-}
-
 export async function generateMetadata({
   params,
 }: PageParams<string[]>): Promise<Metadata> {
-  const item = await getPodcastItem(params);
+  const item = await PodcastHelper.GetItemAsync(params);
   //
   return {
     title: `${item.appName} Design Session`,
@@ -25,7 +18,7 @@ export async function generateMetadata({
 }
 
 export default async function PodcastPage({ params }: PageParams<string[]>) {
-  const item = await getPodcastItem(params);
+  const item = await PodcastHelper.GetItemAsync(params);
   //
   return (
     <main className="flex-centered min-h-[80svh]">

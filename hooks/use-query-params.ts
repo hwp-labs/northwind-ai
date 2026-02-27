@@ -20,7 +20,7 @@ export function useQueryParams() {
   const slug = (params?.slug as string[]) ?? [];
   const urlSearchParams = new URLSearchParams(searchParams.toString());
 
-  const getSlug = (i: number, defaultValue: unknown) => slug[i] || defaultValue;
+  const getSlug = (i: number, defaultValue: unknown) => slug[i] || String(defaultValue);
 
   const get = (query: Query) => {
     const obj: Record<string, string> = {};

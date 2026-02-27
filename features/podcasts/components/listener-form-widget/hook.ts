@@ -10,9 +10,8 @@ import {
   listenerSchema,
   ListenerSchema,
 } from "@/lib/supabase/services/listeners/types";
-import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { PATH } from "@/constants/PATH";
-import data from "@/lib/supabase/services/podcasts/data.json";
 //
 import { M, defaultValues } from "./utils";
 
@@ -28,9 +27,7 @@ export function useListenerFormWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const id = Number(getSlug(0, 1));
-  const i = id - 1;
-  const item = (data[i] || data[0]) as PodcastDto;
+  const item = PodcastHelper.GetSlugItem(getSlug(0, 1));
 
   const onSubmit = async (formData: ListenerSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
@@ -40,7 +37,7 @@ export function useListenerFormWidget() {
       await sleep();
     } else {
       const payload = {
-        podcast_id: id,
+        podcast_id: item.id,
         display_name: formData.display_name,
       };
       const { error } = await createListenerAction(payload, PATH.podcast);
@@ -57,7 +54,9 @@ export function useListenerFormWidget() {
     setSuccess(true);
     await sleep(1.5);
     // setSuccess(false);
-    M.router || !item.spaceUrl ? null : window.open(item.spaceUrl);
+    M.router || PodcastHelper.IsOngoing(item)
+      ? window.open(item.spaceUrl)
+      : null;
   };
 
   return {

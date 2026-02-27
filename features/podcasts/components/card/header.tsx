@@ -2,8 +2,8 @@ import { SquareArrowOutUpRightIcon, CalendarClockIcon } from "lucide-react";
 import { FaMicrophoneAlt, FaMicrophoneAltSlash } from "react-icons/fa";
 import clsx from "clsx";
 //
+import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
-import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 
 export const Header = ({
   date,
@@ -12,14 +12,14 @@ export const Header = ({
   timeText,
   spaceUrl,
 }: PodcastDto) => {
-  const ongoing = CUR_DATE === date && CUR_HOUR_UTC >= hour;
+  const isOngoing = PodcastHelper.IsOngoing({ date, hour });
   //
   return (
     <header className="flex-row-cb debug_ mt-6 font-[Poppins] text-sm font-medium text-white">
       {/* LEFT */}
       <section className="flex-row-cs gap-2">
         <div className="relative">
-          {ongoing ? (
+          {isOngoing ? (
             <FaMicrophoneAlt size={20} />
           ) : (
             <FaMicrophoneAltSlash size={20} />
@@ -27,15 +27,15 @@ export const Header = ({
           <div
             className={clsx(
               "absolute top-0 right-0 size-2 rounded-full",
-              ongoing ? "bg-emerald-500" : "bg-rose-500",
+              isOngoing ? "bg-emerald-500" : "bg-rose-500",
             )}
           ></div>
         </div>
-        <p className="tracking-wide_">{ongoing ? "Ongoing" : "Upcoming"}</p>
+        <p className="tracking-wide_">{isOngoing ? "Ongoing" : "Upcoming"}</p>
       </section>
       {/* RIGHT */}
       <section>
-        {ongoing ? (
+        {isOngoing ? (
           <a
             href={spaceUrl || "#"}
             title="Join"

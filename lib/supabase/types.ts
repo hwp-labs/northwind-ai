@@ -13,7 +13,7 @@ export interface ApiResponse<T> {
 }
 
 export interface ApiQueryParams<T = {}> {
-  id: number | null;
+  id?: number | null;
   page?: number;
   pageSize?: number;
   sortBy?: keyof (BaseEntity & T);
