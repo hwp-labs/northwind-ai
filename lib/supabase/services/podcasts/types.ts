@@ -1,7 +1,8 @@
 export interface PodcastDto {
   id: number;
-  date: string;
+  date?: string;
   dateText: string;
+  hour?: number;
   timeText: string;
   appName: string;
   guestName?: string;

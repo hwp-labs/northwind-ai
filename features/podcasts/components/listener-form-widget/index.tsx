@@ -16,7 +16,7 @@ export const ListenerFormWidget = () => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         autoComplete="off"
-        className="text-background rounded-t-4xl bg-white px-6 pt-5 pb-4 lg:rounded-t-2xl"
+        className="text-background rounded-t-2xl bg-white px-4 sm:px-5 pt-4 sm:pt-5 sm:pb-4 pb-3"
       >
         <FieldSet disabled={submitting} className="flex flex-row gap-2">
           <ControlledFieldInput

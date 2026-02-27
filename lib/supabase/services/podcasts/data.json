@@ -3,6 +3,7 @@
     "id": 1,
     "date": "2026-03-01",
     "dateText": "Sunday, March 1st",
+    "hour": 20,
     "timeText": "8 PM",
     "appName": "Northwind AI",
     "notionUrl": "https://notion.so/Podcast-1-Northwind-AI-7876a7cc633c827e86de01df6f295bc1",
@@ -12,6 +13,7 @@
     "id": 2,
     "date": "2026-04-01",
     "dateText": "Wednesday, April 1st",
+    "time": "20:00",
     "timeText": "8 PM",
     "appName": "Jobsavvy",
     "guestName": "@SonOfVerdansk"
@@ -20,6 +22,7 @@
     "id": 3,
     "date": "2026-05-01",
     "dateText": "Friday, May 1st",
+    "time": "20:00",
     "timeText": "8 PM",
     "appName": "Exxpo CBT",
     "guestName": "@DayneKORA"
@@ -28,6 +31,7 @@
     "id": 4,
     "date": "2026-06-01",
     "dateText": "Monday, June 1st",
+    "time": "20:00",
     "timeText": "8 PM",
     "appName": "PrepMyApp",
     "guestName": "@BenedictEsimaje"
@@ -36,6 +40,7 @@
     "id": 5,
     "date": "2026-07-01",
     "dateText": "Wednesday, July 1st",
+    "time": "20:00",
     "timeText": "8 PM",
     "appName": "SmartCoop",
     "guestName": "@smartcoop-mpcs"

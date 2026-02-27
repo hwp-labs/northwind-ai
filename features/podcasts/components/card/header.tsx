@@ -3,17 +3,23 @@ import { FaMicrophoneAlt, FaMicrophoneAltSlash } from "react-icons/fa";
 import clsx from "clsx";
 //
 import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
-import { CUR_DATE } from "@/constants";
+import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 
-export const Header = ({ date, dateText, timeText, spaceUrl }: PodcastDto) => {
-  const isToday = CUR_DATE === date;
+export const Header = ({
+  date,
+  dateText,
+  hour = 0,
+  timeText,
+  spaceUrl,
+}: PodcastDto) => {
+  const ongoing = CUR_DATE === date && CUR_HOUR_UTC >= hour;
   //
   return (
     <header className="flex-row-cb debug_ mt-6 font-[Poppins] text-sm font-medium text-white">
       {/* LEFT */}
       <section className="flex-row-cs gap-2">
         <div className="relative">
-          {isToday ? (
+          {ongoing ? (
             <FaMicrophoneAlt size={20} />
           ) : (
             <FaMicrophoneAltSlash size={20} />
@@ -21,15 +27,15 @@ export const Header = ({ date, dateText, timeText, spaceUrl }: PodcastDto) => {
           <div
             className={clsx(
               "absolute top-0 right-0 size-2 rounded-full",
-              isToday ? "bg-emerald-500" : "bg-rose-500",
+              ongoing ? "bg-emerald-500" : "bg-rose-500",
             )}
           ></div>
         </div>
-        <p className="tracking-wide_">{isToday ? "Ongoing" : "Upcoming"}</p>
+        <p className="tracking-wide_">{ongoing ? "Ongoing" : "Upcoming"}</p>
       </section>
       {/* RIGHT */}
       <section>
-        {isToday ? (
+        {ongoing ? (
           <a
             href={spaceUrl || "#"}
             title="Join"
