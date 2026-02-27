@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 //
 import { useQueryParams } from "@/hooks/use-query-params";
 import { useToast } from "@/hooks/use-toast";
+import { getListenerByPodcastIdAction } from "@/lib/supabase/services/listeners/actions/getListenerAction";
 import { createListenerAction } from "@/lib/supabase/services/listeners/actions/createListenerAction";
 import { sleep } from "@/utils";
 import {
@@ -12,6 +13,7 @@ import {
 } from "@/lib/supabase/services/listeners/types";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { PATH } from "@/constants/PATH";
+import { ERROR } from "@/constants/ERROR";
 //
 import { M, defaultValues } from "./utils";
 
@@ -41,8 +43,15 @@ export function useListenerFormWidget() {
         podcast_id: item.id,
         username: formData.username,
       };
-      const { error } = await createListenerAction(payload, PATH.podcast);
 
+      const { data } = await getListenerByPodcastIdAction(payload);
+      if (data?.length) {
+        toast.error(ERROR.duplicateListenerUsername);
+        setSubmitting(false);
+        return;
+      }
+
+      const { error } = await createListenerAction(payload, PATH.podcast);
       if (error) {
         toast.error(error);
         setSubmitting(false);

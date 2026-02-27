@@ -3,7 +3,7 @@
 import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
 import { CreateContactDto, TABLE, ContactEntity } from "../types";
-import { ERROR_COPY } from "@/constants/LOCALE";
+import { ERROR } from "@/constants/ERROR";
 
 type RequestDto = CreateContactDto;
 type ResponseDto = ContactEntity;
@@ -18,7 +18,7 @@ export async function createContactAction(
     .single();
 
   if (error?.code === "23505") {
-    return { data: null, error: ERROR_COPY.duplicateContactEmail };
+    return { data: null, error: ERROR.duplicateContactEmail };
   }
 
   return { data, error: error?.message };

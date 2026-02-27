@@ -85,7 +85,3 @@ export const COPY = {
     </>
   ),
 };
-
-export const ERROR_COPY = {
-  duplicateContactEmail: "Hey, contact email already captured 👀",
-};
