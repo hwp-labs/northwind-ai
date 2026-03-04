@@ -18,8 +18,8 @@ export const PATH = {
   previewPodcastPostCard: "/preview/post-cards?tabIndex=3",
   //
   podcast: "/podcast",
-  PodcastTranscript: (id: unknown) => `/podcast/transcripts/${id}`,
-  createPodcastTranscript: "/podcast/transcripts/create",
+  PodcastTranscript: (id: unknown) => `/podcast/transcript/${id}`,
+  createPodcastTranscript: "/podcast/transcript/create",
 } as const satisfies Record<string, PathType>;
 
 export const PROTECTED_PATH = {
