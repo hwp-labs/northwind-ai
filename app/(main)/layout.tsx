@@ -10,7 +10,7 @@ export default function MainLayout({
   return (
     <>
       <Header />
-      {children}
+      <div className="min-h-[75vh]">{children}</div>
       <Footer />
       <ScrollToTop />
     </>
