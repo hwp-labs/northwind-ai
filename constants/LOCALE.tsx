@@ -4,6 +4,10 @@ import {
   IconStarFilled,
 } from "@tabler/icons-react";
 import { APP } from "./APP";
+import {
+  PodcastDto,
+  PodcastFormatEnum,
+} from "@/lib/supabase/services/podcasts/types";
 
 export const COPY = {
   prompt: `How can ${APP.name} help automate my business?`,
@@ -77,11 +81,30 @@ export const COPY = {
   ],
   podcastSummary:
     "An open discussion on %'s system design, core features, GTM, tech stack, data models, APIs, KPIs, and more.",
-  podcastSummaryRichText: (appName: string) => (
-    <>
-      An open discussion on {appName}'s system design, core features, GTM,
-      <br />
-      tech stack, data models, APIs, KPIs, and more 💃
-    </>
-  ),
+  podcastSummaryRichText: ({
+    appName,
+    guestName,
+    guestCareerTitle,
+    format,
+  }: PodcastDto) => {
+    const isFiresideChat = format === PodcastFormatEnum.FIRESIDE_CHAT;
+    //
+    return isFiresideChat ? (
+      <>
+        A fireside chat with <strong>{guestName}</strong> ({guestCareerTitle})
+        on
+        <br />
+        the application areas of AI automation in the Nigerian Aviation
+        industry.
+      </>
+    ) : (
+      <>
+        A design session with <strong>{guestName}</strong> ({guestCareerTitle})
+        on
+        <br />
+        <strong>{appName}</strong>'s system design, features, tech stack, data
+        models, GTM, KPIs & more 💃
+      </>
+    );
+  },
 };

@@ -3,10 +3,13 @@ import { FaTwitter } from "react-icons/fa6";
 import { MapPinHouseIcon } from "lucide-react";
 //
 import { OptionItem } from "@/types";
-import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
+import {
+  PodcastDto,
+  PodcastFormatEnum,
+} from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
-// 
+//
 import { CardBuilderDatetime as Datetime } from "./card-builder-datetime";
 
 const Venue = ({ id }: PodcastDto) => {
@@ -48,22 +51,28 @@ const Speaker = ({ label, value }: OptionItem) => (
   </li>
 );
 
-const Hero = ({ appName, guestName }: PodcastDto) => (
-  <section
-    style={{
-      background:
-        "linear-gradient(to right, black, black, rgba(255,255,255,0))",
-    }}
-  >
-    <h1 className="grid text-6xl leading-[45px] font-black text-white uppercase">
-      <span className="_text-[#41dbc1]">{appName}</span>
-      <span className="_text-[#fb085a]">Design Session</span>
-    </h1>
-    <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-xs font-medium tracking-wide">
-      {COPY.podcastSummaryRichText(appName)}
-    </div>
-  </section>
-);
+const Hero = (item: PodcastDto) => {
+  const isFiresideChat = item.format === PodcastFormatEnum.FIRESIDE_CHAT;
+  //
+  return (
+    <section
+      style={{
+        background:
+          "linear-gradient(to right, black, black, rgba(255,255,255,0))",
+      }}
+    >
+      <h1 className="grid text-6xl leading-[45px] font-black text-white uppercase">
+        <span className="_text-[#41dbc1]">{item.appName}</span>
+        <span className="_text-[#fb085a]">
+          {isFiresideChat ? "Fireside Chat" : "Design Session"}
+        </span>
+      </h1>
+      <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-xs font-medium tracking-wide">
+        {COPY.podcastSummaryRichText(item)}
+      </div>
+    </section>
+  );
+};
 
 const PoweredBy = ({ notionUrl }: PodcastDto) => (
   <footer className="absolute right-8 bottom-5 z-1">

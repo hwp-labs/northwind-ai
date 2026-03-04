@@ -6,8 +6,11 @@
     "hour": 20,
     "timeText": "8 PM",
     "appName": "Northwind AI",
+    "guestName": "Emmanuel Tugbeh",
+    "guestCareerTitle": "Product Manager, HWP Labs",
     "notionUrl": "https://held-gambler-004.notion.site/Ep-1-Northwind-AI-7876a7cc633c827e86de01df6f295bc1?source=copy_link",
-    "spaceUrl": "https://x.com/i/spaces/1nxnRYRXOgjxO"
+    "spaceUrl": "https://x.com/i/spaces/1nxnRYRXOgjxO",
+    "listeners": 18
   },
   {
     "id": 2,
@@ -16,7 +19,9 @@
     "hour": 20,
     "timeText": "8 PM",
     "appName": "Scupex",
-    "guestName": "@sanmiAkinbo"
+    "guestUsername": "@sanmiAkinbo",
+    "guestName": "Martins Akinbo",
+    "guestCareerTitle": "Founder/CEO, Technox Solutions Ltd."
   },
   {
     "id": 3,
@@ -25,7 +30,21 @@
     "hour": 20,
     "timeText": "8 PM",
     "appName": "Bookin",
-    "guestName": "@feanyluch"
+    "guestUsername": "@feanyluch",
+    "guestName": "Oluchi Ifeanyi ",
+    "guestCareerTitle": "Founder/CEO, Bookin"
+  },
+  {
+    "id": 4,
+    "date": "2026-03-22",
+    "dateText": "Sunday, March 22nd",
+    "hour": 20,
+    "timeText": "8 PM",
+    "appName": "AI & Aviation",
+    "guestUsername": "@NisakpoJoshua",
+    "guestName": "Joshua Nisakpo",
+    "guestCareerTitle": "Head of Operations, Bayelsa Airport",
+    "format": "fireside-chat"
   },
   {
     "id": 0,
@@ -34,7 +53,7 @@
     "time": "20:00",
     "timeText": "8 PM",
     "appName": "Jobsavvy",
-    "guestName": "@SonOfVerdansk"
+    "guestUsername": "@SonOfVerdansk"
   },
   {
     "id": 0,
@@ -43,7 +62,7 @@
     "time": "20:00",
     "timeText": "8 PM",
     "appName": "Exxpo CBT",
-    "guestName": "@DayneKORA"
+    "guestUsername": "@DayneKORA"
   },
   {
     "id": 0,
@@ -52,7 +71,7 @@
     "time": "20:00",
     "timeText": "8 PM",
     "appName": "PrepMyApp",
-    "guestName": "@BenedictEsimaje"
+    "guestUsername": "@BenedictEsimaje"
   },
   {
     "id": 0,
@@ -61,6 +80,6 @@
     "time": "20:00",
     "timeText": "8 PM",
     "appName": "SmartCoop",
-    "guestName": "@smartcoop-mpcs"
+    "guestUsername": "@smartcoop-mpcs"
   }
 ]
