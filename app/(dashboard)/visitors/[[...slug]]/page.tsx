@@ -32,9 +32,12 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
     ? filtered
       ? data.filter(({ geolocation }) => {
           if (geolocation && geolocation.latitude && geolocation.longitude) {
+            const [lat, lng] = [
+              Number(process.env.NEXT_PUBLIC_BLACKLIST_LATITUDE || 0),
+              Number(process.env.NEXT_PUBLIC_BLACKLIST_LONGITUDE || 0),
+            ];
             return (
-              geolocation.latitude === 6.4474 &&
-              geolocation.longitude === 3.3903
+              geolocation.latitude === lat && geolocation.longitude === lng
             );
           }
         })
@@ -43,7 +46,11 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
   //
   return (
     <main className="grid gap-4">
-      <Toolbar selected={transformedData.length} total={data?.length} />
+      <Toolbar
+        selected={transformedData.length}
+        total={data?.length}
+        filteredIds={filtered ? transformedData.map(({ id }) => id) : undefined}
+      />
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
           <TableHead>IP Address</TableHead>

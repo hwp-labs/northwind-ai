@@ -48,7 +48,7 @@ export const MonthlyPostCard = ({ page }: Props) => {
           </div>
           <figcaption
             className={clsx(
-              "bg-clip-text text-center font-[Raleway] text-[340px] leading-72 font-bold text-transparent uppercase",
+              "bg-clip-text text-center font-[Raleway] text-[340px] leading-72 font-bold text-transparent uppercase -ml-2",
               "from-bot bg-gradient-to-b",
             )}
           >

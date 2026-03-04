@@ -11,7 +11,7 @@ export const CardBuilderDatetime = ({ dateText, timeText }: PodcastDto) => {
   //
   return (
     <section
-      className={clsx("flex-row-cs gap-0 text-sm", tonight ? "ml-12" : "ml-6")}
+      className={clsx("flex-row-cs gap-0 text-sm", tonight ? "ml-10" : "ml-8")}
     >
       <span
         className="text-foreground flex-row-cs ml-2 -rotate-4 cursor-default gap-2 bg-[#071228] px-2 py-2 font-black tracking-wide"

@@ -8,7 +8,7 @@ import { PrimaryKeyType } from "../types";
 type RequestDto = {
   path?: string;
   table: string;
-  id: PrimaryKeyType;
+  id: PrimaryKeyType | PrimaryKeyType[];
 };
 type ResponseDto = number;
 
@@ -18,10 +18,11 @@ export async function deleteAction({
   id,
 }: RequestDto): Promise<ApiResponse<ResponseDto>> {
   const supabase = await supabaseAsync();
-  const { data, count, error } = await supabase
-    .from(table)
-    .delete({ count: "exact" })
-    .eq("id", id);
+  const baseQuery = supabase.from(table).delete({ count: "exact" });
+
+  const { count, error } = await (Array.isArray(id)
+    ? baseQuery.in("id", id)
+    : baseQuery.eq("id", id));
 
   if (count && path) revalidatePath(path);
 

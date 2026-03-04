@@ -28,8 +28,8 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           <PodcastPostCardBuilder.Venue {...item} />
           <ul
             className={clsx(
-              "flex-row-cs gap-2 text-xs",
-              item.guestName ? "mt-4 ml-4 -rotate-4" : "mt-6 ml-28",
+              "flex-row-cs gap-2 text-sm",
+              item.guestName ? "ml-4 -rotate-4 mb-10 mt-4" : "ml-26 my-6",
             )}
           >
             <PodcastPostCardBuilder.Speaker label="host" value="@2gbeh" />

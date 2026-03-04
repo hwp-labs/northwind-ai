@@ -6,11 +6,29 @@
     "hour": 20,
     "timeText": "8 PM",
     "appName": "Northwind AI",
-    "notionUrl": "https://notion.so/Podcast-1-Northwind-AI-7876a7cc633c827e86de01df6f295bc1",
+    "notionUrl": "https://held-gambler-004.notion.site/Ep-1-Northwind-AI-7876a7cc633c827e86de01df6f295bc1?source=copy_link",
     "spaceUrl": "https://x.com/i/spaces/1nxnRYRXOgjxO"
   },
   {
     "id": 2,
+    "date": "2026-03-8",
+    "dateText": "Sunday, March 8th",
+    "hour": 20,
+    "timeText": "8 PM",
+    "appName": "Scupex",
+    "guestName": "@sanmiAkinbo"
+  },
+  {
+    "id": 3,
+    "date": "2026-03-15",
+    "dateText": "Sunday, March 15th",
+    "hour": 20,
+    "timeText": "8 PM",
+    "appName": "Bookin",
+    "guestName": "@feanyluch"
+  },
+  {
+    "id": 0,
     "date": "2026-04-01",
     "dateText": "Wednesday, April 1st",
     "time": "20:00",
@@ -19,7 +37,7 @@
     "guestName": "@SonOfVerdansk"
   },
   {
-    "id": 3,
+    "id": 0,
     "date": "2026-05-01",
     "dateText": "Friday, May 1st",
     "time": "20:00",
@@ -28,7 +46,7 @@
     "guestName": "@DayneKORA"
   },
   {
-    "id": 4,
+    "id": 0,
     "date": "2026-06-01",
     "dateText": "Monday, June 1st",
     "time": "20:00",
@@ -37,7 +55,7 @@
     "guestName": "@BenedictEsimaje"
   },
   {
-    "id": 5,
+    "id": 0,
     "date": "2026-07-01",
     "dateText": "Wednesday, July 1st",
     "time": "20:00",

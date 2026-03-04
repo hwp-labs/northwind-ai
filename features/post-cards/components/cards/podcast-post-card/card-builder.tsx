@@ -50,7 +50,6 @@ const Speaker = ({ label, value }: OptionItem) => (
 
 const Hero = ({ appName, guestName }: PodcastDto) => (
   <section
-    className={guestName ? "mt-10" : "mt-6"}
     style={{
       background:
         "linear-gradient(to right, black, black, rgba(255,255,255,0))",
@@ -60,7 +59,7 @@ const Hero = ({ appName, guestName }: PodcastDto) => (
       <span className="_text-[#41dbc1]">{appName}</span>
       <span className="_text-[#fb085a]">Design Session</span>
     </h1>
-    <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-[10px] font-medium tracking-wide">
+    <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-xs font-medium tracking-wide">
       {COPY.podcastSummaryRichText(appName)}
     </div>
   </section>

@@ -16,6 +16,7 @@ export const VisitorsTableAction = ({ id }: { id: PrimaryKeyType }) => {
 
   const handleAction = async (value: string) => {
     if (value !== "delete") return;
+    
     if (confirm(`Confirm delete?`)) {
       setLoading(true);
 
