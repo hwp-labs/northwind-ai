@@ -37,8 +37,9 @@ export const Header = ({ isOngoing, spaceUrl, dateText, timeText }: Props) => {
             title="Join"
             target="_blank"
             rel="noopener noreferrer"
-            className="_debug ml-auto"
+            className="_debug flex-row-cs ml-auto gap-1.5"
           >
+            Live
             <SquareArrowOutUpRightIcon size={16} strokeWidth={3} />
           </a>
         ) : (
