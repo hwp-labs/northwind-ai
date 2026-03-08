@@ -2,13 +2,10 @@ import { MdAdsClick } from "react-icons/md";
 import { FaTwitter } from "react-icons/fa6";
 import { MapPinHouseIcon } from "lucide-react";
 //
+import { Summary } from "@/features/podcasts/components/card";
+import { PodcastDto, TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 import { OptionItem } from "@/types";
-import {
-  PodcastDto,
-  PodcastFormatEnum,
-} from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
-import { COPY } from "@/constants/LOCALE";
 //
 import { CardBuilderDatetime as Datetime } from "./card-builder-datetime";
 
@@ -40,7 +37,7 @@ const Speaker = ({ label, value }: OptionItem) => (
       <FaTwitter size={12} />
     </span>
     <a
-      href={`https://x.com/${value}`}
+      href={`https://x.com/${value.replace("@", "")}`}
       target="_blank"
       rel="noopener noreferrer"
       className="font-semibold"
@@ -51,9 +48,7 @@ const Speaker = ({ label, value }: OptionItem) => (
   </li>
 );
 
-const Hero = (item: PodcastDto) => {
-  const isFiresideChat = item.format === PodcastFormatEnum.FIRESIDE_CHAT;
-  //
+const Hero = (item: TransformedPodcastDto) => {
   return (
     <section
       style={{
@@ -62,13 +57,13 @@ const Hero = (item: PodcastDto) => {
       }}
     >
       <h1 className="grid text-6xl leading-[45px] font-black text-white uppercase">
-        <span className="_text-[#41dbc1]">{item.appName}</span>
+        <span className="_text-[#41dbc1]">{item.topic.title}</span>
         <span className="_text-[#fb085a]">
-          {isFiresideChat ? "Fireside Chat" : "Design Session"}
+          {item.isFiresideChat ? "Fireside Chat" : "Design Session"}
         </span>
       </h1>
       <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-xs font-medium tracking-wide">
-        {COPY.podcastSummaryRichText(item)}
+        <Summary {...item} />
       </div>
     </section>
   );

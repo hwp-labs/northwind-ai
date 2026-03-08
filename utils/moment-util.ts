@@ -40,4 +40,10 @@ const transform = (format: string, dt?: InputType) =>
 // Sun, 1 Jan 1970 | 9:00 AM
 const verbose = (dt?: InputType) => transform("ddd, D MMM YYYY | h:mm A", dt);
 
-export const momentUtil = { verbose };
+// Sunday, March 1st
+const podcastDate = (dt?: InputType) => transform("dddd, MMMM Do", dt);
+
+// 8 PM
+const podcastTime = (dt?: InputType) => transform("h A", dt);
+
+export const momentUtil = { verbose, podcastDate, podcastTime };

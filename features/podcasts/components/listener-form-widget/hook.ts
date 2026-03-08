@@ -29,8 +29,7 @@ export function useListenerFormWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const item = PodcastHelper.GetSlugItem(getSlug(0, 1));
-  const isOngoing = PodcastHelper.IsOngoing(item);
+  const { isOngoing, ...item } = PodcastHelper.GetSlugItem(getSlug(0, 1));
 
   const onSubmit = async (formData: ListenerSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);

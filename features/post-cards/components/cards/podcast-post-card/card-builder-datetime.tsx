@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { CalendarClockIcon } from "lucide-react";
 import clsx from "clsx";
-//
-import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
+// 
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-export const CardBuilderDatetime = ({ dateText, timeText }: PodcastDto) => {
+export const CardBuilderDatetime = ({ dateText, timeText }: TransformedPodcastDto) => {
   const [tonight, setTonight] = useState(false);
   //
   return (

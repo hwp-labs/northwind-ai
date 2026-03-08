@@ -41,7 +41,7 @@ export const Guests = async ({ podcast_id }: Props) => {
         ))}
       </AvatarGroup>
       <figcaption className="text-xs font-medium">
-        {totalSafe} Guests
+        {totalSafe} RSVP
       </figcaption>
     </figure>
   );

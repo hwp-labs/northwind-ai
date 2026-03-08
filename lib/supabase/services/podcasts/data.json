@@ -1,88 +1,70 @@
 [
   {
     "id": 1,
-    "date": "2026-03-01",
-    "dateText": "Sunday, March 1st",
-    "hour": 20,
-    "timeText": "8 PM",
-    "appName": "Northwind AI",
-    "guestName": "Emmanuel Tugbeh",
-    "guestCareerTitle": "Product Manager, HWP Labs",
+    "datetime": "2026-03-01T19:00:00.000Z",
     "notionUrl": "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
     "spaceUrl": "https://x.com/i/spaces/1nxnRYRXOgjxO",
-    "listeners": 18
+    "listeners": 18,
+    "guest": {
+      "name": "Emmanuel Tugbeh",
+      "username": "@2gbeh",
+      "company": "HWP Labs",
+      "jobTitle": "Product Manager"
+    },
+    "topic": {
+      "title": "Northwind AI",
+      "description": "AI Automation Web Services"
+    }
   },
   {
     "id": 2,
-    "date": "2026-03-8",
-    "dateText": "Sunday, March 8th",
-    "hour": 20,
-    "timeText": "8 PM",
-    "appName": "Scupex",
-    "guestUsername": "@sanmiAkinbo",
-    "guestName": "Martins Akinbo",
-    "guestCareerTitle": "Founder/CEO, Technox Solutions Ltd.",
+    "datetime": "2026-03-08T14:00:00.000Z",
     "notionUrl": "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",
     "spaceUrl": "https://x.com/i/spaces/1qGvvkLwDBAGB",
-    "listeners": 0
+    "listeners": null,
+    "guest": {
+      "name": "Martins Akinbo",
+      "username": "@sanmiAkinbo",
+      "company": "Technox Solutions Ltd",
+      "jobTitle": "Founder/CTO"
+    },
+    "topic": {
+      "title": "Scupex",
+      "description": "AI-native, multi-tenant school management solution"
+    }
   },
   {
     "id": 3,
-    "date": "2026-03-15",
-    "dateText": "Sunday, March 15th",
-    "hour": 20,
-    "timeText": "8 PM",
-    "appName": "Bookin",
-    "guestUsername": "@feanyluch",
-    "guestName": "Oluchi Ifeanyi ",
-    "guestCareerTitle": "Founder/CEO, Bookin"
+    "datetime": "2026-03-15T19:00:00.000Z",
+    "notionUrl": null,
+    "spaceUrl": null,
+    "listeners": null,
+    "guest": {
+      "name": "Oluchi Ifeanyi",
+      "username": "@feanyluch",
+      "company": null,
+      "jobTitle": null
+    },
+    "topic": {
+      "title": "Bookin",
+      "description": null
+    }
   },
   {
-    "id": 4,
-    "date": "2026-03-22",
-    "dateText": "Sunday, March 22nd",
-    "hour": 20,
-    "timeText": "8 PM",
-    "appName": "AI & Aviation",
-    "guestUsername": "@NisakpoJoshua",
-    "guestName": "Joshua Nisakpo",
-    "guestCareerTitle": "Head of Operations, Bayelsa Airport",
-    "format": "fireside-chat"
-  },
-  {
-    "id": 0,
-    "date": "2026-04-01",
-    "dateText": "Wednesday, April 1st",
-    "time": "20:00",
-    "timeText": "8 PM",
-    "appName": "Jobsavvy",
-    "guestUsername": "@SonOfVerdansk"
-  },
-  {
-    "id": 0,
-    "date": "2026-05-01",
-    "dateText": "Friday, May 1st",
-    "time": "20:00",
-    "timeText": "8 PM",
-    "appName": "Exxpo CBT",
-    "guestUsername": "@DayneKORA"
-  },
-  {
-    "id": 0,
-    "date": "2026-06-01",
-    "dateText": "Monday, June 1st",
-    "time": "20:00",
-    "timeText": "8 PM",
-    "appName": "PrepMyApp",
-    "guestUsername": "@BenedictEsimaje"
-  },
-  {
-    "id": 0,
-    "date": "2026-07-01",
-    "dateText": "Wednesday, July 1st",
-    "time": "20:00",
-    "timeText": "8 PM",
-    "appName": "SmartCoop",
-    "guestUsername": "@smartcoop-mpcs"
+    "id": 3,
+    "datetime": "2026-03-22T19:00:00.000Z",
+    "notionUrl": null,
+    "spaceUrl": null,
+    "listeners": null,
+    "guest": {
+      "name": "Aigboje Ohiorenua",
+      "username": "@Ohioroje",
+      "company": null,
+      "jobTitle": "Software Engineer"
+    },
+    "topic": {
+      "title": "MarketBridge",
+      "description": null
+    }
   }
 ]

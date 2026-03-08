@@ -1,17 +1,28 @@
 export interface PodcastDto {
   id: number;
-  date?: string;
-  dateText: string;
-  hour?: number;
-  timeText: string;
-  appName: string;
-  guestUsername?: string;
-  guestName?: string;
-  guestCareerTitle?: string;
-  notionUrl?: string;
-  spaceUrl?: string;
-  listeners?: number;
+  datetime: string;
+  notionUrl: string | null;
+  spaceUrl: string | null;
+  listeners: number | null;
   format?: PodcastFormatEnum;
+  guest: PodcastGuest;
+  topic: PodcastTopic;
+}
+export interface TransformedPodcastDto extends PodcastDto {
+  dateText: string;
+  timeText: string;
+  isOngoing: boolean;
+  isFiresideChat: boolean;
+}
+export interface PodcastGuest {
+  name: string;
+  username: string;
+  company: string | null;
+  jobTitle: string | null;
+}
+export interface PodcastTopic {
+  title: string;
+  description: string | null;
 }
 
 export enum PodcastFormatEnum {

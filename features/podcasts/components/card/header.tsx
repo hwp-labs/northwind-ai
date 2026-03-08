@@ -1,19 +1,15 @@
 import { SquareArrowOutUpRightIcon, CalendarClockIcon } from "lucide-react";
 import { FaMicrophoneAlt, FaMicrophoneAltSlash } from "react-icons/fa";
 import clsx from "clsx";
-//
-import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
-import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-export const Header = ({
-  date,
-  dateText,
-  hour = 0,
-  timeText,
-  spaceUrl,
-}: PodcastDto) => {
-  const isOngoing = PodcastHelper.IsOngoing({ date, hour });
-  //
+interface Props {
+  isOngoing: boolean;
+  spaceUrl: string | null;
+  dateText: string;
+  timeText: string;
+}
+
+export const Header = ({ isOngoing, spaceUrl, dateText, timeText }: Props) => {
   return (
     <header className="flex-row-cb debug_ mt-6 font-[Poppins] text-sm font-medium text-white">
       {/* LEFT */}

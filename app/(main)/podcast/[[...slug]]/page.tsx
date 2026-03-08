@@ -2,9 +2,13 @@ import { Metadata } from "next";
 //
 import { PageParams } from "@/types";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
-import { COPY } from "@/constants/LOCALE";
 //
-import { Header, Host, Guests } from "@/features/podcasts/components/card";
+import {
+  Header,
+  Summary,
+  Host,
+  Guests,
+} from "@/features/podcasts/components/card";
 import { ListenerFormWidget } from "@/features/podcasts/components/listener-form-widget";
 
 export async function generateMetadata({
@@ -13,7 +17,7 @@ export async function generateMetadata({
   const item = await PodcastHelper.GetItemAsync(params);
   //
   return {
-    title: `${item.appName} Design Session`,
+    title: `${item.topic.title} Design Session`,
   };
 }
 
@@ -26,18 +30,18 @@ export default async function PodcastPage({ params }: PageParams<string[]>) {
         <div className="grid gap-6 px-6 sm:px-8">
           <Header {...item} />
           <hgroup className="grid gap-2 py-4">
-            <h1 className="grid text-3xl sm:text-4xl leading-[30px] sm:leading-[35px] font-black text-white uppercase_">
-              {item.appName} Design Session
+            <h1 className="uppercase_ grid text-3xl leading-[35px] font-black text-white sm:text-4xl sm:leading-[45px]">
+              {item.topic.title} Design Session
             </h1>
-            <p className="text-foreground _font-[Montserrat] text-xs font-medium tracking-wide">
-              {COPY.podcastSummary.replaceAll("%", item.appName)}
+            <p className="text-foreground _font-[Montserrat] mt-0 text-xs font-medium tracking-wide">
+              <Summary {...item} />
             </p>
           </hgroup>
         </div>
         <section className="px-6 sm:px-8">
           <ListenerFormWidget />
         </section>
-        <footer className="flex-row-cb gap-2 bg-[#8253d1] px-6 sm:px-8 py-5 text-sm">
+        <footer className="flex-row-cb gap-2 bg-[#8253d1] px-6 py-5 text-sm sm:px-8">
           <Host />
           <Guests podcast_id={item.id} />
         </footer>
