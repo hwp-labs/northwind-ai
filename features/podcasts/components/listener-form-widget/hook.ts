@@ -63,7 +63,7 @@ export function useListenerFormWidget() {
     setSuccess(true);
     await sleep(1.5);
     // setSuccess(false);
-    M.router || isOngoing ? window.open(item.spaceUrl) : null;
+    M.router || isOngoing ? window.open(item.spaceUrl!) : null;
   };
 
   return {
