@@ -30,16 +30,16 @@ export default async function PodcastPage({ params }: PageParams<string[]>) {
         <div className="grid gap-6 px-6 sm:px-8">
           <Header {...item} />
           <hgroup className="grid gap-2 py-4">
-            <h1 className="uppercase_ grid text-3xl leading-[35px] font-black text-white sm:text-4xl sm:leading-[45px]">
+            <h1 className="uppercase_ grid text-2xl leading-[35px] font-black text-white sm:text-4xl sm:leading-[45px]">
               {item.topic.title} Design Session
             </h1>
-            <p className="text-foreground _font-[Montserrat] mt-0 text-xs font-medium tracking-wide">
+            <p className="text-foreground _font-[Montserrat] mt-0 text-[11px] sm:text-xs font-medium tracking-wide">
               <Summary {...item} />
             </p>
           </hgroup>
         </div>
         <section className="px-6 sm:px-8">
-          <ListenerFormWidget />
+          <ListenerFormWidget/>
         </section>
         <footer className="flex-row-cb gap-2 bg-[#8253d1] px-6 py-5 text-sm sm:px-8">
           <Host />

@@ -1,17 +1,18 @@
-import { SquareArrowOutUpRightIcon, CalendarClockIcon } from "lucide-react";
 import { FaMicrophoneAlt, FaMicrophoneAltSlash } from "react-icons/fa";
+import { SquareArrowOutUpRightIcon, CalendarClockIcon } from "lucide-react";
 import clsx from "clsx";
+//
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-interface Props {
-  isOngoing: boolean;
-  spaceUrl: string | null;
-  dateText: string;
-  timeText: string;
-}
-
-export const Header = ({ isOngoing, spaceUrl, dateText, timeText }: Props) => {
+export const Header = ({
+  isOngoing,
+  isConcluded,
+  spaceUrl,
+  dateText,
+  timeText,
+}: TransformedPodcastDto) => {
   return (
-    <header className="flex-row-cb debug_ mt-6 font-[Poppins] text-sm font-medium text-white">
+    <header className="flex-row-cb debug_ mt-6 font-[Poppins] text-xs sm:text-sm font-medium text-white">
       {/* LEFT */}
       <section className="flex-row-cs gap-2">
         <div className="relative">
@@ -27,7 +28,9 @@ export const Header = ({ isOngoing, spaceUrl, dateText, timeText }: Props) => {
             )}
           ></div>
         </div>
-        <p className="tracking-wide_">{isOngoing ? "Ongoing" : "Upcoming"}</p>
+        <p className="tracking-wide_">
+          {isConcluded ? "Concluded" : isOngoing ? "Ongoing" : "Upcoming"}
+        </p>
       </section>
       {/* RIGHT */}
       <section>

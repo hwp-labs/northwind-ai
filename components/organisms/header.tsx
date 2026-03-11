@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Logo } from "../logo";
 import { VisitorTrackerWidget } from "../widgets/visitor-tracker-widget";
-import { GithubStarsWidget } from "../widgets/github-stars-widget";
 import { PATH } from "@/constants/PATH";
 
 export const Header = () => {
@@ -10,7 +9,6 @@ export const Header = () => {
       <Logo path={PATH.home} />
       <VisitorTrackerWidget />
       <div className="flex-row-cs gap-4">
-        <GithubStarsWidget />
         <Link href={PATH.login} title="Log in">
           <img
             src="/images/avatar.png"

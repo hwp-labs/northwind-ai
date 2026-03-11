@@ -37,6 +37,9 @@ export const QUARTER = ["Q1", "Q2", "Q3", "Q4"];
 const transform = (format: string, dt?: InputType) =>
   moment(dt).tz("Africa/Lagos").format(format);
 
+const isPastDay = (dt: InputType) =>
+  moment.utc(dt).isBefore(moment.utc(), "day");
+
 // Sun, 1 Jan 1970 | 9:00 AM
 const verbose = (dt?: InputType) => transform("ddd, D MMM YYYY | h:mm A", dt);
 
@@ -46,4 +49,4 @@ const podcastDate = (dt?: InputType) => transform("dddd, MMMM Do", dt);
 // 8 PM
 const podcastTime = (dt?: InputType) => transform("h A", dt);
 
-export const momentUtil = { verbose, podcastDate, podcastTime };
+export const momentUtil = { isPastDay, verbose, podcastDate, podcastTime };

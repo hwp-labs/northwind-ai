@@ -40,7 +40,7 @@ export const Guests = async ({ podcast_id }: Props) => {
           </Avatar>
         ))}
       </AvatarGroup>
-      <figcaption className="text-xs font-medium">
+      <figcaption className="text-xs font-medium hidden sm:block">
         {totalSafe} RSVP
       </figcaption>
     </figure>

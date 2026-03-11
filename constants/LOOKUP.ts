@@ -42,4 +42,5 @@ export const StateLookup = [
   { value: "35", label: "Taraba", item: { capital: "Janlingo" } },
   { value: "36", label: "Yobe", item: { capital: "Damaturu" } },
   { value: "37", label: "Zamfara", item: { capital: "Gusau" } },
+  { value: "0", label: "Other", item: { capital: "Other" } },
 ] as const satisfies OptionItem[];

@@ -22,8 +22,10 @@ export const COPY = {
       <strong className="font-semibold">{APP.name}</strong>
     </>
   ),
-  transform:
+  hyphenTransform:
     "-transform repetitive business processes into smart, autonomous AI agents.",
+  transform:
+    "Transform repetitive business processes into smart, autonomous AI agents.",
   transformRichText: (
     <>
       -transform repetitive business processes into{" "}

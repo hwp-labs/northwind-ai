@@ -4,7 +4,7 @@ export const Host = () => {
   return (
     <figure className="flex-row-cs gap-2">
       <img
-        src="/images/photo-etugbeh.png"
+        src="/images/avatar-etugbeh.png"
         alt=""
         className="size-[32px] rounded-full ring-2 ring-white"
       />

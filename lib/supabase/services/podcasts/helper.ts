@@ -10,6 +10,7 @@ export class PodcastHelper {
     dateText: momentUtil.podcastDate(item.datetime),
     timeText: momentUtil.podcastTime(item.datetime),
     isOngoing: this.IsOngoing(item.datetime),
+    isConcluded: momentUtil.isPastDay(item.datetime),
     isFiresideChat: this.IsFiresideChat(item.format),
   });
 

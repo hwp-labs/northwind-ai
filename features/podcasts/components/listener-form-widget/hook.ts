@@ -29,7 +29,11 @@ export function useListenerFormWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const { isOngoing, ...item } = PodcastHelper.GetSlugItem(getSlug(0, 1));
+  const { isOngoing, isConcluded, ...item } = PodcastHelper.GetSlugItem(
+    getSlug(0, 1),
+  );
+
+  const onRedirect = () => window.open(item.spaceUrl!);
 
   const onSubmit = async (formData: ListenerSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);
@@ -63,7 +67,7 @@ export function useListenerFormWidget() {
     setSuccess(true);
     await sleep(1.5);
     // setSuccess(false);
-    M.router || isOngoing ? window.open(item.spaceUrl!) : null;
+    M.router || isOngoing ? onRedirect() : null;
   };
 
   return {
@@ -71,6 +75,8 @@ export function useListenerFormWidget() {
     submitting,
     success,
     onSubmit,
+    onRedirect,
     isOngoing,
+    isConcluded,
   };
 }

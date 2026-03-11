@@ -1,6 +1,6 @@
 import { FaUserSecret, FaUserTag, FaBusinessTime } from "react-icons/fa6";
 import { getStatisticsAction } from "@/lib/supabase/services/analytics/actions/getStatisticsAction";
-import { Item, GithubStarsItem } from "./item";
+import { Item } from "./item";
 import clsx from "clsx";
 
 export const StatisticsWidget = async () => {
@@ -22,7 +22,7 @@ export const StatisticsWidget = async () => {
       key: "contacts",
       icon: <FaBusinessTime size={24} />,
       label: "Demo Requests",
-      value: (data?.totalContacts || 0) + 5,
+      value: data?.totalContacts || 0,
     },
   ];
   //
@@ -34,11 +34,10 @@ export const StatisticsWidget = async () => {
           "from-contrast bg-gradient-to-l to-purple-800",
         )}
       >
-        <ul className="grid gap-16 text-white sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <ul className="debug_ gap-16 flex-row-cc text-white flex-wrap">
           {transformedData.map(({ key, ...item }) => (
             <Item key={key} {...item} />
           ))}
-          <GithubStarsItem />
         </ul>
       </div>
     </section>

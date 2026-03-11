@@ -12,6 +12,7 @@ export interface TransformedPodcastDto extends PodcastDto {
   dateText: string;
   timeText: string;
   isOngoing: boolean;
+  isConcluded: boolean;
   isFiresideChat: boolean;
 }
 export interface PodcastGuest {

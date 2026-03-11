@@ -13,9 +13,9 @@ export const PATH = {
   previewWelcomeEmail: "/preview/emails/welcome",
   //
   previewPostCards: "/preview/post-cards",
-  previewFAQPostCard: "/preview/post-cards?tabIndex=4",
+  previewFAQPostCard: "/preview/post-cards?tabIndex=1",
   previewMonthlyPostCard: "/preview/post-cards?tabIndex=2&page=4",
-  previewPodcastPostCard: "/preview/post-cards?tabIndex=3&page=2",
+  previewPodcastPostCard: "/preview/post-cards?tabIndex=3&page=3",
   //
   podcast: "/podcast",
   PodcastTranscript: (id: unknown) => `/podcast/transcript/${id}`,

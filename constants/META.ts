@@ -47,7 +47,7 @@ export const METADATA: Metadata = {
     url: APP.website,
     siteName: APP.name,
     title: APP.titleVerbose,
-    description: COPY.automate,
+    description: COPY.transform,
     images: {
       url: APP.socialPreview,
       alt: "",
@@ -59,7 +59,7 @@ export const METADATA: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: APP.titleVerbose,
-    description: COPY.automate,
+    description: COPY.transform,
     creator: "@2gbeh",
     images: {
       url: APP.socialPreview,
