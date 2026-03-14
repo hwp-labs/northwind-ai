@@ -65,7 +65,7 @@ const Hero = (item: TransformedPodcastDto) => {
           {item.isFiresideChat ? "Fireside Chat" : "Design Session"}
         </span>
       </h1>
-      <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-xs font-medium tracking-wide">
+      <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-sm font-medium tracking-wide">
         <Summary {...item} />
       </div>
     </section>
