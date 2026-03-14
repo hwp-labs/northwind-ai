@@ -36,18 +36,19 @@
   {
     "id": 3,
     "datetime": "2026-03-15T19:00:00.000Z",
-    "notionUrl": null,
-    "spaceUrl": null,
+    "notionUrl": "https://held-gambler-004.notion.site/Bookin-3226a7cc633c81f1a9d8ebbce7bbc6b3",
+    "spaceUrl": "https://x.com/i/spaces/1DxleEjawjlKL",
     "listeners": null,
     "guest": {
       "name": "Oluchi Ifeanyi",
       "username": "@feanyluch",
-      "company": null,
-      "jobTitle": null
+      "company": "Bookin",
+      "jobTitle": "Co-founder"
     },
     "topic": {
       "title": "Bookin",
-      "description": null
+      "description": "All-in-one booking platform for creative professionals",
+      "descriptionRichText": "A design session with <strong>Oluchi Ifeanyi</strong>, Co-founder of <strong>Bookin</strong>;<br />All-in-one booking platform for creative professionals."
     }
   },
   {

@@ -5,6 +5,12 @@ export const Summary = ({
   guest,
   topic,
 }: TransformedPodcastDto) => {
+  if (topic.descriptionRichText) {
+    return (
+      <span dangerouslySetInnerHTML={{ __html: topic.descriptionRichText }} />
+    );
+  }
+
   return isFiresideChat ? (
     <>
       A fireside chat with <strong>{guest.name}</strong> ({guest.jobTitle},{" "}

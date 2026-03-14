@@ -24,6 +24,7 @@ export interface PodcastGuest {
 export interface PodcastTopic {
   title: string;
   description: string | null;
+  descriptionRichText?: string;
 }
 
 export enum PodcastFormatEnum {

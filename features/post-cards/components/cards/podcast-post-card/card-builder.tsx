@@ -3,7 +3,10 @@ import { FaTwitter } from "react-icons/fa6";
 import { MapPinHouseIcon } from "lucide-react";
 //
 import { Summary } from "@/features/podcasts/components/card";
-import { PodcastDto, TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import {
+  PodcastDto,
+  TransformedPodcastDto,
+} from "@/lib/supabase/services/podcasts/types";
 import { OptionItem } from "@/types";
 import { APP } from "@/constants/APP";
 //

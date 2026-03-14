@@ -40,5 +40,6 @@
   { "name": "Travel" },
   { "name": "Telecommunications" },
   { "name": "Wellness & Fitness" },
-  { "name": "Wholesale" }
+  { "name": "Wholesale" },
+  { "name": "Marketplace" }
 ]
