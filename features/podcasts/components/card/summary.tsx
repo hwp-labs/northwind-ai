@@ -1,14 +1,22 @@
 import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
+interface Props extends TransformedPodcastDto {
+  noLineBreak?: boolean;
+}
+
 export const Summary = ({
   isFiresideChat,
   guest,
   topic,
-}: TransformedPodcastDto) => {
+  noLineBreak,
+}: Props) => {
   if (topic.descriptionRichText) {
-    return (
-      <span dangerouslySetInnerHTML={{ __html: topic.descriptionRichText }} />
-    );
+    let html = topic.descriptionRichText
+      .replaceAll("%x", guest.name)
+      .replaceAll("%y", topic.title);
+    html = noLineBreak ? html.replaceAll("<br/>", " ") : html;
+    //
+    return <span dangerouslySetInnerHTML={{ __html: html }} />;
   }
 
   return isFiresideChat ? (

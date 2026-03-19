@@ -34,7 +34,7 @@ export default async function PodcastPage({ params }: PageParams<string[]>) {
               {item.topic.title} Design Session
             </h1>
             <p className="text-foreground _font-[Montserrat] mt-0 text-[11px] sm:text-xs font-medium tracking-wide">
-              <Summary {...item} />
+              <Summary {...item} noLineBreak/>
             </p>
           </hgroup>
         </div>

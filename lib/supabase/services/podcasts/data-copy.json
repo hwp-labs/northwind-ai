@@ -1,42 +1,37 @@
 [
   {
-    "id": 1,
-    "date": "2026-03-01",
-    "dateText": "Sunday, March 1st",
-    "hour": 20,
-    "timeText": "8 PM",
-    "appName": "Northwind AI",
-    "guestName": "Emmanuel Tugbeh",
-    "guestCareerTitle": "Product Manager, HWP Labs",
-    "notionUrl": "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
-    "spaceUrl": "https://x.com/i/spaces/1nxnRYRXOgjxO",
-    "listeners": 18
+    "id": 5,
+    "datetime": "2026-03-29T19:00:00.000Z",
+    "notionUrl": null,
+    "spaceUrl": null,
+    "listeners": null,
+    "guest": {
+      "name": "Victor Ijoni",
+      "username": "@Ohioroje",
+      "company": null,
+      "jobTitle": "Software Engineer"
+    },
+    "topic": {
+      "title": "MarketBridge",
+      "description": null
+    }
   },
   {
-    "id": 2,
-    "date": "2026-03-08",
-    "dateText": "Sunday, March 8th",
-    "hour": 10,
-    "timeText": "8 PM",
-    "appName": "Scupex",
-    "description": "AI-native, multi-tenant school management solution",
-    "guestUsername": "@sanmiAkinbo",
-    "guestName": "Martins Akinbo",
-    "guestCareerTitle": "Founder/CEO, Technox Solutions Ltd.",
-    "notionUrl": "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",
-    "spaceUrl": "https://x.com/i/spaces/1qGvvkLwDBAGB",
-    "listeners": 0
-  },
-  {
-    "id": 3,
-    "date": "2026-03-15",
-    "dateText": "Sunday, March 15th",
-    "hour": 20,
-    "timeText": "8 PM",
-    "appName": "Bookin",
-    "guestUsername": "@feanyluch",
-    "guestName": "Oluchi Ifeanyi",
-    "guestCareerTitle": "Founder/CEO, Bookin"
+    "id": 6,
+    "datetime": "2026-04-05T19:00:00.000Z",
+    "notionUrl": null,
+    "spaceUrl": null,
+    "listeners": null,
+    "guest": {
+      "name": "Aigboje Ohiorenua",
+      "username": "@Ohioroje",
+      "company": null,
+      "jobTitle": "Software Engineer"
+    },
+    "topic": {
+      "title": "MarketBridge",
+      "description": null
+    }
   },
   {
     "id": 4,
