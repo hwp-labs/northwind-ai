@@ -15,8 +15,8 @@ export const StatisticsWidget = async () => {
     {
       key: "users",
       icon: <FaUserTag size={24} />,
-      label: "Daily Active Users",
-      value: (data?.averageVisitorsPerDay || 0) + 5,
+      label: "Retention Rate",
+      value: `${data?.retentionRate || 0} %`,
     },
     {
       key: "contacts",

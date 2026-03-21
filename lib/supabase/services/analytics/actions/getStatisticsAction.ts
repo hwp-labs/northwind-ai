@@ -8,14 +8,14 @@ import { TABLE as contactsTable } from "../../contacts/types";
 type RequestDto = never;
 type ResponseDto = {
   totalVisitors: number;
-  averageVisitorsPerDay: number;
+  retentionRate: number;
   totalContacts: number;
 };
 
 export async function getStatisticsAction(): Promise<ApiResponse<ResponseDto>> {
-  const data: ResponseDto = {
+  const res: ResponseDto = {
     totalVisitors: 0,
-    averageVisitorsPerDay: 0,
+    retentionRate: 0,
     totalContacts: 0,
   };
 
@@ -24,38 +24,36 @@ export async function getStatisticsAction(): Promise<ApiResponse<ResponseDto>> {
     supabase.from(contactsTable).select("id", { count: "exact" }),
   ]);
 
-  if (totalContacts) data.totalContacts = totalContacts;
+  if (totalContacts) res.totalContacts = totalContacts;
 
   if (visitors?.length) {
-    const ipAddressSet = new Set(visitors.map(({ ip_address }) => ip_address));
+    const ipFrequency: Record<string, number> = {};
 
-    data.totalVisitors = ipAddressSet.size;
+    visitors.forEach(({ ip_address }) => {
+      ip_address in ipFrequency
+        ? (ipFrequency[ip_address] += 1)
+        : (ipFrequency[ip_address] = 1);
+    });
 
-    const createdFirst = visitors[0].created_at;
-    const createdLast = visitors[visitors.length - 1].created_at;
-    const createdFirstTime = new Date(createdFirst).getTime();
-    const createdLastTime = new Date(createdLast).getTime();
-    const dayDiff =
-      (createdLastTime - createdFirstTime) / (1000 * 60 * 60 * 24);
-    const dayDiffSafe = Math.floor(dayDiff) || 1;
-
-    data.averageVisitorsPerDay = Math.round(ipAddressSet.size / dayDiffSafe);
+    const totalVisitors = (res.totalVisitors = Object.keys(ipFrequency).length);
+    
+    const duplicateVisitors = Object.values(ipFrequency).filter(
+      (count) => count > 1,
+    ).length;
+    
+    res.retentionRate = duplicateVisitors
+      ? Math.round((duplicateVisitors * 100) / totalVisitors)
+      : 0;
 
     // console.log(
-    //   "🚀 ~ getStatisticsAction ~ data:",
-    //   data,
+    //   "🚀 ~ getStatisticsAction ~ res:",
     //   // visitors,
-    //   ipAddressSet,
-    //   createdAtFirst,
-    //   createdAtLast,
-    //   createdAtFirstTime,
-    //   createdAtLastTime,
-    //   dayDiff,
+    //   res,
     // );
   }
 
   return {
-    data,
+    data: res,
     error: undefined,
   };
 }
