@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { IconSparkles } from "@tabler/icons-react";
+import clsx from "clsx";
 //
 import { Button } from "../shadcn/ui/button";
 import { Spinner } from "../shadcn/ui/spinner";
@@ -10,6 +11,7 @@ interface Props {
   submittingText?: string;
   success?: boolean;
   successText?: string;
+  className?: string;
 }
 
 export const SubmitButton = ({
@@ -18,10 +20,14 @@ export const SubmitButton = ({
   submittingText,
   success,
   successText,
+  className,
 }: Props) => {
   return (
     <div className="_border flex flex-col justify-end lg:flex-row">
-      <Button type="submit" className={success ? "bg-emerald-600" : undefined}>
+      <Button
+        type="submit"
+        className={clsx(className, success && "bg-emerald-600")}
+      >
         {submitting ? <Spinner /> : success ? <IconSparkles /> : null}
         {submitting
           ? submittingText || children

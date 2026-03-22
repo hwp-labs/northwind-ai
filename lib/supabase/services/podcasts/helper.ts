@@ -9,6 +9,7 @@ export class PodcastHelper {
     ...item,
     dateText: momentUtil.podcastDate(item.datetime),
     timeText: momentUtil.podcastTime(item.datetime),
+    datetimeText: momentUtil.podcastDatetime(item.datetime),
     isOngoing: this.IsOngoing(item.datetime),
     isConcluded: momentUtil.isPastDay(item.datetime),
     isFiresideChat: this.IsFiresideChat(item.format),
@@ -21,7 +22,7 @@ export class PodcastHelper {
     return this._transform(item);
   }
 
-  static GetSlugItem(slugId: string) {
+  static GetSlugItem(slugId: string | number) {
     const i = Number(slugId) - 1;
     const item = (data[i] || data[0]) as PodcastDto;
     return this._transform(item);
@@ -41,12 +42,4 @@ export class PodcastHelper {
 
   static IsFiresideChat = (format?: PodcastFormatEnum) =>
     format === PodcastFormatEnum.FIRESIDE_CHAT;
-
-  static composeDesignSessionText ()  {
-  
-  };
-  
-  static composeFiresideChatText ()  {
-  
-  };
 }

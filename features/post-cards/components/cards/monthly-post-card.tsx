@@ -48,14 +48,14 @@ export const MonthlyPostCard = ({ page }: Props) => {
           </div>
           <figcaption
             className={clsx(
-              "bg-clip-text text-center font-[Raleway] text-[340px] leading-72 font-bold text-transparent uppercase -ml-2",
+              "-ml-2 bg-clip-text text-center font-[Raleway] text-[340px] leading-72 font-bold text-transparent uppercase",
               "from-bot bg-gradient-to-b",
             )}
           >
             {displayMonth}
           </figcaption>
         </figure>
-        <CardBuilder.Description centered />
+        <CardBuilder.Description />
         <CardBuilder.CTA />
       </CardBuilder.Container>
     </>

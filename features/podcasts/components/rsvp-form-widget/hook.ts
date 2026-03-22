@@ -17,8 +17,8 @@ import { ERROR } from "@/constants/ERROR";
 //
 import { M, defaultValues } from "./utils";
 
-export function useListenerFormWidget() {
-  const { getSlug } = useQueryParams();
+export function useRsvpFormWidget() {
+  const { getSlugId } = useQueryParams();
   const toast = useToast();
   const form = useForm<ListenerSchema>({
     resolver: zodResolver(listenerSchema),
@@ -30,7 +30,7 @@ export function useListenerFormWidget() {
   const [success, setSuccess] = useState(false);
 
   const { isOngoing, isConcluded, ...item } = PodcastHelper.GetSlugItem(
-    getSlug(0, 1),
+    getSlugId(),
   );
 
   const onRedirect = () => window.open(item.spaceUrl!);

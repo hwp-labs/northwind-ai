@@ -1,30 +1,22 @@
 export interface PodcastDto {
   id: number;
   datetime: string;
+  title: string;
+  richTextLine1: string;
+  richTextLine2: string;
+  guestUsername: string | null;
   notionUrl: string | null;
   spaceUrl: string | null;
-  listeners: number | null;
+  listeners: number;
   format?: PodcastFormatEnum;
-  guest: PodcastGuest;
-  topic: PodcastTopic;
 }
 export interface TransformedPodcastDto extends PodcastDto {
   dateText: string;
   timeText: string;
+  datetimeText: string;
   isOngoing: boolean;
   isConcluded: boolean;
   isFiresideChat: boolean;
-}
-export interface PodcastGuest {
-  name: string;
-  username: string;
-  company: string | null;
-  jobTitle: string | null;
-}
-export interface PodcastTopic {
-  title: string;
-  description: string | null;
-  descriptionRichText?: string;
 }
 
 export enum PodcastFormatEnum {

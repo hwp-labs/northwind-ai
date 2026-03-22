@@ -2,71 +2,45 @@
   {
     "id": 1,
     "datetime": "2026-03-01T19:00:00.000Z",
+    "title": "Northstar Analytics",
+    "richTextLine1": "A design session with <strong>Emmanuel Tugbeh</strong> (AI Product Engineer, HWP Labs),",
+    "richTextLine2": "creator of <strong>Northstar Analytics</strong>-AI-native, cross-platform data analytics service.",
+    "guestUsername": null,
     "notionUrl": "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
     "spaceUrl": "https://x.com/i/spaces/1nxnRYRXOgjxO",
-    "listeners": 18,
-    "guest": {
-      "name": "Emmanuel Tugbeh",
-      "username": "@2gbeh",
-      "company": "HWP Labs",
-      "jobTitle": "Product Manager"
-    },
-    "topic": {
-      "title": "Northwind AI",
-      "description": "AI Automation Web Services"
-    }
+    "listeners": 18
   },
   {
     "id": 2,
     "datetime": "2026-03-08T19:00:00.000Z",
+    "title": "Scupex",
+    "richTextLine1": "A design session with <strong>Martins Akinbo</strong> (Founder/CTO, Technox Solutions Ltd),",
+    "richTextLine2": "creator of <strong>Scupex</strong>-AI-native, multi-tenant school management solution.",
+    "guestUsername": "@sanmiAkinbo",
     "notionUrl": "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",
     "spaceUrl": "https://x.com/i/spaces/1qGvvkLwDBAGB",
-    "listeners": 103,
-    "guest": {
-      "name": "Martins Akinbo",
-      "username": "@sanmiAkinbo",
-      "company": "Technox Solutions Ltd",
-      "jobTitle": "Founder/CTO"
-    },
-    "topic": {
-      "title": "Scupex",
-      "description": "AI-native, multi-tenant school management solution"
-    }
+    "listeners": 103
   },
   {
     "id": 3,
     "datetime": "2026-03-15T19:00:00.000Z",
+    "title": "Bookin",
+    "richTextLine1": "A design session with <strong>Oluchi Ifeanyi</strong>, creator of <strong>Bookin</strong> - ",
+    "richTextLine2": "All-in-one booking platform for creative professionals.",
+    "guestUsername": "@feanyluch",
     "notionUrl": "https://held-gambler-004.notion.site/Bookin-3226a7cc633c81f1a9d8ebbce7bbc6b3",
     "spaceUrl": "https://x.com/i/spaces/1DxleEjawjlKL",
-    "listeners": 112,
-    "guest": {
-      "name": "Oluchi Ifeanyi",
-      "username": "@feanyluch",
-      "company": "Bookin",
-      "jobTitle": "Co-founder"
-    },
-    "topic": {
-      "title": "Bookin",
-      "description": "All-in-one booking platform for creative professionals",
-      "descriptionRichText": "A design session with <strong>%x</strong>, Co-founder of <strong>%y</strong>;<br/>all-in-one booking platform for creative professionals."
-    }
+    "listeners": 112
   },
   {
     "id": 4,
     "datetime": "2026-03-22T19:00:00.000Z",
+    "title": "Izivote",
+    "richTextLine1": "A design session with <strong>Joshua Uyi</strong>, creator of <strong>Izivote</strong> - ",
+    "richTextLine2": "Cloud-based voting platform for award events and campaigns.",
+    "guestUsername": "@joshuaouyi",
     "notionUrl": "https://held-gambler-004.notion.site/Izivote-3206a7cc633c807dbd55c6fbb373ff37",
     "spaceUrl": "https://x.com/i/spaces/1XGygmPjeMkxM",
-    "listeners": null,
-    "guest": {
-      "name": "Joshua Uyi",
-      "username": "@joshuaouyi",
-      "company": null,
-      "jobTitle": "Software Engineer"
-    },
-    "topic": {
-      "title": "Izivote",
-      "description": "Setup Votes & Polls in Minutes",
-      "descriptionRichText": "A design session with <strong>%x</strong>, creator of <strong>%y</strong>;<br/>cloud-based voting platform for award events and campaigns."
-    }
+    "listeners": 0
   }
 ]

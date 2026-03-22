@@ -51,14 +51,14 @@ const Container = ({ children, className, noCover }: ContainerProps) => (
 );
 
 interface DescriptionProps {
-  centered?: boolean;
+  className?: string;
 }
 
-const Description = ({ centered }: DescriptionProps) => (
+const Description = ({ className }: DescriptionProps) => (
   <article
     className={clsx(
-      "debug_ absolute bottom-25 w-full text-[12px] leading-5",
-      centered ? "text-center" : "px-10",
+      "debug_ absolute bottom-25 w-full text-center text-[12px] leading-5",
+      className,
     )}
   >
     <p>{COPY.automateRichText}</p>

@@ -21,17 +21,17 @@ export const Guests = async ({ podcast_id }: Props) => {
           {
             src: "/images/icon-hwp-labs.png",
             alt: "@HWP_Labs",
-            text: "HL",
+            text: "H",
           },
           {
             src: "/icon.png",
             alt: "@northwind_ai",
-            text: "NA",
+            text: "N",
           },
           {
             src: "/images/avatar.png",
             alt: "@2gbeh",
-            text: "ET",
+            text: "E",
           },
         ].map((item, i) => (
           <Avatar key={i}>

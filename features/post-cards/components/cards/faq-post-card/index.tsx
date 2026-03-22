@@ -54,7 +54,7 @@ export const FAQPostCard = ({ page = 1 }: Props) => {
             </ul>
           </div>
         </section>
-        <CardBuilder.Description centered />
+        <CardBuilder.Description />
         <CardBuilder.CTA />
       </CardBuilder.Container>
     </>

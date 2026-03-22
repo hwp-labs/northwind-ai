@@ -8,21 +8,33 @@ import { FieldSet } from "@/components/shadcn/ui/field";
 import { SubmitButton } from "@/components/atoms/submit-button";
 import { ControlledFieldInput } from "@/components/atoms/forms/controlled-field-input";
 //
-import { useListenerFormWidget } from "./hook";
+import { useRsvpFormWidget } from "../hook";
 
-export const ListenerFormWidget = () => {
-  const { form, submitting, success, onSubmit, onRedirect, isOngoing, isConcluded } =
-    useListenerFormWidget();
+export const RsvpFormWidgetV2 = () => {
+  const {
+    form,
+    submitting,
+    success,
+    onSubmit,
+    onRedirect,
+    isOngoing,
+    isConcluded,
+  } = useRsvpFormWidget();
   //
   return (
     <FormProvider {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         autoComplete="off"
-        className="text-background rounded-t-2xl bg-white px-4 pt-4 pb-3 sm:px-5 sm:pt-5 sm:pb-4"
+        className="_debug mx-auto mt-10 max-w-sm gap-4 px-6"
       >
         {isConcluded ? (
-          <Button className="w-full" onClick={onRedirect}>
+          <Button
+            type="button"
+            onClick={onRedirect}
+            variant="secondary"
+            className="w-full"
+          >
             <IconPlayerPlayFilled />
             Play recording
           </Button>
@@ -41,6 +53,7 @@ export const ListenerFormWidget = () => {
               submitting={submitting}
               success={success}
               successText="Nice!"
+              className="bg-gray-900"
             >
               {isOngoing ? "Attend" : "RSVP"}
             </SubmitButton>

@@ -1,15 +1,12 @@
 import { Metadata } from "next";
 //
-import { PageParams } from "@/types";
+import { CoverImage } from "@/components/atoms/cover-image";
+import { ValuePropositionCards } from "@/components/molecules/value-proposition-cards";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
+import { PageParams } from "@/types";
 //
-import {
-  Header,
-  Summary,
-  Host,
-  Guests,
-} from "@/features/podcasts/components/card";
-import { ListenerFormWidget } from "@/features/podcasts/components/listener-form-widget";
+import { TopSection } from "@/features/podcasts/components/card/top-section";
+import { RsvpFormWidgetV2 } from "@/features/podcasts/components/rsvp-form-widget/v2";
 
 export async function generateMetadata({
   params,
@@ -17,7 +14,7 @@ export async function generateMetadata({
   const item = await PodcastHelper.GetItemAsync(params);
   //
   return {
-    title: `${item.topic.title} Design Session`,
+    title: `${item.title} Design Session`,
   };
 }
 
@@ -25,27 +22,11 @@ export default async function PodcastPage({ params }: PageParams<string[]>) {
   const item = await PodcastHelper.GetItemAsync(params);
   //
   return (
-    <main className="flex-centered min-h-[80svh]">
-      <div className="mx-auto mb-16 max-w-lg overflow-hidden rounded-4xl bg-[#9b63fa] shadow-2xl lg:rounded-2xl">
-        <div className="grid gap-6 px-6 sm:px-8">
-          <Header {...item} />
-          <hgroup className="grid gap-2 py-4">
-            <h1 className="uppercase_ grid text-2xl leading-[35px] font-black text-white sm:text-4xl sm:leading-[45px]">
-              {item.topic.title} Design Session
-            </h1>
-            <p className="text-foreground _font-[Montserrat] mt-0 text-[11px] sm:text-xs font-medium tracking-wide">
-              <Summary {...item} noLineBreak/>
-            </p>
-          </hgroup>
-        </div>
-        <section className="px-6 sm:px-8">
-          <ListenerFormWidget/>
-        </section>
-        <footer className="flex-row-cb gap-2 bg-[#8253d1] px-6 py-5 text-sm sm:px-8">
-          <Host />
-          <Guests podcast_id={item.id} />
-        </footer>
-      </div>
+    <main>
+      <TopSection {...item} />
+      <RsvpFormWidgetV2 />
+      <CoverImage />
+      <ValuePropositionCards />
     </main>
   );
 }

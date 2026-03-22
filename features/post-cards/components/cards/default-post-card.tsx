@@ -13,11 +13,11 @@ export const DefaultPostCard = () => {
             width={640}
             className="mx-auto px-4"
           />
-          <figcaption className="mt-5 font-[Raleway] text-[24px] font-bold px-10 text-center">
+          <figcaption className="mt-1 text-center font-[Raleway] text-[32px] font-bold">
             {APP.title}
           </figcaption>
         </figure>
-        <CardBuilder.Description centered />
+        <CardBuilder.Description className="text-[14px] leading-6" />
         <CardBuilder.CTA />
       </CardBuilder.Container>
     </>

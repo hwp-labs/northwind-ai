@@ -49,4 +49,8 @@ const podcastDate = (dt?: InputType) => transform("dddd, MMMM Do", dt);
 // 8 PM
 const podcastTime = (dt?: InputType) => transform("h A", dt);
 
-export const momentUtil = { isPastDay, verbose, podcastDate, podcastTime };
+// Sunday, 22 March 2026 | 9 PM (WAT)
+const podcastDatetime = (dt?: InputType) =>
+  transform("dddd, D MMMM YYYY | h A (z)", dt);
+
+export const momentUtil = { isPastDay, verbose, podcastDate, podcastTime, podcastDatetime };

@@ -20,7 +20,11 @@ export function useQueryParams() {
   const slug = (params?.slug as string[]) ?? [];
   const urlSearchParams = new URLSearchParams(searchParams.toString());
 
-  const getSlug = (i: number, defaultValue: unknown) => slug[i] || String(defaultValue);
+  const getSlug = (i: number, defaultValue: unknown) =>
+    slug[i] || String(defaultValue);
+
+  const getSlugId = (i = 0, defaultValue = 1) =>
+    Number(slug[i] || defaultValue);
 
   const get = (query: Query) => {
     const obj: Record<string, string> = {};
@@ -54,5 +58,5 @@ export function useQueryParams() {
     replace ? router.replace(href, { scroll }) : router.push(href, { scroll });
   };
 
-  return { slug, getSlug, get, add, remove };
+  return { pathname, slug, getSlug, getSlugId, get, add, remove };
 }

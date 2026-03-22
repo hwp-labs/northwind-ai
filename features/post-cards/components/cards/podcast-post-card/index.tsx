@@ -26,20 +26,11 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
         <div className="debug_ absolute bottom-16 left-8 z-1">
           <PodcastPostCardBuilder.Datetime {...item} />
           <PodcastPostCardBuilder.Venue {...item} />
-          <ul
-            className={clsx(
-              "flex-row-cs gap-2 text-sm",
-              item.guest.username ? "mt-4 mb-10 ml-1 -rotate-4" : "my-6 ml-26",
-            )}
-          >
-            <PodcastPostCardBuilder.Speaker label="host" value="@2gbeh" />
-            {item.guest.username ? (
-              <PodcastPostCardBuilder.Speaker
-                label="guest"
-                value={item.guest.username}
-              />
-            ) : null}
-          </ul>
+          {item.guestUsername ? (
+            <PodcastPostCardBuilder.Speakers {...item} />
+          ) : (
+            <p className="my-12" />
+          )}
           <PodcastPostCardBuilder.Hero {...item} />
         </div>
         <PodcastPostCardBuilder.PoweredBy {...item} />
