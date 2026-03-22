@@ -10,9 +10,9 @@ import { PATH } from "@/constants/PATH";
 import { useQueryParams } from "@/hooks/use-query-params";
 
 export const Header = () => {
+  useVisitTracker();
   const { pathname, getSlugId } = useQueryParams();
   const id = Number(getSlugId());
-  useVisitTracker();
   //
   return (
     <header className="flex-row-cb debug_ p-6 lg:p-8">

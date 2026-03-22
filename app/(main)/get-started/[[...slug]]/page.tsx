@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function GetStartedPage() {
   return (
-    <main className="flex-centered lg:min-h-[80svh] lg:mb-24">
+    <main className="flex-centered lg:min-h-[80svh] lg:mb-24  mb-12">
       <div className="w-full max-w-2xl">
         <ContactFormWidget />
       </div>
