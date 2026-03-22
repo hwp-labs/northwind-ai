@@ -28,6 +28,10 @@ export interface ControlledInput<T extends FieldValues> extends BaseInput {
   description?: string;
 }
 
+export type PageLayout = Readonly<{
+  children: React.ReactNode;
+}>;
+
 export interface PageParams<T extends string | string[] = string> {
   params: Promise<{ slug: T }>;
   searchParams: Promise<{ [key: string]: T | undefined }>;

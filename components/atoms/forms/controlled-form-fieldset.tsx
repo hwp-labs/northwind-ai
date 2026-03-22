@@ -31,7 +31,7 @@ export const ControlledFormFieldset = <T extends FieldValues>({
       <form
         onSubmit={onSubmit}
         autoComplete="off"
-        className="text-background bg-white rounded-t-4xl lg:rounded-2xl lg:px-10 px-6 py-10"
+        className="text-background bg-white rounded-t-4xl md:rounded-2xl md:px-10 px-6 py-10"
       >
         {h1 ? <FieldLegend className="leading-4">{h1}</FieldLegend> : null}
         {p ? (

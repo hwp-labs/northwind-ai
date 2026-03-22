@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { PageContainer } from "@/components/widgets/contact-form-widget/ui/page-container";
 import { ContactFormWidget } from "@/components/widgets/contact-form-widget";
 
 export const metadata: Metadata = {
@@ -7,10 +8,8 @@ export const metadata: Metadata = {
 
 export default function RegisterPage() {
   return (
-    <main className="flex-centered lg:min-h-[80svh] lg:mb-24 mb-12">
-      <div className="w-full max-w-2xl">
-        <ContactFormWidget />
-      </div>
-    </main>
+    <PageContainer>
+      <ContactFormWidget />
+    </PageContainer>
   );
 }

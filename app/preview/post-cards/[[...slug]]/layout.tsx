@@ -1,10 +1,7 @@
 import { Header } from "@/features/post-cards/components/header";
+import { PageLayout } from "@/types";
 
-export default function PreviewPostsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PreviewPostsLayout({ children }: PageLayout) {
   return (
     <>
       <Header />

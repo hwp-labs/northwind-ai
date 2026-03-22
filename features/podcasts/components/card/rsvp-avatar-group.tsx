@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   Avatar,
   AvatarFallback,
@@ -7,7 +8,6 @@ import {
 } from "@/components/shadcn/ui/avatar";
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { getListenersCountAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
-import { useEffect, useState } from "react";
 
 interface Props {
   podcast_id: number;

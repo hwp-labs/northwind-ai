@@ -58,5 +58,5 @@ export function useQueryParams() {
     replace ? router.replace(href, { scroll }) : router.push(href, { scroll });
   };
 
-  return { pathname, slug, getSlug, getSlugId, get, add, remove };
+  return { router, pathname, slug, getSlug, getSlugId, get, add, remove };
 }
