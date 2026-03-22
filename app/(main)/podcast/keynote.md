@@ -223,7 +223,7 @@ The way it works;
 
 ## Trivia
 
-- Hiring or voluteers
+- Hiring or intern or voluteers
 - Next 3-5 years projection
 - Voting systems in Nigeria
 
@@ -273,7 +273,6 @@ The way it works;
 - Yes, @BannyDav, I've responded to your message on Twitter, hit me back bro.
 - Thank you Joshua Uyi for coming on the show and keep up the great job.
 - And thanks to everyone listening.
-- My Wife said I didn't acknowledge you guys last week, which I did, but thanks again for joining.
 - If you would like to Sponsor and Support the Northwind AI Podcast, my account details are attached to the Keynotes link in the comment section.
 
 - Have a productive week, and see you next Sunday.
