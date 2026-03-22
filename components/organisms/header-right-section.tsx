@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { LogInIcon } from "lucide-react";
+import { FaCircleUser } from "react-icons/fa6";
 //
 import { Button } from "@/components/shadcn/ui/button";
 import { RsvpAvatarGroup } from "@/features/podcasts/components/card/rsvp-avatar-group";
@@ -26,7 +25,7 @@ export const HeaderRightSection = () => {
           aria-label="Log in"
           className="shadow-lg transition-colors"
         >
-          <LogInIcon size={14} />
+          <FaCircleUser />
         </Button>
       )}
     </div>

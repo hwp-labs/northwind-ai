@@ -64,8 +64,8 @@ export const COPY = {
       description: (
         <>
           {/* Deliver fast and reliable services with AI-powered automation. */}
-          AI-powered automation ensures 99% accuracy across internal business processes,{" "}
-          <span className="_font-medium text-white">learning and adapting</span>{" "}
+          AI-powered automation ensures 99% accuracy across internal business processes, and{" "}
+          <span className="_font-medium text-white">learns and adapts</span>{" "}
           as your business grows.
         </>
       ),
@@ -74,7 +74,7 @@ export const COPY = {
       Icon: IconStarFilled,
       title: "Satisfy Your Customers",
       description: `Convert 10x more sales leads with seamless multi-channel integrations
-      that exceed customer expectations, builds trust and loyalty.`,
+      that exceed customer expectations, builds trust and brand loyalty.`,
     },
   ]
 };
