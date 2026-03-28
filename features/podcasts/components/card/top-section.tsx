@@ -20,6 +20,7 @@ export const TopSection = ({
       <PromptBar>
         {isOngoing ? "Live: " : "Date: "}
         {isMobile ? `${item.dateText} | ${item.timeText}` : item.datetimeText}
+        <span>WAT</span>
       </PromptBar>
       <Hero title={<p dangerouslySetInnerHTML={{ __html }} />}>
         {item.title} Design Session
