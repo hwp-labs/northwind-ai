@@ -8,7 +8,7 @@ export interface PodcastDto {
   notionUrl: string | null;
   spaceUrl: string | null;
   listeners: number;
-  format?: PodcastFormatEnum;
+  series?: PodcastSeriesEnum;
 }
 export interface TransformedPodcastDto extends PodcastDto {
   dateText: string;
@@ -19,7 +19,7 @@ export interface TransformedPodcastDto extends PodcastDto {
   isFiresideChat: boolean;
 }
 
-export enum PodcastFormatEnum {
+export enum PodcastSeriesEnum {
   DESIGN_SESSION = "design-session",
   FIRESIDE_CHAT = "fireside-chat",
 }

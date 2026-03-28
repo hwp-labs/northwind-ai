@@ -17,7 +17,9 @@ export function useQueryParams() {
   const params = useParams();
   const searchParams = useSearchParams();
 
-  const slug = (params?.slug as string[]) ?? [];
+  const id = Number(params.id || 1);
+  const uuid = params.id ? String(params.id) : undefined;
+  const slug = (params.slug as string[]) ?? [];
   const urlSearchParams = new URLSearchParams(searchParams.toString());
 
   const getSlug = (i: number, defaultValue: unknown) =>
@@ -58,5 +60,16 @@ export function useQueryParams() {
     replace ? router.replace(href, { scroll }) : router.push(href, { scroll });
   };
 
-  return { router, pathname, slug, getSlug, getSlugId, get, add, remove };
+  return {
+    router,
+    pathname,
+    id,
+    uuid,
+    slug,
+    getSlug,
+    getSlugId,
+    get,
+    add,
+    remove,
+  };
 }

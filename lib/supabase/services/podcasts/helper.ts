@@ -1,7 +1,7 @@
 import { momentUtil } from "@/utils/moment-util";
 import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 //
-import { PodcastDto, PodcastFormatEnum } from "./types";
+import { PodcastDto, PodcastSeriesEnum } from "./types";
 import data from "./data.json";
 
 export class PodcastHelper {
@@ -12,12 +12,19 @@ export class PodcastHelper {
     datetimeText: momentUtil.podcastDatetime(item.datetime),
     isOngoing: this.IsOngoing(item.datetime),
     isConcluded: item.listeners > 0, //momentUtil.isPastDay(item.datetime),
-    isFiresideChat: this.IsFiresideChat(item.format),
+    isFiresideChat: item.series === PodcastSeriesEnum.FIRESIDE_CHAT,
   });
 
-  static async GetItemAsync(paramsAsync: Promise<{ slug: string[] }>) {
+  static async GetSlugItemAsync(paramsAsync: Promise<{ slug: string[] }>) {
     const params = await paramsAsync;
     const i = Number(params.slug?.[0] || 1) - 1;
+    const item = (data[i] || data[0]) as PodcastDto;
+    return this._transform(item);
+  }
+
+  static async GetIdItemAsync(paramsAsync: Promise<{ id: string }>) {
+    const params = await paramsAsync;
+    const i = Number(params.id || 1) - 1;
     const item = (data[i] || data[0]) as PodcastDto;
     return this._transform(item);
   }
@@ -39,7 +46,4 @@ export class PodcastHelper {
     const hour = Number(dt.slice(11, 13));
     return CUR_DATE === date && CUR_HOUR_UTC >= hour;
   }
-
-  static IsFiresideChat = (format?: PodcastFormatEnum) =>
-    format === PodcastFormatEnum.FIRESIDE_CHAT;
 }

@@ -18,7 +18,7 @@ import { ERROR } from "@/constants/ERROR";
 import { M, defaultValues } from "./utils";
 
 export function useRsvpFormWidget() {
-  const { getSlugId } = useQueryParams();
+  const { id } = useQueryParams();
   const toast = useToast();
   const form = useForm<ListenerSchema>({
     resolver: zodResolver(listenerSchema),
@@ -29,9 +29,7 @@ export function useRsvpFormWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const { isOngoing, isConcluded, ...item } = PodcastHelper.GetSlugItem(
-    getSlugId(),
-  );
+  const { isOngoing, isConcluded, ...item } = PodcastHelper.GetSlugItem(id);
 
   const onRedirect = () => window.open(item.spaceUrl!);
 
@@ -43,7 +41,7 @@ export function useRsvpFormWidget() {
       await sleep();
     } else {
       const payload = {
-        podcast_id: item.id,
+        podcast_id: id,
         username: formData.username,
       };
 

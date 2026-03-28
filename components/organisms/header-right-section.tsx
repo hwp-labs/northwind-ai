@@ -10,8 +10,7 @@ import { PATH } from "@/constants/PATH";
 
 export const HeaderRightSection = () => {
   useVisitTracker();
-  const { router, pathname, getSlugId } = useQueryParams();
-  const id = getSlugId();
+  const { router, pathname, id } = useQueryParams();
   //
   return (
     <div className="flex-row-cs gap-4">
