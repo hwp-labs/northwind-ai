@@ -23,7 +23,7 @@ const Venue = ({ id }: PodcastDto) => {
         <a
           href={`/podcast/${id}`}
           target="_blank"
-          className="font-[Raleway] text-xs font-bold tracking-[1px] underline underline-offset-2"
+          className="font-[Raleway] text-xs font-bold tracking-[1px] _underline underline-offset-2"
         >
           {APP.domain}/podcast/{id}
         </a>
@@ -33,7 +33,7 @@ const Venue = ({ id }: PodcastDto) => {
 };
 
 const Speakers = (item: TransformedPodcastDto) => (
-  <ul className="flex-row-cs mt-4 mb-10 ml-0 -rotate-4 gap-4 text-sm">
+  <ul className="flex-row-cc debug_ mt-6 mb-6 w-[320px] -rotate-4 gap-8 text-sm">
     <Speaker label="host" value="@2gbeh" />
     {item.guestUsername ? (
       <Speaker label="guest" value={item.guestUsername} />
@@ -42,7 +42,7 @@ const Speakers = (item: TransformedPodcastDto) => (
 );
 
 const Speaker = ({ label, value }: OptionItem) => (
-  <li className="flex-row-cs gap-1">
+  <li className="flex-row-cs flex-col gap-1">
     <span className="flex-row-cs gap-2 bg-black px-1 py-0.5 text-white">
       {label}
       <FaTwitter size={12} />
