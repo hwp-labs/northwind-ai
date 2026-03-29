@@ -11,7 +11,7 @@ export class PodcastHelper {
     timeText: momentUtil.podcastTime(item.datetime),
     datetimeText: momentUtil.podcastDatetime(item.datetime),
     isOngoing: this.IsOngoing(item.datetime),
-    isConcluded: item.listeners > 0, //momentUtil.isPastDay(item.datetime),
+    isConcluded: item.listeners > 0 || momentUtil.isPastDay(item.datetime),
     isFiresideChat: item.series === PodcastSeriesEnum.FIRESIDE_CHAT,
   });
 
