@@ -23,7 +23,7 @@ const Venue = ({ id }: PodcastDto) => {
         <a
           href={`/podcast/${id}`}
           target="_blank"
-          className="font-[Raleway] text-xs font-bold tracking-[1px] _underline underline-offset-2"
+          className="_underline font-[Raleway] text-xs font-bold tracking-[1px] underline-offset-2"
         >
           {APP.domain}/podcast/{id}
         </a>
@@ -67,10 +67,10 @@ const Hero = (item: TransformedPodcastDto) => {
           "linear-gradient(to right, black, black, rgba(255,255,255,0))",
       }}
     >
-      <h1 className="grid text-6xl leading-[45px] font-black text-white uppercase">
+      <h1 className="grid text-[58px] leading-[45px] font-black text-white uppercase">
         <span className="_text-[#41dbc1]">{item.title}</span>
         <span className="_text-[#fb085a]">
-          {item.isFiresideChat ? "Fireside Chat" : "Design Session"}
+          {!item.isLongTitle && item.seriesText}
         </span>
       </h1>
       <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-sm font-medium tracking-wide">

@@ -23,7 +23,7 @@ export const TopSection = ({
         <span>WAT</span>
       </PromptBar>
       <Hero title={<p dangerouslySetInnerHTML={{ __html }} />}>
-        {item.title} Design Session
+        {item.isLongTitle ? item.title : `${item.title} ${item.seriesText}`}
       </Hero>
     </>
   );

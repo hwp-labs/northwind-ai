@@ -17,6 +17,8 @@ export interface TransformedPodcastDto extends PodcastDto {
   isOngoing: boolean;
   isConcluded: boolean;
   isFiresideChat: boolean;
+  seriesText: string;
+  isLongTitle: boolean;
 }
 
 export enum PodcastSeriesEnum {

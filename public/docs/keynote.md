@@ -354,7 +354,7 @@ you can also use this medium to give our guest some feedback or suggestions.
 - Are you a FS dev ? If so, which is more complex, FE or BE ?
 - What's your opinion on the voting system in Nigeria ?
 - What's your opinion on the wave of financial inclusion in Nigeria ?
-- New CBN regulation for fintechs
+- New CBN regulation for FinTechs
 
 ```ts
 // My opinion

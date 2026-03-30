@@ -5,15 +5,23 @@ import { PodcastDto, PodcastSeriesEnum } from "./types";
 import data from "./data.json";
 
 export class PodcastHelper {
-  static _transform = (item: PodcastDto) => ({
-    ...item,
-    dateText: momentUtil.podcastDate(item.datetime),
-    timeText: momentUtil.podcastTime(item.datetime),
-    datetimeText: momentUtil.podcastDatetime(item.datetime),
-    isOngoing: this.IsOngoing(item.datetime),
-    isConcluded: item.listeners > 0, //momentUtil.isPastDay(item.datetime),
-    isFiresideChat: item.series === PodcastSeriesEnum.FIRESIDE_CHAT,
-  });
+  static _transform = (item: PodcastDto) => {
+    const isFiresideChat = item.series === PodcastSeriesEnum.FIRESIDE_CHAT;
+    const isConcluded =
+      item.listeners > 0 || momentUtil.isPastDay(item.datetime);
+    
+    return {
+      ...item,
+      dateText: momentUtil.podcastDate(item.datetime),
+      timeText: momentUtil.podcastTime(item.datetime),
+      datetimeText: momentUtil.podcastDatetime(item.datetime),
+      isOngoing: this.IsOngoing(item.datetime),
+      isConcluded,
+      isFiresideChat,
+      seriesText: isFiresideChat ? "Fireside Chat" : "Design Session",
+      isLongTitle: item.title.length >= 15,
+    };
+  };
 
   static async GetSlugItemAsync(paramsAsync: Promise<{ slug: string[] }>) {
     const params = await paramsAsync;

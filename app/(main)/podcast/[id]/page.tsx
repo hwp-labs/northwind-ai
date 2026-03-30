@@ -9,22 +9,22 @@ import { PageIdParams } from "@/types";
 import { TopSection } from "@/features/podcasts/components/card/top-section";
 import { RsvpFormWidgetV2 } from "@/features/podcasts/components/rsvp-form-widget/v2";
 
-const getCachedItem = cache(async (params: PageIdParams['params']) =>
-  PodcastHelper.GetIdItemAsync(params)
+const getCachedItem = cache(async (params: PageIdParams["params"]) =>
+  PodcastHelper.GetIdItemAsync(params),
 );
 
 export async function generateMetadata({
   params,
 }: PageIdParams): Promise<Metadata> {
-   const item = await getCachedItem(params);
+  const item = await getCachedItem(params);
   //
   return {
-    title: `${item.title} Design Session`,
+    title: item.isLongTitle ? item.title : `${item.title} ${item.seriesText}`,
   };
 }
 
 export default async function PodcastPage({ params }: PageIdParams) {
-   const item = await getCachedItem(params);
+  const item = await getCachedItem(params);
   //
   return (
     <main>
