@@ -7,11 +7,11 @@ import { Logo } from "@/components/logo";
 import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
 
-interface HeaderProps {
+interface HeaderProps extends PropsWithChildren {
   noBorder?: boolean;
 }
 
-const Header = ({ noBorder }: HeaderProps) => {
+const Header = ({ children, noBorder, }: HeaderProps) => {
   return (
     <header
       className={clsx(
@@ -20,12 +20,14 @@ const Header = ({ noBorder }: HeaderProps) => {
       )}
     >
       <Logo />
-      <figure className="flex-row-cs gap-2">
-        <img src="/images/icon-hwp-labs.png" width={24} alt="" />
-        <figcaption className="text-[15px] font-medium">
-          {APP.owner}&reg;
-        </figcaption>
-      </figure>
+      {children || (
+        <figure className="flex-row-cs gap-2">
+          <img src="/images/icon-hwp-labs.png" width={24} alt="" />
+          <figcaption className="text-[15px] font-medium">
+            {APP.owner}&reg;
+          </figcaption>
+        </figure>
+      )}
     </header>
   );
 };

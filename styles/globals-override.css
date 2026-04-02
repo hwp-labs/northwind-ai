@@ -14,10 +14,22 @@
   --input: oklch(0 0 0 / 20%) !important;
 }
 
+i,
+address {
+  font-style: normal;
+}
+
 .debug {
   @apply border border-red-500;
 }
 
 .custom-mono {
   @apply font-mono leading-4 font-semibold;
+}
+
+.page-transition {
+  opacity: 0;
+  background: black;
+  transform: translateY(40px);
+  filter: blur(12px);
 }

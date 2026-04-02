@@ -1,0 +1,22 @@
+[
+  {
+    "thumbnail": "thumb-aisle.png",
+    "headline": "Northwind AI partners with Nimabox to deploy cloud-native, cross-platform ERP solution across CGMi HQ, branches",
+    "location": "Benin City",
+    "date": "2026-04-01",
+    "icons": [
+      "logo-nimabox.png",
+      "logo-cgmi.png"
+    ]
+  },
+  {
+    "thumbnail": "thumb-app.png",
+    "headline": "Northwind AI secures deal with Babago to pilot ride sharing app, on-demand food delivery app at Gwarinpa Abuja",
+    "location": "Abuja",
+    "date": "2025-06-30",
+    "icons": [
+      "logo-babago.png"
+    ],
+    "#notes": "Gwarinpa, Maitama, Wuse"
+  }
+]

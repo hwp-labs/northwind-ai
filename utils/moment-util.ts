@@ -43,6 +43,9 @@ const isPastDay = (dt: InputType) =>
 // Sun, 1 Jan 1970 | 9:00 AM
 const verbose = (dt?: InputType) => transform("ddd, D MMM YYYY | h:mm A", dt);
 
+// 1 April 2026
+const shortDate = (dt?: InputType) => transform("D MMM YYYY", dt);
+
 // Sunday, March 1st
 const podcastDate = (dt?: InputType) => transform("dddd, MMMM Do", dt);
 
@@ -53,4 +56,4 @@ const podcastTime = (dt?: InputType) => transform("h A", dt);
 const podcastDatetime = (dt?: InputType) =>
   transform("dddd, D MMMM YYYY | h A", dt);
 
-export const momentUtil = { isPastDay, verbose, podcastDate, podcastTime, podcastDatetime };
+export const momentUtil = { isPastDay, verbose, shortDate, podcastDate, podcastTime, podcastDatetime };

@@ -16,7 +16,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
       <CardBuilder.Header />
       <CardBuilder.Container>
         <img
-          src={`/uploads/blog/${item.isFiresideChat ? "sony.png" : "halim.png"}`}
+          src={`/uploads/podcast/${item.isFiresideChat ? "sony.png" : "halim.png"}`}
           className={clsx(
             "absolute size-full object-cover",
             item.isFiresideChat ? "object-top-left" : "object-top-right",
