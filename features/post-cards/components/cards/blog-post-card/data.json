@@ -1,7 +1,44 @@
 [
   {
+    "thumbnail": "thumb-app.png",
+    "categories": [
+      "Transport",
+      "Logistics"
+    ],
+    "headline": "Northwind AI secures deal with Babago to pilot Ride Sharing App, On-demand Food Delivery App at Gwarinpa, Abuja",
+    "location": "Abuja",
+    "date": "2025-06-30",
+    "icons": [
+      "logo-babago.png"
+    ],
+    "#notes": "Gwarinpa, Maitama, Wuse"
+  },
+  {
+    "classNames": {
+      "img": "object-bottom!"
+    },
+    "thumbnail": "thumb-real-estate.png",
+    "categories": [
+      "Real Estate",
+      "AI"
+    ],
+    "headline": "Northwind AI secures deal with 24hms.com to pilot AI-native Real Estate Marketplace at Asaba, Delta",
+    "location": "Delta",
+    "date": "2025-03-22",
+    "icons": [
+      "logo-hms.png"
+    ]
+  },
+  {
+    "classNames": {
+      "h1": "text-[19px]!"
+    },
     "thumbnail": "thumb-aisle.png",
-    "headline": "Northwind AI partners with Nimabox to deploy cloud-native, cross-platform ERP solution across CGMi HQ, branches",
+    "categories": [
+      "SaaS",
+      "FinTech"
+    ],
+    "headline": "Northwind AI partners with Nimabox to deploy Cloud-native, Cross-platform ERP Solution across CGMi HQ and branches",
     "location": "Benin City",
     "date": "2026-04-01",
     "icons": [
@@ -10,13 +47,35 @@
     ]
   },
   {
-    "thumbnail": "thumb-app.png",
-    "headline": "Northwind AI secures deal with Babago to pilot ride sharing app, on-demand food delivery app at Gwarinpa Abuja",
-    "location": "Abuja",
-    "date": "2025-06-30",
-    "icons": [
-      "logo-babago.png"
+    "classNames": {
+      "img": "object-bottom"
+    },
+    "thumbnail": "thumb-pos-clinic.png",
+    "categories": [
+      "Healthcare",
+      "FinTech"
     ],
-    "#notes": "Gwarinpa, Maitama, Wuse"
+    "headline": "Northwind AI partners with Nimabox to deploy Point-of-Sale (POS) Terminals at Faith Mediplex Teaching Hospital",
+    "location": "Benin City",
+    "date": "2026-04-01",
+    "icons": [
+      "logo-nimabox.png",
+      "logo-faith-mediplex.png"
+    ]
+  },
+  {
+    "thumbnail": "thumb-student-phone.png",
+    "categories": [
+      "Education",
+      "FinTech",
+      "DeFI"
+    ],
+    "headline": "Northwind AI partners with Nimabox to deploy Tokenized Student Wallet at Benson Idahosa University",
+    "location": "Benin City",
+    "date": "2026-04-01",
+    "icons": [
+      "logo-nimabox.png",
+      "logo-biu.png"
+    ]
   }
 ]
