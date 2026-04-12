@@ -60,12 +60,12 @@ export function useRsvpFormWidget() {
       }
     }
 
-    // form.reset()
+    form.reset()
     setSubmitting(false);
     setSuccess(true);
     await sleep(1.5);
-    // setSuccess(false);
-    M.router || isOngoing ? onRedirect() : null;
+    setSuccess(false);
+    M.router ? null : onRedirect();
   };
 
   return {

@@ -65,14 +65,25 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
           )}
         />
         <footer className="bg-background/90 absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white">
-          <div className="flex-row-cs text-foreground gap-2 text-sm font-medium">
+          <div
+            className={clsx(
+              "flex-row-cs text-foreground text-sm font-medium",
+              item.series ? "gap-4" : "gap-2",
+            )}
+          >
             {item.series ? (
               <>
-                <FaCalendarDay className="text-white" />
+                <div className="flex-row-cs gap-2">
+                  <FaCalendarDay className="text-white" />
+                </div>
                 {momentUtil.podcastDate(item.date)}
-                <FaClock className="text-white" />
-                {momentUtil.podcastTime(item.date)} (WAT)
-                <FaTwitter  className="text-white" /> Twitter/X Spaces
+                <div className="flex-row-cs gap-2">
+                  <FaClock className="text-white" />
+                  {momentUtil.podcastTime(item.date)} (WAT)
+                </div>
+                <div className="flex-row-cs gap-2">
+                  <FaTwitter className="text-white" /> Twitter/X Spaces
+                </div>
               </>
             ) : (
               <>
@@ -101,7 +112,7 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
               ))}
             </div>
             <div className="flex-row-cs gap-1.5 text-xs font-medium tracking-wide">
-              <MdAdsClick className="text-[#e05c1a] text-[15px]" />
+              <MdAdsClick className="text-[15px] text-[#e05c1a]" />
               <span>{item.series || APP.domain}</span>
             </div>
           </section>

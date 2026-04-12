@@ -81,10 +81,10 @@
   {
     "classNames": {
       "img": "object-bottom!",
-      "h1": "text-[18px]! py-1!"
+      "h1": "_text-[19px]! py-1!"
     },
     "thumbnail": "thumb-grab.png",
-    "headline": "Exploring Grab's journey  from MVP to Product Market Fit. Building a super-app for Ride-Hailing, Order & Delivery, Digital Payments.",
+    "headline": "A case study on Grab's journey from MVP (Minimum Viable Product) to Product Market Fit.",
     "location": "Twitter Spaces",
     "date": "2026-04-12T19:00:00.000Z",
     "icons": [
