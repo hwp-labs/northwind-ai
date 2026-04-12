@@ -65,5 +65,17 @@
     "spaceUrl": "https://x.com/i/spaces/1rGmqojWqzqGy",
     "listeners": 31,
     "series": "fireside-chat"
+  },
+  {
+    "id": 7,
+    "datetime": "2026-04-12T19:00:00.000Z",
+    "title": "Grab's Case Study",
+    "richTextLine1": "A case study on Grab's journey to Product Market Fit. Building a",
+    "richTextLine2": "super-app Ride-Hailing, Order & Delivery, and Digital Payments.",
+    "guestUsername": "@InsideGrab",
+    "notionUrl": "https://youtube.com/watch?v=PR2194ddosg",
+    "spaceUrl": "https://x.com/i/spaces/1rGmqojWqzqGy",
+    "listeners": 0,
+    "series": "fireside-chat"
   }
 ]

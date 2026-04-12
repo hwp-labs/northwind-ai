@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import { FaGlobeAfrica } from "react-icons/fa";
+import {
+  FaCalendarDay,
+  FaClock,
+  FaTwitter,
+  FaGlobeAfrica,
+} from "react-icons/fa";
+import { MdAdsClick } from "react-icons/md";
 //
 import { Badge } from "@/components/shadcn/ui/badge";
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
@@ -13,11 +19,12 @@ import data from "./data.json";
 interface Data {
   classNames?: { img?: string; h1?: string };
   thumbnail: string;
-  categories: string[];
   headline: string;
   location: string;
   date: string;
   icons: string[];
+  categories: string[];
+  series?: string;
 }
 
 interface Props {
@@ -40,6 +47,11 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
               <AvatarImage src={`/uploads/blog/${item}`} alt="" />
             </Avatar>
           ))}
+          {item.series ? (
+            <Avatar>
+              <AvatarImage src="/images/avatar-etugbeh.png" alt="" />
+            </Avatar>
+          ) : null}
         </AvatarGroup>
       </CardBuilder.Header>
       <main className="relative flex-1 overflow-hidden">
@@ -53,10 +65,24 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
           )}
         />
         <footer className="bg-background/90 absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white">
-          <div className="flex-row-cs gap-1 text-sm font-medium">
-            <time dateTime={item.date}>{momentUtil.shortDate(item.date)}</time>
-            &bull;
-            <address>{item.location}</address>
+          <div className="flex-row-cs text-foreground gap-2 text-sm font-medium">
+            {item.series ? (
+              <>
+                <FaCalendarDay className="text-white" />
+                {momentUtil.podcastDate(item.date)}
+                <FaClock className="text-white" />
+                {momentUtil.podcastTime(item.date)} (WAT)
+                <FaTwitter  className="text-white" /> Twitter/X Spaces
+              </>
+            ) : (
+              <>
+                <time dateTime={item.date}>
+                  {momentUtil.shortDate(item.date)}
+                </time>
+                &bull;
+                <address>{item.location}</address>
+              </>
+            )}
           </div>
           <h1
             className={clsx(
@@ -75,8 +101,8 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
               ))}
             </div>
             <div className="flex-row-cs gap-1.5 text-xs font-medium tracking-wide">
-              <FaGlobeAfrica className="text-contrast"/>
-              <span>{APP.domain}</span>
+              <MdAdsClick className="text-[#e05c1a] text-[15px]" />
+              <span>{item.series || APP.domain}</span>
             </div>
           </section>
         </footer>
