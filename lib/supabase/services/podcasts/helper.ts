@@ -9,7 +9,7 @@ export class PodcastHelper {
     const isFiresideChat = item.series === PodcastSeriesEnum.FIRESIDE_CHAT;
     const isConcluded =
       item.listeners > 0 || momentUtil.isPastDay(item.datetime);
-    
+
     return {
       ...item,
       dateText: momentUtil.podcastDate(item.datetime),
@@ -19,7 +19,6 @@ export class PodcastHelper {
       isConcluded,
       isFiresideChat,
       seriesText: isFiresideChat ? "Fireside Chat" : "Design Session",
-      isLongTitle: item.title.length >= 15,
     };
   };
 

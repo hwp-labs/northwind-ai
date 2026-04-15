@@ -6,12 +6,13 @@ import clsx from "clsx";
 import { Logo } from "@/components/logo";
 import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
+import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-interface HeaderProps extends PropsWithChildren {
+interface HeaderProps extends PropsWithChildren, PodcastDto {
   noBorder?: boolean;
 }
 
-const Header = ({ children, noBorder, }: HeaderProps) => {
+const Header = ({ children, noBorder, customTag }: HeaderProps) => {
   return (
     <header
       className={clsx(
@@ -22,9 +23,21 @@ const Header = ({ children, noBorder, }: HeaderProps) => {
       <Logo />
       {children || (
         <figure className="flex-row-cs gap-2">
-          <img src="/images/icon-hwp-labs.png" width={24} alt="" />
+          <img
+            src={
+              customTag === "radio-verse"
+                ? "/uploads/podcast/icon-verse.png"
+                : "/images/icon-hwp-labs.png"
+            }
+            width={24}
+            alt=""
+          />
           <figcaption className="text-[15px] font-medium">
-            {APP.owner}&reg;
+            {customTag === "radio-verse" ? (
+              "Verse Radio"
+            ) : (
+              <>{APP.owner}&reg;</>
+            )}
           </figcaption>
         </figure>
       )}

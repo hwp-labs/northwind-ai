@@ -22,7 +22,7 @@ export const CardBuilderDatetime = ({ dateText, timeText }: TransformedPodcastDt
       </span>
       <span className="bg-foreground -mt-4 -rotate-4 px-2 py-2 font-black tracking-wide text-[#071228]">
         {timeText}
-        <span className="text-xs tracking-normal"> / WAT</span>
+        <span className="text-[12px] tracking-normal font-medium"> WAT</span>
       </span>
     </section>
   );

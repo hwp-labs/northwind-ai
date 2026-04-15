@@ -1,6 +1,8 @@
 import { MdAdsClick } from "react-icons/md";
 import { FaTwitter } from "react-icons/fa6";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { MapPinHouseIcon } from "lucide-react";
+import clsx from "clsx";
 //
 import {
   PodcastDto,
@@ -14,8 +16,8 @@ import { CardBuilderDatetime as Datetime } from "./card-builder-datetime";
 const Venue = ({ id }: PodcastDto) => {
   return (
     <section className="flex-col-sc ml-8">
-      <div className="text-foreground flex-row-cs ml-4 -rotate-4 gap-2.5 bg-[#071228] px-4 py-2 font-black tracking-wide">
-        <MapPinHouseIcon size={16} />
+      <div className="text-foreground flex-row-cs ml-7 -rotate-4 gap-2 bg-[#071228] px-4 py-2 text-sm font-black tracking-wide">
+        <FaMapMarkerAlt size={14} />
         Twitter_X Spaces
       </div>
       <div className="flex-row-cs -mt-0 -rotate-4 gap-2 bg-[#fb085a] px-4 py-2 text-white">
@@ -32,18 +34,43 @@ const Venue = ({ id }: PodcastDto) => {
   );
 };
 
-const Speakers = (item: TransformedPodcastDto) => (
-  <ul className="flex-row-cc debug_ mt-6 mb-6 w-[320px] -rotate-4 gap-8 text-sm">
-    <Speaker label="host" value="@2gbeh" />
-    {item.guestUsername ? (
-      <Speaker label="guest" value={item.guestUsername} />
-    ) : null}
-  </ul>
-);
+const Speakers = (item: TransformedPodcastDto) => {
+  if (!item.guestUsername) return null;
 
-const Speaker = ({ label, value }: OptionItem) => (
+  if (typeof item.guestUsername === "string")
+    return (
+      <ul className="flex-row-cc debug_ mt-6 mb-6 w-[320px] -rotate-4 gap-8 text-sm">
+        <Speaker label="host" value="@2gbeh" />
+        <Speaker label="guest" value={item.guestUsername} />
+      </ul>
+    );
+
+  return (
+    item.customTag === "radio-verse" && (
+      <div className="debug_ mt-4 mb-4 w-[320px] -rotate-0 text-sm">
+        <Speaker label="host" value={item.guestUsername[0]} invert />
+        <ul className="mt-4 grid grid-cols-2 gap-2">
+          {item.guestUsername.map((item, i) =>
+            i > 0 ? <Speaker key={item} label="guest" value={item} /> : null,
+          )}
+        </ul>
+      </div>
+    )
+  );
+};
+
+const Speaker = ({
+  label,
+  value,
+  invert,
+}: OptionItem & { invert?: boolean }) => (
   <li className="flex-row-cs flex-col gap-1">
-    <span className="flex-row-cs gap-2 bg-black px-1 py-0.5 text-white">
+    <span
+      className={clsx(
+        "flex-row-cs gap-2 bg-black px-1 py-0.5 text-white",
+        invert && "invert",
+      )}
+    >
       {label}
       <FaTwitter size={12} />
     </span>
@@ -67,13 +94,28 @@ const Hero = (item: TransformedPodcastDto) => {
           "linear-gradient(to right, black, black, rgba(255,255,255,0))",
       }}
     >
-      <h1 className="grid text-[58px] leading-[45px] font-black text-white uppercase">
-        <span className="_text-[#41dbc1]">{item.title}</span>
+      <h1
+        className={clsx(
+          "uppercase_ grid text-[58px] leading-[45px] font-black text-white uppercase",
+          {
+            "px-4 py-2 text-[28px]! leading-[35px]! capitalize!":
+              item.customTag === "radio-verse",
+          },
+        )}
+      >
+        <span className="_text-[#41dbc1]">
+          {item.customTag === "radio-verse" ? item.richTextLine1 : item.title}
+        </span>
         <span className="_text-[#fb085a]">
           {!item.isLongTitle && item.seriesText}
         </span>
       </h1>
-      <div className="text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-sm font-medium tracking-wide">
+      <div
+        className={clsx(
+          "text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-sm font-medium tracking-wide",
+          { hidden: item.customTag === "radio-verse" },
+        )}
+      >
         <p dangerouslySetInnerHTML={{ __html: item.richTextLine1 }} />
         <p dangerouslySetInnerHTML={{ __html: item.richTextLine2 }} />
       </div>
@@ -81,7 +123,7 @@ const Hero = (item: TransformedPodcastDto) => {
   );
 };
 
-const PoweredBy = ({ notionUrl }: PodcastDto) => (
+const PoweredBy = ({ notionUrl, customTag }: PodcastDto) => (
   <footer className="absolute right-8 bottom-5 z-1">
     <a
       href={notionUrl || "#"}
@@ -90,7 +132,16 @@ const PoweredBy = ({ notionUrl }: PodcastDto) => (
       className="flex-row-cs text-foreground _debug gap-2 text-xs font-medium"
     >
       Powered by
-      <img src="/images/icon-notion.png" alt="" width={20} /> Notion
+      <img
+        src={
+          customTag === "radio-verse"
+            ? "/uploads/podcast/icon-bitcoin.png"
+            : "/images/icon-notion.png"
+        }
+        alt=""
+        width={20}
+      />{" "}
+      {customTag === "radio-verse" ? "Bitcoin" : "Notion"}
     </a>
   </footer>
 );
