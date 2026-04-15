@@ -8,11 +8,12 @@ import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
 import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-interface HeaderProps extends PropsWithChildren, PodcastDto {
+interface HeaderProps extends PropsWithChildren {
   noBorder?: boolean;
+  item?: PodcastDto;
 }
 
-const Header = ({ children, noBorder, customTag }: HeaderProps) => {
+const Header = ({ children, noBorder, item }: HeaderProps) => {
   return (
     <header
       className={clsx(
@@ -25,7 +26,7 @@ const Header = ({ children, noBorder, customTag }: HeaderProps) => {
         <figure className="flex-row-cs gap-2">
           <img
             src={
-              customTag === "radio-verse"
+              item?.customTag === "radio-verse"
                 ? "/uploads/podcast/icon-verse.png"
                 : "/images/icon-hwp-labs.png"
             }
@@ -33,7 +34,7 @@ const Header = ({ children, noBorder, customTag }: HeaderProps) => {
             alt=""
           />
           <figcaption className="text-[15px] font-medium">
-            {customTag === "radio-verse" ? (
+            {item?.customTag === "radio-verse" ? (
               "Verse Radio"
             ) : (
               <>{APP.owner}&reg;</>
