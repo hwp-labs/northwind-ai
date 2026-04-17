@@ -18,7 +18,7 @@ export const TopSection = ({
   return (
     <>
       <PromptBar>
-        {isOngoing ? "Live: " : "Date: "}
+        {/*isOngoing ? "Live: " : "Date: "*/}
         {isMobile ? `${item.dateText} | ${item.timeText}` : item.datetimeText}
         <span>WAT</span>
       </PromptBar>

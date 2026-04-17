@@ -16,9 +16,14 @@ interface Props {
 
 export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
   const [total, setTotal] = useState(1);
+  const [customTag, setCustomTag] = useState<undefined|string>(undefined);
 
+  const isVerseRadio = customTag === "radio-verse";
+    
   async function fetcher() {
-    const listeners = PodcastHelper.GetPageItem(podcast_id).listeners;
+    const {listeners, customTag} = PodcastHelper.GetPageItem(podcast_id);
+    setCustomTag(customTag);
+    
     if (listeners) {
       setTotal(listeners);
     } else {
@@ -40,14 +45,14 @@ export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
           text: "H",
         },
         {
-          src: "/images/avatar-etugbeh.png",
+          src: isVerseRadio?"/uploads/podcast/icon-bitcoin.png":"/images/avatar-etugbeh.png",
           alt: "@2gbeh",
-          text: "E",
+          text: isVerseRadio?"B":"E",
         },
         {
-          src: "/images/avatar.png",
+          src: isVerseRadio?"/uploads/podcast/icon-verse.png":"/images/avatar.png",
           alt: "",
-          text: "A",
+          text: isVerseRadio?"V":"A",
         },
       ].map((item, i) => (
         <Avatar key={i}>
