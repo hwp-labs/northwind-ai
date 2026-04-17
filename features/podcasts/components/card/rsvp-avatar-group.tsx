@@ -40,12 +40,12 @@ export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
           text: "H",
         },
         {
-          src: customTag === "radio-verse"?"/uploads/podcast/icon-bitcoin.png":"/images/avatar-etugbeh.png",
+          src: customTag && customTag === "radio-verse"?"/uploads/podcast/icon-bitcoin.png":"/images/avatar-etugbeh.png",
           alt: "@2gbeh",
           text: "E",
         },
         {
-          src: customTag === "radio-verse"?"/uploads/podcast/icon-verse.png":"/images/avatar.png",
+          src: customTag && customTag === "radio-verse"?"/uploads/podcast/icon-verse.png":"/images/avatar.png",
           alt: "",
           text: "A",
         },
