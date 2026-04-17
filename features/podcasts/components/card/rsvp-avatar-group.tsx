@@ -16,11 +16,14 @@ interface Props {
 
 export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
   const [total, setTotal] = useState(1);
+  const [customTag, setCustomTag] = useState<undefined|string>(undefined);
 
   async function fetcher() {
-    const p = PodcastHelper.GetPageItem(podcast_id);
-    if (p.listeners) {
-      setTotal(p.listeners);
+    const {listeners, customTag} = PodcastHelper.GetPageItem(podcast_id);
+    setCustomTag(customTag);
+    
+    if (listeners) {
+      setTotal(listeners);
     } else {
       const { data: total } = await getListenersCountAction({ podcast_id });
       setTotal(total || 1);
@@ -40,12 +43,12 @@ export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
           text: "H",
         },
         {
-          src: p?.customTag === "radio-verse"?"/uploads/podcast/icon-bitcoin.png":"/images/avatar-etugbeh.png",
+          src: customTag === "radio-verse"?"/uploads/podcast/icon-bitcoin.png":"/images/avatar-etugbeh.png",
           alt: "@2gbeh",
           text: "E",
         },
         {
-          src: p?.customTag === "radio-verse"?"/uploads/podcast/icon-verse.png":"/images/avatar.png",
+          src: customTag === "radio-verse"?"/uploads/podcast/icon-verse.png":"/images/avatar.png",
           alt: "",
           text: "A",
         },
