@@ -13,7 +13,17 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
   //
   return (
     <>
-      <CardBuilder.Header item={item} />
+      <CardBuilder.Header item={item}>
+        {item.customTag || !item.logoSafe.length ? undefined : (
+          <CardBuilder.AvatarGroup
+            src={[
+              "/images/icon-hwp-labs.png",
+              "/images/avatar-etugbeh.png",
+              ...item.logoSafe.map((item) => `/uploads/logos/${item}`),
+            ]}
+          />
+        )}
+      </CardBuilder.Header>
       <CardBuilder.Container>
         <img
           src={`/uploads/podcast/${item.isFiresideChat ? "sony.png" : "halim.png"}`}

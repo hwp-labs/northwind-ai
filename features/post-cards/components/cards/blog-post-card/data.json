@@ -1,12 +1,10 @@
 [
   {
+    "logo": "babago.png",
     "thumbnail": "thumb-app.png",
     "headline": "Northwind AI secures deal with Babago to pilot Ride-hailing App, On-demand Food Delivery App at Gwarinpa, Abuja",
     "location": "Abuja",
     "date": "2025-03-18",
-    "icons": [
-      "babago.png"
-    ],
     "categories": [
       "Transport",
       "Logistics"
@@ -17,13 +15,11 @@
     "classNames": {
       "img": "object-bottom!"
     },
+    "logo": "hms.png",
     "thumbnail": "thumb-real-estate.png",
     "headline": "Northwind AI secures deal with 24hms.com to pilot AI-native Real Estate Marketplace at Asaba, Delta",
     "location": "Delta",
     "date": "2025-03-22",
-    "icons": [
-      "hms.png"
-    ],
     "categories": [
       "Real Estate",
       "AI"
@@ -33,14 +29,14 @@
     "classNames": {
       "h1": "text-[19px]!"
     },
+    "logo": [
+      "nimabox.png",
+      "cgmi.png"
+    ],
     "thumbnail": "thumb-aisle.png",
     "headline": "Northwind AI partners with Nimabox to deploy Cloud-native, Cross-platform ERP Solution across CGMi HQ and branches",
     "location": "Benin City",
     "date": "2026-04-01",
-    "icons": [
-      "nimabox.png",
-      "cgmi.png"
-    ],
     "categories": [
       "SaaS",
       "FinTech"
@@ -50,28 +46,28 @@
     "classNames": {
       "img": "object-bottom!"
     },
+    "logo": [
+      "nimabox.png",
+      "faith-mediplex.png"
+    ],
     "thumbnail": "thumb-pos-clinic.png",
     "headline": "Northwind AI partners with Nimabox to deploy Point-of-Sale (POS) Terminals at Faith Mediplex Teaching Hospital",
     "location": "Benin City",
     "date": "2026-04-01",
-    "icons": [
-      "nimabox.png",
-      "faith-mediplex.png"
-    ],
     "categories": [
       "Healthcare",
       "FinTech"
     ]
   },
   {
+    "logo": [
+      "nimabox.png",
+      "biu.png"
+    ],
     "thumbnail": "thumb-student-phone.png",
     "headline": "Northwind AI partners with Nimabox to deploy Tokenized Student Wallet at Benson Idahosa University",
     "location": "Benin City",
     "date": "2026-04-01",
-    "icons": [
-      "nimabox.png",
-      "biu.png"
-    ],
     "categories": [
       "EdTech",
       "FinTech",
@@ -83,18 +79,17 @@
       "img": "object-bottom!",
       "h1": "_text-[19px]! py-1!"
     },
+    "logo": "grab.png",
     "thumbnail": "thumb-grab.png",
     "headline": "A case study on Grab's journey from MVP (Minimum Viable Product) to Product Market Fit.",
     "location": "Twitter Spaces",
     "date": "2026-04-12T19:00:00.000Z",
-    "icons": [
-      "grab.png"
-    ],
     "categories": [
       "Transport",
       "Logistics",
       "FinTech"
     ],
-    "series": "northwindai.org/podcast/7"
+    "event": true,
+    "url": "northwindai.org/podcast/7"
   }
 ]

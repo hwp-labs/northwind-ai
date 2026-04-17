@@ -4,6 +4,8 @@ import { IconRocket } from "@tabler/icons-react";
 import clsx from "clsx";
 //
 import { Logo } from "@/components/logo";
+import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
+import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
 import {
@@ -27,8 +29,9 @@ const Header = ({ children, noBorder, item }: HeaderProps) => {
   return (
     <header
       className={clsx(
-        "flex-row-cb bg-white px-8 py-6",
+        "flex-row-cb bg-white px-8",
         !noBorder && "border-b border-gray-200",
+        children ? "py-4" : "py-5",
       )}
     >
       <Logo />
@@ -65,11 +68,7 @@ const Container = ({ children, className, noCover }: ContainerProps) => (
   </main>
 );
 
-interface DescriptionProps {
-  className?: string;
-}
-
-const Description = ({ className }: DescriptionProps) => (
+const Description = ({ className }: { className?: string }) => (
   <article
     className={clsx(
       "debug_ absolute bottom-25 w-full text-center text-[12px] leading-5",
@@ -96,10 +95,23 @@ const CTA = () => (
   </Footer>
 );
 
+const AvatarGroup_ = ({ src }: { src: string[] }) => {
+  return (
+    <AvatarGroup className="[&>span]:bg-foreground [&>span]:ring-[#eee]">
+      {src.map((item, i) => (
+        <Avatar key={i}>
+          <AvatarImage src={item} alt="" />
+        </Avatar>
+      ))}
+    </AvatarGroup>
+  );
+};
+
 export const CardBuilder = {
   Header,
   Footer,
   Container,
   Description,
   CTA,
+  AvatarGroup: AvatarGroup_,
 };
