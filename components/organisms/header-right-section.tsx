@@ -3,7 +3,7 @@
 import { FaCircleUser } from "react-icons/fa6";
 //
 import { Button } from "@/components/shadcn/ui/button";
-import { RsvpAvatarGroup } from "@/features/podcasts/components/card/rsvp-avatar-group";
+import { RsvpAvatarGroup } from "@/features/podcasts/components/rsvp-avatar-group";
 import { useVisitTracker } from "@/hooks/use-visit-tracker";
 import { useQueryParams } from "@/hooks/use-query-params";
 import { PATH } from "@/constants/PATH";

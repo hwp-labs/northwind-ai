@@ -6,7 +6,7 @@ import { ValuePropositionCards } from "@/components/molecules/value-proposition-
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { PageIdParams } from "@/types";
 //
-import { TopSection } from "@/features/podcasts/components/card/top-section";
+import { PromptBarHero } from "@/features/podcasts/components/prompt-bar-hero";
 import { RsvpFormWidgetV2 } from "@/features/podcasts/components/rsvp-form-widget/v2";
 
 const getCachedItem = cache(async (params: PageIdParams["params"]) =>
@@ -28,7 +28,7 @@ export default async function PodcastPage({ params }: PageIdParams) {
   //
   return (
     <main>
-      <TopSection {...item} />
+      <PromptBarHero {...item} />
       <RsvpFormWidgetV2 />
       <CoverImage />
       <ValuePropositionCards />

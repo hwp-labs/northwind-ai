@@ -1,12 +1,12 @@
 import { MdAdsClick } from "react-icons/md";
 import { FaTwitter } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { MapPinHouseIcon } from "lucide-react";
 import clsx from "clsx";
 //
 import {
   PodcastDto,
   TransformedPodcastDto,
+  PodcastCustomTagEnum,
 } from "@/lib/supabase/services/podcasts/types";
 import { OptionItem } from "@/types";
 import { APP } from "@/constants/APP";
@@ -45,18 +45,16 @@ const Speakers = (item: TransformedPodcastDto) => {
       </ul>
     );
 
-  return (
-    item.customTag === "radio-verse" && (
-      <div className="debug_ mt-4 mb-4 w-[320px] -rotate-0 text-sm">
-        <Speaker label="host" value={item.guestUsername[0]} invert />
-        <ul className="mt-4 grid grid-cols-2 gap-2">
-          {item.guestUsername.map((item, i) =>
-            i > 0 ? <Speaker key={item} label="guest" value={item} /> : null,
-          )}
-        </ul>
-      </div>
-    )
-  );
+  return item.customTag === PodcastCustomTagEnum.VERSE_RADIO ? (
+    <div className="debug_ mt-4 mb-4 w-[320px] -rotate-0 text-sm">
+      <Speaker label="host" value={item.guestUsername[0]} invert />
+      <ul className="mt-4 grid grid-cols-2 gap-2">
+        {item.guestUsername.map((item, i) =>
+          i > 0 ? <Speaker key={item} label="guest" value={item} /> : null,
+        )}
+      </ul>
+    </div>
+  ) : null;
 };
 
 const Speaker = ({
@@ -87,6 +85,8 @@ const Speaker = ({
 );
 
 const Hero = (item: TransformedPodcastDto) => {
+  const isVerseRadio = item.customTag === PodcastCustomTagEnum.VERSE_RADIO;
+  //
   return (
     <section
       style={{
@@ -97,14 +97,11 @@ const Hero = (item: TransformedPodcastDto) => {
       <h1
         className={clsx(
           "uppercase_ grid text-[58px] leading-[45px] font-black text-white uppercase",
-          {
-            "px-4 py-2 text-[28px]! leading-[35px]! capitalize!":
-              item.customTag === "radio-verse",
-          },
+          isVerseRadio && "px-4 py-2 text-[28px]! leading-[35px]! capitalize!",
         )}
       >
         <span className="_text-[#41dbc1]">
-          {item.customTag === "radio-verse" ? item.richTextLine1 : item.title}
+          {isVerseRadio ? item.richTextLine1 : item.title}
         </span>
         <span className="_text-[#fb085a]">
           {!item.isLongTitle && item.seriesText}
@@ -113,7 +110,7 @@ const Hero = (item: TransformedPodcastDto) => {
       <div
         className={clsx(
           "text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-sm font-medium tracking-wide",
-          { hidden: item.customTag === "radio-verse" },
+          isVerseRadio && "hidden",
         )}
       >
         <p dangerouslySetInnerHTML={{ __html: item.richTextLine1 }} />
@@ -131,17 +128,18 @@ const PoweredBy = ({ notionUrl, customTag }: PodcastDto) => (
       rel="noopener noreferrer"
       className="flex-row-cs text-foreground _debug gap-2 text-xs font-medium"
     >
-      Official Token of
-      <img
-        src={
-          customTag === "radio-verse"
-            ? "/uploads/podcast/icon-bitcoin.png"
-            : "/images/icon-notion.png"
-        }
-        alt=""
-        width={20}
-      />{" "}
-      {customTag === "radio-verse" ? "Bitcoin" : "Notion"}
+      {customTag === PodcastCustomTagEnum.VERSE_RADIO ? (
+        <>
+          Official Token of
+          <img src="/uploads/logos/bitcoin.png" alt="" width={20} />{" "}
+          Bitcoin
+        </>
+      ) : (
+        <>
+          Powered by
+          <img src="/uploads/logos/notion.png" alt="" width={20} /> Notion
+        </>
+      )}
     </a>
   </footer>
 );

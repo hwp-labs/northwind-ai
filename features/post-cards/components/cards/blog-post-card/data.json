@@ -5,7 +5,7 @@
     "location": "Abuja",
     "date": "2025-03-18",
     "icons": [
-      "logo-babago.png"
+      "babago.png"
     ],
     "categories": [
       "Transport",
@@ -22,7 +22,7 @@
     "location": "Delta",
     "date": "2025-03-22",
     "icons": [
-      "logo-hms.png"
+      "hms.png"
     ],
     "categories": [
       "Real Estate",
@@ -38,8 +38,8 @@
     "location": "Benin City",
     "date": "2026-04-01",
     "icons": [
-      "logo-nimabox.png",
-      "logo-cgmi.png"
+      "nimabox.png",
+      "cgmi.png"
     ],
     "categories": [
       "SaaS",
@@ -55,8 +55,8 @@
     "location": "Benin City",
     "date": "2026-04-01",
     "icons": [
-      "logo-nimabox.png",
-      "logo-faith-mediplex.png"
+      "nimabox.png",
+      "faith-mediplex.png"
     ],
     "categories": [
       "Healthcare",
@@ -69,8 +69,8 @@
     "location": "Benin City",
     "date": "2026-04-01",
     "icons": [
-      "logo-nimabox.png",
-      "logo-biu.png"
+      "nimabox.png",
+      "biu.png"
     ],
     "categories": [
       "EdTech",
@@ -88,7 +88,7 @@
     "location": "Twitter Spaces",
     "date": "2026-04-12T19:00:00.000Z",
     "icons": [
-      "logo-grab.png"
+      "grab.png"
     ],
     "categories": [
       "Transport",

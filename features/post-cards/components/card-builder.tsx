@@ -6,7 +6,10 @@ import clsx from "clsx";
 import { Logo } from "@/components/logo";
 import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
-import { PodcastDto } from "@/lib/supabase/services/podcasts/types";
+import {
+  PodcastCustomTagEnum,
+  PodcastDto,
+} from "@/lib/supabase/services/podcasts/types";
 
 interface HeaderProps extends PropsWithChildren {
   noBorder?: boolean;
@@ -14,6 +17,13 @@ interface HeaderProps extends PropsWithChildren {
 }
 
 const Header = ({ children, noBorder, item }: HeaderProps) => {
+  const [img, alt, size]: [string, string | null, number | null] =
+    item?.customTag === PodcastCustomTagEnum.BOOKIN
+      ? ["/uploads/logos/bookin-lg.png", null, 75]
+      : item?.customTag === PodcastCustomTagEnum.VERSE_RADIO
+        ? ["/uploads/logos/verse.png", "Verse Radio", null]
+        : ["/images/icon-hwp-labs.png", `${APP.owner}&reg;`, null];
+  //
   return (
     <header
       className={clsx(
@@ -23,23 +33,12 @@ const Header = ({ children, noBorder, item }: HeaderProps) => {
     >
       <Logo />
       {children || (
-        <figure className="flex-row-cs gap-2">
-          <img
-            src={
-              item?.customTag === "radio-verse"
-                ? "/uploads/podcast/icon-verse.png"
-                : "/images/icon-hwp-labs.png"
-            }
-            width={24}
-            alt=""
+        <figure className="flex-row-cs debug_ gap-2">
+          <img src={img} width={size || 24} alt="" />
+          <figcaption
+            className="text-[15px] font-medium"
+            dangerouslySetInnerHTML={{ __html: alt || "" }}
           />
-          <figcaption className="text-[15px] font-medium">
-            {item?.customTag === "radio-verse" ? (
-              "Verse Radio"
-            ) : (
-              <>{APP.owner}&reg;</>
-            )}
-          </figcaption>
         </figure>
       )}
     </header>

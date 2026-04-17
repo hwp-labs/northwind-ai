@@ -19,6 +19,11 @@ export class PodcastHelper {
       isConcluded,
       isFiresideChat,
       seriesText: isFiresideChat ? "Fireside Chat" : "Design Session",
+      logoSafe: item.logo
+        ? typeof item.logo === "string"
+          ? [item.logo]
+          : item.logo
+        : [],
     };
   };
 

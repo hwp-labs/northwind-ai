@@ -1,6 +1,7 @@
 export interface PodcastDto {
   id: number;
   datetime: string;
+  logo?: string[];
   title: string;
   isLongTitle?: boolean;
   richTextLine1: string;
@@ -20,10 +21,16 @@ export interface TransformedPodcastDto extends PodcastDto {
   isConcluded: boolean;
   isFiresideChat: boolean;
   seriesText: string;
+  logoSafe: string[];
 }
 
 export enum PodcastSeriesEnum {
   DESIGN_SESSION = "design-session",
   FIRESIDE_CHAT = "fireside-chat",
   CASE_STUDY = "case-study",
+}
+
+export enum PodcastCustomTagEnum {
+  BOOKIN = "bookin",
+  VERSE_RADIO = "verse-radio",
 }
