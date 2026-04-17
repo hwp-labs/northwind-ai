@@ -27,15 +27,15 @@ const Container = ({ children }: PropsWithChildren) => {
 };
 
 interface HeaderRowProps extends PropsWithChildren {
-  hasNumbering?: boolean;
+  isNumbered?: boolean;
   hasAction?: boolean;
 }
 
-const HeaderRow = ({ children, hasNumbering, hasAction }: HeaderRowProps) => {
+const HeaderRow = ({ children, isNumbered, hasAction }: HeaderRowProps) => {
   return (
     <TableHeader>
       <TableRow className="bg-muted">
-        {hasNumbering && (
+        {isNumbered && (
           <TableHead className="w-[10px]" aria-label="S/N">
             #
           </TableHead>
@@ -67,25 +67,29 @@ const CellAvatarBio = ({
   showBadge,
 }: CellAvatarBioProps) => {
   return (
-    <TableCell className="flex-center-start gap-2.5">
-      <div className="relative">
-        {textOnly ? null : (
-          <Avatar className="size-8">
-            <AvatarImage src={src || undefined} />
-            <AvatarFallback>
-              {srcText || (name || UNKNOWN).charAt(0).toUpperCase()}
-            </AvatarFallback>
-          </Avatar>
-        )}
-        {showBadge && <Indicator />}
-      </div>
-      <div className="grid gap-0.5 text-sm leading-tight">
-        <span className="_font-medium truncate text-sm">{name || HYPHENS}</span>
-        {email ? (
-          <span className="text-muted-foreground truncate text-xs">
-            {email}
+    <TableCell>
+      <div className="flex-center-start gap-2.5">
+        <div className="relative">
+          {textOnly ? null : (
+            <Avatar className="size-8">
+              <AvatarImage src={src || undefined} />
+              <AvatarFallback>
+                {srcText || (name || UNKNOWN).charAt(0).toUpperCase()}
+              </AvatarFallback>
+            </Avatar>
+          )}
+          {showBadge && <Indicator />}
+        </div>
+        <div className="grid gap-0.5 text-sm leading-tight">
+          <span className="_font-medium truncate text-sm">
+            {name || HYPHENS}
           </span>
-        ) : null}
+          {email ? (
+            <span className="text-muted-foreground truncate text-xs">
+              {email}
+            </span>
+          ) : null}
+        </div>
       </div>
     </TableCell>
   );

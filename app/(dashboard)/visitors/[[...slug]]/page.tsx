@@ -53,8 +53,7 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
       />
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
-          <TableHead>IP Address</TableHead>
-          {/* <TableHead className="text-right">Visits</TableHead> */}
+          <TableHead>Visitor</TableHead>
           <TableHead>Geolocation</TableHead>
           <TableHead>Platform</TableHead>
           <TableHead>Device</TableHead>
@@ -73,7 +72,6 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
                     email={item.pathname}
                     showBadge={visitor.IsUpdatedToday()}
                   />
-                  {/* <TableCell className="text-right">{item.visits}</TableCell> */}
                   <TableUI.CellAvatarBio
                     name={visitor.location}
                     email={visitor.geolocation}
