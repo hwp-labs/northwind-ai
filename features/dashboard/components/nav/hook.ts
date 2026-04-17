@@ -1,28 +1,24 @@
 import { useEffect, useState } from "react";
-import { getIndustriesCountAction } from "@/lib/supabase/services/industries/actions/getIndustriesAction";
 import { getVisitorsCountAction } from "@/lib/supabase/services/visitors/actions/getVisitorsAction";
-import { getContactsCountAction } from "@/lib/supabase/services/contacts/actions/getContactsAction";
+import { getListenersCountAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
 
 interface Totaled {
-  industries?: number;
   visitors?: number;
-  contacts?: number;
+  listeners?: number;
 }
 
 export const useNav = () => {
   const [totaled, setTotaled] = useState<Totaled>({});
 
   const fetchTotaled = async () => {
-    const [{ data: industries }, { data: visitors }, { data: contacts }] =
+    const [{ data: visitors }, { data: listeners }] =
       await Promise.all([
-        getIndustriesCountAction(),
         getVisitorsCountAction(),
-        getContactsCountAction(),
+        getListenersCountAction(),
       ]);
 
-    if (industries) setTotaled((prev) => ({ ...prev, industries }));
     if (visitors) setTotaled((prev) => ({ ...prev, visitors }));
-    if (contacts) setTotaled((prev) => ({ ...prev, contacts }));
+    if (listeners) setTotaled((prev) => ({ ...prev, listeners }));
   };
 
   useEffect(() => {

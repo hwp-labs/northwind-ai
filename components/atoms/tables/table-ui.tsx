@@ -51,6 +51,7 @@ const HeaderRow = ({ children, hasNumbering, hasAction }: HeaderRowProps) => {
 
 interface CellAvatarBioProps {
   src?: string;
+  srcText?: string | number;
   name?: string;
   email?: string;
   textOnly?: boolean;
@@ -59,6 +60,7 @@ interface CellAvatarBioProps {
 
 const CellAvatarBio = ({
   src,
+  srcText,
   name,
   email,
   textOnly,
@@ -71,7 +73,7 @@ const CellAvatarBio = ({
           <Avatar className="size-8">
             <AvatarImage src={src || undefined} />
             <AvatarFallback>
-              {(name || UNKNOWN).charAt(0).toUpperCase()}
+              {srcText || (name || UNKNOWN).charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
         )}

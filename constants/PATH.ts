@@ -24,8 +24,9 @@ export const PATH = {
 } as const satisfies Record<string, PathType>;
 
 export const PROTECTED_PATH = {
+  visitors: "/visitors",
+  listeners: "/listeners",
   dashboard: "/dashboard",
   industries: "/industries",
-  visitors: "/visitors",
   contacts: "/contacts",
 } as const satisfies Record<string, PathType>;

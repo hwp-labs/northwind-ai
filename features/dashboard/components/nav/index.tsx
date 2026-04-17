@@ -21,11 +21,8 @@ export const Nav = () => {
         if (item.path === PROTECTED_PATH.visitors)
           props.badgeValue = totaled.visitors;
 
-        if (item.path === PROTECTED_PATH.contacts)
-          props.badgeValue = totaled.contacts;
-
-        if (item.path === PROTECTED_PATH.industries)
-          props.badgeValue = totaled.industries;
+        if (item.path === PROTECTED_PATH.listeners)
+          props.badgeValue = totaled.listeners;
 
         return <NavItem key={i} {...props} />;
       })}

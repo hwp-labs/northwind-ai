@@ -9,8 +9,9 @@ export const MENU = [
 
 export const DASHBOARD_MENU = [
   { label: "Home", path: PATH.home, Icon: HomeIcon },
-  { label: "Dashboard", path: PROTECTED_PATH.dashboard },
+  // { label: "Dashboard", path: PROTECTED_PATH.dashboard },
   { label: "Visitors", path: PROTECTED_PATH.visitors },
-  { label: "Contacts", path: PROTECTED_PATH.contacts },
-  { label: "Industries", path: PROTECTED_PATH.industries },
+  { label: "Listeners", path: PROTECTED_PATH.listeners },
+  // { label: "Contacts", path: PROTECTED_PATH.contacts },
+  // { label: "Industries", path: PROTECTED_PATH.industries },
 ] as const satisfies MenuItem[];

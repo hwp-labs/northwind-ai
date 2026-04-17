@@ -8,23 +8,23 @@ import {
 } from "@/components/shadcn/ui/table";
 import { TableUI } from "@/components/atoms/tables/table-ui";
 import { Toolbar } from "@/features/dashboard/components/toolbar";
-import { VisitorsTableAction } from "@/features/visitors/components/visitors-table-action";
-import { VisitorsTableEmpty } from "@/features/visitors/components/visitors-table-empty";
-import { VisitorHelper } from "@/lib/supabase/services/visitors/helper";
-import { getVisitorsAction } from "@/lib/supabase/services/visitors/actions/getVisitorsAction";
+import { ListenersTableAction } from "@/features/listeners/components/listeners-table-action";
+import { ListenersTableEmpty } from "@/features/listeners/components/listeners-table-empty";
+import { ListenerHelper } from "@/lib/supabase/services/listeners/helper";
+import { getListenersAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
 import { PageParams } from "@/types";
 
 export const metadata: Metadata = {
-  title: "Manage Visitors",
+  title: "Manage Listeners",
 };
 
-const visitor = new VisitorHelper();
+const listener = new ListenerHelper();
 
-export default async function VisitorsPage({ searchParams }: PageParams) {
+export default async function ListenersPage({ searchParams }: PageParams) {
   const searchParamsAsync = await searchParams;
   const filtered = searchParamsAsync.filtered ? true : false;
 
-  const { data, error } = await getVisitorsAction({
+  const { data, error } = await getListenersAction({
     sortBy: "updated_at",
   });
 
@@ -54,40 +54,39 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
           <TableHead>IP Address</TableHead>
-          {/* <TableHead className="text-right">Visits</TableHead> */}
-          <TableHead>Geolocation</TableHead>
-          <TableHead>Platform</TableHead>
+          <TableHead className="text-right">Visits</TableHead>
           <TableHead>Device</TableHead>
+          <TableHead>Platform</TableHead>
+          <TableHead>Geolocation</TableHead>
           <TableHead>Last Seen</TableHead>
         </TableUI.HeaderRow>
         <TableBody>
           {transformedData.length ? (
             transformedData.map((item, i) => {
-              visitor.setVisitor(item);
+              listener.setListener(item);
               //
               return (
                 <TableRow key={item.id}>
                   <TableUI.CellAvatarBio
-                    srcText={item.visits}
                     name={item.ip_address}
                     email={item.pathname}
-                    showBadge={visitor.IsUpdatedToday()}
+                    showBadge={listener.IsUpdatedToday()}
                   />
-                  {/* <TableCell className="text-right">{item.visits}</TableCell> */}
+                  <TableCell className="text-right">{item.visits}</TableCell>
+                  <TableUI.CellBadge>{item.username}</TableUI.CellBadge>
+                  <TableCell>{item.username}</TableCell>
                   <TableUI.CellAvatarBio
-                    name={visitor.location}
-                    email={visitor.geolocation}
+                    name={listener.location}
+                    email={listener.geolocation}
                     textOnly
                   />
-                  <TableCell>{item.platform}</TableCell>
-                  <TableUI.CellBadge>{visitor.device}</TableUI.CellBadge>
-                  <TableCell>{visitor.updatedAt}</TableCell>
-                  <VisitorsTableAction id={item.id} />
+                  <TableCell>{listener.updatedAt}</TableCell>
+                  <ListenersTableAction id={item.id} />
                 </TableRow>
               );
             })
           ) : (
-            <VisitorsTableEmpty />
+            <ListenersTableEmpty />
           )}
         </TableBody>
       </TableUI.Container>
