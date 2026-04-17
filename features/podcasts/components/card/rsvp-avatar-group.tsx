@@ -18,7 +18,7 @@ export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
   const [total, setTotal] = useState(1);
 
   async function fetcher() {
-    const listeners = PodcastHelper.GetPageItem(podcast_id).listeners;
+    const {listeners, customTag} = PodcastHelper.GetPageItem(podcast_id);
     if (listeners) {
       setTotal(listeners);
     } else {
@@ -40,12 +40,12 @@ export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
           text: "H",
         },
         {
-          src: "/images/avatar-etugbeh.png",
+          src: customTag === "radio-verse"?"/uploads/podcast/icon-bitcoin.png":"/images/avatar-etugbeh.png",
           alt: "@2gbeh",
           text: "E",
         },
         {
-          src: "/images/avatar.png",
+          src: customTag === "radio-verse"?"/uploads/podcast/icon-verse.png":"/images/avatar.png",
           alt: "",
           text: "A",
         },
