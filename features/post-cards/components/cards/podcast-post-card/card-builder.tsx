@@ -131,7 +131,7 @@ const PoweredBy = ({ notionUrl, customTag }: PodcastDto) => (
       rel="noopener noreferrer"
       className="flex-row-cs text-foreground _debug gap-2 text-xs font-medium"
     >
-      Powered by
+      Official Token of
       <img
         src={
           customTag === "radio-verse"
