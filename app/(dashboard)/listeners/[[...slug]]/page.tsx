@@ -11,11 +11,15 @@ import { TableUI } from "@/components/atoms/tables/table-ui";
 import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
 import { TdBadge } from "@/components/atoms/tables/td-badge";
 import { Toolbar } from "@/features/dashboard/components/toolbar";
+import { isValidEmail } from "@/utils";
+import { PageParams } from "@/types";
+import { PROTECTED_PATH } from "@/constants/PATH";
+//
 import { ListenersTableAction } from "@/features/listeners/components/listeners-table-action";
 import { ListenersTableEmpty } from "@/features/listeners/components/listeners-table-empty";
 import { ListenerHelper } from "@/lib/supabase/services/listeners/helper";
 import { getListenersAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
-import { PageParams } from "@/types";
+import { TABLE } from "@/lib/supabase/services/listeners/types";
 
 export const metadata: Metadata = {
   title: "Manage Listeners",
@@ -28,14 +32,23 @@ export default async function ListenersPage({ searchParams }: PageParams) {
   const filtered = searchParamsAsync.filtered ? true : false;
 
   const { data, error } = await getListenersAction();
-  const transformedData = data || [];
+  const transformedData = data
+    ? filtered
+      ? data.filter(({ username }) => isValidEmail(username))
+      : data
+    : [];
   //
   return (
     <main className="grid gap-4">
       <Toolbar
-        selected={transformedData.length}
+        path={PROTECTED_PATH.listeners}
+        table={TABLE}
         total={data?.length}
+        selected={transformedData.length}
         filteredIds={filtered ? transformedData.map(({ id }) => id) : undefined}
+        recipients={
+          filtered ? transformedData.map(({ username }) => username) : undefined
+        }
       />
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
@@ -44,7 +57,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
           <TableHead>Urls</TableHead>
           <TableHead className="text-right">Listeners</TableHead>
           <TableHead>Username</TableHead>
-          <TableHead>Last Seen</TableHead>
+          <TableHead>Registered</TableHead>
         </TableUI.HeaderRow>
         <TableBody>
           {transformedData.length ? (
@@ -55,7 +68,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                 <TableRow key={item.id}>
                   <TdAvatarBio
                     src={listener.podcast.lastLogoSrc}
-                    name={listener.podcast.title}
+                    name={listener.podcast.titleSeriesText}
                     email={listener.podcast.datetimeText}
                     showBadge={listener.IsUpdatedToday()}
                   />
@@ -76,7 +89,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                     />
                   </TableCell>
                   <TableUI.Amount>{listener.podcast.listeners}</TableUI.Amount>
-                  <TdBadge>{item.username}</TdBadge>
+                  <TdBadge variant={"outline"}>{item.username}</TdBadge>
                   <TableCell>{listener.createdAt}</TableCell>
                   <ListenersTableAction id={item.id} />
                 </TableRow>

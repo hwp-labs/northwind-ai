@@ -9,13 +9,15 @@ export class PodcastHelper {
     const isFiresideChat = item.series === PodcastSeriesEnum.FIRESIDE_CHAT;
     const isConcluded =
       item.listeners > 0 || momentUtil.isPastDay(item.datetime);
+    const seriesText = isFiresideChat ? "Fireside Chat" : "Design Session";
     const logoSafe = item.logo
       ? typeof item.logo === "string"
         ? [item.logo]
         : item.logo
       : [];
-    const guestUsernameSafe = typeof item.guestUsername
-      ? item.guestUsername === "string"
+    const lastLogoIndex = logoSafe.length - 1;
+    const guestUsernameSafe = item.guestUsername
+      ? typeof item.guestUsername === "string"
         ? [item.guestUsername]
         : item.guestUsername
       : [];
@@ -28,8 +30,11 @@ export class PodcastHelper {
       isOngoing: this.IsOngoing(item.datetime),
       isConcluded,
       isFiresideChat,
-      seriesText: isFiresideChat ? "Fireside Chat" : "Design Session",
-      lastLogoSrc: `/uploads/logos/${logoSafe.pop() || "hwp.png"}`,
+      seriesText,
+      titleSeriesText: item.isLongTitle
+        ? item.title
+        : `${item.title} ${seriesText}`,
+      lastLogoSrc: `/uploads/logos/${logoSafe[lastLogoIndex] || "hwp.png"}`,
       logoSafe,
       guestUsernameSafe,
     };
@@ -58,6 +63,12 @@ export class PodcastHelper {
   static GetPageItem(page = 1) {
     const i = page - 1;
     const item = (data[i] || data[0]) as PodcastDto;
+    return this._transform(item);
+  }
+
+  static GetMostRecentItem() {
+    const i = data.length - 1;
+    const item = data[i] as PodcastDto;
     return this._transform(item);
   }
 

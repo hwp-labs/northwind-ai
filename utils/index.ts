@@ -25,6 +25,9 @@ export const getStartOfDate = (d?: string) => {
   return new Date(utc).toISOString();
 };
 
+export const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 export const isValidIp = (ip: string) => {
   const ipv4 =
     /^(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)){3}$/;

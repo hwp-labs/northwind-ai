@@ -1,8 +1,7 @@
 import { Metadata } from "next";
-//
 import { WelcomeEmail } from "@/components/emails/welcome-email";
 import { PageParams } from "@/types";
-
+//
 import mockData from "@/lib/supabase/services/contacts/data.json";
 
 export const metadata: Metadata = {

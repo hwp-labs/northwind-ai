@@ -11,6 +11,7 @@ export const PATH = {
   manageCookies: "/manage-cookies",
   //
   previewWelcomeEmail: "/preview/emails/welcome",
+  previewPodcastInviteEmail: "/preview/emails/podcast-invite",
   //
   previewPostCards: "/preview/post-cards",
   previewMonthlyPostCard: "/preview/post-cards?tabIndex=1&page=5",

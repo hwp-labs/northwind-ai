@@ -23,7 +23,7 @@ export const PromptBarHero = ({
         <span>WAT</span>
       </PromptBar>
       <Hero title={<p dangerouslySetInnerHTML={{ __html }} />}>
-        {item.isLongTitle ? item.title : `${item.title} ${item.seriesText}`}
+        {item.titleSeriesText}
       </Hero>
     </>
   );

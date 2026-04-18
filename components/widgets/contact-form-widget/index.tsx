@@ -22,7 +22,7 @@ import { useContactFormWidget } from "./hook";
 
 export const ContactFormWidget = () => {
   const { form, submitting, success, setSuccess, onSubmit, onSubmitted } =
-    useContactFormWidget({ sendWelcomeEmail });
+    useContactFormWidget({ sendEmail });
   //
   return (
     <ControlledFormFieldset
@@ -54,14 +54,14 @@ export const ContactFormWidget = () => {
   );
 };
 
-const sendWelcomeEmail = async (formData: ContactSchema) => {
+const sendEmail = async (payload: ContactSchema) => {
   if (MOCK.sendWelcomeEmail.skip)
     return { data: "<fake@message.id>", error: undefined };
 
-  const body = await pretty(await render(<WelcomeEmail data={formData} />));
+  const body = await pretty(await render(<WelcomeEmail data={payload} />));
 
   return await sendEmailAction({
-    to: formData.email,
+    to: payload.email,
     subject: COPY.email.subject,
     body,
   });

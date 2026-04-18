@@ -21,6 +21,7 @@ export interface TransformedPodcastDto extends PodcastDto {
   isConcluded: boolean;
   isFiresideChat: boolean;
   seriesText: string;
+  titleSeriesText: string;
   logoSafe: string[];
   guestUsernameSafe: string[];
   lastLogoSrc: string;

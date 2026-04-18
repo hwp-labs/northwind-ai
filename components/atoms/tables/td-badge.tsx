@@ -13,22 +13,21 @@ interface Props extends PropsWithChildren {
 export const TdBadge = ({ children, label, variant }: Props) => {
   const labelSafe = label ? (typeof label === "string" ? [label] : label) : [];
 
-  if (children)
-    return (
-      <Badge variant={variant} className="m-0.5 px-1.5">
-        {children}
-      </Badge>
-    );
-
   return (
     <TableCell>
-      {label
-        ? labelSafe.map((label, i) => (
-            <Badge key={i} variant={variant} className="m-0.5 px-1.5">
-              {label}
-            </Badge>
-          ))
-        : HYPHENS}
+      {children ? (
+        <Badge variant={variant} className="m-0.5 px-1.5">
+          {children}
+        </Badge>
+      ) : label ? (
+        labelSafe.map((label, i) => (
+          <Badge key={i} variant={variant} className="m-0.5 px-1.5">
+            {label}
+          </Badge>
+        ))
+      ) : (
+        HYPHENS
+      )}
     </TableCell>
   );
 };

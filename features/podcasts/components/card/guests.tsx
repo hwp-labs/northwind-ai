@@ -11,7 +11,9 @@ interface Props {
 }
 
 export const Guests = async ({ podcast_id }: Props) => {
-  const { data: total } = await getListenersCountAction({ podcast_id });
+  const { data: total } = await getListenersCountAction({
+    filterByPodcastId: podcast_id,
+  });
   const totalSafe = (total || 0) + 5;
   //
   return (
@@ -40,7 +42,7 @@ export const Guests = async ({ podcast_id }: Props) => {
           </Avatar>
         ))}
       </AvatarGroup>
-      <figcaption className="text-xs font-medium hidden sm:block">
+      <figcaption className="hidden text-xs font-medium sm:block">
         {totalSafe} RSVP
       </figcaption>
     </figure>

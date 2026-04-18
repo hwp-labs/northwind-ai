@@ -7,14 +7,17 @@ import {
   TableRow,
 } from "@/components/shadcn/ui/table";
 import { TableUI } from "@/components/atoms/tables/table-ui";
+import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
+import { TdBadge } from "@/components/atoms/tables/td-badge";
 import { Toolbar } from "@/features/dashboard/components/toolbar";
+import { PageParams } from "@/types";
+import { PROTECTED_PATH } from "@/constants/PATH";
+// 
 import { VisitorsTableAction } from "@/features/visitors/components/visitors-table-action";
 import { VisitorsTableEmpty } from "@/features/visitors/components/visitors-table-empty";
 import { VisitorHelper } from "@/lib/supabase/services/visitors/helper";
 import { getVisitorsAction } from "@/lib/supabase/services/visitors/actions/getVisitorsAction";
-import { PageParams } from "@/types";
-import { TdBadge } from "@/components/atoms/tables/td-badge";
-import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
+import { TABLE } from "@/lib/supabase/services/visitors/types";
 
 export const metadata: Metadata = {
   title: "Manage Visitors",
@@ -49,8 +52,10 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
   return (
     <main className="grid gap-4">
       <Toolbar
-        selected={transformedData.length}
+        path={PROTECTED_PATH.visitors}
+        table={TABLE}
         total={data?.length}
+        selected={transformedData.length}
         filteredIds={filtered ? transformedData.map(({ id }) => id) : undefined}
       />
       <TableUI.Container>

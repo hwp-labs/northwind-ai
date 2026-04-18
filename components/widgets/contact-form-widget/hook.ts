@@ -16,7 +16,7 @@ import { PATH } from "@/constants/PATH";
 import { M, defaultValues, prepareCreateContactPayload } from "./utils";
 
 interface Params {
-  sendWelcomeEmail?: (formData: ContactSchema) => Promise<ApiResponse<string>>;
+  sendEmail?: (formData: ContactSchema) => Promise<ApiResponse<string>>;
 }
 
 export function useContactFormWidget(params?: Params) {
@@ -52,8 +52,8 @@ export function useContactFormWidget(params?: Params) {
         return;
       }
 
-      if (params?.sendWelcomeEmail) {
-        const { error } = await params.sendWelcomeEmail(formData);
+      if (params?.sendEmail) {
+        const { error } = await params.sendEmail(formData);
 
         if (error) {
           toast.error(error);

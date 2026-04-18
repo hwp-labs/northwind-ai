@@ -11,10 +11,10 @@ interface MockParams {
 
 export const MOCK = {
   explorer: {
-    show: 1,
+    show: 0,
   },
   useDeviceDetails: {
-    skip: 1,
+    skip: 0,
   },
   VisitorTrackerWidget: {
     show: 0,
@@ -34,7 +34,7 @@ export const MOCK = {
     router: 0,
   },
   podcastRsvp: {
-    formData: 1,
+    formData: 0,
     action: 0,
     router: 0,
   },
