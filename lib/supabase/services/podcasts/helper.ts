@@ -9,6 +9,16 @@ export class PodcastHelper {
     const isFiresideChat = item.series === PodcastSeriesEnum.FIRESIDE_CHAT;
     const isConcluded =
       item.listeners > 0 || momentUtil.isPastDay(item.datetime);
+    const logoSafe = item.logo
+      ? typeof item.logo === "string"
+        ? [item.logo]
+        : item.logo
+      : [];
+    const guestUsernameSafe = typeof item.guestUsername
+      ? item.guestUsername === "string"
+        ? [item.guestUsername]
+        : item.guestUsername
+      : [];
 
     return {
       ...item,
@@ -19,11 +29,9 @@ export class PodcastHelper {
       isConcluded,
       isFiresideChat,
       seriesText: isFiresideChat ? "Fireside Chat" : "Design Session",
-      logoSafe: item.logo
-        ? typeof item.logo === "string"
-          ? [item.logo]
-          : item.logo
-        : [],
+      lastLogoSrc: `/uploads/logos/${logoSafe.pop()}`,
+      logoSafe,
+      guestUsernameSafe,
     };
   };
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { ShipmentList } from "@/features/go-send-am/shipment-list";
-import shipmentsData from "@/features/go-send-am/shipment-list/data.json";
+import { ShipmentList } from "@/lib/go-send-am/shipment-list";
+import shipmentsData from "@/lib/go-send-am/shipment-list/data.json";
 
 export default function GoSendAmPage() {
   return (

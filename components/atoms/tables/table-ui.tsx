@@ -1,5 +1,8 @@
 import { PropsWithChildren } from "react";
+import clsx from "clsx";
 //
+import { Badge } from "@/components/shadcn/ui/badge";
+import { Skeleton } from "@/components/shadcn/ui/skeleton";
 import {
   Table,
   TableHead,
@@ -7,16 +10,15 @@ import {
   TableRow,
   TableCell,
 } from "@/components/shadcn/ui/table";
-import { Badge } from "@/components/shadcn/ui/badge";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@/components/shadcn/ui/avatar";
 import { Indicator } from "../indicator";
-import { ColorVariantType } from "@/types";
 import { UNKNOWN, HYPHENS } from "@/constants";
-import { Skeleton } from "@/components/shadcn/ui/skeleton";
+import { ColorVariantType } from "@/types";
+import { BadgeVariantType } from "@/components/shadcn/types";
 
 const Container = ({ children }: PropsWithChildren) => {
   return (
@@ -80,14 +82,10 @@ const CellAvatarBio = ({
           )}
           {showBadge && <Indicator />}
         </div>
-        <div className="grid gap-0.5 text-sm leading-tight">
-          <span className="_font-medium truncate text-sm">
-            {name || HYPHENS}
-          </span>
+        <div className="grid gap-0.5 text-sm leading-tight whitespace-nowrap">
+          <span className="_font-medium text-sm">{name || HYPHENS}</span>
           {email ? (
-            <span className="text-muted-foreground truncate text-xs">
-              {email}
-            </span>
+            <span className="text-muted-foreground text-xs">{email}</span>
           ) : null}
         </div>
       </div>
@@ -103,12 +101,23 @@ const CellAmount = ({ children, variant }: CellAmountProps) => {
   return <TableCell className={`text-right`}>{children}</TableCell>;
 };
 
-const CellBadge = ({ children }: PropsWithChildren) => {
+interface CellBadgeProps {
+  text?: string | string[] | null;
+  variant?: BadgeVariantType;
+}
+
+const CellBadge = ({ variant, text }: CellBadgeProps) => {
+  const textSafe = text ? (typeof text === "string" ? [text] : text) : [];
+  // 
   return (
     <TableCell>
-      <Badge variant="outline" className="text-muted-foreground px-1.5">
-        {children}
-      </Badge>
+      {text
+        ? textSafe.map((text, i) => (
+            <Badge key={i} variant={variant} className="m-0.5 px-1.5">
+              {text}
+            </Badge>
+          ))
+        : HYPHENS}
     </TableCell>
   );
 };

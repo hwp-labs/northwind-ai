@@ -24,25 +24,8 @@ export default async function ListenersPage({ searchParams }: PageParams) {
   const searchParamsAsync = await searchParams;
   const filtered = searchParamsAsync.filtered ? true : false;
 
-  const { data, error } = await getListenersAction({
-    sortBy: "updated_at",
-  });
-
-  const transformedData = data
-    ? filtered
-      ? data.filter(({ geolocation }) => {
-          if (geolocation && geolocation.latitude && geolocation.longitude) {
-            const [lat, lng] = [
-              Number(process.env.NEXT_PUBLIC_BLACKLIST_LATITUDE || 0),
-              Number(process.env.NEXT_PUBLIC_BLACKLIST_LONGITUDE || 0),
-            ];
-            return (
-              geolocation.latitude === lat && geolocation.longitude === lng
-            );
-          }
-        })
-      : data
-    : [];
+  const { data, error } = await getListenersAction();
+  const transformedData = data || [];
   //
   return (
     <main className="grid gap-4">
@@ -53,11 +36,13 @@ export default async function ListenersPage({ searchParams }: PageParams) {
       />
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
-          <TableHead>IP Address</TableHead>
-          <TableHead className="text-right">Visits</TableHead>
-          <TableHead>Device</TableHead>
-          <TableHead>Platform</TableHead>
-          <TableHead>Geolocation</TableHead>
+          <TableHead>Podcast</TableHead>
+          <TableHead>Guest</TableHead>
+          <TableHead>notionUrl</TableHead>
+          <TableHead>spaceUrl</TableHead>
+          <TableHead>Username</TableHead>
+          <TableHead>Listeners</TableHead>
+          <TableHead>Series</TableHead>
           <TableHead>Last Seen</TableHead>
         </TableUI.HeaderRow>
         <TableBody>
@@ -68,19 +53,24 @@ export default async function ListenersPage({ searchParams }: PageParams) {
               return (
                 <TableRow key={item.id}>
                   <TableUI.CellAvatarBio
-                    name={item.ip_address}
-                    email={item.pathname}
+                    src={listener.podcast.lastLogoSrc}
+                    name={listener.podcast.title}
+                    email={listener.podcast.datetimeText}
                     showBadge={listener.IsUpdatedToday()}
                   />
-                  <TableCell className="text-right">{item.visits}</TableCell>
-                  <TableUI.CellBadge>{item.username}</TableUI.CellBadge>
-                  <TableCell>{item.username}</TableCell>
-                  <TableUI.CellAvatarBio
-                    name={listener.location}
-                    email={listener.geolocation}
-                    textOnly
+                  <TableUI.CellBadge
+                    text={listener.podcast.guestUsername}
+                    variant="secondary"
                   />
-                  <TableCell>{listener.updatedAt}</TableCell>
+                  <TableCell>{listener.podcast.notionUrl}</TableCell>
+                  <TableCell>{listener.podcast.spaceUrl}</TableCell>
+                  <TableUI.CellBadge
+                    text={item.username}
+                    // variant="outline-muted"
+                  />
+                  <TableCell>{listener.podcast.listeners}</TableCell>
+                  <TableCell>{listener.podcast.seriesText}</TableCell>
+                  <TableCell>{listener.createdAt}</TableCell>
                   <ListenersTableAction id={item.id} />
                 </TableRow>
               );

@@ -22,6 +22,8 @@ export interface TransformedPodcastDto extends PodcastDto {
   isFiresideChat: boolean;
   seriesText: string;
   logoSafe: string[];
+  guestUsernameSafe: string[];
+  lastLogoSrc: string;
 }
 
 export enum PodcastSeriesEnum {

@@ -39,7 +39,9 @@ export function useRsvpAvatarGroup(podcast_id: number) {
     if (listeners) {
       setTotal(listeners);
     } else {
-      const { data: total } = await getListenersCountAction({ podcast_id });
+      const { data: total } = await getListenersCountAction({
+        filterByPodcastId: podcast_id,
+      });
       setTotal(total || 1);
     }
   }
@@ -57,7 +59,6 @@ const transformLogos = (logos: string[]) => {
       alt: item.charAt(0),
     }),
   );
-
 
   return arr;
 };
