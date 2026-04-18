@@ -3,6 +3,7 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import clsx from "clsx";
 //
+import { AnchorOutbound } from "@/components/atoms/anchor";
 import {
   PodcastDto,
   TransformedPodcastDto,
@@ -72,15 +73,13 @@ const Speaker = ({
       {label}
       <FaTwitter size={12} />
     </span>
-    <a
+    <AnchorOutbound
       href={`https://x.com/${value.replace("@", "")}`}
-      target="_blank"
-      rel="noopener noreferrer"
       className="font-semibold"
       style={{ textShadow: "-1px 1px 1px white" }}
     >
       {value}
-    </a>
+    </AnchorOutbound>
   </li>
 );
 
@@ -122,17 +121,14 @@ const Hero = (item: TransformedPodcastDto) => {
 
 const PoweredBy = ({ notionUrl, customTag }: PodcastDto) => (
   <footer className="absolute right-8 bottom-5 z-1">
-    <a
+    <AnchorOutbound
       href={notionUrl || "#"}
-      target="_blank"
-      rel="noopener noreferrer"
       className="flex-row-cs text-foreground _debug gap-2 text-xs font-medium"
     >
       {customTag === PodcastCustomTagEnum.VERSE_RADIO ? (
         <>
           Official Token of
-          <img src="/uploads/logos/bitcoin.png" alt="" width={20} />{" "}
-          Bitcoin
+          <img src="/uploads/logos/bitcoin.png" alt="" width={20} /> Bitcoin
         </>
       ) : (
         <>
@@ -140,7 +136,7 @@ const PoweredBy = ({ notionUrl, customTag }: PodcastDto) => (
           <img src="/uploads/logos/notion.png" alt="" width={20} /> Notion
         </>
       )}
-    </a>
+    </AnchorOutbound>
   </footer>
 );
 

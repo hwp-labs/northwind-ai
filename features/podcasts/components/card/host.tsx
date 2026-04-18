@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { AnchorOutbound } from "@/components/atoms/anchor";
 
 export const Host = () => {
   return (
@@ -9,17 +9,15 @@ export const Host = () => {
         className="size-[32px] rounded-full ring-2 ring-white"
       />
       <figcaption>
-        <Link
+        <AnchorOutbound
           href="https://x.com/2gbeh"
-          target="_blank"
-          rel="noopener noreferrer"
           className="flex-row-cs gap-1.5 font-medium"
         >
           @2gbeh
           <span className="rounded bg-[#ae8aea] px-1.5 py-0.5 text-xs font-normal">
             Host
           </span>
-        </Link>
+        </AnchorOutbound>
       </figcaption>
     </figure>
   );

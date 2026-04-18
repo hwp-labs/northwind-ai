@@ -2,6 +2,7 @@ import { FaMicrophoneAlt, FaMicrophoneAltSlash } from "react-icons/fa";
 import { SquareArrowOutUpRightIcon, CalendarClockIcon } from "lucide-react";
 import clsx from "clsx";
 //
+import { AnchorOutbound } from "@/components/atoms/anchor";
 import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
 export const Header = ({
@@ -12,7 +13,7 @@ export const Header = ({
   timeText,
 }: TransformedPodcastDto) => {
   return (
-    <header className="flex-row-cb debug_ mt-6 font-[Poppins] text-xs sm:text-sm font-medium text-white">
+    <header className="flex-row-cb debug_ mt-6 font-[Poppins] text-xs font-medium text-white sm:text-sm">
       {/* LEFT */}
       <section className="flex-row-cs gap-2">
         <div className="relative">
@@ -35,16 +36,14 @@ export const Header = ({
       {/* RIGHT */}
       <section>
         {isOngoing ? (
-          <a
-            href={spaceUrl || "#"}
+          <AnchorOutbound
+            href={spaceUrl || undefined}
             title="Join"
-            target="_blank"
-            rel="noopener noreferrer"
             className="_debug flex-row-cs ml-auto gap-1.5"
           >
             Live
             <SquareArrowOutUpRightIcon size={16} strokeWidth={3} />
-          </a>
+          </AnchorOutbound>
         ) : (
           <span className="flex-row-cs gap-2">
             <CalendarClockIcon size={18} />

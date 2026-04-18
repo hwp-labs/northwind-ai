@@ -19,7 +19,7 @@ interface Props {
   onChange: (value: string, item?: MenuType) => void;
 }
 
-export const TableCellAction = ({
+export const TdAction = ({
   menu,
   onChange = () => undefined,
 }: Props) => {

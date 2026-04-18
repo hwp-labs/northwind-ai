@@ -1,7 +1,5 @@
 import { PropsWithChildren } from "react";
-import clsx from "clsx";
 //
-import { Badge } from "@/components/shadcn/ui/badge";
 import { Skeleton } from "@/components/shadcn/ui/skeleton";
 import {
   Table,
@@ -10,15 +8,7 @@ import {
   TableRow,
   TableCell,
 } from "@/components/shadcn/ui/table";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/shadcn/ui/avatar";
-import { Indicator } from "../indicator";
-import { UNKNOWN, HYPHENS } from "@/constants";
 import { ColorVariantType } from "@/types";
-import { BadgeVariantType } from "@/components/shadcn/types";
 
 const Container = ({ children }: PropsWithChildren) => {
   return (
@@ -51,77 +41,6 @@ const HeaderRow = ({ children, isNumbered, hasAction }: HeaderRowProps) => {
   );
 };
 
-interface CellAvatarBioProps {
-  src?: string;
-  srcText?: string | number;
-  name?: string;
-  email?: string;
-  textOnly?: boolean;
-  showBadge?: boolean;
-}
-
-const CellAvatarBio = ({
-  src,
-  srcText,
-  name,
-  email,
-  textOnly,
-  showBadge,
-}: CellAvatarBioProps) => {
-  return (
-    <TableCell>
-      <div className="flex-center-start gap-2.5">
-        <div className="relative">
-          {textOnly ? null : (
-            <Avatar className="size-8">
-              <AvatarImage src={src || undefined} />
-              <AvatarFallback>
-                {srcText || (name || UNKNOWN).charAt(0).toUpperCase()}
-              </AvatarFallback>
-            </Avatar>
-          )}
-          {showBadge && <Indicator />}
-        </div>
-        <div className="grid gap-0.5 text-sm leading-tight whitespace-nowrap">
-          <span className="_font-medium text-sm">{name || HYPHENS}</span>
-          {email ? (
-            <span className="text-muted-foreground text-xs">{email}</span>
-          ) : null}
-        </div>
-      </div>
-    </TableCell>
-  );
-};
-
-interface CellAmountProps extends PropsWithChildren {
-  variant?: ColorVariantType;
-}
-
-const CellAmount = ({ children, variant }: CellAmountProps) => {
-  return <TableCell className={`text-right`}>{children}</TableCell>;
-};
-
-interface CellBadgeProps {
-  text?: string | string[] | null;
-  variant?: BadgeVariantType;
-}
-
-const CellBadge = ({ variant, text }: CellBadgeProps) => {
-  const textSafe = text ? (typeof text === "string" ? [text] : text) : [];
-  // 
-  return (
-    <TableCell>
-      {text
-        ? textSafe.map((text, i) => (
-            <Badge key={i} variant={variant} className="m-0.5 px-1.5">
-              {text}
-            </Badge>
-          ))
-        : HYPHENS}
-    </TableCell>
-  );
-};
-
 const TBodySkeleton = () => {
   return (
     <TableRow>
@@ -131,12 +50,32 @@ const TBodySkeleton = () => {
     </TableRow>
   );
 };
+interface AmountProps extends PropsWithChildren {
+  variant?: ColorVariantType;
+}
+
+const Amount = ({ children, variant }: AmountProps) => {
+  return <TableCell className="text-right">{children}</TableCell>;
+};
+interface UrlProps {
+  label: string;
+  value?: string | null;
+  icon?: React.ReactNode;
+}
+
+const Url = ({ label, value, icon }: UrlProps) => {
+  return (
+    <a href={value || "#"} className="debug_ flex-row-cs m-1 gap-1.5">
+      {icon}
+      <span className="underline _underline-offset-2">{label}</span>
+    </a>
+  );
+};
 
 export const TableUI = {
   Container,
   HeaderRow,
-  CellAvatarBio,
-  CellAmount,
-  CellBadge,
   TBodySkeleton,
+  Amount,
+  Url,
 };

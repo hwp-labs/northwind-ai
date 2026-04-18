@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { IconBrandNotion, IconBrandX } from "@tabler/icons-react";
 //
 import {
   TableBody,
@@ -7,6 +8,8 @@ import {
   TableRow,
 } from "@/components/shadcn/ui/table";
 import { TableUI } from "@/components/atoms/tables/table-ui";
+import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
+import { TdBadge } from "@/components/atoms/tables/td-badge";
 import { Toolbar } from "@/features/dashboard/components/toolbar";
 import { ListenersTableAction } from "@/features/listeners/components/listeners-table-action";
 import { ListenersTableEmpty } from "@/features/listeners/components/listeners-table-empty";
@@ -38,11 +41,9 @@ export default async function ListenersPage({ searchParams }: PageParams) {
         <TableUI.HeaderRow hasAction>
           <TableHead>Podcast</TableHead>
           <TableHead>Guest</TableHead>
-          <TableHead>notionUrl</TableHead>
-          <TableHead>spaceUrl</TableHead>
+          <TableHead>Urls</TableHead>
+          <TableHead className="text-right">Listeners</TableHead>
           <TableHead>Username</TableHead>
-          <TableHead>Listeners</TableHead>
-          <TableHead>Series</TableHead>
           <TableHead>Last Seen</TableHead>
         </TableUI.HeaderRow>
         <TableBody>
@@ -52,24 +53,30 @@ export default async function ListenersPage({ searchParams }: PageParams) {
               //
               return (
                 <TableRow key={item.id}>
-                  <TableUI.CellAvatarBio
+                  <TdAvatarBio
                     src={listener.podcast.lastLogoSrc}
                     name={listener.podcast.title}
                     email={listener.podcast.datetimeText}
                     showBadge={listener.IsUpdatedToday()}
                   />
-                  <TableUI.CellBadge
-                    text={listener.podcast.guestUsername}
+                  <TdBadge
+                    label={listener.podcast.guestUsername}
                     variant="secondary"
                   />
-                  <TableCell>{listener.podcast.notionUrl}</TableCell>
-                  <TableCell>{listener.podcast.spaceUrl}</TableCell>
-                  <TableUI.CellBadge
-                    text={item.username}
-                    // variant="outline-muted"
-                  />
-                  <TableCell>{listener.podcast.listeners}</TableCell>
-                  <TableCell>{listener.podcast.seriesText}</TableCell>
+                  <TableCell>
+                    <TableUI.Url
+                      label="Notion"
+                      value={listener.podcast.notionUrl}
+                      icon={<IconBrandNotion size={16} />}
+                    />
+                    <TableUI.Url
+                      label="Space"
+                      value={listener.podcast.spaceUrl}
+                      icon={<IconBrandX size={16} />}
+                    />
+                  </TableCell>
+                  <TableUI.Amount>{listener.podcast.listeners}</TableUI.Amount>
+                  <TdBadge>{item.username}</TdBadge>
                   <TableCell>{listener.createdAt}</TableCell>
                   <ListenersTableAction id={item.id} />
                 </TableRow>

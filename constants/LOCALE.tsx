@@ -3,6 +3,7 @@ import {
   IconPigFilled,
   IconStarFilled,
 } from "@tabler/icons-react";
+import { AnchorOutbound } from "@/components/atoms/anchor";
 import { APP } from "./APP";
 
 export const COPY = {
@@ -35,14 +36,12 @@ export const COPY = {
   transformRichTextWithLink: (
     <>
       -transform repetitive business processes into smart, autonomous{" "}
-      <a
+      <AnchorOutbound
         href="https://agent.ai/"
-        target="_blank"
-        rel="noopener noreferrer"
         className="text-brand font-medium underline underline-offset-2"
       >
         AI agents.
-      </a>
+      </AnchorOutbound>
     </>
   ),
   whatWeDo:
@@ -64,9 +63,10 @@ export const COPY = {
       description: (
         <>
           {/* Deliver fast and reliable services with AI-powered automation. */}
-          AI-powered automation ensures 99% accuracy across internal business processes, and{" "}
-          <span className="_font-medium text-white">learns and adapts</span>{" "}
-          as your business grows.
+          AI-powered automation ensures 99% accuracy across internal business
+          processes, and{" "}
+          <span className="_font-medium text-white">learns and adapts</span> as
+          your business grows.
         </>
       ),
     },
@@ -76,5 +76,5 @@ export const COPY = {
       description: `Convert 10x more sales leads with seamless multi-channel integrations
       that exceed customer expectations, builds trust and brand loyalty.`,
     },
-  ]
+  ],
 };

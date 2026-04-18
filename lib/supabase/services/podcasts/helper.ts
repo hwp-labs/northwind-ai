@@ -29,7 +29,7 @@ export class PodcastHelper {
       isConcluded,
       isFiresideChat,
       seriesText: isFiresideChat ? "Fireside Chat" : "Design Session",
-      lastLogoSrc: `/uploads/logos/${logoSafe.pop()}`,
+      lastLogoSrc: `/uploads/logos/${logoSafe.pop() || "hwp.png"}`,
       logoSafe,
       guestUsernameSafe,
     };

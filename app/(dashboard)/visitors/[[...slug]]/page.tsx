@@ -13,6 +13,8 @@ import { VisitorsTableEmpty } from "@/features/visitors/components/visitors-tabl
 import { VisitorHelper } from "@/lib/supabase/services/visitors/helper";
 import { getVisitorsAction } from "@/lib/supabase/services/visitors/actions/getVisitorsAction";
 import { PageParams } from "@/types";
+import { TdBadge } from "@/components/atoms/tables/td-badge";
+import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
 
 export const metadata: Metadata = {
   title: "Manage Visitors",
@@ -66,19 +68,19 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
               //
               return (
                 <TableRow key={item.id}>
-                  <TableUI.CellAvatarBio
+                  <TdAvatarBio
                     srcText={item.visits}
                     name={item.ip_address}
                     email={item.pathname}
                     showBadge={visitor.IsUpdatedToday()}
                   />
-                  <TableUI.CellAvatarBio
+                  <TdAvatarBio
                     name={visitor.location}
                     email={visitor.geolocation}
                     textOnly
                   />
                   <TableCell>{item.platform}</TableCell>
-                  <TableUI.CellBadge>{visitor.device}</TableUI.CellBadge>
+                  <TdBadge>{visitor.device}</TdBadge>
                   <TableCell>{visitor.updatedAt}</TableCell>
                   <VisitorsTableAction id={item.id} />
                 </TableRow>

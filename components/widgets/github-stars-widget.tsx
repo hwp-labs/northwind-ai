@@ -6,6 +6,7 @@ import useSWR from "swr";
 import { FaGithub } from "react-icons/fa6";
 //
 import { Skeleton } from "../shadcn/ui/skeleton";
+import { AnchorOutbound } from "../atoms/anchor";
 import { APP } from "@/constants/APP";
 import { useAppStore } from "@/store/appStore";
 
@@ -34,11 +35,9 @@ export const GithubStarsWidget = () => {
       {isLoading ? (
         <Skeleton className="border-outline h-6 w-12 rounded-lg border bg-white/5" />
       ) : (
-        <a
+        <AnchorOutbound
           href={APP.repositoryUrl}
           title="View Source"
-          target="_blank"
-          rel="noopener noreferrer"
           className="flex-row-cc border-outline debug_ gap-2.5 rounded-md border py-0.5 pr-2.5 pl-1.5 text-white"
         >
           <FaGithub />
@@ -46,7 +45,7 @@ export const GithubStarsWidget = () => {
             {stargazers_count}
             {/* +15.9k */}
           </span>
-        </a>
+        </AnchorOutbound>
       )}
     </div>
   );
