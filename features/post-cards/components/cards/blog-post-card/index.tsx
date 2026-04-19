@@ -1,13 +1,7 @@
 import clsx from "clsx";
 import { CardBuilder } from "../../card-builder";
 //
-import {
-  Thumbnail,
-  DateLocation,
-  EventDetails,
-  Headline,
-  Footer,
-} from "./builder";
+import { Builder as B } from "./builder";
 import { IBlog } from "./interface";
 import data from "./data.json";
 
@@ -30,7 +24,7 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
         <CardBuilder.AvatarGroup src={src} />
       </CardBuilder.Header>
       <main className="relative flex-1 overflow-hidden">
-        <Thumbnail {...item} />
+        <B.Thumbnail {...item} />
         <article className="bg-background/90 absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white">
           <section
             className={clsx(
@@ -39,13 +33,13 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
             )}
           >
             {item.event ? (
-              <EventDetails {...item} />
+              <B.EventDetails {...item} />
             ) : (
-              <DateLocation {...item} />
+              <B.DateLocation {...item} />
             )}
           </section>
-          <Headline {...item} />
-          <Footer {...item} />
+          <B.Headline {...item} />
+          <B.Footer {...item} />
         </article>
       </main>
     </>

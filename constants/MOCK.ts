@@ -43,4 +43,7 @@ export const MOCK = {
   sendWelcomeEmail: {
     skip: 0,
   },
+  sendPodcastInviteEmail: {
+    formData: devMode,
+  },
 } as const satisfies Record<string, MockParams>;

@@ -111,7 +111,7 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
                     //   {
                     //     label: "Duplicate",
                     //     value: "Duplicate",
-                    //     hasSeparator: true,
+                    //     separator: true,
                     //   },
                     // ]}
                   />

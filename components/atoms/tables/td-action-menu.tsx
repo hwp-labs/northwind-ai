@@ -20,7 +20,7 @@ import { deleteAction } from "@/lib/supabase/services/base/actions/deleteAction"
 
 type MenuType = OptionItem & {
   onClick?: (value: string, item?: MenuType) => Promise<void>;
-  hasSeparator?: boolean;
+  separator?: boolean;
 };
 
 interface Props {
@@ -86,7 +86,7 @@ export const TdActionMenu = ({
           {[...menu, ...actions].map((item, i) => {
             return (
               <Fragment key={i}>
-                {item.hasSeparator && <DropdownMenuSeparator />}
+                {item.separator && <DropdownMenuSeparator />}
                 <DropdownMenuItem
                   disabled={item.disabled}
                   onSelect={() =>

@@ -72,4 +72,10 @@ const Footer = ({ categories, url }: IBlog) => (
   </footer>
 );
 
-export { Thumbnail, DateLocation, EventDetails, Headline, Footer };
+export const Builder = {
+  Thumbnail,
+  DateLocation,
+  EventDetails,
+  Headline,
+  Footer,
+};
