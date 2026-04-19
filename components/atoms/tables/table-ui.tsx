@@ -41,6 +41,10 @@ const HeaderRow = ({ children, isNumbered, hasAction }: HeaderRowProps) => {
   );
 };
 
+const ThAlignRight = ({ children }: PropsWithChildren) => {
+  return <TableHead className="text-right">{children}</TableHead>;
+};
+
 const TBodySkeleton = () => {
   return (
     <TableRow>
@@ -67,7 +71,7 @@ const Url = ({ label, value, icon }: UrlProps) => {
   return (
     <a href={value || "#"} className="debug_ flex-row-cs m-1 gap-1.5">
       {icon}
-      <span className="underline _underline-offset-2">{label}</span>
+      <span className="_underline-offset-2 underline">{label}</span>
     </a>
   );
 };
@@ -75,6 +79,7 @@ const Url = ({ label, value, icon }: UrlProps) => {
 export const TableUI = {
   Container,
   HeaderRow,
+  ThAlignRight,
   TBodySkeleton,
   Amount,
   Url,

@@ -53,7 +53,7 @@ export const PodcastInviteEmail = ({ data }: Props) => {
                 href={data.spaceUrl || "#"}
                 style={{
                   color: "white",
-                  backgroundColor: "#D946EF",
+                  backgroundColor: APP.colors.fuchsia,
                   borderRadius: 8,
                   padding: 8,
                   textAlign: "center",

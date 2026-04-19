@@ -9,12 +9,14 @@ interface MockParams {
   skip?: number | boolean;
 }
 
+const devMode = 1;
+
 export const MOCK = {
   explorer: {
-    show: 0,
+    show: devMode,
   },
   useDeviceDetails: {
-    skip: 0,
+    skip: devMode,
   },
   VisitorTrackerWidget: {
     show: 0,
@@ -34,7 +36,7 @@ export const MOCK = {
     router: 0,
   },
   podcastRsvp: {
-    formData: 0,
+    formData: devMode,
     action: 0,
     router: 0,
   },

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
 import Link from "next/link";
 import { Trash2Icon, SendIcon } from "lucide-react";
 import { render, pretty } from "@react-email/render";
@@ -15,7 +15,7 @@ import { deleteAction } from "@/lib/supabase/services/base/actions/deleteAction"
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-interface Props {
+interface Props extends PropsWithChildren {
   path: string;
   table: string;
   total?: number;
@@ -25,6 +25,7 @@ interface Props {
 }
 
 export const Toolbar = ({
+  children,
   path,
   table,
   total = 0,
@@ -98,6 +99,7 @@ export const Toolbar = ({
             {item.label}
           </Link>
         ))}
+        {children}
         {/* DELETE */}
         {filteredIds.length ? (
           <>

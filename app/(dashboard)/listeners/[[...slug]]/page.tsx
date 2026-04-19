@@ -10,21 +10,24 @@ import {
 import { TableUI } from "@/components/atoms/tables/table-ui";
 import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
 import { TdBadge } from "@/components/atoms/tables/td-badge";
-import { Toolbar } from "@/features/dashboard/components/toolbar";
+import { TdAction } from "@/components/atoms/tables/td-action";
+import { TableEmpty } from "@/components/atoms/tables/table-empty";
 import { isValidEmail } from "@/utils";
 import { PageParams } from "@/types";
 import { PROTECTED_PATH } from "@/constants/PATH";
 //
-import { ListenersTableAction } from "@/features/listeners/components/listeners-table-action";
-import { ListenersTableEmpty } from "@/features/listeners/components/listeners-table-empty";
+import { Toolbar } from "@/features/dashboard/components/toolbar";
 import { ListenerHelper } from "@/lib/supabase/services/listeners/helper";
 import { getListenersAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
 import { TABLE } from "@/lib/supabase/services/listeners/types";
+import { ListenersToolbar } from "@/features/listeners/components/listeners-toolbar";
 
 export const metadata: Metadata = {
   title: "Manage Listeners",
 };
 
+const path = PROTECTED_PATH.listeners;
+const table = TABLE;
 const listener = new ListenerHelper();
 
 export default async function ListenersPage({ searchParams }: PageParams) {
@@ -41,21 +44,23 @@ export default async function ListenersPage({ searchParams }: PageParams) {
   return (
     <main className="grid gap-4">
       <Toolbar
-        path={PROTECTED_PATH.listeners}
-        table={TABLE}
+        path={path}
+        table={table}
         total={data?.length}
         selected={transformedData.length}
         filteredIds={filtered ? transformedData.map(({ id }) => id) : undefined}
         recipients={
           filtered ? transformedData.map(({ username }) => username) : undefined
         }
-      />
+      >
+        <ListenersToolbar />
+      </Toolbar>
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
           <TableHead>Podcast</TableHead>
           <TableHead>Guest</TableHead>
           <TableHead>Urls</TableHead>
-          <TableHead className="text-right">Listeners</TableHead>
+          <TableUI.ThAlignRight>Listeners</TableUI.ThAlignRight>
           <TableHead>Username</TableHead>
           <TableHead>Registered</TableHead>
         </TableUI.HeaderRow>
@@ -91,12 +96,25 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                   <TableUI.Amount>{listener.podcast.listeners}</TableUI.Amount>
                   <TdBadge variant={"outline"}>{item.username}</TdBadge>
                   <TableCell>{listener.createdAt}</TableCell>
-                  <ListenersTableAction id={item.id} />
+                  <TdAction
+                    path={path}
+                    table={table}
+                    id={item.id}
+                    canDelete
+                    actions={[
+                      { label: "Receipt", value: "Receipt", disabled: true },
+                      {
+                        label: "Duplicate",
+                        value: "Duplicate",
+                        hasSeparator: true,
+                      },
+                    ]}
+                  />
                 </TableRow>
               );
             })
           ) : (
-            <ListenersTableEmpty />
+            <TableEmpty />
           )}
         </TableBody>
       </TableUI.Container>
