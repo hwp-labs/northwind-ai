@@ -1,27 +1,41 @@
 "use client";
 
+import { useState } from "react";
+import { SendIcon } from "lucide-react";
+import { render, pretty } from "@react-email/render";
+//
 import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
-import { SendIcon } from "lucide-react";
+import { PodcastInviteEmail } from "@/components/emails/podcast-invite-email";
+import { useToast } from "@/hooks/use-toast";
+import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
+import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-export const ListenersToolbar = ({ id }: { id: PrimaryKeyType }) => {
+interface Props {
+  recipients?: string[];
+}
+
+export const ListenersToolbar = ({ recipients = [] }: Props) => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
 
-  const handleAction = async (value: string) => {
-    if (value !== "delete") return;
+  const handleSendEmail = async () => {
+    if (!recipients.length) {
+      toast.error("No emails selected");
+      return;
+    }
 
-    if (confirm("Confirm delete?")) {
+    if (confirm("Send email invite?")) {
       setLoading(true);
 
-      const { data, error } = await deleteAction({
-        path: PROTECTED_PATH.industries,
-        table: TABLE,
-        id,
+      const { error } = await sendEmail({
+        recipients,
+        podcast: PodcastHelper.GetMostRecentItem(),
       });
 
       if (error) toast.error(error);
-      if (data) toast.success(`Row id ${id} deleted!`);
+      else toast.success(`${recipients.length} invites sent!`);
 
       setLoading(false);
     }
@@ -32,4 +46,22 @@ export const ListenersToolbar = ({ id }: { id: PrimaryKeyType }) => {
       {loading ? <Spinner /> : <SendIcon />}
     </Button>
   );
+};
+
+const sendEmail = async ({
+  recipients,
+  podcast,
+}: {
+  recipients: string[];
+  podcast: TransformedPodcastDto;
+}) => {
+  const body = await pretty(
+    await render(<PodcastInviteEmail data={podcast} />),
+  );
+
+  return await sendEmailAction({
+    to: recipients,
+    subject: podcast.titleSeriesText,
+    body,
+  });
 };

@@ -10,17 +10,17 @@ import {
 import { TableUI } from "@/components/atoms/tables/table-ui";
 import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
 import { TdBadge } from "@/components/atoms/tables/td-badge";
-import { TdAction } from "@/components/atoms/tables/td-action";
+import { TdActionMenu } from "@/components/atoms/tables/td-action-menu";
 import { TableEmpty } from "@/components/atoms/tables/table-empty";
+import { Toolbar } from "@/features/dashboard/components/toolbar";
 import { isValidEmail } from "@/utils";
 import { PageParams } from "@/types";
 import { PROTECTED_PATH } from "@/constants/PATH";
 //
-import { Toolbar } from "@/features/dashboard/components/toolbar";
+import { ListenersToolbar } from "@/features/listeners/components/listeners-toolbar";
 import { ListenerHelper } from "@/lib/supabase/services/listeners/helper";
 import { getListenersAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
 import { TABLE } from "@/lib/supabase/services/listeners/types";
-import { ListenersToolbar } from "@/features/listeners/components/listeners-toolbar";
 
 export const metadata: Metadata = {
   title: "Manage Listeners",
@@ -35,6 +35,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
   const filtered = searchParamsAsync.filtered ? true : false;
 
   const { data, error } = await getListenersAction();
+
   const transformedData = data
     ? filtered
       ? data.filter(({ username }) => isValidEmail(username))
@@ -45,22 +46,21 @@ export default async function ListenersPage({ searchParams }: PageParams) {
     <main className="grid gap-4">
       <Toolbar
         path={path}
-        table={table}
         total={data?.length}
         selected={transformedData.length}
-        filteredIds={filtered ? transformedData.map(({ id }) => id) : undefined}
-        recipients={
-          filtered ? transformedData.map(({ username }) => username) : undefined
-        }
       >
-        <ListenersToolbar />
+        {filtered && (
+          <ListenersToolbar
+            recipients={transformedData.map(({ username }) => username)}
+          />
+        )}
       </Toolbar>
       <TableUI.Container>
         <TableUI.HeaderRow hasAction>
           <TableHead>Podcast</TableHead>
           <TableHead>Guest</TableHead>
           <TableHead>Urls</TableHead>
-          <TableUI.ThAlignRight>Listeners</TableUI.ThAlignRight>
+          <TableUI.ThAmount>Listeners</TableUI.ThAmount>
           <TableHead>Username</TableHead>
           <TableHead>Registered</TableHead>
         </TableUI.HeaderRow>
@@ -75,7 +75,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                     src={listener.podcast.lastLogoSrc}
                     name={listener.podcast.titleSeriesText}
                     email={listener.podcast.datetimeText}
-                    showBadge={listener.IsUpdatedToday()}
+                    showBadge={listener.IsCreatedToday()}
                   />
                   <TdBadge
                     label={listener.podcast.guestUsername}
@@ -93,22 +93,16 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                       icon={<IconBrandX size={16} />}
                     />
                   </TableCell>
-                  <TableUI.Amount>{listener.podcast.listeners}</TableUI.Amount>
+                  <TableUI.TdAmount>
+                    {listener.podcast.listeners}
+                  </TableUI.TdAmount>
                   <TdBadge variant={"outline"}>{item.username}</TdBadge>
                   <TableCell>{listener.createdAt}</TableCell>
-                  <TdAction
+                  <TdActionMenu
                     path={path}
                     table={table}
                     id={item.id}
                     canDelete
-                    actions={[
-                      { label: "Receipt", value: "Receipt", disabled: true },
-                      {
-                        label: "Duplicate",
-                        value: "Duplicate",
-                        hasSeparator: true,
-                      },
-                    ]}
                   />
                 </TableRow>
               );

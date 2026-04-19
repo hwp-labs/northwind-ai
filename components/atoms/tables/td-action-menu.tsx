@@ -33,7 +33,7 @@ interface Props {
   canDelete?: boolean;
 }
 
-export const TdAction = ({
+export const TdActionMenu = ({
   path,
   table,
   id,

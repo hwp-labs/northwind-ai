@@ -41,7 +41,7 @@ const HeaderRow = ({ children, isNumbered, hasAction }: HeaderRowProps) => {
   );
 };
 
-const ThAlignRight = ({ children }: PropsWithChildren) => {
+const ThAmount = ({ children }: PropsWithChildren) => {
   return <TableHead className="text-right">{children}</TableHead>;
 };
 
@@ -54,11 +54,11 @@ const TBodySkeleton = () => {
     </TableRow>
   );
 };
-interface AmountProps extends PropsWithChildren {
+interface TdAmountProps extends PropsWithChildren {
   variant?: ColorVariantType;
 }
 
-const Amount = ({ children, variant }: AmountProps) => {
+const TdAmount = ({ children, variant }: TdAmountProps) => {
   return <TableCell className="text-right">{children}</TableCell>;
 };
 interface UrlProps {
@@ -79,8 +79,8 @@ const Url = ({ label, value, icon }: UrlProps) => {
 export const TableUI = {
   Container,
   HeaderRow,
-  ThAlignRight,
+  ThAmount,
   TBodySkeleton,
-  Amount,
+  TdAmount,
   Url,
 };

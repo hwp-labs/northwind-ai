@@ -45,6 +45,11 @@ export class BaseHelper {
   }
   // ////////////////////////////////////////////////////////////////////////
 
+  IsCreatedToday = () =>
+    this.p?.created_at && this.p.created_at.slice(0, 10) === CUR_DATE
+      ? true
+      : false;
+
   IsUpdatedToday = () =>
     this.p?.updated_at && this.p.updated_at.slice(0, 10) === CUR_DATE
       ? true
