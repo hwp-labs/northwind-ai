@@ -10,7 +10,7 @@ import {
   fontPoppins,
   fontMontserrat,
   fontRaleway,
-  fontSatisfy,
+  fontBebasNeue,
 } from "@/constants/FONT";
 import "@/styles/globals.css";
 
@@ -29,7 +29,7 @@ export default function RootLayout({
           fontPoppins.variable,
           fontMontserrat.variable,
           fontRaleway.variable,
-          fontSatisfy.variable,
+          fontBebasNeue.variable,
           "font-[Poppins] antialiased",
         )}
       >

@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 //
 import { CardBuilder } from "../card-builder";
 import { MONTH_SHORT } from "@/utils/moment-util";
-import clsx from "clsx";
 
 interface Props {
   page?: number;
@@ -13,6 +13,7 @@ interface Props {
 export const MonthlyPostCard = ({ page }: Props) => {
   const [i, setCounter] = useState(page || 1);
 
+  const isMay = i === 5;
   const displayMonth = MONTH_SHORT[i - 1];
   const mutateCounter = () => setCounter((prev) => (prev < 12 ? prev + 1 : 1));
 
@@ -31,10 +32,19 @@ export const MonthlyPostCard = ({ page }: Props) => {
     <>
       <CardBuilder.Header noBorder />
       <CardBuilder.Container className="bg-white">
-        <figure className="mt-5">
-          <div className="relative z-2 mx-auto size-[120px]">
+        <figure className={clsx("mt-5", isMay && "-mt-0!")}>
+          <div
+            className={clsx(
+              "relative z-2 mx-auto size-[120px]",
+              isMay && "size-[180px]",
+            )}
+          >
             <img
-              src={`/uploads/monthly/bot-${i}.png`}
+              src={
+                isMay
+                  ? `/uploads/monthly/may-1.png`
+                  : `/uploads/monthly/bot-${i}.png`
+              }
               alt=""
               className="size-full object-contain"
             />
@@ -42,7 +52,10 @@ export const MonthlyPostCard = ({ page }: Props) => {
               src="/uploads/monthly/hello.png"
               alt=""
               width={48}
-              className="absolute top-2 -left-11"
+              className={clsx(
+                "absolute top-2 -left-11",
+                isMay && "top-8 -left-12",
+              )}
             />
             {renderImgAttachment(i)}
           </div>
@@ -50,6 +63,7 @@ export const MonthlyPostCard = ({ page }: Props) => {
             className={clsx(
               "-ml-2 bg-clip-text text-center font-[Raleway] text-[340px] leading-72 font-bold text-transparent uppercase",
               "from-bot bg-gradient-to-b",
+              isMay && "-mt-8 -ml-12",
             )}
           >
             {displayMonth}

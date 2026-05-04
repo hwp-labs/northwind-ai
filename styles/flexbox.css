@@ -13,7 +13,7 @@
   .flex-row-cs {
     @apply flex items-center justify-start;
   }
-  
+
   .flex-start-center {
     @apply flex items-start justify-center;
   }
@@ -44,6 +44,18 @@
 
   .flex-row-cb {
     @apply flex items-center justify-between;
+  }
+
+  .flex-row-eb {
+    @apply flex items-end justify-between;
+  }
+
+  .flex-row-ex {
+    @apply flex items-end;
+  }
+
+  .flex-row-sx {
+    @apply flex items-start;
   }
 
   /* COLUMN */

@@ -1,13 +1,12 @@
 import { Metadata } from "next";
 //
-import {
-  DefaultPostCard,
-  MonthlyPostCard,
-  FAQPostCard,
-  PodcastPostCard,
-  BlogPostCard
-} from "@/features/post-cards/components/cards";
 import { PageParams } from "@/types";
+import { DefaultPostCard } from "@/features/post-cards/components/cards/default-post-card";
+import { MonthlyPostCard } from "@/features/post-cards/components/cards/monthly-post-card";
+import { FAQPostCard } from "@/features/post-cards/components/cards/faq-post-card";
+import { PodcastPostCard } from "@/features/post-cards/components/cards/podcast-post-card";
+import { BlogPostCard } from "@/features/post-cards/components/cards/blog-post-card";
+import { QversePostCard } from "@/features/post-cards/components/cards/qverse-post-card";
 
 export const metadata: Metadata = {
   title: "Post Cards",
@@ -32,6 +31,7 @@ export default async function PreviewPostCardsPage({
           <FAQPostCard page={page} />,
           <PodcastPostCard page={page} />,
           <BlogPostCard page={page} />,
+          <QversePostCard page={page} />,
         ][tabIndex]
       }
     </main>

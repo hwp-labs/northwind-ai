@@ -3,7 +3,7 @@ import { ChevronRightIcon } from "lucide-react";
 import { IconRocket } from "@tabler/icons-react";
 import clsx from "clsx";
 //
-import { Logo } from "@/components/logo";
+import { Logo, LogoAlt } from "@/components/logo";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { APP } from "@/constants/APP";
@@ -14,11 +14,13 @@ import {
 } from "@/lib/supabase/services/podcasts/types";
 
 interface HeaderProps extends PropsWithChildren {
-  noBorder?: boolean;
   item?: PodcastDto;
+  flagship?: boolean;
+  noBorder?: boolean;
+  py4?: boolean;
 }
 
-const Header = ({ children, noBorder, item }: HeaderProps) => {
+const Header = ({ children, item, flagship, noBorder, py4 }: HeaderProps) => {
   const [img, alt, size]: [string, string | null, number | null] =
     item?.customTag === PodcastCustomTagEnum.BOOKIN
       ? ["/uploads/logos/bookin-lg.png", null, 75]
@@ -31,10 +33,10 @@ const Header = ({ children, noBorder, item }: HeaderProps) => {
       className={clsx(
         "flex-row-cb bg-white px-8",
         !noBorder && "border-b border-gray-200",
-        children ? "py-4" : "py-5",
+        children || py4 ? "py-4" : "py-5",
       )}
     >
-      <Logo />
+      {flagship ? <LogoAlt /> : <Logo />}
       {children || (
         <figure className="flex-row-cs debug_ gap-2">
           <img src={img} width={size || 24} alt="" />

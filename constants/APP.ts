@@ -1,19 +1,27 @@
 export const APP = {
   name: "Northwind AI",
+  name2: "Northstar Analytics",
   nameShort: "NorthwindAI",
+  nameShort2: "Northstar",
   slug: "northwind-ai",
+  slug2: "northstar-analytics",
   //
   title: "AI Automation Web Services",
+  title2: "Discover Web3 Apps",
   titleVerbose: "Northwind AI - AI Automation Web Services",
+  titleVerbose2: "Northstar Analytics | Discover Web3 Apps",
   keywords: "northwind ai, northwind db, ai automation, ai agents",
   description:
     "Automate virtual workflows and Point-of-Sale (POS) systems with Northwind AI -transform repetitive business processes into smart, autonomous AI agents.",
+  description2:
+    "Discover community-led Web3 projects powered by Bitcoin Verse Ecosystem, and Northstar Analytics",
   owner: "HWP Labs",
   creator: "Emmanuel Tugbeh",
   startData: "2026-01-30T20:12:35.000",
   launchData: "2026-02-14T09:00:00.000",
   //
   domain: "northwindai.org",
+  domain2: "Qverse.store",
   website: "https://northwindai.org",
   socialPreview: "https://northwindai.org/social-preview.png",
   email: "no-reply@northwindai.org",
@@ -34,6 +42,8 @@ export const APP = {
     contrast: "#dd4a00",
     bot: "#90c9ca",
     fuchsia: "#D946EF",
+    opayGreen: "#1dcf9f",
+    opayBlue: "#200f5f",
     info: "oklch(0.488 0.243 264.376)",
     success: "oklch(0.696 0.17 162.48)",
     warning: "oklch(0.769 0.188 70.08)",

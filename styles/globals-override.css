@@ -19,6 +19,18 @@ address {
   font-style: normal;
 }
 
+
+strong {
+  /*  medium */
+  font-weight: 500;
+}
+
+b {
+  /* semibold */
+  font-weight: 600;
+}
+
+
 .debug {
   @apply border border-red-500;
 }

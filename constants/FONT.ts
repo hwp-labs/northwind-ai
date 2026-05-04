@@ -1,4 +1,9 @@
-import { Raleway, Poppins, Montserrat, Satisfy } from "next/font/google";
+import {
+  Raleway,
+  Poppins,
+  Montserrat,
+  Bebas_Neue,
+} from "next/font/google";
 
 export const fontPoppins = Poppins({
   variable: "--font-Poppins",
@@ -19,8 +24,8 @@ export const fontRaleway = Raleway({
   display: "swap",
 });
 
-export const fontSatisfy = Satisfy({
-  variable: "--font-Satisfy",
+export const fontBebasNeue = Bebas_Neue({
+  variable: "--font-Bebas_Neue",
   weight: "400",
   subsets: ["latin"],
   display: "swap",

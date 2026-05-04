@@ -15,7 +15,7 @@ export const PodcastInviteEmail = ({ data }: Props) => {
       <Builder.P richText={`${data.richTextLine1} ${data.richTextLine2}`} />
       <Builder.P>LIVE: {data.datetimeText} WAT</Builder.P>
       <Builder.Button href={data.spaceUrl!} color={APP.colors.fuchsia}>
-        Join Now
+        Listen Now
       </Builder.Button>
       <Builder.P>
         Or join using the URL below: <br />

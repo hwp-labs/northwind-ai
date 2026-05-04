@@ -81,7 +81,7 @@
     },
     "logo": "grab.png",
     "thumbnail": "thumb-grab.png",
-    "headline": "A case study on Grab's journey from MVP (Minimum Viable Product) to Product Market Fit.",
+    "headline": "A case study on Grab's journey from MVP (Minimum Viable Product) to Product Market Fit",
     "location": "Twitter Spaces",
     "date": "2026-04-12T19:00:00.000Z",
     "categories": [
@@ -91,5 +91,21 @@
     ],
     "event": true,
     "url": "northwindai.org/podcast/7"
+  },
+  {
+    "classNames": {
+      "h1": "text-[19px]!"
+    },
+    "logo": "shago.png",
+    "thumbnail": "thumb-hardware.png",
+    "headline": "Northwind AI secures deal with shagoapp.com to pilot Chat-enabled Gadgets, Electronics Marketplace at FarmCenter, Kano",
+    "location": "Kano",
+    "date": "2025-04-18",
+    "categories": [
+      "AI",
+      "Marketplace",
+      "Logistics"
+    ],
+    "url": "northwindai.org/c/shago"
   }
 ]

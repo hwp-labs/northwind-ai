@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { PageContainer } from "@/components/widgets/contact-form-widget/ui/page-container";
 import { ContactFormWidget } from "@/components/widgets/contact-form-widget";
 

@@ -128,7 +128,7 @@ const PoweredBy = ({ notionUrl, customTag }: PodcastDto) => (
       {customTag === PodcastCustomTagEnum.VERSE_RADIO ? (
         <>
           Official Token of
-          <img src="/uploads/logos/bitcoin.png" alt="" width={20} /> Bitcoin
+          <img src="/uploads/logos/btc.png" alt="" width={20} /> Bitcoin
         </>
       ) : (
         <>

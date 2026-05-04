@@ -31,7 +31,7 @@ const Template = ({
     <Preview>{preview}</Preview>
     <Tailwind>
       <Body>
-        <Container className="debug_ mx-auto max-w-md">
+        <Container className="debug_ mx-auto max-w-md px-4">
           {heading ? <H1>{heading}</H1> : null}
           {children}
           {!hideFooter && <Footer />}
@@ -78,8 +78,7 @@ const List = ({ list, variant = "bullet" }: ListProps) => {
       {list.map((item, i) => (
         <P key={i}>
           {variant === "bullet" ? <>&bull;</> : <>{i + 1}.</>}
-          &nbsp;
-          &nbsp;
+          &nbsp; &nbsp;
           {item}
         </P>
       ))}
@@ -104,8 +103,7 @@ const Link = ({ children, href, color }: LinkProps) => (
     {children || href}
   </a>
 );
-interface ButtonProps {
-  children: string;
+interface ButtonProps extends PropsWithChildren {
   href: string;
   color?: string;
 }
@@ -117,11 +115,12 @@ const Button = ({ children, href, color }: ButtonProps) => (
       style={{
         color: "white",
         backgroundColor: color || APP.colors.brand,
-        borderRadius: 8,
-        padding: 8,
+        borderRadius: 100,
+        padding: 10,
         textAlign: "center",
         textDecoration: "none",
         fontWeight: 600,
+        fontSize: 15,
         display: "block",
       }}
     >
@@ -156,7 +155,7 @@ const Banner = ({
         }
         alt=""
         width="320"
-        height="160"
+        height="auto"
         className={clsx(
           "mx-auto w-full",
           variant === "social-preview" && "invert",

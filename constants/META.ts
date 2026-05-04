@@ -40,7 +40,7 @@ export const METADATA: Metadata = {
     },
   },
   // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest
-  manifest: `/manifest.json`,
+  manifest: "/manifest.json",
   // OPEN GRAPH
   openGraph: {
     type: "website",
