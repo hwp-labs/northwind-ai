@@ -12,7 +12,7 @@ export const APP = {
   titleVerbose2: "Northstar Analytics | Discover Web3 Apps",
   keywords: "northwind ai, northwind db, ai automation, ai agents",
   description:
-    "Automate virtual workflows and Point-of-Sale (POS) systems with Northwind AI -transform repetitive business processes into smart, autonomous AI agents.",
+    "Transform repetitive business processes into smart, autonomous AI agents. Automate virtual workflows and Point-of-Sale (POS) systems with Northwind AI.",
   description2:
     "Discover community-led Web3 projects powered by Bitcoin Verse Ecosystem, and Northstar Analytics",
   owner: "HWP Labs",

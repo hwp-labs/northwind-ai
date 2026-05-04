@@ -77,8 +77,8 @@ const Description = ({ className }: { className?: string }) => (
       className,
     )}
   >
+    <p>{COPY.transform}</p>
     <p>{COPY.automateRichText}</p>
-    <p>{COPY.transformRichText}</p>
   </article>
 );
 

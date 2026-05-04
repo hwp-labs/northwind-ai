@@ -51,24 +51,6 @@ const Hero = () => (
   </hgroup>
 );
 
-const Address = () => (
-  <address className="font-[Montserrat] text-[10px]">
-    Powered by Bitcoin Verse Ecosystem, <b>{APP.name2}</b>.
-  </address>
-);
-
-const CtaBtn = ({ children }: PropsWithChildren) => (
-  <button
-    className={clsx(
-      "flex-row-cs gap-1.5 rounded-full px-5 py-2.5 text-sm font-semibold",
-      classNames.whiteGradient,
-      classNames.brandText,
-    )}
-  >
-    <IconWorldUpload size={16} /> {children || APP.domain2}
-  </button>
-);
-
 interface EventProps {
   date: string;
   time?: string;
@@ -92,6 +74,24 @@ const Event = ({ date, time, venue }: EventProps) => (
       </div>
     </div>
   </div>
+);
+
+const Address = () => (
+  <address className="font-[Montserrat] text-[10px]">
+    Powered by <b>Bitcoin Verse Ecosystem</b>, and <>{APP.name2}</>.
+  </address>
+);
+
+const CtaBtn = ({ children }: PropsWithChildren) => (
+  <button
+    className={clsx(
+      "flex-row-cs gap-1.5 rounded-full px-5 py-2.5 text-sm font-semibold",
+      classNames.whiteGradient,
+      classNames.brandText,
+    )}
+  >
+    <IconWorldUpload size={16} /> {children || APP.domain2}
+  </button>
 );
 
 export const Builder = { Container, Hero, Event, Address, CtaBtn };

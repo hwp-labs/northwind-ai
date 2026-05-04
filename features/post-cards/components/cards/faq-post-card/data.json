@@ -4,8 +4,9 @@
     "label": "E-Commerce & Logistics business",
     "value": [
       "Chat/voice-enabled product search & filters",
+      "Real-time dynamic pricing & stock optimization",
       "Real-time order tracking, deliveries & returns",
-      "Product demand forecasting, real-time dynamic pricing & stock monitoring alerts",
+      "Product demand forecasting & reporting",
       "Purchase intent & checkout friction analysis",
       "Inventory, supply chain & fleet automation",
       "# emma ar, shafiyi, steady"
@@ -21,16 +22,16 @@
       "Virtual Reality (VR) property inspections & tours",
       "Augmented Reality (AR) spatial/interior design",
       "Automated Property Valuation Models (AVMs)",
-      "#Automated Property Valuation (AVMs)",
       "# madu, ben"
     ]
   },
   {
     "icon": "first-aid.png",
-    "label": "Health Centres, Pharmaceuticals & Labs",
+    "label": "Health Centres & Pharmaceuticals",
     "value": [
-      "Electronic Health Records (EHR) workflow automation & patient triage sub-systems",
-      "Chat/voice-enabled health information assistants & appointment scheduling",
+      "Electronic Health Records (EHR) automation",
+      "Chat/voice-enabled appointment scheduling",
+      "Patient triage workflow automation",
       "Automated test orders & prescription refills",
       "AI diagnostics & medical  image analysis",
       "Health insurance policy & claims processing",
@@ -44,15 +45,15 @@
       "Loan processing & credit risk assessment",
       "Investment insights & portfolio management",
       "Financial forecasting & market trend analysis",
+      "Fraud detection & transaction monitoring",
       "Anti-Money Laundering (AML) automation",
       "Escrow-based DeFi & Smart Contracts",
-      "#Fraud detection & transaction monitoring",
       "# ntx asaba sftcentre, cgmi abbey tetra, dpf da divine, biu ahmed"
     ]
   },
   {
     "icon": "breakfast.png",
-    "label": "Hotels, Restaurant & Bar business",
+    "label": "Hotels, Restaurants & Bar business",
     "value": [
       "Chat/voice-enabled booking & reservations",
       "Check-in & check-out workflow automation",
@@ -62,6 +63,32 @@
       "Meal planning & recipe sourcing automation",
       "#Procurement workflow optimization",
       "# ntx jbagbons spa, ntx jairo pos"
+    ]
+  },
+  {
+    "icon": "justice.png",
+    "label": "Law Firms & Legal Services",
+    "value": [
+      "Legal research briefs & precedent collation",
+      "Evidence e-discovery & exhibit annotation",
+      "Case note tracking & real-time status alerts",
+      "Contract analysis & obligation extraction",
+      "Compliance monitoring & reporting tools",
+      "Automated billing & invoice generation",
+      "# ezomo"
+    ]
+  },
+  {
+    "icon": "police.png",
+    "label": "Law Enforcement Agencies",
+    "value": [
+      "Inter-agency case file management APIs",
+      "Automated background checks & profiling",
+      "Investigation triage workflow automation",
+      "Evidence tagging & chain-of-custody tracking",
+      "Crime lab forensic analysis automation",
+      "Freedom of Information Act (FOIA) e-library",
+      "# jc efosa, trend dashboards reporting"
     ]
   }
 ]

@@ -13,7 +13,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
       <Builder.Container>
         <Builder.Hero />
         <ul className="mt-1">
-          {/* <Card
+          <Card
             {...{
               icon: "/uploads/logos/snapp-quest.png",
               name: "SnappQuest",
@@ -22,7 +22,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
               rating: 4,
               posted: "Just now",
             }}
-          /> */}
+          />
           <Card
             {...{
               icon: "/uploads/logos/zela.png",
@@ -47,7 +47,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
             }}
           />
         </ul>
-        <Builder.Event date="Sunday, May 3rd" />
+        {/* <Builder.Event date="Sunday, May 3rd" /> */}
         <section className="flex-row-eb -mt-4">
           <Builder.Address />
           <Builder.CtaBtn />

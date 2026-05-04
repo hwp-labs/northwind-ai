@@ -55,8 +55,8 @@ const renderAvatar = (src: string, size = 40) => (
 );
 
 const renderVerifiedBadge = (
-  <div className="absolute -right-0 -bottom-0 bg-white rounded-full">
-    <IconRosetteDiscountCheckFilled size={14} className="text-blue-500" />
+  <div className="absolute -right-0.5 bottom-0 bg-white rounded-full">
+    <IconRosetteDiscountCheckFilled size={16} className="text-blue-500" />
   </div>
 );
 
