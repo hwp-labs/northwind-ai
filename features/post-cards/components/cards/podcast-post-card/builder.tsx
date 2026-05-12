@@ -57,6 +57,7 @@ export const Footer = ({ children, podcast }: Props) => {
       <AnchorOutbound
         href={podcast?.notionUrl || "#"}
         className="flex-row-cs text-foreground _debug gap-2 text-xs font-medium"
+        style={{ textShadow: "-1px 1px 1px black" }}
       >
         {children || (
           <>
@@ -78,11 +79,11 @@ export const Background = ({ children, podcast }: Props) => {
     ? {
         ds: "halim.png",
         fc: "sony.png",
-        qt: "chess.png",
+        rt: "lazer.png",
       }[podcast?.series]
     : "halim.png";
   const isFiresideChat = podcast?.series === "fc";
-  const isPyQt = podcast?.series === "qt";
+  const isRoundTable = podcast?.series === "rt";
   //
   return (
     children || (
@@ -92,7 +93,7 @@ export const Background = ({ children, podcast }: Props) => {
         className={clsx(
           "absolute size-full object-cover object-top-right",
           isFiresideChat && "object-top-left!",
-          isPyQt && "object-center!",
+          isRoundTable && "object-bottom-right!",
         )}
       />
     )

@@ -1,53 +1,37 @@
-import clsx from "clsx";
-//
-import { CardBuilder } from "../../card-builder";
-import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
-import { CardBuilder as PodcastPostCardBuilder } from "./card-builder";
+import { Header, Footer, Main, Venue, Container, Background } from "./builder";
+import { data } from "@/lib/supabase/services/podcasts/data-v2";
+import { Datetime } from "./datetime";
+import { Speakers } from "./speakers";
+import { Hero } from "./hero";
 
 interface Props {
   page?: number;
 }
 
 export const PodcastPostCard = ({ page = 1 }: Props) => {
-  const item = PodcastHelper.GetPageItem(page);
+  const item = data[page];
+  const overwriteHero = [7, 8, 9].includes(item?.id) ? item.summary : null;
+  const overwriteFooter =
+    item?.id === 8 ? (
+      <>
+        Powered by
+        <img src="/uploads/logos/verse.png" alt="" width={20} /> Verse Radio
+      </>
+    ) : null;
   //
   return (
     <>
-      <CardBuilder.Header item={item}>
-        {item.customTag || !item.logoSafe.length ? undefined : (
-          <CardBuilder.AvatarGroup
-            src={[
-              "/images/icon-hwp-labs.png",
-              "/images/avatar-etugbeh.png",
-              ...item.logoSafe.map((item) => `/uploads/logos/${item}`),
-            ]}
-          />
-        )}
-      </CardBuilder.Header>
-      <CardBuilder.Container>
-        <img
-          src={`/uploads/podcast/${item.isFiresideChat ? "sony.png" : "halim.png"}`}
-          className={clsx(
-            "absolute size-full object-cover",
-            item.isFiresideChat
-              ? "_scale-x-[-1] object-top-left"
-              : "object-top-right",
-          )}
-          alt=""
-        />
-        <div className="debug_ absolute bottom-16 left-8 z-1">
-          <PodcastPostCardBuilder.Datetime {...item} />
-          <PodcastPostCardBuilder.Venue {...item} />
-          {item.guestUsername ? (
-            <PodcastPostCardBuilder.Speakers {...item} />
-          ) : (
-            <p className="my-12" />
-          )}
-          <PodcastPostCardBuilder.Hero {...item} />
-        </div>
-        <PodcastPostCardBuilder.PoweredBy {...item} />
-      </CardBuilder.Container>
+      <Header podcast={item} />
+      <Main podcast={item}>
+        <Background podcast={item} />
+        <Container>
+          <Datetime podcast={item} />
+          <Venue podcast={item} />
+          <Speakers podcast={item} />
+          <Hero podcast={item}>{overwriteHero}</Hero>
+        </Container>
+        <Footer podcast={item}>{overwriteFooter}</Footer>
+      </Main>
     </>
   );
 };
-

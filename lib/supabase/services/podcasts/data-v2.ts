@@ -2,15 +2,15 @@ export interface PodcastV2 {
   id: number;
   avatars: string[] | null;
   datetime: string;
-  host: string | null;
-  guest: string | string[] | null;
   title: string;
-  titleShort: string | null;
+  isLongTitle?: boolean;
   summary: string | null;
+  host?: string;
+  guest?: string | string[];
   notionUrl: string | null;
   spaceUrl: string | null;
   listeners: number | null;
-  series: "ds" | "fc" | "qt";
+  series?: "ds" | "fc" | "rt";
 }
 
 export const data: PodcastV2[] = [
@@ -18,147 +18,154 @@ export const data: PodcastV2[] = [
     id: 1,
     avatars: null,
     datetime: "2026-03-01T19:00:00.000Z",
-    host: null,
-    guest: null,
     title: "Northstar",
-    titleShort: null,
     summary:
-      "A design session with <strong>Emmanuel Tugbeh</strong>, creator of <strong>Northstar</strong> - <br/>AI-native, cross-platform Product Analytics APIs.",
+      "A design session with <b>Emmanuel Tugbeh</b>, creator of <b>Northstar</b> - <br/>AI-native, Cross-platform Product Analytics Solution.",
     notionUrl:
       "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
     spaceUrl: "https://x.com/i/spaces/1nxnRYRXOgjxO",
     listeners: 18,
-    series: "ds",
   },
-  // {
-  //   id: 2,
-  //   datetime: "2026-03-08T19:00:00.000Z",
-  //   logo: "scupex.png",
-  //   title: "Scupex",
-  //   richTextLine1:
-  //     "A design session with <strong>Martins Akinbo</strong> (Founder/CTO, Technox Solutions Ltd),",
-  //   richTextLine2:
-  //     "creator of <strong>Scupex</strong>-AI-native, multi-tenant school management solution.",
-  //   guestUsername: "@sanmiAkinbo",
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",
-  //   spaceUrl: "https://x.com/i/spaces/1qGvvkLwDBAGB",
-  //   listeners: 103,
-  // },
-  // {
-  //   id: 3,
-  //   datetime: "2026-03-15T19:00:00.000Z",
-  //   logo: "bookin.png",
-  //   title: "Bookin",
-  //   richTextLine1:
-  //     "A design session with <strong>Oluchi Ifeanyi</strong>, creator of <strong>Bookin</strong> - ",
-  //   richTextLine2: "All-in-one booking platform for creative professionals.",
-  //   guestUsername: "@feanyluch",
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Bookin-3226a7cc633c81f1a9d8ebbce7bbc6b3",
-  //   spaceUrl: "https://x.com/i/spaces/1DxleEjawjlKL",
-  //   listeners: 112,
-  //   customTag: "bookin",
-  // },
-  // {
-  //   id: 4,
-  //   datetime: "2026-03-22T19:00:00.000Z",
-  //   logo: "izivote.png",
-  //   title: "Izivote",
-  //   richTextLine1:
-  //     "A design session with <strong>Joshua Uyi</strong>, creator of <strong>Izivote</strong> - ",
-  //   richTextLine2:
-  //     "Cloud-based voting platform for award events and campaigns.",
-  //   guestUsername: "@joshuaouyi",
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Izivote-3206a7cc633c807dbd55c6fbb373ff37",
-  //   spaceUrl: "https://x.com/i/spaces/1XGygmPjeMkxM",
-  //   listeners: 84,
-  // },
-  // {
-  //   id: 5,
-  //   datetime: "2026-03-29T19:00:00.000Z",
-  //   logo: "tetra.png",
-  //   title: "Tetra",
-  //   richTextLine1:
-  //     "A design session with <strong>Aboyowa Olueh</strong>, creator of <strong>Tetra</strong> - ",
-  //   richTextLine2: "Virtual Dollar Cards for seamless Int'l transactions.",
-  //   guestUsername: "@OluehAboyowa",
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Tetra-3316a7cc633c81429fabfb80a8601f8d",
-  //   spaceUrl: "https://x.com/i/spaces/1nxeLyZOkXLJX",
-  //   listeners: 21,
-  // },
-  // {
-  //   id: 6,
-  //   datetime: "2026-04-05T19:00:00.000Z",
-  //   logo: "adiz.png",
-  //   title: "Brand-Led Growth Hacking",
-  //   isLongTitle: true,
-  //   richTextLine1:
-  //     "A fireside chat with <strong>Isaac Adebiyi</strong> (Founder/CEO, Adiz Media) on",
-  //   richTextLine2:
-  //     "designing a brand identity that drives sales and customer loyalty.",
-  //   guestUsername: "@theisaacade",
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Brand-Led-Growth-Hacking-3336a7cc633c810692e6e80f80946edb",
-  //   spaceUrl: "https://x.com/i/spaces/1rGmqojWqzqGy",
-  //   listeners: 31,
-  //   series: "fireside-chat",
-  // },
-  // {
-  //   id: 7,
-  //   datetime: "2026-04-12T19:00:00.000Z",
-  //   logo: "grab.png",
-  //   title: "Grab",
-  //   richTextLine1:
-  //     "A case study on Grab's journey from MVP to Product Market Fit.",
-  //   richTextLine2: "",
-  //   guestUsername: "@InsideGrab",
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
-  //   spaceUrl: "https://x.com/i/spaces/1YxNrZNPNnpxw",
-  //   listeners: 10,
-  //   series: "fireside-chat",
-  // },
-  // {
-  //   id: 8,
-  //   datetime: "2026-04-18T19:00:00.000Z",
-  //   logo: ["btc.png", "verse.png"],
-  //   title: "Bitcoin Verse Radio",
-  //   isLongTitle: true,
-  //   richTextLine1:
-  //     "From Hype To Adoption: What Actually Works When Building Web3 Products?",
-  //   richTextLine2: "",
-  //   guestUsername: [
-  //     "@realVerseRadio",
-  //     "@2gbeh",
-  //     "@Aderoju_isaac9",
-  //     "@CodyEffect",
-  //     "@edafeafiemo",
-  //   ],
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
-  //   spaceUrl: "https://x.com/i/spaces/1yxBeMlXgZPJN",
-  //   listeners: 243,
-  //   series: "fireside-chat",
-  //   customTag: "verse-radio",
-  // },
-  // {
-  //   id: 9,
-  //   datetime: "2026-05-17T19:00:00.000Z",
-  //   logo: ["btc.png", "verse.png"],
-  //   title: "KPIs of World-Class Software Engineers",
-  //   isLongTitle: true,
-  //   richTextLine1:
-  //     "Key Performance Indicators (KPIs) of World-Class Software Engineers",
-  //   richTextLine2: "",
-  //   guestUsername: ["@2gbeh", "@realVerseRadio", "@Aderoju_isaac9"],
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
-  //   spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",
-  //   listeners: 0,
-  //   series: "fireside-chat",
-  //   customTag: "pyqt",
-  // },
+  {
+    id: 2,
+    avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/scupex.png",
+      "/images/avatar-etugbeh.png",
+    ],
+    datetime: "2026-03-08T19:00:00.000Z",
+    title: "Scupex",
+    summary:
+      "A design session with <b>Martins Akinbo</b>, creator of <b>Scupex</b> - <br/>Cloud-native, Multi-tenant School Management Solution.",
+    guest: "@sanmiAkinbo",
+    notionUrl:
+      "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",
+    spaceUrl: "https://x.com/i/spaces/1qGvvkLwDBAGB",
+    listeners: 103,
+  },
+  {
+    id: 3,
+    avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/bookin.png",
+      "/images/avatar-etugbeh.png",
+    ],
+    datetime: "2026-03-15T19:00:00.000Z",
+    title: "Bookin",
+    summary:
+      "A design session with <b>Oluchi Ifeanyi</b>, creator of <b>Bookin</b> - <br/>All-in-one booking platform for creative professionals.",
+    guest: "@feanyluch",
+    notionUrl:
+      "https://held-gambler-004.notion.site/Bookin-3226a7cc633c81f1a9d8ebbce7bbc6b3",
+    spaceUrl: "https://x.com/i/spaces/1DxleEjawjlKL",
+    listeners: 112,
+  },
+  {
+    id: 4,
+    avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/izivote.png",
+      "/images/avatar-etugbeh.png",
+    ],
+    datetime: "2026-03-22T19:00:00.000Z",
+    title: "Izivote",
+    summary:
+      "A design session with <b>Joshua Uyi</b>, creator of <b>Izivote</b> - <br/>Cloud-based voting platform for events and campaigns.",
+    guest: "@joshuaouyi",
+    notionUrl:
+      "https://held-gambler-004.notion.site/Izivote-3206a7cc633c807dbd55c6fbb373ff37",
+    spaceUrl: "https://x.com/i/spaces/1XGygmPjeMkxM",
+    listeners: 84,
+  },
+  {
+    id: 5,
+    avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/tetra.png",
+      "/images/avatar-etugbeh.png",
+    ],
+    datetime: "2026-03-29T19:00:00.000Z",
+    title: "Tetra",
+    summary:
+      "A design session with <b>Aboyowa Olueh</b>, creator of <b>Tetra</b> - <br/>Virtual Dollar Cards for seamless Int'l transactions.",
+    guest: "@OluehAboyowa",
+    notionUrl:
+      "https://held-gambler-004.notion.site/Tetra-3316a7cc633c81429fabfb80a8601f8d",
+    spaceUrl: "https://x.com/i/spaces/1nxeLyZOkXLJX",
+    listeners: 21,
+  },
+  {
+    id: 6,
+    avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/adiz.png",
+      "/images/avatar-etugbeh.png",
+    ],
+    datetime: "2026-04-05T19:00:00.000Z",
+    title: "Brand-Led<br/>Growth Hacking",
+    isLongTitle: true,
+    summary:
+      "A fireside chat with <b>Isaac Adebiyi</b> (Founder/CEO, Adiz Media) on <br/>designing a brand identity that drive sales and customer loyalty.",
+    guest: "@theisaacade",
+    notionUrl:
+      "https://held-gambler-004.notion.site/Brand-Led-Growth-Hacking-3336a7cc633c810692e6e80f80946edb",
+    spaceUrl: "https://x.com/i/spaces/1rGmqojWqzqGy",
+    listeners: 31,
+    series: "fc",
+  },
+  {
+    id: 7,
+    avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/grab.png",
+      "/images/avatar-etugbeh.png",
+    ],
+    datetime: "2026-04-12T19:00:00.000Z",
+    title: "Grab.com from MVP to PMF",
+    summary:
+      "A case study on Grab's journey <br/>from MVP to Product Market Fit.",
+    guest: "@InsideGrab",
+    notionUrl:
+      "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
+    spaceUrl: "https://x.com/i/spaces/1YxNrZNPNnpxw",
+    listeners: 10,
+    series: "fc",
+  },
+  {
+    id: 8,
+    avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/btc.png",
+      "/uploads/logos/verse.png",
+    ],
+    datetime: "2026-04-18T19:00:00.000Z",
+    title: "Bitcoin Verse Radio",
+    isLongTitle: true,
+    summary:
+      "From Hype To Adoption: What Actually Works When Building Web3 Products?",
+    host: "@realVerseRadio",
+    guest: ["@2gbeh", "@Aderoju_isaac9", "@CodyEffect", "@edafeafiemo"],
+    notionUrl: null,
+    spaceUrl: "https://x.com/i/spaces/1yxBeMlXgZPJN",
+    listeners: 243,
+    series: "fc",
+  },
+  {
+    id: 9,
+    avatars: [
+      "/images/avatar-etugbeh.png",
+      "/images/avatar.png",
+      "/images/avatar.png",
+    ],
+    datetime: "2026-05-17T19:00:00.000Z",
+    title: "KPIs of World-Class Software Engineers",
+    isLongTitle: true,
+    summary:
+      "Key Performance Indicators of <br/>World-Class Software Engineers",
+    guest: ["@undefined", "@undefined"],
+    notionUrl: "https://held-gambler-004.notion.site/KPIs-of-World-Class-Software-Engineers-3486a7cc633c8078980ded890c2c9cc6",
+    spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",
+    listeners: null,
+    series: "fc",
+  },
 ];
