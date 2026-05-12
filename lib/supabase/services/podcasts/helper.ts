@@ -6,7 +6,6 @@ import { data } from "./data";
 
 export class PodcastHelper {
   static _transform = (item: PodcastDto) => {
-    // const isFiresideChat = item.series === PodcastSeriesEnum.FIRESIDE_CHAT;
     const isConcluded =
       item.listeners > 0 || momentUtil.isPastDay(item.datetime);
     const titleNobr = item.title.replaceAll("<br/>", " ");
@@ -14,17 +13,6 @@ export class PodcastHelper {
       ? item.summary.replaceAll("<br/>", " ")
       : "";
     const seriesText = item?.series ? "" : "Design Session";
-    // const logoSafe = item.logo
-    //   ? typeof item.logo === "string"
-    //     ? [item.logo]
-    //     : item.logo
-    //   : [];
-    // const lastLogoIndex = logoSafe.length - 1;
-    // const guestUsernameSafe = item.guestUsername
-    //   ? typeof item.guestUsername === "string"
-    //     ? [item.guestUsername]
-    //     : item.guestUsername
-    //   : [];
 
     return {
       ...item,
@@ -34,16 +22,12 @@ export class PodcastHelper {
       datetimeText: momentUtil.podcastDatetime(item.datetime),
       isOngoing: this.IsOngoing(item.datetime),
       isConcluded,
-      // isFiresideChat,
       titleNobr,
       summaryNobr,
       seriesText,
       titleSeriesText: item.isLongTitle
         ? titleNobr
         : `${item.title} ${seriesText}`,
-      // lastLogoSrc: `/uploads/logos/${logoSafe[lastLogoIndex] || "hwp.png"}`,
-      // logoSafe,
-      // guestUsernameSafe,
     };
   };
 
