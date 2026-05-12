@@ -10,7 +10,7 @@ export interface PodcastV2 {
   notionUrl: string | null;
   spaceUrl: string | null;
   listeners: number | null;
-  series: "design-session" | "fireside-chat";
+  series: "ds" | "fc" | "qt";
 }
 
 export const data: PodcastV2[] = [
@@ -23,12 +23,12 @@ export const data: PodcastV2[] = [
     title: "Northstar",
     titleShort: null,
     summary:
-      "A design session with <strong>Emmanuel Tugbeh</strong>, creator of <strong>Northstar Analytics</strong><br/> - AI-native, cross-platform Product Analytics API.",
+      "A design session with <strong>Emmanuel Tugbeh</strong>, creator of <strong>Northstar</strong> - <br/>AI-native, cross-platform Product Analytics APIs.",
     notionUrl:
       "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
     spaceUrl: "https://x.com/i/spaces/1nxnRYRXOgjxO",
     listeners: 18,
-    series: 'design-session',
+    series: "ds",
   },
   // {
   //   id: 2,
