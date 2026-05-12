@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react";
-import { PodcastV2 } from "@/lib/supabase/services/podcasts/data-v2";
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
 interface Props extends PropsWithChildren {
-  podcast?: PodcastV2;
+  podcast: TransformedPodcastDto;
 }
 
 export const Hero = ({ children, podcast }: Props) => (
@@ -24,7 +24,7 @@ export const Hero = ({ children, podcast }: Props) => (
           {podcast?.title ? (
             <h1 dangerouslySetInnerHTML={{ __html: podcast.title }} />
           ) : null}
-          <h1>{podcast?.isLongTitle ? null : "Design Session"}</h1>
+          <h1>{podcast?.isLongTitle ? null : podcast.seriesText}</h1>
         </hgroup>
         {podcast?.summary ? (
           <p

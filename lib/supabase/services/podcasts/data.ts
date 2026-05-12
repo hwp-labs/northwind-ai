@@ -1,19 +1,6 @@
-export interface PodcastV2 {
-  id: number;
-  avatars: string[] | null;
-  datetime: string;
-  title: string;
-  isLongTitle?: boolean;
-  summary: string | null;
-  host?: string;
-  guest?: string | string[];
-  notionUrl: string | null;
-  spaceUrl: string | null;
-  listeners: number | null;
-  series?: "ds" | "fc" | "rt";
-}
+import { PodcastDto } from "./types";
 
-export const data: PodcastV2[] = [
+export const data: PodcastDto[] = [
   {
     id: 1,
     avatars: null,
@@ -121,7 +108,9 @@ export const data: PodcastV2[] = [
       "/images/avatar-etugbeh.png",
     ],
     datetime: "2026-04-12T19:00:00.000Z",
-    title: "Grab.com from MVP to PMF",
+    title: "Northwind AI Podcast",
+    titleShort: "Grab's Case Study",
+    isLongTitle: true,
     summary:
       "A case study on Grab's journey <br/>from MVP to Product Market Fit.",
     guest: "@InsideGrab",
@@ -158,14 +147,16 @@ export const data: PodcastV2[] = [
       "/images/avatar.png",
     ],
     datetime: "2026-05-17T19:00:00.000Z",
-    title: "KPIs of World-Class Software Engineers",
+    title: "Northwind AI Podcast",
+    titleShort: "KPIs of SWE",
     isLongTitle: true,
     summary:
       "Key Performance Indicators of <br/>World-Class Software Engineers",
     guest: ["@undefined", "@undefined"],
-    notionUrl: "https://held-gambler-004.notion.site/KPIs-of-World-Class-Software-Engineers-3486a7cc633c8078980ded890c2c9cc6",
+    notionUrl:
+      "https://held-gambler-004.notion.site/KPIs-of-World-Class-Software-Engineers-3486a7cc633c8078980ded890c2c9cc6",
     spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",
-    listeners: null,
+    listeners: 0,
     series: "fc",
   },
 ];

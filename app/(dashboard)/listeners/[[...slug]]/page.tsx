@@ -20,7 +20,7 @@ import { PROTECTED_PATH } from "@/constants/PATH";
 import { ListenersToolbar } from "@/features/listeners/components/listeners-toolbar";
 import { ListenerHelper } from "@/lib/supabase/services/listeners/helper";
 import { getListenersAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
-import { TABLE } from "@/lib/supabase/services/listeners/types";
+import { ListenerEntity, TABLE } from "@/lib/supabase/services/listeners/types";
 
 export const metadata: Metadata = {
   title: "Manage Listeners",
@@ -30,6 +30,21 @@ const path = PROTECTED_PATH.listeners;
 const table = TABLE;
 const listener = new ListenerHelper();
 
+const getDistinctEmails = (data: ListenerEntity[]) => {
+  const emails: string[] = [];
+  const items: ListenerEntity[] = [];
+
+  data.forEach((item) => {
+    const email = item.username;
+    if (isValidEmail(email) && !emails.includes(email)) {
+      emails.push(email);
+      items.push(item);
+    }
+  });
+
+  return items;
+};
+
 export default async function ListenersPage({ searchParams }: PageParams) {
   const searchParamsAsync = await searchParams;
   const filtered = searchParamsAsync.filtered ? true : false;
@@ -38,7 +53,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
 
   const transformedData = data
     ? filtered
-      ? data.filter(({ username }) => isValidEmail(username))
+      ? getDistinctEmails(data)
       : data
     : [];
   //
@@ -72,15 +87,15 @@ export default async function ListenersPage({ searchParams }: PageParams) {
               return (
                 <TableRow key={item.id}>
                   <TdAvatarBio
-                    src={listener.podcast.lastLogoSrc}
-                    name={listener.podcast.titleSeriesText}
+                    src={listener.podcast.displayAvatar}
+                    name={
+                      listener.podcast.titleShort ||
+                      listener.podcast.titleSeriesText
+                    }
                     email={listener.podcast.datetimeText}
                     showBadge={listener.IsCreatedToday()}
                   />
-                  <TdBadge
-                    label={listener.podcast.guestUsername}
-                    variant="secondary"
-                  />
+                  <TdBadge label={listener.podcast.guest} variant="secondary" />
                   <TableCell>
                     <TableUI.Url
                       label="Notion"

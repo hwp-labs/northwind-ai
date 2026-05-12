@@ -1,40 +1,30 @@
 export interface PodcastDto {
   id: number;
+  avatars: string[] | null;
   datetime: string;
-  logo?: string[];
   title: string;
+  titleShort?: string;
   isLongTitle?: boolean;
-  richTextLine1: string;
-  richTextLine2: string;
-  guestUsername: string | string[] | null;
+  summary: string | null;
+  host?: string;
+  guest?: string | string[];
   notionUrl: string | null;
   spaceUrl: string | null;
   listeners: number;
-  series?: PodcastSeriesEnum;
-  customTag?: string;
+  series?: "ds" | "fc" | "rt";
 }
 export interface TransformedPodcastDto extends PodcastDto {
+  displayAvatar: string;
   dateText: string;
   timeText: string;
   datetimeText: string;
   isOngoing: boolean;
   isConcluded: boolean;
-  isFiresideChat: boolean;
+  // isFiresideChat: boolean;
+  titleNobr: string;
+  summaryNobr: string;
   seriesText: string;
   titleSeriesText: string;
-  logoSafe: string[];
-  guestUsernameSafe: string[];
-  lastLogoSrc: string;
-}
-
-export enum PodcastSeriesEnum {
-  DESIGN_SESSION = "design-session",
-  FIRESIDE_CHAT = "fireside-chat",
-  CASE_STUDY = "case-study",
-}
-
-export enum PodcastCustomTagEnum {
-  BOOKIN = "bookin",
-  VERSE_RADIO = "verse-radio",
-  PYQT = "pyqt",
+  // guestUsernameSafe: string[];
+  // lastLogoSrc: string;
 }

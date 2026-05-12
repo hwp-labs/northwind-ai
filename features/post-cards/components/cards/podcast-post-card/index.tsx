@@ -1,15 +1,16 @@
 import { Header, Footer, Main, Venue, Container, Background } from "./builder";
-import { data } from "@/lib/supabase/services/podcasts/data-v2";
 import { Datetime } from "./datetime";
 import { Speakers } from "./speakers";
 import { Hero } from "./hero";
+import { data } from "@/lib/supabase/services/podcasts/data";
+import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 
 interface Props {
   page?: number;
 }
 
 export const PodcastPostCard = ({ page = 1 }: Props) => {
-  const item = data[page];
+  const item = PodcastHelper.GetPageItem(page);
   const overwriteHero = [7, 8, 9].includes(item?.id) ? item.summary : null;
   const overwriteFooter =
     item?.id === 8 ? (

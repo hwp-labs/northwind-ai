@@ -6,11 +6,35 @@ import {
   FaGlobeAfrica,
 } from "react-icons/fa";
 import { MdAdsClick } from "react-icons/md";
+//
+import { AvatarGroup } from "@/components/atoms/avatar-builder";
+import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
+import { Logo } from "@/components/logo";
 import { Badge } from "@/components/shadcn/ui/badge";
 import { momentUtil } from "@/utils/moment-util";
 import { APP } from "@/constants/APP";
 //
 import { IBlog } from "./interface";
+
+const Header = ({ src }: { src: string[] }) => {
+  return (
+    <header
+      className={clsx(
+        "flex-row-cb h-[58px] bg-white px-8",
+        "border-b border-gray-200",
+      )}
+    >
+      <Logo />
+      <AvatarGroup className="[&>span]:bg-foreground [&>span]:ring-[#eee]">
+        {src.map((item, i) => (
+          <Avatar key={i}>
+            <AvatarImage src={item} alt="" />
+          </Avatar>
+        ))}
+      </AvatarGroup>
+    </header>
+  );
+};
 
 const Thumbnail = ({ thumbnail, classNames }: IBlog) => (
   <img
@@ -73,6 +97,7 @@ const Footer = ({ categories, url }: IBlog) => (
 );
 
 export const Builder = {
+  Header,
   Thumbnail,
   DateLocation,
   EventDetails,

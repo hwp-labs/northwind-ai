@@ -9,7 +9,7 @@ interface Props {
 export const QversePostCard = ({ page = 1 }: Props) => {
   return (
     <>
-      <CardBuilder.Header py4 />
+      <CardBuilder.Header />
       <Builder.Container>
         <Builder.Hero />
         <ul className="mt-1">

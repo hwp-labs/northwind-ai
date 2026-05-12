@@ -3,49 +3,20 @@ import { ChevronRightIcon } from "lucide-react";
 import { IconRocket } from "@tabler/icons-react";
 import clsx from "clsx";
 //
-import { Logo } from "@/components/logo";
-import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
-import { AvatarGroup } from "@/components/atoms/avatar-builder";
+import { CompanyLogo, Logo } from "@/components/logo";
 import { APP } from "@/constants/APP";
 import { COPY } from "@/constants/LOCALE";
-import {
-  PodcastCustomTagEnum,
-  PodcastDto,
-} from "@/lib/supabase/services/podcasts/types";
 
-interface HeaderProps extends PropsWithChildren {
-  item?: PodcastDto;
-  flagship?: boolean;
-  noBorder?: boolean;
-  py4?: boolean;
-}
-
-const Header = ({ children, item, flagship, noBorder, py4 }: HeaderProps) => {
-  const [img, alt, size]: [string, string | null, number | null] =
-    item?.customTag === PodcastCustomTagEnum.BOOKIN
-      ? ["/uploads/logos/bookin-lg.png", null, 75]
-      : item?.customTag === PodcastCustomTagEnum.VERSE_RADIO
-        ? ["/uploads/logos/verse.png", "Verse Radio", null]
-        : ["/images/icon-hwp-labs.png", `${APP.owner}&reg;`, null];
-  //
+const Header = ({ noBorder }: { noBorder?: boolean }) => {
   return (
     <header
       className={clsx(
-        "flex-row-cb bg-white px-8",
+        "flex-row-cb h-[58px] bg-white px-8",
         !noBorder && "border-b border-gray-200",
-        children || py4 ? "py-4" : "py-5",
       )}
     >
       <Logo />
-      {children || (
-        <figure className="flex-row-cs debug_ gap-2">
-          <img src={img} width={size || 24} alt="" />
-          <figcaption
-            className="text-[15px] font-medium"
-            dangerouslySetInnerHTML={{ __html: alt || "" }}
-          />
-        </figure>
-      )}
+      <CompanyLogo />
     </header>
   );
 };
@@ -97,23 +68,10 @@ const CTA = () => (
   </Footer>
 );
 
-const AvatarGroup_ = ({ src }: { src: string[] }) => {
-  return (
-    <AvatarGroup className="[&>span]:bg-foreground [&>span]:ring-[#eee]">
-      {src.map((item, i) => (
-        <Avatar key={i}>
-          <AvatarImage src={item} alt="" />
-        </Avatar>
-      ))}
-    </AvatarGroup>
-  );
-};
-
 export const CardBuilder = {
   Header,
   Footer,
   Container,
   Description,
   CTA,
-  AvatarGroup: AvatarGroup_,
 };

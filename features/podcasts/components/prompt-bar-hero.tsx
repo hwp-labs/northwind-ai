@@ -11,9 +11,6 @@ export const PromptBarHero = ({
   ...item
 }: TransformedPodcastDto) => {
   const isMobile = useIsMobile();
-  const __html = isMobile
-    ? `${item.richTextLine1} ${item.richTextLine2}`
-    : `${item.richTextLine1}<br/>${item.richTextLine2}`;
   //
   return (
     <>
@@ -22,7 +19,9 @@ export const PromptBarHero = ({
         {isMobile ? `${item.dateText} | ${item.timeText}` : item.datetimeText}
         <span>WAT</span>
       </PromptBar>
-      <Hero title={<p dangerouslySetInnerHTML={{ __html }} />}>
+      <Hero
+        title={<p dangerouslySetInnerHTML={{ __html: item.summaryNobr }} />}
+      >
         {item.titleSeriesText}
       </Hero>
     </>

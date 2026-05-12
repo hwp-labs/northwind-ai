@@ -7,11 +7,11 @@ import { CompanyLogo, Logo } from "@/components/logo";
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { AnchorOutbound } from "@/components/atoms/anchor";
-import { PodcastV2 } from "@/lib/supabase/services/podcasts/data-v2";
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
 
 interface Props extends PropsWithChildren {
-  podcast?: PodcastV2;
+  podcast?: TransformedPodcastDto;
 }
 
 export const Header = ({ children, podcast }: Props) => {
@@ -31,9 +31,8 @@ export const Header = ({ children, podcast }: Props) => {
   return (
     <header
       className={clsx(
-        "flex-row-cb bg-white px-8",
+        "flex-row-cb h-[58px] bg-white px-8",
         "border-b border-gray-200",
-        "py-4",
       )}
     >
       <Logo />

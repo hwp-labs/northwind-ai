@@ -19,7 +19,7 @@ export async function generateMetadata({
   const item = await getCachedItem(params);
   //
   return {
-    title: item.isLongTitle ? item.title : `${item.title} ${item.seriesText}`,
+    title: item.titleSeriesText,
   };
 }
 

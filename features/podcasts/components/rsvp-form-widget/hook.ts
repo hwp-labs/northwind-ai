@@ -29,9 +29,9 @@ export function useRsvpFormWidget() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const { isOngoing, isConcluded, ...item } = PodcastHelper.GetSlugItem(id);
+  const { isOngoing, isConcluded, spaceUrl } = PodcastHelper.GetSlugItem(id);
 
-  const onRedirect = () => window.open(item.spaceUrl!);
+  const onRedirect = () => window.open(spaceUrl!);
 
   const onSubmit = async (formData: ListenerSchema) => {
     // console.log("🚀 ~ onSubmit ~ formData:", formData);

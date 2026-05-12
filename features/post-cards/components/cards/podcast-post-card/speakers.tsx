@@ -3,10 +3,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import clsx from "clsx";
 //
 import { AnchorOutbound } from "@/components/atoms/anchor";
-import { PodcastV2 } from "@/lib/supabase/services/podcasts/data-v2";
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
 interface Props extends PropsWithChildren {
-  podcast?: PodcastV2;
+  podcast: TransformedPodcastDto;
 }
 
 export const Speakers = ({ podcast }: Props) => {

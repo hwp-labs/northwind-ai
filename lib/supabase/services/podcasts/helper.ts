@@ -1,42 +1,49 @@
 import { momentUtil } from "@/utils/moment-util";
 import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 //
-import { PodcastDto, PodcastSeriesEnum } from "./types";
-import data from "./data.json";
+import { PodcastDto } from "./types";
+import { data } from "./data";
 
 export class PodcastHelper {
   static _transform = (item: PodcastDto) => {
-    const isFiresideChat = item.series === PodcastSeriesEnum.FIRESIDE_CHAT;
+    // const isFiresideChat = item.series === PodcastSeriesEnum.FIRESIDE_CHAT;
     const isConcluded =
       item.listeners > 0 || momentUtil.isPastDay(item.datetime);
-    const seriesText = isFiresideChat ? "Fireside Chat" : "Design Session";
-    const logoSafe = item.logo
-      ? typeof item.logo === "string"
-        ? [item.logo]
-        : item.logo
-      : [];
-    const lastLogoIndex = logoSafe.length - 1;
-    const guestUsernameSafe = item.guestUsername
-      ? typeof item.guestUsername === "string"
-        ? [item.guestUsername]
-        : item.guestUsername
-      : [];
+    const titleNobr = item.title.replaceAll("<br/>", " ");
+    const summaryNobr = item?.summary
+      ? item.summary.replaceAll("<br/>", " ")
+      : "";
+    const seriesText = item?.series ? "" : "Design Session";
+    // const logoSafe = item.logo
+    //   ? typeof item.logo === "string"
+    //     ? [item.logo]
+    //     : item.logo
+    //   : [];
+    // const lastLogoIndex = logoSafe.length - 1;
+    // const guestUsernameSafe = item.guestUsername
+    //   ? typeof item.guestUsername === "string"
+    //     ? [item.guestUsername]
+    //     : item.guestUsername
+    //   : [];
 
     return {
       ...item,
+      displayAvatar: this.DisplayAvatar(item.avatars),
       dateText: momentUtil.podcastDate(item.datetime),
       timeText: momentUtil.podcastTime(item.datetime),
       datetimeText: momentUtil.podcastDatetime(item.datetime),
       isOngoing: this.IsOngoing(item.datetime),
       isConcluded,
-      isFiresideChat,
+      // isFiresideChat,
+      titleNobr,
+      summaryNobr,
       seriesText,
       titleSeriesText: item.isLongTitle
-        ? item.title
+        ? titleNobr
         : `${item.title} ${seriesText}`,
-      lastLogoSrc: `/uploads/logos/${logoSafe[lastLogoIndex] || "hwp.png"}`,
-      logoSafe,
-      guestUsernameSafe,
+      // lastLogoSrc: `/uploads/logos/${logoSafe[lastLogoIndex] || "hwp.png"}`,
+      // logoSafe,
+      // guestUsernameSafe,
     };
   };
 
@@ -76,5 +83,15 @@ export class PodcastHelper {
     const date = dt.slice(0, 10);
     const hour = Number(dt.slice(11, 13));
     return CUR_DATE === date && CUR_HOUR_UTC >= hour;
+  }
+
+  static DisplayAvatar(avatars: PodcastDto["avatars"]) {
+    /** avatars: [
+      "/uploads/logos/hwp.png",
+      "/uploads/logos/scupex.png",
+      "/images/avatar-etugbeh.png",
+    ], */
+    if (!avatars) return "/uploads/logos/hwp.png";
+    return avatars[1];
   }
 }

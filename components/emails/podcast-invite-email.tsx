@@ -12,7 +12,7 @@ export const PodcastInviteEmail = ({ data }: Props) => {
     <Builder.Template preview={`LIVE: ${data.datetimeText} WAT`}>
       <Builder.Banner variant="support-podcast" />
       <Builder.H1>{data.titleSeriesText}</Builder.H1>
-      <Builder.P richText={`${data.richTextLine1} ${data.richTextLine2}`} />
+      <Builder.P richText={data.summaryNobr} />
       <Builder.P>LIVE: {data.datetimeText} WAT</Builder.P>
       <Builder.Button href={data.spaceUrl!} color={APP.colors.fuchsia}>
         Listen Now

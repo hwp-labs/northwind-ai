@@ -4,16 +4,13 @@ import { PropsWithChildren, useState } from "react";
 import { CalendarClockIcon } from "lucide-react";
 import clsx from "clsx";
 //
-import { momentUtil } from "@/utils/moment-util";
-import { PodcastV2 } from "@/lib/supabase/services/podcasts/data-v2";
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
 interface Props extends PropsWithChildren {
-  podcast?: PodcastV2;
+  podcast: TransformedPodcastDto;
 }
 
 export const Datetime = ({ podcast }: Props) => {
-  const dateText = momentUtil.podcastDate(podcast?.datetime);
-  const timeText = momentUtil.podcastTime(podcast?.datetime);
   const [tonight, setTonight] = useState(false);
   //
   return (
@@ -25,10 +22,10 @@ export const Datetime = ({ podcast }: Props) => {
         onClick={() => setTonight((s) => !s)}
       >
         <CalendarClockIcon size={16} />
-        {tonight ? "Tonight bro.. 👀" : dateText}
+        {tonight ? "Tonight bro.. 👀" : podcast.dateText}
       </span>
       <span className="bg-foreground -mt-4 -rotate-3 p-2 font-black tracking-wide text-[#071228]">
-        {timeText}
+        {podcast.timeText}
         <span className="text-[12px] font-medium tracking-normal"> WAT</span>
       </span>
     </div>
