@@ -26,10 +26,15 @@ export const RsvpFormWidget = () => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         autoComplete="off"
-        className="text-background rounded-t-2xl bg-white px-4 pt-4 pb-3 sm:px-5 sm:pt-5 sm:pb-4"
+        className="_debug mx-auto mt-10 max-w-sm gap-4 px-6"
       >
         {isConcluded ? (
-          <Button type="button" onClick={onRedirect} className="w-full">
+          <Button
+            type="button"
+            onClick={onRedirect}
+            variant="secondary"
+            className="w-full"
+          >
             <IconPlayerPlayFilled />
             Play recording
           </Button>
@@ -48,6 +53,7 @@ export const RsvpFormWidget = () => {
               submitting={submitting}
               success={success}
               successText="Nice!"
+              className="bg-gray-900"
             >
               {isOngoing ? "Attend" : "RSVP"}
             </SubmitButton>

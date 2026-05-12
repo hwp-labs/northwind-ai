@@ -7,7 +7,7 @@ import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { PageIdParams } from "@/types";
 //
 import { PromptBarHero } from "@/features/podcasts/components/prompt-bar-hero";
-import { RsvpFormWidgetV2 } from "@/features/podcasts/components/rsvp-form-widget/v2";
+import { RsvpFormWidget } from "@/features/podcasts/components/rsvp-form-widget";
 
 const getCachedItem = cache(async (params: PageIdParams["params"]) =>
   PodcastHelper.GetIdItemAsync(params),
@@ -29,7 +29,7 @@ export default async function PodcastPage({ params }: PageIdParams) {
   return (
     <main>
       <PromptBarHero {...item} />
-      <RsvpFormWidgetV2 />
+      <RsvpFormWidget />
       <CoverImage />
       <ValuePropositionCards />
     </main>
