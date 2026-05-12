@@ -50,3 +50,4 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
     </>
   );
 };
+

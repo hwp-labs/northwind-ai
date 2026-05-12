@@ -17,7 +17,7 @@ export const Header = () => {
   return (
     <header className="flex-row-cb px-4 py-4 debug_">
       <nav className="flex-row-cs gap-4 text-sm">
-        {["Default", "Monthly", "FAQs", "Podcast", "Blog", "Qverse"].map(
+        {["Default", "Monthly", "FAQs", "Podcast", "PodcastV2", "Blog", "Qverse"].map(
           (item, i) => (
             <Link
               key={i}

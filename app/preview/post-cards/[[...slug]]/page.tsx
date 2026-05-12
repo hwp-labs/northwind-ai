@@ -5,6 +5,7 @@ import { DefaultPostCard } from "@/features/post-cards/components/cards/default-
 import { MonthlyPostCard } from "@/features/post-cards/components/cards/monthly-post-card";
 import { FAQPostCard } from "@/features/post-cards/components/cards/faq-post-card";
 import { PodcastPostCard } from "@/features/post-cards/components/cards/podcast-post-card";
+import { PodcastV2PostCard } from "@/features/post-cards/components/cards/podcast-post-card/v2";
 import { BlogPostCard } from "@/features/post-cards/components/cards/blog-post-card";
 import { QversePostCard } from "@/features/post-cards/components/cards/qverse-post-card";
 
@@ -30,6 +31,7 @@ export default async function PreviewPostCardsPage({
           <MonthlyPostCard page={page} />,
           <FAQPostCard page={page} />,
           <PodcastPostCard page={page} />,
+          <PodcastV2PostCard page={page} />,
           <BlogPostCard page={page} />,
           <QversePostCard page={page} />,
         ][tabIndex]

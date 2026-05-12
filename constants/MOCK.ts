@@ -9,7 +9,7 @@ interface MockParams {
   skip?: number | boolean;
 }
 
-const devMode = 0;
+const devMode = 1;
 
 export const MOCK = {
   explorer: {
@@ -25,7 +25,7 @@ export const MOCK = {
     portal: 0,
   },
   login: {
-    formData: 0,
+    formData: devMode,
     action: 0,
     router: 0,
   },

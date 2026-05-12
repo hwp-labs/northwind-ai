@@ -3,7 +3,7 @@ import { ChevronRightIcon } from "lucide-react";
 import { IconRocket } from "@tabler/icons-react";
 import clsx from "clsx";
 //
-import { Logo, LogoAlt } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { APP } from "@/constants/APP";
@@ -36,7 +36,7 @@ const Header = ({ children, item, flagship, noBorder, py4 }: HeaderProps) => {
         children || py4 ? "py-4" : "py-5",
       )}
     >
-      {flagship ? <LogoAlt /> : <Logo />}
+      <Logo />
       {children || (
         <figure className="flex-row-cs debug_ gap-2">
           <img src={img} width={size || 24} alt="" />

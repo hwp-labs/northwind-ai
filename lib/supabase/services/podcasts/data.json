@@ -2,8 +2,8 @@
   {
     "id": 1,
     "datetime": "2026-03-01T19:00:00.000Z",
-    "title": "Northstar Analytics",
-    "isLongTitle": true,
+    "title": "Northstar",
+    "isLongTitle": false,
     "richTextLine1": "A design session with <strong>Emmanuel Tugbeh</strong>, creator of <strong>Northstar Analytics</strong> - ",
     "richTextLine2": "AI-native, cross-platform Product Analytics service provider.",
     "guestUsername": null,
@@ -110,5 +110,27 @@
     "listeners": 243,
     "series": "fireside-chat",
     "customTag": "verse-radio"
+  },
+  {
+    "id": 9,
+    "datetime": "2026-05-17T19:00:00.000Z",
+    "logo": [
+      "btc.png",
+      "verse.png"
+    ],
+    "title": "KPIs of World-Class Software Engineers",
+    "isLongTitle": true,
+    "richTextLine1": "Key Performance Indicators (KPIs) of World-Class Software Engineers",
+    "richTextLine2": "",
+    "guestUsername": [
+      "@2gbeh",
+      "@realVerseRadio",
+      "@Aderoju_isaac9"
+    ],
+    "notionUrl": "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
+    "spaceUrl": "https://x.com/i/spaces/1mGPaLAgERYJN",
+    "listeners": 0,
+    "series": "fireside-chat",
+    "customTag": "pyqt"
   }
 ]

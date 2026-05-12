@@ -1,3 +1,18 @@
+export interface PodcastV2Dto {
+  id: number;
+  avatars?: string[];
+  datetime: string;
+  host?: string;
+  guest?: string | string[];
+  title: string;
+  titleShort?: string;
+  summary?: string;
+  notionUrl: string | null;
+  spaceUrl: string | null;
+  listeners: number;
+  customTag?: string;
+}
+
 export interface PodcastDto {
   id: number;
   datetime: string;
@@ -36,4 +51,5 @@ export enum PodcastSeriesEnum {
 export enum PodcastCustomTagEnum {
   BOOKIN = "bookin",
   VERSE_RADIO = "verse-radio",
+  PYQT = "pyqt",
 }

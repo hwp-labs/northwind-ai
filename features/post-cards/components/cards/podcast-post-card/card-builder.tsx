@@ -85,6 +85,7 @@ const Speaker = ({
 
 const Hero = (item: TransformedPodcastDto) => {
   const isVerseRadio = item.customTag === PodcastCustomTagEnum.VERSE_RADIO;
+  const isPyQt = item.customTag === PodcastCustomTagEnum.PYQT;
   //
   return (
     <section
@@ -100,7 +101,7 @@ const Hero = (item: TransformedPodcastDto) => {
         )}
       >
         <span className="_text-[#41dbc1]">
-          {isVerseRadio ? item.richTextLine1 : item.title}
+          {isVerseRadio || isPyQt ? item.richTextLine1 : item.title}
         </span>
         <span className="_text-[#fb085a]">
           {!item.isLongTitle && item.seriesText}
@@ -109,7 +110,7 @@ const Hero = (item: TransformedPodcastDto) => {
       <div
         className={clsx(
           "text-foreground uppercase_ px-1 py-1 font-[Montserrat] text-sm font-medium tracking-wide",
-          isVerseRadio && "hidden",
+          (isVerseRadio || isPyQt) && "hidden",
         )}
       >
         <p dangerouslySetInnerHTML={{ __html: item.richTextLine1 }} />
