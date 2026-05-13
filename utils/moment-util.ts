@@ -43,17 +43,17 @@ const isPastDay = (dt: InputType) =>
 // Sun, 1 Jan 1970 | 9:00 AM
 const verbose = (dt?: InputType) => transform("ddd, D MMM YYYY | h:mm A", dt);
 
-// 1 April 2026
+// 1 Apr 2026
 const shortDate = (dt?: InputType) => transform("D MMM YYYY", dt);
 
-// Sunday, March 1st
-const podcastDate = (dt?: InputType) => transform("dddd, MMMM Do", dt);
+// Sunday, Mar 1st
+const podcastDate = (dt?: InputType) => transform("dddd, MMM Do", dt);
 
-// 8 PM
+// 8PM
 const podcastTime = (dt?: InputType) => transform("hA", dt);
 
-// Sunday, 22 March 2026 | 9 PM
+// Sunday, 22 Mar 2026 | 9PM
 const podcastDatetime = (dt?: InputType) =>
-  transform("dddd, D MMMM YYYY | hA", dt);
+  transform("dddd, D MMM YYYY | hA", dt);
 
 export const momentUtil = { isPastDay, verbose, shortDate, podcastDate, podcastTime, podcastDatetime };
