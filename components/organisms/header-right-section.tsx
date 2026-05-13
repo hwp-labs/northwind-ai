@@ -14,7 +14,7 @@ export const HeaderRightSection = () => {
   //
   return (
     <div className="flex-row-cs gap-4">
-      {pathname.startsWith("/podcast") ? (
+      {pathname.startsWith("/podcast/") ? (
         <RsvpAvatarGroup podcast_id={id} />
       ) : (
         <Button
