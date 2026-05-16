@@ -1,6 +1,7 @@
 export interface PodcastDto {
   id: number;
   avatars: string[] | null;
+  avatarFlags?: string[];
   datetime: string;
   title: string;
   titleShort?: string;

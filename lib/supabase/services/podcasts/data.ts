@@ -146,13 +146,18 @@ export const data: PodcastDto[] = [
       "/uploads/podcast/avatar-polalere.png",
       "/uploads/podcast/avatar-aosawere.png",
     ],
+    avatarFlags: [
+      "/uploads/podcast/flag-ng.webp",
+      "/uploads/podcast/flag-us.webp",
+      "/uploads/podcast/flag-uk.webp",
+    ],
     datetime: "2026-05-17T19:00:00.000Z",
     title: "Northwind AI Podcast",
     titleShort: "KPIs of World-Class Engineers",
     isLongTitle: true,
     summary:
       "Key Performance Indicators of <br/>World-Class Software Engineers",
-    guest: ["@workofao", "@philstring93"],
+    guest: ["@philstring93", "@workofao"],
     notionUrl:
       "https://held-gambler-004.notion.site/KPIs-of-World-Class-Engineers-3486a7cc633c8078980ded890c2c9cc6",
     spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",

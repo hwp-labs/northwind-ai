@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import clsx from "clsx";
 import {
   FaCalendarDay,
@@ -15,6 +16,7 @@ import { momentUtil } from "@/utils/moment-util";
 import { APP } from "@/constants/APP";
 //
 import { IBlog } from "./interface";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Header = ({ src }: { src: string[] }) => {
   return (
@@ -64,7 +66,7 @@ const EventDetails = ({ date }: IBlog) => (
       {momentUtil.podcastTime(date)} (WAT)
     </div>
     <div className="flex-row-cs gap-2">
-      <FaTwitter className="text-white" /> Twitter/X Spaces
+      <FaXTwitter className="text-white" /> Twitter/X Spaces
     </div>
   </>
 );
@@ -84,9 +86,18 @@ const Footer = ({ categories, url }: IBlog) => (
   <footer className="flex-row-cb mt-4">
     <div className="flex-row-cs gap-2">
       {categories.map((v, i) => (
-        <Badge key={i} variant="secondary">
-          {v}
-        </Badge>
+        <Fragment key={i}>
+          {i < 1 ? (
+            <div className="flex-row-cs gap-1 border-r border-gray-500 pr-2">
+              <small className="mr-1 font-[Montserrat] font-semibold hidden">
+                Host
+              </small>
+              <Badge variant="secondary">{v}</Badge>
+            </div>
+          ) : (
+            <Badge variant="secondary">{v}</Badge>
+          )}
+        </Fragment>
       ))}
     </div>
     <div className="flex-row-cs gap-1.5 text-xs font-medium tracking-wide">

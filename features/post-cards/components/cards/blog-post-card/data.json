@@ -107,5 +107,23 @@
       "Logistics"
     ],
     "url": "northwindai.org/c/shago"
+  },
+  {
+    "classNames": {
+      "img": "object-bottom!",
+      "h1": "text-[32px]! py-1! leading-9!"
+    },
+    "logo": ["avatar-etugbeh.png","avatar-polalere.png","avatar-aosawere.png"],
+    "thumbnail": "thumb-city4k.jpg",
+    "headline": "Key Performance Indicators of World-Class Software Engineers",
+    "location": "Twitter Spaces",
+    "date": "2026-05-17T19:00:00.000Z",
+    "categories": [
+      "@2gbeh",
+      "@philstring93",
+      "@workofao"
+    ],
+    "event": true,
+    "url": "northwindai.org/podcast/9"
   }
 ]

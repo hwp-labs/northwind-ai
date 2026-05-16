@@ -12,16 +12,22 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
   const item = (data[i] || data[0]) as IBlog;
   const logoSafe = typeof item.logo === "string" ? [item.logo] : item.logo;
 
-  const src = ["/images/icon-hwp-labs.png"];
+  const src: string[] = []; //["/images/icon-hwp-labs.png"];
   logoSafe.map((item) => src.push(`/uploads/logos/${item}`));
-  item.event ? src.push("/images/avatar-etugbeh.png") : null;
+  // item.event ? src.push("/images/avatar-etugbeh.png") : null;
   //
   return (
     <>
       <B.Header src={src} />
       <main className="relative flex-1 overflow-hidden">
         <B.Thumbnail {...item} />
-        <article className="bg-background/90 absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white">
+        <article
+          className="_bg-background/90 absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white"
+          style={{
+            background:
+              "linear-gradient(to right, black, black, rgba(255,255,255,0))",
+          }}
+        >
           <section
             className={clsx(
               "flex-row-cs text-foreground text-sm font-medium",
