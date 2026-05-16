@@ -2,7 +2,6 @@ import { Header, Footer, Main, Venue, Container, Background } from "./builder";
 import { Datetime } from "./datetime";
 import { Speakers } from "./speakers";
 import { Hero } from "./hero";
-import { data } from "@/lib/supabase/services/podcasts/data";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 
 interface Props {

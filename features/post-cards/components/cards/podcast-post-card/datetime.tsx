@@ -15,7 +15,7 @@ export const Datetime = ({ podcast }: Props) => {
   //
   return (
     <div
-      className={clsx("flex-row-cs text-sm", tonight ? "ml-6" : "ml-3")}
+      className={clsx("flex-row-cs text-sm", tonight ? "ml-6" : "ml-4")}
     >
       <span
         className="text-foreground flex-row-cs ml-2 -rotate-3 cursor-default gap-2 bg-[#071228] px-2 py-2 font-black tracking-wide"

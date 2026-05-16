@@ -44,7 +44,7 @@ const Speaker = ({ label, value, invert }: SpeakerProps) => (
   <li className="flex-row-cs flex-col gap-1">
     <span
       className={clsx(
-        "flex-row-cs gap-1 bg-[#071228] px-1 py-0.5 text-white",
+        "flex-row-cs gap-1 bg-[#071228] px-1 py-0.5 text-white font-semibold",
         invert && "bg-foreground! text-[#071228]!",
       )}
     >

@@ -1,5 +1,5 @@
-import { Logo } from "../logo";
-import { HeaderRightSection } from "./header-right-section";
+import { Logo } from "../../logo";
+import { HeaderRightSection } from "./right-section";
 import { PATH } from "@/constants/PATH";
 
 export const Header = () => {
