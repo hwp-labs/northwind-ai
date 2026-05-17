@@ -27,12 +27,12 @@ export class PodcastHelper {
       titleSeriesText: item.isLongTitle
         ? titleNobr
         : `${item.title} ${seriesText}`,
-      displayAvatar: item.displayAvatar || "/images/icon-hwp.png",
+      displayAvatar: this.DisplayAvatar(item),
       displayAvatars: this.DisplayAvatars(item),
       guestList: item.guest
         ? Array.isArray(item.guest)
           ? item.guest.map(({ username }) => username)
-          : []
+          : [item.guest.username]
         : undefined,
     };
   };
@@ -73,6 +73,13 @@ export class PodcastHelper {
     const date = dt.slice(0, 10);
     const hour = Number(dt.slice(11, 13));
     return CUR_DATE === date && CUR_HOUR_UTC >= hour;
+  }
+
+  static DisplayAvatar(item: PodcastDto) {
+    if (item.displayAvatar) return item.displayAvatar;
+    if (item.guest && !Array.isArray(item.guest)) return item.guest?.avatar;
+
+    return "/images/icon-hwp.png";
   }
 
   static DisplayAvatars(item: PodcastDto) {
