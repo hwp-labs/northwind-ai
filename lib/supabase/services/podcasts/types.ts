@@ -1,21 +1,27 @@
+export interface PodcastSpeakerDto {
+  name?: string;
+  avatar?: string;
+  username: string;
+  flag?: string;
+}
+
 export interface PodcastDto {
   id: number;
-  avatars: string[] | null;
-  avatarFlags?: string[];
   datetime: string;
   title: string;
   titleShort?: string;
   isLongTitle?: boolean;
   summary: string | null;
-  host?: string;
-  guest?: string | string[];
+  host?: PodcastSpeakerDto;
+  guest?: PodcastSpeakerDto | PodcastSpeakerDto[];
+  displayAvatar?: string;
+  displayAvatars?: string[];
   notionUrl: string | null;
   spaceUrl: string | null;
   listeners: number;
   series?: "ds" | "fc" | "rt";
 }
 export interface TransformedPodcastDto extends PodcastDto {
-  displayAvatar: string;
   dateText: string;
   timeText: string;
   datetimeText: string;
@@ -28,4 +34,5 @@ export interface TransformedPodcastDto extends PodcastDto {
   titleSeriesText: string;
   // guestUsernameSafe: string[];
   // lastLogoSrc: string;
+  guestList?: string[];
 }

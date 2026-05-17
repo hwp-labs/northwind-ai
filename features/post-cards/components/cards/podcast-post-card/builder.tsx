@@ -15,10 +15,9 @@ interface Props extends PropsWithChildren {
 }
 
 export const Header = ({ children, podcast }: Props) => {
-  const avatars = podcast?.avatars || [];
-  const renderRightSection = avatars.length ? (
+  const renderRightSection = podcast?.displayAvatars ? (
     <AvatarGroup className="[&>span]:bg-foreground [&>span]:ring-[#eee]">
-      {avatars.map((item, i) => (
+      {podcast.displayAvatars.map((item, i) => (
         <Avatar key={i}>
           <AvatarImage src={item} alt="" />
         </Avatar>
@@ -61,7 +60,7 @@ export const Footer = ({ children, podcast }: Props) => {
         {children || (
           <>
             Powered by
-            <img src="/uploads/logos/notion.png" alt="" width={20} /> Notion
+            <img src="/images/icon-notion.png" alt="" width={20} /> Notion
           </>
         )}
       </AnchorOutbound>

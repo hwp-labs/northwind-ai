@@ -1,11 +1,11 @@
 import { momentUtil } from "@/utils/moment-util";
 import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 //
-import { PodcastDto } from "./types";
+import { PodcastDto, TransformedPodcastDto } from "./types";
 import { data } from "./data";
 
 export class PodcastHelper {
-  static _transform = (item: PodcastDto) => {
+  static _transform = (item: PodcastDto): TransformedPodcastDto => {
     const isConcluded =
       item.listeners > 0 || momentUtil.isPastDay(item.datetime);
     const titleNobr = item.title.replaceAll("<br/>", " ");
@@ -16,7 +16,6 @@ export class PodcastHelper {
 
     return {
       ...item,
-      displayAvatar: this.DisplayAvatar(item.avatars),
       dateText: momentUtil.podcastDate(item.datetime),
       timeText: momentUtil.podcastTime(item.datetime),
       datetimeText: momentUtil.podcastDatetime(item.datetime),
@@ -28,6 +27,13 @@ export class PodcastHelper {
       titleSeriesText: item.isLongTitle
         ? titleNobr
         : `${item.title} ${seriesText}`,
+      displayAvatar: item.displayAvatar || "/images/icon-hwp.png",
+      displayAvatars: this.DisplayAvatars(item),
+      guestList: item.guest
+        ? Array.isArray(item.guest)
+          ? item.guest.map(({ username }) => username)
+          : []
+        : undefined,
     };
   };
 
@@ -69,13 +75,21 @@ export class PodcastHelper {
     return CUR_DATE === date && CUR_HOUR_UTC >= hour;
   }
 
-  static DisplayAvatar(avatars: PodcastDto["avatars"]) {
-    /** avatars: [
-      "/uploads/logos/hwp.png",
-      "/uploads/logos/scupex.png",
-      "/images/avatar-etugbeh.png",
-    ], */
-    if (!avatars) return "/uploads/logos/hwp.png";
-    return avatars[1];
+  static DisplayAvatars(item: PodcastDto) {
+    if (item.displayAvatars) return item.displayAvatars;
+
+    if (item.guest) {
+      if (Array.isArray(item.guest)) {
+        const arr = ["/images/avatar-etugbeh.png"];
+        item.guest.forEach(({ avatar }) => (avatar ? arr.push(avatar) : null));
+        return arr;
+      } else {
+        return [
+          "/images/icon-hwp.png",
+          "/images/avatar-etugbeh.png",
+          item.guest.avatar || "",
+        ];
+      }
+    }
   }
 }

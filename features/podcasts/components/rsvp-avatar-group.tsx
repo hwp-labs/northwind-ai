@@ -18,8 +18,8 @@ export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
   const item = PodcastHelper.GetPageItem(podcast_id);
   const [total, setTotal] = useState(1);
 
-  const avatars = item.avatars || [
-    "/uploads/logos/hwp.png",
+  const avatars = item.displayAvatars || [
+    "/images/icon-hwp.png",
     "/images/avatar-etugbeh.png",
     "/images/avatar.png",
   ];

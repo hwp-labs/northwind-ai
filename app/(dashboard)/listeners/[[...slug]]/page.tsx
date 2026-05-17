@@ -95,7 +95,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                     email={listener.podcast.datetimeText}
                     showBadge={listener.IsCreatedToday()}
                   />
-                  <TdBadge label={listener.podcast.guest} variant="secondary" />
+                  <TdBadge label={listener.podcast.guestList} variant="secondary" />
                   <TableCell>
                     <TableUI.Url
                       label="Notion"

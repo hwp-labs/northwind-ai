@@ -32,7 +32,7 @@ export const Logo = ({ path, iconOnly }: Props) => {
 export const CompanyLogo = () => {
   return (
     <figure className="flex-row-cs gap-2">
-      <img src="/images/icon-hwp-labs.png" width={24} alt="" />
+      <img src="/images/icon-hwp.png" width={24} alt="" />
       <figcaption className="text-[15px] font-medium">
         {APP.owner}&reg;
       </figcaption>

@@ -79,7 +79,11 @@
       "img": "object-bottom!",
       "h1": "_text-[19px]! py-1!"
     },
-    "logo": "grab.png",
+    "logo": [
+      "/images/icon-hwp.png",
+      "/images/avatar-etugbeh.png",
+      "grab.png"
+    ],
     "thumbnail": "thumb-grab.png",
     "headline": "A case study on Grab's journey from MVP (Minimum Viable Product) to Product Market Fit",
     "location": "Twitter Spaces",
@@ -106,20 +110,24 @@
       "Marketplace",
       "Logistics"
     ],
-    "url": "northwindai.org/c/shago"
+    "url": "northwindai.org/mvp/shago"
   },
   {
     "classNames": {
       "img": "object-bottom!",
       "h1": "text-[32px]! py-1! leading-9!"
     },
-    "logo": ["avatar-etugbeh.png","avatar-polalere.png","avatar-aosawere.png"],
+    "logo": [
+      "/images/avatar-etugbeh.png",
+      "/uploads/podcast/avatar-polalere.png",
+      "/uploads/podcast/avatar-aosawere.png"
+    ],
     "thumbnail": "thumb-city4k.jpg",
     "headline": "Key Performance Indicators of World-Class Software Engineers",
     "location": "Twitter Spaces",
     "date": "2026-05-17T19:00:00.000Z",
     "categories": [
-      "@2gbeh",
+      "#@2gbeh",
       "@philstring93",
       "@workofao"
     ],

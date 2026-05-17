@@ -1,11 +1,6 @@
 import { Fragment } from "react";
 import clsx from "clsx";
-import {
-  FaCalendarDay,
-  FaClock,
-  FaTwitter,
-  FaGlobeAfrica,
-} from "react-icons/fa";
+import { FaCalendarDay, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import { MdAdsClick } from "react-icons/md";
 //
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
@@ -16,7 +11,6 @@ import { momentUtil } from "@/utils/moment-util";
 import { APP } from "@/constants/APP";
 //
 import { IBlog } from "./interface";
-import { FaXTwitter } from "react-icons/fa6";
 
 const Header = ({ src }: { src: string[] }) => {
   return (
@@ -49,8 +43,9 @@ const Thumbnail = ({ thumbnail, classNames }: IBlog) => (
 
 const DateLocation = ({ date, location }: IBlog) => (
   <>
+    <FaCalendarDay className="text-white" />
     <time dateTime={date}>{momentUtil.shortDate(date)}</time>
-    &bull;
+    <FaMapMarkerAlt className="text-white" />
     <address>{location}</address>
   </>
 );
@@ -59,14 +54,14 @@ const EventDetails = ({ date }: IBlog) => (
   <>
     <div className="flex-row-cs gap-2">
       <FaCalendarDay className="text-white" />
+      {1 ? momentUtil.podcastDate(date) : "TONIGHT 🦊"}
     </div>
-    {momentUtil.podcastDate(date)}
     <div className="flex-row-cs gap-2">
       <FaClock className="text-white" />
       {momentUtil.podcastTime(date)} (WAT)
     </div>
     <div className="flex-row-cs gap-2">
-      <FaXTwitter className="text-white" /> Twitter/X Spaces
+      <FaMapMarkerAlt className="text-white" /> Twitter/X Spaces
     </div>
   </>
 );
@@ -87,12 +82,12 @@ const Footer = ({ categories, url }: IBlog) => (
     <div className="flex-row-cs gap-2">
       {categories.map((v, i) => (
         <Fragment key={i}>
-          {i < 1 ? (
+          {v.startsWith("#") ? (
             <div className="flex-row-cs gap-1 border-r border-gray-500 pr-2">
-              <small className="mr-1 font-[Montserrat] font-semibold hidden">
+              <small className="mr-1 hidden font-[Montserrat] font-semibold">
                 Host
               </small>
-              <Badge variant="secondary">{v}</Badge>
+              <Badge variant="secondary">{v.replace("#", "")}</Badge>
             </div>
           ) : (
             <Badge variant="secondary">{v}</Badge>

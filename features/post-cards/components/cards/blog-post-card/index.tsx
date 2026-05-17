@@ -12,9 +12,10 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
   const item = (data[i] || data[0]) as IBlog;
   const logoSafe = typeof item.logo === "string" ? [item.logo] : item.logo;
 
-  const src: string[] = []; //["/images/icon-hwp-labs.png"];
-  logoSafe.map((item) => src.push(`/uploads/logos/${item}`));
-  // item.event ? src.push("/images/avatar-etugbeh.png") : null;
+  const src: string[] = item.event ? [] : ["/images/icon-hwp.png"];
+  logoSafe.map((item) =>
+    src.push(item.startsWith("/") ? item : `/uploads/logos/${item}`),
+  );
   //
   return (
     <>
