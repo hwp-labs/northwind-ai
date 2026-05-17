@@ -145,7 +145,7 @@ export const data: PodcastDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/KPIs-of-World-Class-Engineers-3486a7cc633c8078980ded890c2c9cc6",
     spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",
-    listeners: 0,
+    listeners: 14,
     series: "fc",
   },
 ];
