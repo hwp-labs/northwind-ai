@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "lib/go-send-am/ShipmentList.jsx", "app/wip/go-send-am/page.jsx"  ],
-  "exclude": ["node_modules", "__ignore__"]
+    "**/*.mts",
+  ],
+  "exclude": ["node_modules", "__ignore__", "lib/go-send-am"]
 }
