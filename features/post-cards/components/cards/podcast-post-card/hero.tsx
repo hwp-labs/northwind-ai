@@ -16,7 +16,7 @@ export const Hero = ({ children, podcast }: Props) => (
     {children ? (
       <h1
         dangerouslySetInnerHTML={{ __html: children }}
-        className="px-4 py-2 text-[28px] leading-[35px] font-black text-white"
+        className="px-4 py-2 text-[38px] leading-[35px] font-black text-white"
       />
     ) : (
       <>

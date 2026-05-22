@@ -41,8 +41,8 @@ export const RsvpAvatarGroup = ({ podcast_id }: Props) => {
   }, []);
   //
   return (
-    <AvatarGroup count={total}>
-      {avatars.map((item, i) => (
+    <AvatarGroup count={total + (avatars.length - 3)}>
+      {avatars.slice(0, 3).map((item, i) => (
         <Avatar key={i}>
           <AvatarImage src={item} alt="" />
           <AvatarFallback>A</AvatarFallback>

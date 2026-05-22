@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { Builder as B } from "./builder";
-import { IBlog } from "./interface";
-import data from "./data.json";
+import { BlogDto, data } from "./data";
 
 interface Props {
   page?: number;
@@ -9,7 +8,7 @@ interface Props {
 
 export const BlogPostCard = ({ page = 1 }: Props) => {
   const i = page - 1;
-  const item = (data[i] || data[0]) as IBlog;
+  const item = (data[i] || data[0]) as BlogDto;
   const logoSafe = typeof item.logo === "string" ? [item.logo] : item.logo;
 
   const src: string[] = item.event ? [] : ["/images/icon-hwp.png"];
@@ -23,10 +22,14 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
       <main className="relative flex-1 overflow-hidden">
         <B.Thumbnail {...item} />
         <article
-          className="_bg-background/90 absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white"
+          className={clsx(
+            "absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white",
+            item.classNames?.hasOpacity ? "" : "bg-background/90",
+          )}
           style={{
-            background:
-              "linear-gradient(to right, black, black, rgba(255,255,255,0))",
+            background: item.classNames?.hasOpacity
+              ? "linear-gradient(to right, black, black, rgba(255,255,255,0))"
+              : "",
           }}
         >
           <section

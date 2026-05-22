@@ -10,7 +10,7 @@ interface UseHtmlToImageParams {
 export function useHtmlToImage({
   width,
   height,
-  scaleTo = 2,
+  scaleTo = 1.5,
 }: UseHtmlToImageParams) {
   const [loading, setLoading] = useState(false);
 

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdAdsClick } from "react-icons/md";
+import { IconWorldUpload } from "@tabler/icons-react";
 import clsx from "clsx";
 //
 import { CompanyLogo, Logo } from "@/components/logo";
@@ -16,8 +16,12 @@ interface Props extends PropsWithChildren {
 
 export const Header = ({ children, podcast }: Props) => {
   const renderRightSection = podcast?.displayAvatars ? (
-    <AvatarGroup className="[&>span]:bg-foreground [&>span]:ring-[#eee]">
-      {podcast.displayAvatars.map((item, i) => (
+    <AvatarGroup
+      count={podcast.displayAvatars.length - 3}
+      className="[&>span]:bg-foreground [&>span]:ring-[#eee]"
+      countClassName="invert"
+    >
+      {podcast.displayAvatars.slice(0, 3).map((item, i) => (
         <Avatar key={i}>
           <AvatarImage src={item} alt="" />
         </Avatar>
@@ -69,7 +73,7 @@ export const Footer = ({ children, podcast }: Props) => {
 };
 
 export const Container = ({ children }: Props) => {
-  return <div className="debug_ absolute bottom-16 left-8 z-1">{children}</div>;
+  return <div className="debug_ absolute bottom-14 left-8 z-1">{children}</div>;
 };
 
 export const Background = ({ children, podcast }: Props) => {
@@ -101,12 +105,12 @@ export const Background = ({ children, podcast }: Props) => {
 export const Venue = ({ podcast }: Props) => {
   return (
     <div className="flex-col-sc ml-8">
-      <div className="text-foreground flex-row-cs ml-7 -rotate-3 gap-2 bg-[#071228] px-4 py-2 text-sm font-black tracking-wide">
+      <div className="text-foreground flex-row-cs ml-7 -rotate-3 gap-1.5 bg-[#071228] px-4 py-2 text-sm font-black tracking-wide">
         <FaMapMarkerAlt size={14} />
         Twitter_X Spaces
       </div>
-      <div className="flex-row-cs -mt-0 -rotate-3 gap-2 bg-[#fb085a] px-4 py-2 text-white">
-        <MdAdsClick size={16} />
+      <div className="flex-row-cs -mt-0 -rotate-3 gap-1.5 bg-[#fb085a] px-4 py-2 text-white">
+        <IconWorldUpload size={16} />
         <AnchorOutbound
           href={`/podcast/${podcast?.id}`}
           className="_underline font-[Raleway] text-xs font-bold tracking-[1px] underline-offset-2"

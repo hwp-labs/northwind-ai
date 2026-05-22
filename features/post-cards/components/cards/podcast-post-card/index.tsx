@@ -10,7 +10,7 @@ interface Props {
 
 export const PodcastPostCard = ({ page = 1 }: Props) => {
   const item = PodcastHelper.GetPageItem(page);
-  const overwriteHero = [7, 8, 9].includes(item?.id) ? item.summary : null;
+  const overwriteHero = [7, 8, 9, 10].includes(item?.id) ? item.summary : null;
   const overwriteFooter =
     item?.id === 8 ? (
       <>

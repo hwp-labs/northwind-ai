@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import clsx from "clsx";
 import { FaCalendarDay, FaClock, FaMapMarkerAlt } from "react-icons/fa";
-import { MdAdsClick } from "react-icons/md";
+import { IconWorldUpload } from "@tabler/icons-react";
+import clsx from "clsx";
 //
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
@@ -10,7 +10,7 @@ import { Badge } from "@/components/shadcn/ui/badge";
 import { momentUtil } from "@/utils/moment-util";
 import { APP } from "@/constants/APP";
 //
-import { IBlog } from "./interface";
+import { BlogDto } from "./data";
 
 const Header = ({ src }: { src: string[] }) => {
   return (
@@ -21,8 +21,12 @@ const Header = ({ src }: { src: string[] }) => {
       )}
     >
       <Logo />
-      <AvatarGroup className="[&>span]:bg-foreground [&>span]:ring-[#eee]">
-        {src.map((item, i) => (
+      <AvatarGroup
+        count={src.length - 3}
+        className="[&>span]:bg-foreground [&>span]:ring-[#eee]"
+        countClassName="invert"
+      >
+        {src.slice(0, 3).map((item, i) => (
           <Avatar key={i}>
             <AvatarImage src={item} alt="" />
           </Avatar>
@@ -32,7 +36,7 @@ const Header = ({ src }: { src: string[] }) => {
   );
 };
 
-const Thumbnail = ({ thumbnail, classNames }: IBlog) => (
+const Thumbnail = ({ thumbnail, classNames }: BlogDto) => (
   <img
     src={`/uploads/blog/${thumbnail}`}
     alt=""
@@ -41,7 +45,7 @@ const Thumbnail = ({ thumbnail, classNames }: IBlog) => (
   />
 );
 
-const DateLocation = ({ date, location }: IBlog) => (
+const DateLocation = ({ date, location }: BlogDto) => (
   <>
     <FaCalendarDay className="text-white" />
     <time dateTime={date}>{momentUtil.shortDate(date)}</time>
@@ -50,11 +54,11 @@ const DateLocation = ({ date, location }: IBlog) => (
   </>
 );
 
-const EventDetails = ({ date }: IBlog) => (
+const EventDetails = ({ date }: BlogDto) => (
   <>
     <div className="flex-row-cs gap-2">
       <FaCalendarDay className="text-white" />
-      {1 ? momentUtil.podcastDate(date) : "TONIGHT 🦊"}
+      {0 ? momentUtil.podcastDate(date) : "TONIGHT 🦊"}
     </div>
     <div className="flex-row-cs gap-2">
       <FaClock className="text-white" />
@@ -66,7 +70,7 @@ const EventDetails = ({ date }: IBlog) => (
   </>
 );
 
-const Headline = ({ classNames, headline }: IBlog) => (
+const Headline = ({ classNames, headline }: BlogDto) => (
   <h1
     className={clsx(
       "mt-2 font-[Raleway] text-[20px] font-bold",
@@ -77,7 +81,7 @@ const Headline = ({ classNames, headline }: IBlog) => (
   </h1>
 );
 
-const Footer = ({ categories, url }: IBlog) => (
+const Footer = ({ categories, url, appName }: BlogDto) => (
   <footer className="flex-row-cb mt-4">
     <div className="flex-row-cs gap-2">
       {categories.map((v, i) => (
@@ -95,9 +99,9 @@ const Footer = ({ categories, url }: IBlog) => (
         </Fragment>
       ))}
     </div>
-    <div className="flex-row-cs gap-1.5 text-xs font-medium tracking-wide">
-      <MdAdsClick className="text-[15px] text-[#e05c1a]" />
-      <span>{url || APP.domain}</span>
+    <div className="flex-row-cs gap-1 text-xs font-medium tracking-wide">
+      <IconWorldUpload size={15} className="text-[#e05c1a]" />
+      <span>{url || `${APP.domain}/blog`}</span>
     </div>
   </footer>
 );

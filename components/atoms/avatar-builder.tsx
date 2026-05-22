@@ -33,7 +33,7 @@ interface AvatarGroupProps {
 export const AvatarGroup = ({
   children,
   size = 32,
-  count,
+  count = 0,
   className,
   countClassName,
 }: AvatarGroupProps) => {
@@ -50,7 +50,7 @@ export const AvatarGroup = ({
       )}
     >
       {children}
-      {count ? (
+      {count > 0 ? (
         <div
           className={clsx(
             "flex-row-cc bg-background z-1 rounded-full text-xs font-medium text-[#ccc] ring-1 ring-[#000]",
