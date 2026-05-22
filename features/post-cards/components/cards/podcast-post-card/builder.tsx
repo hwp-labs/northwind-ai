@@ -105,7 +105,7 @@ export const Background = ({ children, podcast }: Props) => {
 export const Venue = ({ podcast }: Props) => {
   return (
     <div className="flex-col-sc ml-8">
-      <div className="text-foreground flex-row-cs ml-7 -rotate-3 gap-1.5 bg-[#071228] px-4 py-2 text-sm font-black tracking-wide">
+      <div className="text-foreground flex-row-cs bg-podcast ml-7 -rotate-3 gap-1.5 px-4 py-2 text-sm font-black tracking-wide">
         <FaMapMarkerAlt size={14} />
         Twitter_X Spaces
       </div>

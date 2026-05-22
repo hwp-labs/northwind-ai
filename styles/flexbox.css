@@ -102,4 +102,8 @@
   .flex-col-eb {
     @apply flex flex-col items-end justify-between;
   }
+
+  .flex-col-se {
+    @apply flex flex-col items-start justify-end;
+  }
 }

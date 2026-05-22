@@ -1,0 +1,94 @@
+# Northwind AI Podcast App
+
+northwindai.org/podcast
+
+> [5/13, 10:52 AM] 2gbeh: 💡 I got an idea lastnight to create an online social graph of podcast guests for audience to connect with after the show.. i will be needing these extra details 👆
+
+## Mood Board
+
+WhatsApp\* UI, YouTube, Play Store, Spotify, Apple Music, iHeartRadio
+
+## Guest Form
+
+- Photo/Avatar
+- Name\*
+- Email\* (for email invites)
+- Tel/WhatsApp
+- Location (City, Country)
+- Headline (eg. Full Stack Developer, Software Engineer, Solution Architect, etc)
+- Twitter handle\*
+- Instagram handle
+- LinkedIn URL
+- Website (portfolio or product)
+
+## Event
+
+- episode number
+- date
+- topic (displayTitle)
+- series (for filtering)
+- Listerners (plays)
+- [cta]: rspv, attend, play
+
+## MVP
+
+```
+Icon, Podcast ... Search, Analytics
+Hero (cover, displayTopic, dt, cta ... Rsvp+)
+Guests carousel ... See all >
+Avatar+flag, displayName, flag
+Episodes ... See all >
+Calendar+todayIndicator, displayTopic, ?? ... plays+, cta
+Fab.send: join the guestlist, join the community, support Northwind AI Podcast
+❌ Banner support Northwind AI Podcast
+```
+
+## Modals
+
+```
+Rsvp/Attend sheet
+Play recording sheet
+Support modal
+FiltetBy sheet
+SortBy sheet
+```
+
+## Search Bar
+
+```
+I.scope "Search episodes, guests" i.x, i.funnel
+#filterBy series, date (mmm,yyyy)
+#sortBy date*, episode, guest, listeners
+Analytics
+Total episodes (series)
+Total guests (m, f)
+Total listeners (avg)
+Connections* (profile views/connect)
+```
+
+## Profile
+
+```
+- Back, Avatar+ Name+ headline ... email, tel
+- Back, screen title, .... Share ✨
+  ...
+  Avatar
+  Name
+  Headline
+  📍Location (flag, city)
+  X, in, ig, ...web
+  ...
+  Episodes 2
+  Listeners 28
+  Views 0
+  ...
+  Event list
+  Date+ topic+,
+  series chip?,
+  episode #,
+  Listeners,
+  [play recording]
+  [View keynote]
+  ...
+  (Connect: email)(call)
+```

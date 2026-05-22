@@ -15,7 +15,7 @@ export const Header = () => {
     <header className="flex-row-cb debug_ h-[60px] border-b px-4">
       <div className="flex-row-cs gap-2.5">
         <Logo iconOnly />
-        <strong className="font-[Bebas_Neue] text-lg tracking-widest">
+        <strong className="font-[Bebas_Neue] text-lg tracking-wider">
           Podcast
         </strong>
       </div>

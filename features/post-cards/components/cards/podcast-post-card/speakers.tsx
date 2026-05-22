@@ -51,13 +51,13 @@ interface SpeakerProps extends Partial<PodcastSpeakerDto> {
 
 const Speaker = ({ label, invert, ...speaker }: SpeakerProps) => {
   const username = speaker.username || "@2gbeh";
-  // 
+  //
   return (
     <div className="flex-col-cc gap-1">
       <div
         className={clsx(
-          "flex-row-cs gap-1 bg-[#071228] px-1 py-0.5 font-semibold text-white",
-          invert && "bg-foreground! text-[#071228]!",
+          "flex-row-cs bg-podcast gap-1 px-1 py-0.5 font-semibold text-white",
+          invert && "bg-foreground! text-podcast!",
         )}
       >
         {label}

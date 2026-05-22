@@ -14,17 +14,15 @@ export const Datetime = ({ podcast }: Props) => {
   const [tonight, setTonight] = useState(false);
   //
   return (
-    <div
-      className={clsx("flex-row-cs text-sm", tonight ? "ml-6" : "ml-4")}
-    >
+    <div className={clsx("flex-row-cs text-sm", tonight ? "ml-6" : "ml-4")}>
       <span
-        className="text-foreground flex-row-cs ml-2 -rotate-3 cursor-default gap-2 bg-[#071228] px-2 py-2 font-black tracking-wide"
+        className="text-foreground flex-row-cs bg-podcast ml-2 -rotate-3 cursor-default gap-2 px-2 py-2 font-black tracking-wide"
         onClick={() => setTonight((s) => !s)}
       >
         <CalendarClockIcon size={16} />
         {tonight ? "Tonight bro.. 👀" : podcast.dateText}
       </span>
-      <span className="bg-foreground -mt-4 -rotate-3 p-2 font-black tracking-wide text-[#071228]">
+      <span className="bg-foreground text-podcast -mt-4 -rotate-3 p-2 font-black tracking-wide">
         {podcast.timeText}
         <span className="text-[12px] font-medium tracking-normal"> WAT</span>
       </span>

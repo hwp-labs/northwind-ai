@@ -9,7 +9,10 @@ interface IconButtonProps {
   title?: string;
   path?: string;
   onClick?: () => void;
+  size?: number;
+  compact?: boolean;
   surface?: boolean;
+  debug?: boolean;
 }
 
 export const LucideIconButton = ({
@@ -17,7 +20,10 @@ export const LucideIconButton = ({
   title,
   path,
   onClick,
+  size = 24,
+  compact,
   surface,
+  debug,
 }: IconButtonProps) => {
   const router = useRouter();
   const handleClick = () => {
@@ -30,11 +36,13 @@ export const LucideIconButton = ({
       title={title}
       onClick={handleClick}
       className={clsx(
-        "debug_ flex-row-cc size-[48px] cursor-pointer",
+        "flex-row-cc cursor-pointer",
+        compact ? "" : "size-[48px]",
         surface && "bg-muted rounded-lg",
+        debug && "debug",
       )}
     >
-      <Icon size={surface ? 20 : 24} strokeWidth={2.5} />
+      <Icon size={surface ? 20 : size} strokeWidth={2.5} />
     </button>
   );
 };
