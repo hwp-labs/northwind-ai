@@ -2,8 +2,8 @@ import { create } from "zustand";
 
 interface StoreState {
   show: boolean;
-  typing: boolean;
   value: string;
+  typing: boolean;
 }
 
 interface StoreAction {
@@ -26,6 +26,8 @@ export const usePodcastSearchbarStore = create<StoreType>()((set, get) => ({
   setShow: (p) =>
     set((s) => ({
       show: p || !s.show,
+      value: "",
+      typing: false,
     })),
   setValue: (p) =>
     set({

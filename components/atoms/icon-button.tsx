@@ -5,7 +5,7 @@ import { type LucideIcon } from "lucide-react";
 import clsx from "clsx";
 
 interface IconButtonProps {
-  Icon: LucideIcon;  
+  Icon: LucideIcon;
   title?: string;
   path?: string;
   onClick?: () => void;
@@ -30,7 +30,7 @@ export const LucideIconButton = ({
       title={title}
       onClick={handleClick}
       className={clsx(
-        "debug_ flex-row-cc size-[48px]",
+        "debug_ flex-row-cc size-[48px] cursor-pointer",
         surface && "bg-muted rounded-lg",
       )}
     >
