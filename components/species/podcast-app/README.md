@@ -36,9 +36,9 @@ WhatsApp\* UI, YouTube, Play Store, Spotify, Apple Music, iHeartRadio
 Icon, Podcast ... Search, Analytics
 Hero (cover, displayTopic, dt, cta ... Rsvp+)
 Guests carousel ... See all >
-Avatar+flag, displayName, flag
+__Avatar+flag, displayName, username
 Episodes ... See all >
-Calendar+todayIndicator, displayTopic, ?? ... plays+, cta
+__Calendar+todayIndicator, displayTopic, ?? ... plays+, cta
 Fab.send: join the guestlist, join the community, support Northwind AI Podcast
 ❌ Banner support Northwind AI Podcast
 ```

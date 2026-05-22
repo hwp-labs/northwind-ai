@@ -1,7 +1,16 @@
+b,
+strong,
+i,
+em,
+span,
+small,
+address {
+  display: inline-block;
+}
+
 i,
 address {
   font-style: normal;
-  display: inline-block;
 }
 
 strong {

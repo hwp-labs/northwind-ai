@@ -3,20 +3,20 @@ import { ListHeader } from "./list-header";
 
 export const Guests = () => {
   return (
-    <section className="debug debug max-w-svw">
+    <section className="debug_ max-w-svw">
     <div className="px-5">
-      <ListHeader>Previous Guests</ListHeader>
+      <ListHeader>Featured Guests</ListHeader>
     </div>
       <ul className="scrollbar-hide mt-4 flex snap-x snap-mandatory gap-4_ overflow-x-auto scroll-smooth pb-4 items-end">
         {data.map((item, i) => (
           <li key={i} className="border_ min-w-[120px] max-w-[120px]">
-            <figure className="debug3 flex-col-cc flex-shrink-0 snap-center">
+            <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
               <Image
                 src={item.src}
                 alt=""
                 width={56}
                 height={56}
-                className="rounded-full border-2 border-foreground"
+                className="rounded-full border-2 border-outline size-[56px]"
               />
               <figcaption className="flex-col-cc mt-4 gap-0.5 truncate text-sm">
                 <strong className="text-white">{item.name}</strong>

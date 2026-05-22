@@ -10,6 +10,7 @@ interface Props {
   path?: string;
   onClick?: () => void;
   size?: number;
+  color?: string;
   compact?: boolean;
   surface?: boolean;
   debug?: boolean;
@@ -21,6 +22,7 @@ export const LucideIconButton = ({
   path,
   onClick,
   size = 24,
+  color,
   compact,
   surface,
   debug,
@@ -38,11 +40,11 @@ export const LucideIconButton = ({
       className={clsx(
         "flex-row-cc cursor-pointer",
         compact ? "" : "size-[48px]",
-        surface && "bg-muted rounded-lg",
+        surface && "bg-primary rounded-lg",
         debug && "debug",
       )}
     >
-      <Icon size={surface ? 20 : size} strokeWidth={2.5} />
+      <Icon size={surface ? 20 : size} strokeWidth={2.5} color={color} />
     </button>
   );
 };

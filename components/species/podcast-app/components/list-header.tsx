@@ -10,7 +10,7 @@ export const ListHeader = ({ children, path = "#list-header" }: Props) => {
   return (
     <div className="flex-row-cb" id="list-header">
       <strong className="text-lg">{children}</strong>
-      <Link href={path} className="flex-row-cs gap-1">
+      <Link href={path} className="flex-row-cs gap-1 hidden">
         See all
         <ChevronRightIcon size={20} strokeWidth={2.5} />
       </Link>

@@ -14,11 +14,11 @@ export const SearchBar = () => {
   const typing = usePodcastSearchbarStore((s) => s.typing);
   //
   return show ? (
-    <section className="flex-row-cb h-[60px] border-b px-4">
+    <section className="flex-row-cb h-[72px] border-b_ px-4">
       <div className="flex-row-cb flex-1 gap-4">
         {/* <LucideIconButton Icon={ArrowLeftIcon} onClick={setShow} title="Back" /> */}
         <Logo iconOnly size={24}/>
-        <div className="bg-border flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5">
+        <div className="bg-primary flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5">
           <input
             type="text"
             placeholder="Discover new episodes"
@@ -38,10 +38,10 @@ export const SearchBar = () => {
             ) : (
               <p className="size-[18px]" />
             )}
-            <LucideIconButton Icon={SearchIcon} title="Search" compact />
+            <LucideIconButton Icon={SearchIcon} title="Search" compact color="var(--muted)" />
           </div>
         </div>
-        <LucideIconButton Icon={Settings2Icon} title="Filter" compact />
+        <LucideIconButton Icon={Settings2Icon} title="Filter" compact  />
       </div>
     </section>
   ) : null;

@@ -1,24 +1,19 @@
-@tailwind utilities;
+.debug {
+  @apply border border-red-500;
+}
 
-@layer utilities {
-  .debug {
-    @apply border border-red-500;
-  }
+.debug2 {
+  @apply border border-green-500;
+}
 
-  .debug2 {
-    @apply border border-green-500;
-  }
+.debug3 {
+  @apply border border-blue-500;
+}
 
-  .debug3 {
-    @apply border border-blue-500;
-  }
+.debug4 {
+  @apply border border-yellow-500;
+}
 
-  .debug4 {
-    @apply border border-yellow-500;
-  }
-
-  .custom-mono {
-    @apply font-mono leading-4 font-semibold;
-  }
-
+.custom-mono {
+  @apply font-mono leading-4 font-semibold;
 }

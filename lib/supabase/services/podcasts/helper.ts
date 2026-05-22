@@ -79,7 +79,7 @@ export class PodcastHelper {
     if (item.displayAvatar) return item.displayAvatar;
     if (item.guest && !Array.isArray(item.guest)) return item.guest?.avatar;
 
-    return "/images/icon-hwp.png";
+    return "/icon-512.png";
   }
 
   static DisplayAvatars(item: PodcastDto) {

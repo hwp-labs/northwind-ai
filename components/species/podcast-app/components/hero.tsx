@@ -11,6 +11,7 @@ import {
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { useState } from "react";
+import { CalendarCheckIcon, UserCheckIcon, UserPlusIcon, UserStarIcon } from "lucide-react";
 
 export const Hero = () => {
   const [rsvp, setRsvp] = useState(false);
@@ -50,9 +51,10 @@ export const Hero = () => {
           <div className="flex-row-cb debug_">
             <button
               onClick={() => setRsvp((s) => !s)}
-              className="bg-podcast rounded-lg px-5 py-2 text-sm font-medium invert tracking-wide"
+              className="bg-podcast flex-row-cs gap1 rounded-lg px-4 py-2 text-sm font-medium tracking-wide invert gap-2"
             >
-              RSVP
+              <span>RSVP</span>
+              <CalendarCheckIcon size={18} strokeWidth={2.5} />
             </button>
             <AvatarGroup
               count={2}
