@@ -59,11 +59,30 @@ SortBy sheet
 I.scope "Search episodes, guests" i.x, i.funnel
 #filterBy series, date (mmm,yyyy)
 #sortBy date*, episode, guest, listeners
-Analytics
+```
+
+## Analytics
+
+```
 Total episodes (series)
 Total guests (m, f)
 Total listeners (avg)
 Connections* (profile views/connect)
+
+# ring chart
+Impressions ... all time*,7d,30d,90d,180d,365d
+((Average LPE(i) 70))
+total episodes ...total listeners
+x9 ... y636
+
+# clustered-column
+Podcast Overview
+x money b listeners
+
+# kpi-card
+episodes
+guests
+listeners
 ```
 
 ## Profile

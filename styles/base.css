@@ -1,0 +1,22 @@
+i,
+address {
+  font-style: normal;
+  display: inline-block;
+}
+
+strong {
+  /*  medium */
+  font-weight: 500;
+}
+
+b {
+  /* semibold */
+  font-weight: 600;
+}
+
+.page-transition {
+  opacity: 0;
+  background: black;
+  transform: translateY(40px);
+  filter: blur(12px);
+}

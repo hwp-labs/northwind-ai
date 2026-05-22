@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { type LucideIcon } from "lucide-react";
 import clsx from "clsx";
 
-interface IconButtonProps {
+interface Props {
   Icon: LucideIcon;
   title?: string;
   path?: string;
@@ -24,7 +24,7 @@ export const LucideIconButton = ({
   compact,
   surface,
   debug,
-}: IconButtonProps) => {
+}: Props) => {
   const router = useRouter();
   const handleClick = () => {
     if (path) router.push(path);

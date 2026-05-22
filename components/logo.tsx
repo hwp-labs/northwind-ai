@@ -1,17 +1,24 @@
 import Link from "next/link";
 import { GpuIcon } from "lucide-react";
 import { APP } from "@/constants/APP";
+import clsx from "clsx";
 
 interface Props {
+  size?: number;
   path?: string;
   iconOnly?: boolean;
 }
 
-export const Logo = ({ path, iconOnly }: Props) => {
+export const Logo = ({ size, path, iconOnly }: Props) => {
   const renderLogo = (
     <div className="flex-row-cs border_ gap-2">
-      <span className="flex-row-cc size-[24px] rounded-full bg-black text-white">
-        <GpuIcon size={14} />
+      <span
+        className={clsx(
+          "flex-row-cc rounded-full bg-black text-white",
+          size ? "p-[10px]" : "size-[24px]",
+        )}
+      >
+        <GpuIcon size={size || 14} />
       </span>
       {!iconOnly && (
         <p className="font-[Raleway] font-semibold text-nowrap">{APP.name}</p>
@@ -27,7 +34,6 @@ export const Logo = ({ path, iconOnly }: Props) => {
     </a>
   );
 };
-
 
 export const CompanyLogo = () => {
   return (

@@ -1,0 +1,7 @@
+@tailwind utilities;
+
+@layer utilities {
+  .input-reset {
+    @apply w-full outline-none focus:ring-0 focus:outline-none;
+  }
+}
