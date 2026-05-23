@@ -1,39 +1,21 @@
-"use client";
-
 import Image from "next/image";
 import {
-  IconAlarmPlus,
-  IconBell,
-  IconBellCheck,
-  IconBellRinging,
   IconCalendarEventFilled,
-  IconCalendarFilled,
   IconClockHour8Filled,
   IconMapPinFilled,
 } from "@tabler/icons-react";
 //
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
-import { useState } from "react";
-import {
-  AlarmCheckIcon,
-  AlarmClockPlusIcon,
-  CalendarCheckIcon,
-  ChevronRightIcon,
-  ConciergeBellIcon,
-  UserCheckIcon,
-  UserPlusIcon,
-  UserStarIcon,
-} from "lucide-react";
+//
+import { HeroCta } from "./cta";
 
 export const Hero = () => {
-  const [rsvp, setRsvp] = useState(false);
-  //
   return (
     <section className="px-4">
       <figure className="debug_ relative h-[200px] overflow-hidden rounded-2xl">
         <Image
-          src={`/uploads/podcast/${rsvp ? "halim.png" : "sony.png"}`}
+          src={`/uploads/podcast/${0 ? "halim.png" : "sony.png"}`}
           alt=""
           fill
           priority
@@ -48,11 +30,12 @@ export const Hero = () => {
         >
           <div className="debug_ flex-col-se w-[250px] flex-1 gap-2">
             <h1 className="font-[Bebas_Neue] text-[26px] leading-[28px] font-medium tracking-[3px]">
-              Risk Assessment & AI with Tech Bro Wives
+              {/* Risk Assessment & AI with Tech Bro Wives */}
+              KPIs of World-Class Software Engineers
             </h1>
             <div className="flex-row-cs font-[Raleway]_ _font-medium gap-2 text-sm tracking-wide">
               <IconCalendarEventFilled size={18} />
-              <span>Sun, May 24</span>
+              <span>Sun, May 17</span>
               <IconClockHour8Filled size={18} />
               <time dateTime="2026-05-24t20:00:00">8PM</time>
             </div>
@@ -62,15 +45,9 @@ export const Hero = () => {
             </div>
           </div>
           <div className="flex-row-cb debug_">
-            <button
-              onClick={() => setRsvp((s) => !s)}
-              className="bg-white text-podcast px-4 py-1.5 rounded-lg border-2 border-podcast ring-2 ring-white button-base gap-2 font-medium"
-            >
-              <span>RSVP</span>
-              <IconBell size={18} strokeWidth={2.5} />
-            </button>
+            <HeroCta />
             <AvatarGroup
-              count={2}
+              count={14 - 3}
               className="[&>span]:bg-foreground [&>span]:ring-1.5! [&>span]:ring-[#eee]"
               countClassName="invert"
             >

@@ -1,10 +1,11 @@
 import Image from "next/image";
 import clsx from "clsx";
 //
-import { ListHeader } from "./list-header";
-import { IconPlayerPlayFilled } from "@tabler/icons-react";
+import { ListHeader } from "../list-header";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { data } from "@/lib/supabase/services/podcasts/data";
+// 
+import { EpisodeCta } from "./cta";
 
 export const Episodes = () => {
   return (
@@ -50,9 +51,7 @@ export const Episodes = () => {
                   <small className="font-[Montserrat]_ text-muted-foreground text-sm font-medium whitespace-nowrap">
                     {item.listeners} L
                   </small>
-                  <button className="bg-secondary flex-row-cc size-[40px] rounded-full">
-                    <IconPlayerPlayFilled size={18} />
-                  </button>
+                  <EpisodeCta item={item} />
                 </div>
               </li>
             );

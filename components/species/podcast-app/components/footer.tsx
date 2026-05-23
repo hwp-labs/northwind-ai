@@ -1,6 +1,8 @@
 "use client";
 
-import { IconRocket } from "@tabler/icons-react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { IconHeartFilled, IconRocket } from "@tabler/icons-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
 import {
@@ -25,17 +27,18 @@ import {
 } from "@/components/shadcn/ui/empty";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { usePodcastSearchbarStore } from "@/store/podcastSearchbarStore";
-import { COPY } from "@/constants/LOCALE";
 import { APP } from "@/constants/APP";
-import Link from "next/link";
 import { PATH } from "@/constants/PATH";
+import { COPY } from "@/constants/LOCALE";
 //
 
 export const Footer = () => {
+  const router = useRouter();
+  const isMobile = useIsMobile();
+
+  const [showOPay, setShowOPay] = useState(false);
   const open = usePodcastSearchbarStore((s) => s.show);
   const onClose = usePodcastSearchbarStore((s) => s.setShow);
-
-  const isMobile = useIsMobile();
 
   const renderModalContent = (
     <Empty className="mt-4_">
@@ -49,20 +52,32 @@ export const Footer = () => {
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className="grid px-2">
-        <Button variant="secondary" onClick={() => onClose()}>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            onClose();
+            window.open(APP.whatsappGroupUrl, "_blank");
+          }}
+        >
           Become a Guest
         </Button>
-        <Button variant="secondary" onClick={() => onClose()}>
-          Join WhatsApp Community
+        <Button
+          variant="secondary"
+          onClick={() => setShowOPay((s) => !s)}
+          className={showOPay ? "bg-[#1dcf9f]! text-[#200f5f]" : undefined}
+        >
+          {showOPay && <IconHeartFilled color="var(--destructive)" />}
+          {showOPay ? `OPay 8169960927` : `Support ${APP.name}`}
         </Button>
-        <Button variant="secondary" onClick={() => onClose()}>
-          Support {APP.name}{" "}
+        <Button
+          variant="default"
+          onClick={() => {
+            onClose();
+            router.push(PATH.podcastAnalytics);
+          }}
+        >
+          View Analytics
         </Button>
-        <div className="flex-row-cc mt-2 gap-6">
-          <Link href={PATH.podcastAnalytics} className="underline_">
-            View Analytics
-          </Link>
-        </div>
       </EmptyContent>
     </Empty>
   );

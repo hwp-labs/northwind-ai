@@ -5,7 +5,8 @@
   --color-podcast: #071228;
 }
 
-:root {
+:root,
+.dark {
   --background: #120e0d !important;
   --foreground: #edf1f2 !important;
   --muted: oklch(0.556 0 0) !important;

@@ -14,7 +14,7 @@ export const CTAButtons = () => {
   const handleTalkSales = () => {
     const text = COPY.promptWithHi;
     const textEncoded = encodeURIComponent(text);
-    window.open(`${APP.whatsappUrl}?text=${textEncoded}`, "_blank");
+    window.open(`${APP.whatsappSalesUrl}?text=${textEncoded}`, "_blank");
   };
   //
   return (

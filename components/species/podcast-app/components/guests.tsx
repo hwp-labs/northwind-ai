@@ -1,22 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import { ListHeader } from "./list-header";
 
 export const Guests = () => {
   return (
     <section className="debug_ max-w-svw">
-    <div className="px-5">
-      <ListHeader>Featured Guests</ListHeader>
-    </div>
-      <ul className="scrollbar-hide mt-4 flex snap-x snap-mandatory gap-4_ overflow-x-auto scroll-smooth pb-4 items-end">
+      <div className="px-5">
+        <ListHeader>Featured Guests</ListHeader>
+      </div>
+      <ul className="scrollbar-hide gap-4_ mt-4 flex snap-x snap-mandatory items-end overflow-x-auto scroll-smooth pb-4">
         {data.map((item, i) => (
-          <li key={i} className="border_ min-w-[100px] max-w-[100px]">
-            <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
+          <li key={i} className="border_ max-w-[100px] min-w-[100px]">
+            <figure
+              className="debug3_ flex-col-cc flex-shrink-0 snap-center cursor-pointer"
+              onClick={() =>
+                window.open(`https://x.com/${item.username}`, "_blank")
+              }
+            >
               <Image
                 src={item.src}
                 alt=""
                 width={56}
                 height={56}
-                className="rounded-full border-2 border-outline size-[56px]"
+                className="border-outline size-[56px] rounded-full border-2"
               />
               <figcaption className="flex-col-cc mt-2 gap-0.5 truncate text-sm">
                 <strong className="text-white">{item.name}</strong>

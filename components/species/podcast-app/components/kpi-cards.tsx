@@ -4,7 +4,7 @@ import { KpiCard } from "./kpi-card";
 
 export const KpiCards = ({ data: d }: { data: PodcastAnalyticsDto }) => {
   return (
-    <>
+    <div className="grid sm:grid-cols-2 gap-4">
       <KpiCard
         Icon={<IconMicrophoneFilled size={14} strokeWidth={2.5} />}
         label="Total Episodes"
@@ -47,6 +47,6 @@ export const KpiCards = ({ data: d }: { data: PodcastAnalyticsDto }) => {
           },
         ]}
       />
-    </>
+    </div>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { IconCategoryPlus, IconArrowLeft } from "@tabler/icons-react";
+import { IconCategoryPlus, IconChevronLeft } from "@tabler/icons-react";
 import { Logo } from "@/components/logo";
 import { IconButton } from "@/components/atoms/icon-button";
 import { SearchBar } from "./search-bar";
@@ -25,29 +25,31 @@ export const Header = ({ title, fromPath }: Props) => {
   };
   //
   return (
-    <header className="flex-row-cb _border-b px-4 pt-3 pb-1">
-      {title ? (
-        <div className="flex-row-cs gap-4">
-          <IconButton
-            Icon={IconArrowLeft}
-            onClick={handleBack}
-            title="Back"
-            compact
-          />
-          <h1 className="text-lg font-medium">{title}</h1>
-        </div>
-      ) : (
-        <div className="flex-row-cb flex-1 gap-4">
-          <Logo iconOnly size={24} />
-          <SearchBar />
-          <IconButton
-            Icon={IconCategoryPlus}
-            onClick={setShow}
-            title="Options"
-            compact
-          />
-        </div>
-      )}
+    <header className="bg-background sticky top-0 z-1">
+      <div className="flex-row-cb px-4 h-[60px]">
+        {title ? (
+          <div className="flex-row-cs gap-4">
+            <IconButton
+              Icon={IconChevronLeft}
+              onClick={handleBack}
+              title="Back"
+              compact
+            />
+            <h1 className="text-lg font-medium">{title}</h1>
+          </div>
+        ) : (
+          <div className="flex-row-cb flex-1 gap-4">
+            <Logo iconOnly size={24} />
+            <SearchBar />
+            <IconButton
+              Icon={IconCategoryPlus}
+              onClick={setShow}
+              title="Options"
+              compact
+            />
+          </div>
+        )}
+      </div>
     </header>
   );
 };

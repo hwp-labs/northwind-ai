@@ -17,7 +17,7 @@ export default async function PodcastAnalyticsPage() {
   return (
     <main className="grid gap-4">
       <Header title="Analytics" fromPath={PATH.podcast} />
-      <div className="debug_ mx-auto flex w-full flex-col flex-wrap gap-4 px-4 lg:w-[1280px]">
+      <div className="debug_ mx-auto flex w-full flex-col flex-wrap gap-4 px-4 md:w-[768px]">
         <KpiCards data={d} />
         <RingChart
           title="Listeners Overview"

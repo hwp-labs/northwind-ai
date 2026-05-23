@@ -135,7 +135,7 @@ const Footer = () => (
       Cheers, <br />
       EMANUEL <br />
       AI Product Engineer <br />
-      <Link href={APP.whatsappUrl}>{APP.telDisplayText}</Link>
+      <Link href={APP.whatsappSalesUrl}>{APP.telDisplayText}</Link>
     </P>
   </Section>
 );
