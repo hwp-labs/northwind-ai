@@ -25,7 +25,7 @@ export const Header = ({ title, fromPath }: Props) => {
   };
   //
   return (
-    <header className="bg-background sticky top-0 z-1">
+    <header className="bg-background sticky top-0 z-8">
       <div className="flex-row-cb px-4 h-[60px]">
         {title ? (
           <div className="flex-row-cs gap-4">

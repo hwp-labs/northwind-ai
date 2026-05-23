@@ -56,4 +56,16 @@ const podcastTime = (dt?: InputType) => transform("hA", dt);
 const podcastDatetime = (dt?: InputType) =>
   transform("dddd, D MMM YYYY | hA", dt);
 
-export const momentUtil = { isPastDay, verbose, shortDate, podcastDate, podcastTime, podcastDatetime };
+// Sun, 22 Mar 26 | 9PM
+const podcastDatetimeShort = (dt?: InputType) =>
+  transform("ddd, D MMM YYYY | hA", dt);
+
+export const momentUtil = {
+  isPastDay,
+  verbose,
+  shortDate,
+  podcastDate,
+  podcastTime,
+  podcastDatetime,
+  podcastDatetimeShort,
+};

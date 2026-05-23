@@ -37,7 +37,7 @@ export const Hero = () => {
               <IconCalendarEventFilled size={18} />
               <span>Sun, May 17</span>
               <IconClockHour8Filled size={18} />
-              <time dateTime="2026-05-24t20:00:00">8PM</time>
+              <time dateTime="2026-05-24t20:00:00">8PM (WAT)</time>
             </div>
             <div className="flex-row-cs hidden gap-2">
               <IconMapPinFilled size={18} />

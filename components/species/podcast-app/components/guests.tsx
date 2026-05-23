@@ -38,11 +38,11 @@ export const Guests = () => {
 };
 
 const data = [
-  {
-    src: "/uploads/logos/grab.png",
-    name: "Grab",
-    username: "@InsideGrab",
-  },
+  // {
+  //   src: "/uploads/logos/grab.png",
+  //   name: "Grab",
+  //   username: "@InsideGrab",
+  // },
   {
     src: "/uploads/logos/adiz.png",
     name: "Isaac A.",

@@ -19,6 +19,7 @@ export interface PodcastDto {
   notionUrl: string | null;
   spaceUrl: string | null;
   listeners: number;
+  liveListeners?: number;
   series?: "ds" | "fc" | "cs";
 }
 export interface TransformedPodcastDto extends PodcastDto {
@@ -26,6 +27,7 @@ export interface TransformedPodcastDto extends PodcastDto {
   dateText: string;
   timeText: string;
   datetimeText: string;
+  datetimeTextShort: string;
   isOngoing: boolean;
   isConcluded: boolean;
   // isFiresideChat: boolean;

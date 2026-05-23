@@ -23,6 +23,7 @@ export class PodcastHelper {
       dateText: momentUtil.podcastDate(item.datetime),
       timeText: momentUtil.podcastTime(item.datetime),
       datetimeText: momentUtil.podcastDatetime(item.datetime),
+      datetimeTextShort: momentUtil.podcastDatetimeShort(item.datetime),
       isOngoing: this.IsOngoing(item.datetime),
       isConcluded,
       titleNobr,

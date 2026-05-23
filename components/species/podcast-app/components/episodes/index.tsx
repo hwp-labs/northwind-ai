@@ -43,7 +43,7 @@ export const Episodes = () => {
                       {item.titleShort || item.titleSeriesText}
                     </strong>
                     <p className="text-muted-foreground text-[12px]">
-                      {item.datetimeText}
+                      {item.datetimeTextShort}
                     </p>
                   </figcaption>
                 </figure>

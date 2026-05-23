@@ -5,7 +5,7 @@ em,
 span,
 small,
 address {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 i,
