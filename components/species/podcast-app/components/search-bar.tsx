@@ -9,7 +9,7 @@ export const SearchBar = () => {
   const typing = value.trim().length > 0;
   //
   return (
-    <div className="bg-primary flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5 focus:outline-none">
+    <div className="bg-secondary flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5 focus:outline-none">
       <input
         type="text"
         placeholder="Discover new episodes"
@@ -33,7 +33,7 @@ export const SearchBar = () => {
           Icon={SearchIcon}
           title="Search"
           compact
-          color="var(--muted)"
+          color="var(--ring)"
         />
       </div>
     </div>

@@ -57,7 +57,7 @@ export const RingChart = ({
       </div>
 
       {keys ? (
-        <ul className="mt-6 flex justify-around border-t py-6">
+        <ul className="mt-6 flex justify-around border-t pt-6">
           {keys.map(({ label, value, ...item }, i) => (
             <li className="flex-col-cc _debug gap-1" key={i}>
               <span className="text-muted-foreground">{label}</span>

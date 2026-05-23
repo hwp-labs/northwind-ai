@@ -1,29 +1,12 @@
 import type { Metadata } from "next";
+import { IconInfoCircle, IconMicrophone, IconMicrophoneFilled, IconUsers } from "@tabler/icons-react";
+//
 import { Header } from "@/components/species/podcast-app/components/header";
 import { RingChart } from "@/components/species/podcast-app/components/ring-chart";
-import {
-  KpiCard,
-  KpiCardV2,
-} from "@/components/species/podcast-app/components/kpi-card";
+import { KpiCard } from "@/components/species/podcast-app/components/kpi-card";
 import { PATH } from "@/constants/PATH";
 import { data } from "@/lib/supabase/services/podcasts/data";
-import { IconInfoCircle } from "@tabler/icons-react";
-/**
- # ring chart
-Impressions ... all time*,7d,30d,90d,180d,365d
-((Average LPE(i) 70))
-total episodes ...total listeners
-x9 ... y636
 
-# clustered-column
-Podcast Overview
-x money b listeners
-
-# kpi-card
-episodes
-guests
-listeners
- */
 export const metadata: Metadata = {
   title: "Podcast Analytics",
 };
@@ -35,23 +18,31 @@ export default async function PodcastAnalyticsPage() {
     <main className="grid gap-4">
       <Header title="Analytics" fromPath={PATH.podcast} />
       <div className="debug_ mx-auto flex w-full flex-col flex-wrap gap-6 px-4 lg:w-[1280px]">
+        <KpiCard
+          Icon={<IconMicrophoneFilled size={14} strokeWidth={2.5} />}
+          label="Total Episodes"
+          value={d.episodes?.total}
+        />
+        <KpiCard
+          Icon={<IconUsers size={14} strokeWidth={2.5} />}
+          label="Total Guests"
+          value={d.guests?.total}
+        />
         <RingChart
-          title="Overview"
+          title="Listeners Overview"
           label={
             <div className="flex-row-cs gap-1">
               <span>Average LPE </span>
               <IconInfoCircle size={16} title="Listeners Per Episode" />
             </div>
           }
-          value={d.listeners?.average}
-          valueRate={d.listeners?.averageRate}
+          value={d.listeners?.averageRate}
+          valueSuffix={"%"}
           keys={[
-            { label: "Total Episodes", value: d.episodes?.total },
             { label: "Total Listeners", value: d.listeners?.total },
+            { label: "Avg. Listeners", value: d.listeners?.average },
           ]}
         />
-        <KpiCard />
-        <KpiCardV2 />
       </div>
       <p></p>
     </main>

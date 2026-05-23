@@ -75,20 +75,14 @@ Total guests (m, f)
 Total listeners (avg)
 Connections* (profile views/connect)
 
-# ring chart
-Impressions ... all time*,7d,30d,90d,180d,365d
-((Average LPE(i) 70))
-total episodes ...total listeners
-x9 ... y636
-
-# clustered-column ??
-Podcast Overview
-x money b listeners
-
 # kpi-card
-episodes
-guests
-listeners
+episodes #9
+guests #12
+
+# ring chart
+Listeners Overview ... all time*,7d,30d,90d,180d,365d
+Average LPE(i) #11%
+total listeners #636 ...avg listeners #70
 ```
 
 ## Profile

@@ -26,13 +26,13 @@ export function useRingChart(args?: Args) {
     ctx.clearRect(0, 0, size, size);
     ctx.beginPath();
     ctx.arc(cx, cy, r, 0, 2 * Math.PI);
-    ctx.strokeStyle = args?.strokeColor || "#5c4ee8";
+    ctx.strokeStyle = args?.strokeColor || "#00bc7d26";
     ctx.lineWidth = lw;
     ctx.stroke();
 
     ctx.beginPath();
     ctx.arc(cx, cy, r, start, end);
-    ctx.strokeStyle = args?.fillColor || "#5c4ee8";
+    ctx.strokeStyle = args?.fillColor || "#00bc7d";
     ctx.lineWidth = lw;
     ctx.lineCap = "round";
     ctx.stroke();

@@ -50,7 +50,7 @@ export const Episodes = () => {
                   <small className="font-[Montserrat]_ text-muted-foreground text-sm font-medium whitespace-nowrap">
                     {item.listeners} L
                   </small>
-                  <button className="bg-primary flex-row-cc size-[40px] rounded-full">
+                  <button className="bg-secondary flex-row-cc size-[40px] rounded-full">
                     <IconPlayerPlayFilled size={18} />
                   </button>
                 </div>
