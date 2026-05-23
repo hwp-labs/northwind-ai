@@ -12,7 +12,7 @@ export class PodcastHelper {
     const summaryNobr = item?.summary
       ? item.summary.replaceAll("<br/>", " ")
       : "";
-    const seriesText = item?.series ? "" : "Design Session";
+    const seriesText = item.series ? "" : "Design Session";
 
     return {
       ...item,
@@ -24,6 +24,9 @@ export class PodcastHelper {
       titleNobr,
       summaryNobr,
       seriesText,
+      cover: item.series
+        ? "/uploads/podcast/sony.png"
+        : "/uploads/podcast/halim.png",
       titleSeriesText: item.isLongTitle
         ? titleNobr
         : `${item.title} ${seriesText}`,

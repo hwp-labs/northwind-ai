@@ -15,7 +15,7 @@ interface StoreAction {
 type StoreType = StoreState & StoreAction;
 
 const initialState: StoreState = {
-  show: true,
+  show: false,
   typing: false,
   value: "",
 };

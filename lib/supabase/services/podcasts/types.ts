@@ -19,9 +19,10 @@ export interface PodcastDto {
   notionUrl: string | null;
   spaceUrl: string | null;
   listeners: number;
-  series?: "ds" | "fc" | "rt";
+  series?: "ds" | "fc" | "cs";
 }
 export interface TransformedPodcastDto extends PodcastDto {
+  cover: string;
   dateText: string;
   timeText: string;
   datetimeText: string;

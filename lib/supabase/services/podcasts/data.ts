@@ -78,7 +78,7 @@ export const data: PodcastDto[] = [
     id: 7,
     datetime: "2026-04-12T19:00:00.000Z",
     title: "Northwind AI Podcast",
-    titleShort: "Grab's Case Study",
+    titleShort: "Grab's journey from MVP to Product Market Fit",
     isLongTitle: true,
     summary:
       "A case study on Grab's journey <br/>from MVP to Product Market Fit.",
@@ -87,12 +87,13 @@ export const data: PodcastDto[] = [
       "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
     spaceUrl: "https://x.com/i/spaces/1YxNrZNPNnpxw",
     listeners: 10,
-    series: "fc",
+    series: "cs",
   },
   {
     id: 8,
     datetime: "2026-04-18T19:00:00.000Z",
     title: "Bitcoin Verse Radio",
+    titleShort: "Hype To Adoption: Building Web3 Products",
     isLongTitle: true,
     summary:
       "From Hype To Adoption: What Actually Works When Building Web3 Products?",
@@ -118,7 +119,7 @@ export const data: PodcastDto[] = [
     id: 9,
     datetime: "2026-05-17T19:00:00.000Z",
     title: "Northwind AI Podcast",
-    titleShort: "KPIs of World-Class Engineers",
+    titleShort: "KPIs of World-Class Software Engineers",
     isLongTitle: true,
     summary:
       "Key Performance Indicators of <br/>World-Class Software Engineers",

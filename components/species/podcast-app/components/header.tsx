@@ -1,33 +1,53 @@
 "use client";
 
-import { useState } from "react";
-import { ChartCandlestickIcon, ChartPieIcon, SearchIcon } from "lucide-react";
-//
+import { IconCategoryPlus, IconArrowLeft } from "@tabler/icons-react";
 import { Logo } from "@/components/logo";
-import { LucideIconButton } from "@/components/atoms/icon-button";
+import { IconButton } from "@/components/atoms/icon-button";
+import { SearchBar } from "./search-bar";
 import { usePodcastSearchbarStore } from "@/store/podcastSearchbarStore";
+import { useRouter } from "next/navigation";
 
-export const Header = () => {
-  const show = usePodcastSearchbarStore((s) => s.show);
+interface Props {
+  title?: string;
+  fromPath?: string;
+}
+
+export const Header = ({ title, fromPath }: Props) => {
+  const router = useRouter();
   const setShow = usePodcastSearchbarStore((s) => s.setShow);
-  const [chartIcon, setChartIcon] = useState(true);
+
+  const handleBack = () => {
+    if (fromPath) {
+      router.replace(fromPath);
+      return;
+    }
+    router.back();
+  };
   //
-  return show ? null : (
-    <header className="flex-row-cb debug_ h-[60px] border-b pl-4 pr-2">
-      <div className="flex-row-cs gap-2.5">
-        <Logo iconOnly />
-        <strong className="font-[Bebas_Neue] text-lg tracking-wider">
-          Podcast
-        </strong>
-      </div>
-      <div className="flex-row-cs _gap-8">
-        <LucideIconButton Icon={SearchIcon} onClick={setShow} title="Search" />
-        <LucideIconButton
-          Icon={chartIcon ? ChartPieIcon : ChartCandlestickIcon}
-          onClick={() => setChartIcon((s) => !s)}
-          title="Analytics"
-        />
-      </div>
+  return (
+    <header className="flex-row-cb _border-b px-4 pt-3 pb-1">
+      {title ? (
+        <div className="flex-row-cs gap-4">
+          <IconButton
+            Icon={IconArrowLeft}
+            onClick={handleBack}
+            title="Back"
+            compact
+          />
+          <h1 className="text-lg font-medium">{title}</h1>
+        </div>
+      ) : (
+        <div className="flex-row-cb flex-1 gap-4">
+          <Logo iconOnly size={24} />
+          <SearchBar />
+          <IconButton
+            Icon={IconCategoryPlus}
+            onClick={setShow}
+            title="Options"
+            compact
+          />
+        </div>
+      )}
     </header>
   );
 };

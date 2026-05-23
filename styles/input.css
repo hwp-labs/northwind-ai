@@ -1,7 +1,11 @@
 @tailwind utilities;
 
 @layer utilities {
-  .input-reset {
+  .input-base {
     @apply w-full outline-none focus:ring-0 focus:outline-none;
+  }
+
+  .button-base {
+    @apply cursor-pointer whitespace-nowrap transition-colors duration-200 outline-none focus:ring-0 focus:outline-none flex items-center;
   }
 }

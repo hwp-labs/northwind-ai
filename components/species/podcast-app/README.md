@@ -24,10 +24,10 @@ WhatsApp\* UI, YouTube, Play Store, Spotify, Apple Music, iHeartRadio
 ## Event
 
 - episode number
-- date
+- datetime
 - topic (displayTitle)
 - series (for filtering)
-- Listerners (plays)
+- Listeners (plays)
 - [cta]: rspv, attend, play
 
 ## MVP
@@ -46,10 +46,16 @@ Fab.send: join the guestlist, join the community, support Northwind AI Podcast
 ## Modals
 
 ```
-Rsvp/Attend sheet
-Play recording sheet
-Support modal
-FiltetBy sheet
+<IconCategoryPlus />
+Rsvp/Attend sheet > success (note: email will be sent)
+
+Playing recording ui sheet > [open twitter]
+
+Become a guest > wa
+Join the community > wa
+Support Northwind AI > opay
+
+FilterBy sheet
 SortBy sheet
 ```
 
@@ -75,7 +81,7 @@ Impressions ... all time*,7d,30d,90d,180d,365d
 total episodes ...total listeners
 x9 ... y636
 
-# clustered-column
+# clustered-column ??
 Podcast Overview
 x money b listeners
 

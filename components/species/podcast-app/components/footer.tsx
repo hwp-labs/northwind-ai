@@ -1,6 +1,5 @@
 "use client";
 
-import { useFormContext } from "react-hook-form";
 import { IconRocket } from "@tabler/icons-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
@@ -10,7 +9,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/shadcn/ui/dialog";
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from "@/components/shadcn/ui/drawer";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/shadcn/ui/drawer";
 import {
   Empty,
   EmptyDescription,
@@ -20,39 +24,45 @@ import {
   EmptyContent,
 } from "@/components/shadcn/ui/empty";
 import { useIsMobile } from "@/hooks/use-is-mobile";
-import { ContactHelper } from "@/lib/supabase/services/contacts/helper";
-import { ContactSchema } from "@/lib/supabase/services/contacts/types";
+import { usePodcastSearchbarStore } from "@/store/podcastSearchbarStore";
 import { COPY } from "@/constants/LOCALE";
+import { APP } from "@/constants/APP";
+import Link from "next/link";
+import { PATH } from "@/constants/PATH";
+//
 
-interface Props {
-  open?: boolean;
-  onClose?: () => void;
-}
+export const Footer = () => {
+  const open = usePodcastSearchbarStore((s) => s.show);
+  const onClose = usePodcastSearchbarStore((s) => s.setShow);
 
-export const SuccessModal = ({ open, onClose }: Props) => {
   const isMobile = useIsMobile();
-  const { getValues } = useFormContext<ContactSchema>();
-
-  const contact = new ContactHelper(getValues());
 
   const renderModalContent = (
-    <Empty className="mt-4">
-      <EmptyHeader className="">
+    <Empty className="mt-4_">
+      <EmptyHeader className="hidden">
         <EmptyMedia variant="icon" className="bg-brand mb-4">
           <IconRocket />
         </EmptyMedia>
-        <EmptyTitle>
-          {COPY.email.welcome}
-          {contact.DisplayName()}!
-        </EmptyTitle>
+        <EmptyTitle>{COPY.email.welcome}</EmptyTitle>
         <EmptyDescription className="_border text-muted-foreground w-[340px]">
           {COPY.promptWithCool}
         </EmptyDescription>
       </EmptyHeader>
-      <EmptyContent className="grid">
-        <Button variant="secondary" onClick={onClose}>
-          Alright
+      <EmptyContent className="grid px-2">
+        <Button variant="secondary" onClick={() => onClose()}>
+          Become a Guest
         </Button>
+        <Button variant="secondary" onClick={() => onClose()}>
+          Join WhatsApp Community
+        </Button>
+        <Button variant="secondary" onClick={() => onClose()}>
+          Support {APP.name}{" "}
+        </Button>
+        <div className="flex-row-cc mt-2 gap-6">
+          <Link href={PATH.podcastAnalytics} className="underline_">
+            View Analytics
+          </Link>
+        </div>
       </EmptyContent>
     </Empty>
   );

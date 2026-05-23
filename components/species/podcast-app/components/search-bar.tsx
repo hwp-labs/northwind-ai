@@ -1,48 +1,41 @@
 "use client";
 
-import { ArrowLeftIcon, FunnelIcon, SearchIcon, Settings2Icon, XIcon } from "lucide-react";
-//
-import { LucideIconButton } from "@/components/atoms/icon-button";
-import { usePodcastSearchbarStore } from "@/store/podcastSearchbarStore";
-import { Logo } from "@/components/logo";
+import { useState } from "react";
+import { SearchIcon, XIcon } from "lucide-react";
+import { IconButton } from "@/components/atoms/icon-button";
 
 export const SearchBar = () => {
-  const show = usePodcastSearchbarStore((s) => s.show);
-  const setShow = usePodcastSearchbarStore((s) => s.setShow);
-  const value = usePodcastSearchbarStore((s) => s.value);
-  const setValue = usePodcastSearchbarStore((s) => s.setValue);
-  const typing = usePodcastSearchbarStore((s) => s.typing);
+  const [value, setValue] = useState("");
+  const typing = value.trim().length > 0;
   //
-  return show ? (
-    <section className="flex-row-cb h-[72px] border-b_ px-4">
-      <div className="flex-row-cb flex-1 gap-4">
-        {/* <LucideIconButton Icon={ArrowLeftIcon} onClick={setShow} title="Back" /> */}
-        <Logo iconOnly size={24}/>
-        <div className="bg-primary flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5">
-          <input
-            type="text"
-            placeholder="Discover new episodes"
-            value={value}
-            onChange={(ev) => setValue(ev.target.value)}
-            className="debug_ h-[40px] flex-1 input-reset"
+  return (
+    <div className="bg-primary flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5 focus:outline-none">
+      <input
+        type="text"
+        placeholder="Discover new episodes"
+        value={value}
+        onChange={(ev) => setValue(ev.target.value)}
+        className="debug_ input-base h-[40px] flex-1"
+      />
+      <div className="flex-row-cs gap-2.5">
+        {typing ? (
+          <IconButton
+            Icon={XIcon}
+            onClick={() => setValue("")}
+            title="Clear"
+            size={18}
+            compact
           />
-          <div className="flex-row-cs gap-2.5">
-            {typing ? (
-              <LucideIconButton
-                Icon={XIcon}
-                onClick={() => setValue("")}
-                title="Cancel"
-                size={18}
-                compact
-              />
-            ) : (
-              <p className="size-[18px]" />
-            )}
-            <LucideIconButton Icon={SearchIcon} title="Search" compact color="var(--muted)" />
-          </div>
-        </div>
-        <LucideIconButton Icon={Settings2Icon} title="Filter" compact  />
+        ) : (
+          <p className="size-[18px]" />
+        )}
+        <IconButton
+          Icon={SearchIcon}
+          title="Search"
+          compact
+          color="var(--muted)"
+        />
       </div>
-    </section>
-  ) : null;
+    </div>
+  );
 };

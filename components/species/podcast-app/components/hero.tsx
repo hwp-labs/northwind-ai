@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import {
+  IconAlarmPlus,
+  IconBell,
+  IconBellCheck,
+  IconBellRinging,
   IconCalendarEventFilled,
   IconCalendarFilled,
   IconClockHour8Filled,
@@ -11,7 +15,16 @@ import {
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { useState } from "react";
-import { CalendarCheckIcon, UserCheckIcon, UserPlusIcon, UserStarIcon } from "lucide-react";
+import {
+  AlarmCheckIcon,
+  AlarmClockPlusIcon,
+  CalendarCheckIcon,
+  ChevronRightIcon,
+  ConciergeBellIcon,
+  UserCheckIcon,
+  UserPlusIcon,
+  UserStarIcon,
+} from "lucide-react";
 
 export const Hero = () => {
   const [rsvp, setRsvp] = useState(false);
@@ -34,7 +47,7 @@ export const Hero = () => {
           }}
         >
           <div className="debug_ flex-col-se w-[250px] flex-1 gap-2">
-            <h1 className="font-[Montserrat] text-[22px] leading-[26px] font-semibold">
+            <h1 className="font-[Bebas_Neue] text-[26px] leading-[28px] font-medium tracking-[3px]">
               Risk Assessment & AI with Tech Bro Wives
             </h1>
             <div className="flex-row-cs font-[Raleway]_ _font-medium gap-2 text-sm tracking-wide">
@@ -51,10 +64,10 @@ export const Hero = () => {
           <div className="flex-row-cb debug_">
             <button
               onClick={() => setRsvp((s) => !s)}
-              className="bg-podcast flex-row-cs gap1 rounded-lg px-4 py-2 text-sm font-medium tracking-wide invert gap-2"
+              className="bg-white text-podcast px-4 py-1.5 rounded-lg border-2 border-podcast ring-2 ring-white button-base gap-2 font-medium"
             >
               <span>RSVP</span>
-              <CalendarCheckIcon size={18} strokeWidth={2.5} />
+              <IconBell size={18} strokeWidth={2.5} />
             </button>
             <AvatarGroup
               count={2}

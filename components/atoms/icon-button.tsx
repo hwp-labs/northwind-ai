@@ -1,11 +1,12 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { type LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { TablerIcon } from "@tabler/icons-react";
 import clsx from "clsx";
 
 interface Props {
-  Icon: LucideIcon;
+  Icon: LucideIcon | TablerIcon;
   title?: string;
   path?: string;
   onClick?: () => void;
@@ -16,7 +17,7 @@ interface Props {
   debug?: boolean;
 }
 
-export const LucideIconButton = ({
+export const IconButton = ({
   Icon,
   title,
   path,
@@ -28,6 +29,7 @@ export const LucideIconButton = ({
   debug,
 }: Props) => {
   const router = useRouter();
+
   const handleClick = () => {
     if (path) router.push(path);
     if (onClick) onClick();
@@ -44,7 +46,7 @@ export const LucideIconButton = ({
         debug && "debug",
       )}
     >
-      <Icon size={surface ? 20 : size} strokeWidth={2.5} color={color} />
+      <Icon size={surface ? 20 : size} color={color} strokeWidth={2.5} />
     </button>
   );
 };

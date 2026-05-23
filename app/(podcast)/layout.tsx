@@ -6,7 +6,7 @@ import { PageLayout } from "@/types";
 export default function PodcastLayout({ children }: PageLayout) {
   return (
     <>
-      <div className="_min-h-[75vh]">{children}</div>
+      <div className="_min-h-[75vh] dark">{children}</div>
     </>
   );
 }

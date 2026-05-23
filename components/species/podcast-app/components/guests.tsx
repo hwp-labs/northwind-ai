@@ -9,7 +9,7 @@ export const Guests = () => {
     </div>
       <ul className="scrollbar-hide mt-4 flex snap-x snap-mandatory gap-4_ overflow-x-auto scroll-smooth pb-4 items-end">
         {data.map((item, i) => (
-          <li key={i} className="border_ min-w-[120px] max-w-[120px]">
+          <li key={i} className="border_ min-w-[100px] max-w-[100px]">
             <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
               <Image
                 src={item.src}
@@ -18,9 +18,9 @@ export const Guests = () => {
                 height={56}
                 className="rounded-full border-2 border-outline size-[56px]"
               />
-              <figcaption className="flex-col-cc mt-4 gap-0.5 truncate text-sm">
+              <figcaption className="flex-col-cc mt-2 gap-0.5 truncate text-sm">
                 <strong className="text-white">{item.name}</strong>
-                <small>{item.username}</small>
+                {/* <small>{item.username}</small> */}
               </figcaption>
             </figure>
           </li>

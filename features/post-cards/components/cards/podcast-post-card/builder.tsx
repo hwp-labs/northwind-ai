@@ -77,25 +77,16 @@ export const Container = ({ children }: Props) => {
 };
 
 export const Background = ({ children, podcast }: Props) => {
-  const bgImg = podcast?.series
-    ? {
-        ds: "halim.png",
-        fc: "sony.png",
-        rt: "lazer.png",
-      }[podcast?.series]
-    : "halim.png";
   const isFiresideChat = podcast?.series === "fc";
-  const isRoundTable = podcast?.series === "rt";
   //
   return (
     children || (
       <img
-        src={`/uploads/podcast/${bgImg}`}
+        src={podcast?.cover}
         alt=""
         className={clsx(
           "absolute size-full object-cover object-top-right",
           isFiresideChat && "object-top-left!",
-          isRoundTable && "object-bottom-right!",
         )}
       />
     )
