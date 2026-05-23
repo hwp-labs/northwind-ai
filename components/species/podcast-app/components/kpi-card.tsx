@@ -1,21 +1,27 @@
-import React, { PropsWithChildren } from "react";
+import clsx from "clsx";
 import { SparklineChart } from "./sparkline-chart";
 
-interface Props extends PropsWithChildren {
+interface Props {
   Icon?: React.ReactNode;
   label: string;
   value?: number;
-  valuePrefix?: string;
-  valueSuffix?: string;
+  valueText?: string;
+  keyTitle?: string;
+  keys?: {
+    label: string;
+    value?: number;
+    valueText?: string;
+    color?: string;
+  }[];
 }
 
 export const KpiCard = ({
-  children,
   Icon,
   label,
   value = 0,
-  valueSuffix,
-  valuePrefix,
+  valueText,
+  keyTitle,
+  keys = [],
 }: Props) => {
   return (
     <div className="bg-card rounded-2xl px-6 py-5 shadow-2xl">
@@ -27,13 +33,23 @@ export const KpiCard = ({
       </div>
       <div className="flex-row-cb gap-6">
         <h2 className="mt-4 text-[48px] leading-16 font-semibold">
-          {valuePrefix}
-          {value.toLocaleString()}
-          {valueSuffix}
+          {valueText || value.toLocaleString()}
         </h2>
-        <SparklineChart value={value} />
-        {children}
+        <SparklineChart
+          data={keys.map(({ value }) => ({ value: value || 0 }))}
+        />
       </div>
+      {keys ? (
+        <div className="flex-row-cs mt-2 flex-wrap gap-x-4 gap-y-2 border-t py-4 text-sm">
+          {keyTitle ? <strong>{keyTitle}:</strong> : null}
+          {keys.map((item, i) => (
+            <div key={i} className="flex-row-cs gap-2.5 whitespace-nowrap">
+              <div className={clsx("bg-ring size-2.5 rounded", item.color)} />
+              {item.label} ({item.valueText || item.value})
+            </div>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };

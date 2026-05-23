@@ -37,3 +37,28 @@ export interface TransformedPodcastDto extends PodcastDto {
   // lastLogoSrc: string;
   guestList?: string[];
 }
+
+export interface PodcastAnalyticsDto {
+  episodes?: {
+    total?: number;
+    designSession?: number;
+    firesideChat?: number;
+    caseStudy?: number;
+  };
+  guests?: {
+    total?: number;
+    male?: number;
+    maleRate?: number;
+    female?: number;
+    femaleRate?: number;
+    location?: {
+      country: string;
+      total: number;
+    }[];
+  };
+  listeners?: {
+    total?: number;
+    average?: number;
+    averageRate?: number;
+  };
+}

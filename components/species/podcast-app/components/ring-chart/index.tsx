@@ -7,33 +7,28 @@ interface Props {
   title: string;
   label?: React.ReactNode;
   value?: number;
-  valueRate?: number;
-  valuePrefix?: string;
-  valueSuffix?: string;
+  valueText?: string;
   keys?: {
     label: string;
     value?: number;
-    valuePrefix?: string;
-    valueSuffix?: string;
+    valueText?: string;
   }[];
 }
 
 export const RingChart = ({
   title,
   label,
-  value,
-  valueRate,
-  valuePrefix,
-  valueSuffix,
+  value = 0,
+  valueText,
   keys,
 }: Props) => {
-  const { canvasRef } = useRingChart({ progress: valueRate || value || 0 });
+  const { canvasRef } = useRingChart({ progress: value });
   //
   return (
     <div className="bg-card rounded-2xl px-6 py-5 shadow-2xl">
       <div className="flex-row-cb">
         <strong className="text-lg">{title}</strong>
-        <button className="button-base text-muted-foreground gap-1 rounded-lg border px-4 py-2.5 text-sm font-medium">
+        <button className="button-base text-muted-foreground hidden gap-1 rounded-lg border px-4 py-2.5 text-sm font-medium">
           {/* all time*,7d,30d,90d,180d,365d */}
           All time
           <IconChevronDown stroke={2.5} size={18} />
@@ -45,26 +40,18 @@ export const RingChart = ({
         <div className="absolute mt-2 text-center">
           {label ? <div className="text-muted-foreground">{label}</div> : null}
           <div className="text-[48px] leading-16 font-semibold">
-            {valuePrefix ? (
-              <small className="font-normal">{valuePrefix}</small>
-            ) : null}
-            {value}
-            {valueSuffix ? (
-              <small className="font-normal">{valueSuffix}</small>
-            ) : null}
+            {valueText || value}
           </div>
         </div>
       </div>
 
       {keys ? (
         <ul className="mt-6 flex justify-around border-t pt-6">
-          {keys.map(({ label, value, ...item }, i) => (
+          {keys.map((item, i) => (
             <li className="flex-col-cc _debug gap-1" key={i}>
-              <span className="text-muted-foreground">{label}</span>
+              <span className="text-muted-foreground">{item.label}</span>
               <strong className="text-xl">
-                {item.valuePrefix}
-                {(value || 0).toLocaleString()}
-                {item.valueSuffix}
+                {item.valueText || (item.value || 0).toLocaleString()}
               </strong>
             </li>
           ))}
