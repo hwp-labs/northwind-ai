@@ -30,7 +30,7 @@ export const APP = {
   tel: "+2348169960927",
   telDisplayText: "(+234)81 6996 0927",
   whatsappSalesUrl: "https://wa.me/2348169960927",
-  whatsappGroupUrl: "https://chat.whatsapp.com/HajjJPJ2HkE0rTTITv2FGm",
+  whatsappGroupUrl: "https://chat.whatsapp.com/Id9WYTRrbxAHcTUfr3F5jv",
   repositoryName: "hwp-labs/northwind-ai-app",
   repositoryUrl: "https://github.com/hwp-labs/northwind-ai-app",
   repositoryApiName: "hwp-labs/northwind-ai",
