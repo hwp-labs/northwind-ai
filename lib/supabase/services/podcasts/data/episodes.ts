@@ -1,4 +1,4 @@
-import { PodcastDto } from "./types";
+import { PodcastDto } from "../types";
 
 export const data: PodcastDto[] = [
   {

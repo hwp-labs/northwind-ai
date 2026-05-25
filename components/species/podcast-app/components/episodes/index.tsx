@@ -3,7 +3,7 @@ import clsx from "clsx";
 //
 import { ListHeader } from "../list-header";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
-import { data } from "@/lib/supabase/services/podcasts/data";
+import { data } from "@/lib/supabase/services/podcasts/data/episodes";
 // 
 import { EpisodeCta } from "./cta";
 

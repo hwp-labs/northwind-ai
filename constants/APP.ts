@@ -29,6 +29,8 @@ export const APP = {
   bccEmail: "tugbeh.osaretin@gmail.com",
   tel: "+2348169960927",
   telDisplayText: "(+234)81 6996 0927",
+  telOPay: "81-6996-0927",
+  telOPayRaw: "8169960927",
   whatsappSalesUrl: "https://wa.me/2348169960927",
   whatsappGroupUrl: "https://chat.whatsapp.com/HajjJPJ2HkE0rTTITv2FGm",
   repositoryName: "hwp-labs/northwind-ai-app",

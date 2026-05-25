@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { IconHeartFilled, IconRocket } from "@tabler/icons-react";
+import {
+  IconClipboard,
+  IconClipboardCheck,
+  IconHeartFilled,
+  IconRocket,
+} from "@tabler/icons-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
 import {
@@ -27,6 +32,7 @@ import {
 } from "@/components/shadcn/ui/empty";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { usePodcastSearchbarStore } from "@/store/podcastSearchbarStore";
+import { sleep } from "@/utils";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 import { COPY } from "@/constants/LOCALE";
@@ -37,8 +43,18 @@ export const Footer = () => {
   const isMobile = useIsMobile();
 
   const [showOPay, setShowOPay] = useState(false);
+  const [copying, setCopying] = useState(false);
   const open = usePodcastSearchbarStore((s) => s.show);
   const onClose = usePodcastSearchbarStore((s) => s.setShow);
+
+  const handleCopy = async () => {
+    setCopying(true);
+    await navigator.clipboard.writeText(APP.telOPayRaw);
+    await sleep(1);
+    setCopying(false);
+
+    setShowOPay((s) => !s);
+  };
 
   const renderModalContent = (
     <Empty className="mt-4_">
@@ -61,14 +77,27 @@ export const Footer = () => {
         >
           Become a Guest
         </Button>
-        <Button
-          variant="secondary"
-          onClick={() => setShowOPay((s) => !s)}
-          className={showOPay ? "bg-[#1dcf9f]! text-[#200f5f]" : undefined}
-        >
-          {showOPay && <IconHeartFilled color="var(--destructive)" />}
-          {showOPay ? `OPay 8169960927` : `Support ${APP.name}`}
-        </Button>
+        {showOPay ? (
+          <Button onClick={handleCopy} className="bg-[#1dcf9f]! text-[#200f5f]">
+            {copying ? (
+              <>
+                <IconClipboardCheck strokeWidth={2.5} />
+                Copied!
+              </>
+            ) : (
+              <>
+                <IconHeartFilled color="var(--destructive)" />
+                <strong>
+                  OPay #<b>{APP.telOPayRaw}</b>
+                </strong>
+              </>
+            )}
+          </Button>
+        ) : (
+          <Button variant="secondary" onClick={() => setShowOPay((s) => !s)}>
+            Support {APP.name}
+          </Button>
+        )}
         <Button
           variant="default"
           onClick={() => {

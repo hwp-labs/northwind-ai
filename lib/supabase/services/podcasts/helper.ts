@@ -6,7 +6,7 @@ import {
   PodcastDto,
   TransformedPodcastDto,
 } from "./types";
-import { data } from "./data";
+import { data } from "./data/episodes";
 
 export class PodcastHelper {
   static _transform = (item: PodcastDto): TransformedPodcastDto => {
