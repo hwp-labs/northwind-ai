@@ -20,20 +20,30 @@ export const Guests = () => {
         {randData.map((item, i) => (
           <li key={i} className="border_ max-w-[100px] min-w-[100px]">
             <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
-              <Image
-                src={item.src}
-                alt=""
-                width={56}
-                height={56}
-                className="border-outline size-[56px] rounded-full border-2"
-              />
+              <div className="relative">
+                <Image
+                  src={item.avatar}
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="border-outline size-[56px] rounded-full border-2"
+                />
+                {item.location?.flag ? (
+                  <img
+                    src={item.location.flag}
+                    alt=""
+                    width={20}
+                    className="absolute right-0 bottom-0"
+                  />
+                ) : null}
+              </div>
               <figcaption
                 className="flex-col-cc debug_ mt-2 cursor-pointer gap-0.5 truncate text-sm"
                 onClick={() =>
-                  window.open(`https://x.com/${item.username}`, "_blank")
+                  window.open(`https://x.com/${item.socials.x}`, "_blank")
                 }
               >
-                <strong className="text-white">{item.name}</strong>
+                <strong className="text-white">{item.displayName}</strong>
                 {/* <small>{item.username}</small> */}
               </figcaption>
             </figure>

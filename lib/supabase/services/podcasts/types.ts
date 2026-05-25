@@ -64,3 +64,24 @@ export interface PodcastAnalyticsDto {
     averageRate?: number;
   };
 }
+
+export interface PodcastGuestDto {
+  avatar: string;
+  firstName?: string;
+  surname?: string;
+  displayName: string;
+  email?: string;
+  tel?: string;
+  occupation?: string;
+  website?: string;
+  location?: {
+    city?: string;
+    country?: string;
+    // https://www.worldometers.info/geography/flags-of-the-world/
+    flag?: string;
+  };
+  socials: {
+    x: string;
+    in?: string;
+  };
+}
