@@ -5,7 +5,7 @@ export const data: PodcastGuestDto[] = [
     avatar: "/uploads/podcast/avatar-eokene.jpg",
     firstName: "Emmanuel",
     surname: "Okene",
-    displayName: "Emmanuel O.",
+    displayName: "Okene E.",
     email: "okene_e@yahoo.com",
     tel: "+2348139543769",
     occupation: "Scientific Officer",
