@@ -39,7 +39,7 @@ export const Header = ({ title, fromPath }: Props) => {
           </div>
         ) : (
           <div className="flex-row-cb flex-1 gap-4">
-            <Logo iconOnly size={24} />
+            <Logo />
             {/* <SearchBar /> */}
             <IconButton
               Icon={IconDotsVertical}
