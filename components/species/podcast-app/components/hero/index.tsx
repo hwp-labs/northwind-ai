@@ -10,6 +10,7 @@ import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 //
 import { HeroCta } from "./cta";
+import { RsvpAvatars } from "./rsvp-avatars";
 
 export const Hero = () => {
   const E = PodcastHelper.GetPageItem(10);
@@ -48,19 +49,7 @@ export const Hero = () => {
           </div>
           <div className="flex-row-cb debug_">
             <HeroCta episode={E} />
-            <AvatarGroup
-              count={22 - 3}
-              className="[&>span]:bg-foreground [&>span]:ring-1! [&>span]:ring-[#eee]"
-              countClassName="invert"
-            >
-              {E.displayAvatars
-                ? E.displayAvatars.slice(0, 3).map((item, i) => (
-                    <Avatar key={i}>
-                      <AvatarImage src={item} alt="" />
-                    </Avatar>
-                  ))
-                : null}
-            </AvatarGroup>
+            <RsvpAvatars id={E.id} />
           </div>
         </figcaption>
       </figure>

@@ -8,11 +8,13 @@ export function useFetchRsvp(id?: number) {
 
   const _id = Number(params.id || id || 1);
   const item = PodcastHelper.GetPageItem(_id);
-  const avatars = item.displayAvatars || [
-    "/images/icon-hwp.png",
-    "/images/avatar-etugbeh.png",
-    "/images/avatar.png",
-  ];
+  const avatars = item.displayAvatars
+    ? item.displayAvatars.slice(0, 3)
+    : [
+        "/images/icon-hwp.png",
+        "/images/avatar-etugbeh.png",
+        "/images/avatar.png",
+      ];
 
   const [total, setTotal] = useState(1);
 
@@ -29,7 +31,10 @@ export function useFetchRsvp(id?: number) {
     const { data: total } = await getListenersCountAction({
       filterByPodcastId: _id,
     });
-    setTotal(total || 1);
+    if (total) {
+      const guestsNotInAvatarGroup = avatars.length - 3;
+      setTotal(total + guestsNotInAvatarGroup);
+    }
   };
 
   return { avatars, total };

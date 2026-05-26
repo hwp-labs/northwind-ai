@@ -10,12 +10,12 @@ import { PATH } from "@/constants/PATH";
 
 export const HeaderRightSection = () => {
   useVisitTracker();
-  const { router, pathname, id } = useQueryParams();
+  const { router, pathname } = useQueryParams();
   //
   return (
     <div className="flex-row-cs gap-4">
       {pathname.startsWith("/podcast/") ? (
-        <RsvpAvatarGroup podcast_id={id} />
+        <RsvpAvatarGroup />
       ) : (
         <Button
           onClick={() => router.push(PATH.login)}
