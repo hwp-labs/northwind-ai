@@ -18,7 +18,7 @@ export const Guests = () => {
       </div>
       <ul className="scrollbar-hide gap-4_ mt-4 flex snap-x snap-mandatory items-end overflow-x-auto scroll-smooth pb-4">
         {randData.map((item, i) => (
-          <li key={i} className="border_ max-w-[100px] min-w-[100px]">
+          <li key={i} className="max-w-[90px] min-w-[90px] debug_">
             <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
               <div className="relative">
                 <Image

@@ -1,6 +1,6 @@
 "use client";
 
-import { IconCategoryPlus, IconChevronLeft } from "@tabler/icons-react";
+import { IconDotsVertical, IconChevronLeft } from "@tabler/icons-react";
 import { Logo } from "@/components/logo";
 import { IconButton } from "@/components/atoms/icon-button";
 import { SearchBar } from "./search-bar";
@@ -40,9 +40,9 @@ export const Header = ({ title, fromPath }: Props) => {
         ) : (
           <div className="flex-row-cb flex-1 gap-4">
             <Logo iconOnly size={24} />
-            <SearchBar />
+            {/* <SearchBar /> */}
             <IconButton
-              Icon={IconCategoryPlus}
+              Icon={IconDotsVertical}
               onClick={setShow}
               title="Options"
               compact

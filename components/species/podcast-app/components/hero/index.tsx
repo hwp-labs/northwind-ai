@@ -47,7 +47,7 @@ export const Hero = () => {
           <div className="flex-row-cb debug_">
             <HeroCta />
             <AvatarGroup
-              count={19 - 3}
+              count={22 - 3}
               className="[&>span]:bg-foreground [&>span]:ring-1.5! [&>span]:ring-[#eee]"
               countClassName="invert"
             >
@@ -66,7 +66,7 @@ export const Hero = () => {
           </div>
         </figcaption>
       </figure>
-      <ul className="flex-row-cc mt-4 gap-2 [&_li>div]:size-2 [&_li>div]:rounded-full">
+      <ul className="flex-row-cc mt-4 gap-2 [&_li>div]:size-2 [&_li>div]:rounded-full hidden">
         <li>
           <div className="bg-border" />
         </li>
