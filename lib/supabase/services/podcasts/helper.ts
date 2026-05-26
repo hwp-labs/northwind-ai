@@ -10,8 +10,6 @@ import { data } from "./data/episodes";
 
 export class PodcastHelper {
   static _transform = (item: PodcastDto): TransformedPodcastDto => {
-    const isConcluded =
-      item.listeners > 0 || momentUtil.isPastDay(item.datetime);
     const titleNobr = item.title.replaceAll("<br/>", " ");
     const summaryNobr = item?.summary
       ? item.summary.replaceAll("<br/>", " ")
@@ -21,11 +19,12 @@ export class PodcastHelper {
     return {
       ...item,
       dateText: momentUtil.podcastDate(item.datetime),
+      dateTextShort: momentUtil.podcastShortDate(item.datetime),
       timeText: momentUtil.podcastTime(item.datetime),
       datetimeText: momentUtil.podcastDatetime(item.datetime),
-      datetimeTextShort: momentUtil.podcastDatetimeShort(item.datetime),
+      datetimeTextShort: momentUtil.podcastShortDatetime(item.datetime),
       isOngoing: this.IsOngoing(item.datetime),
-      isConcluded,
+      isConcluded: this.IsConcluded(item),
       titleNobr,
       summaryNobr,
       seriesText,
@@ -42,6 +41,7 @@ export class PodcastHelper {
           ? item.guest.map(({ username }) => username)
           : [item.guest.username]
         : undefined,
+      ctaText: this.CtaText(item),
     };
   };
 
@@ -83,6 +83,10 @@ export class PodcastHelper {
     return CUR_DATE === date && CUR_HOUR_UTC >= hour;
   }
 
+  static IsConcluded(item: PodcastDto) {
+    return item.listeners > 0 || momentUtil.isPastDay(item.datetime);
+  }
+
   static DisplayAvatar(item: PodcastDto) {
     if (item.displayAvatar) return item.displayAvatar;
     if (item.guest && !Array.isArray(item.guest)) return item.guest?.avatar;
@@ -106,57 +110,14 @@ export class PodcastHelper {
         ];
       }
     }
+
   }
 
-  static ComputeAnalytics = () => {
-    const res: PodcastAnalyticsDto = {};
-    const guestUsernames = new Set();
-
-    data.forEach((d) => {
-      if (d.listeners) {
-        if (res.listeners?.total) res.listeners.total += d.listeners;
-        else res.listeners = { ...res.listeners, total: d.listeners };
-
-        if (res.episodes?.total) res.episodes.total += 1;
-        else res.episodes = { ...res.episodes, total: 1 };
-
-        if (d.series) {
-          if (d.series === "fc") {
-            if (res.episodes?.firesideChat) res.episodes.firesideChat += 1;
-            else res.episodes = { ...res.episodes, firesideChat: 1 };
-          }
-          if (d.series === "cs") {
-            if (res.episodes?.caseStudy) res.episodes.caseStudy += 1;
-            else res.episodes = { ...res.episodes, caseStudy: 1 };
-          }
-        } else {
-          if (res.episodes?.designSession) res.episodes.designSession += 1;
-          else res.episodes = { ...res.episodes, designSession: 1 };
-        }
-
-        if (d.guest) {
-          if (Array.isArray(d.guest)) {
-            d.guest.forEach(({ username }) => guestUsernames.add(username));
-          } else {
-            guestUsernames.add(d.guest.username);
-          }
-        }
-      }
-    });
-
-    const listeners = res.listeners?.total || 1;
-    const episodes = res.episodes?.total || 1;
-    const average = listeners / episodes;
-    const averageRate = (average * 100) / listeners;
-
-    res.guests = { ...res.guests, total: guestUsernames.size };
-    res.listeners = {
-      ...res.listeners,
-      average: Math.floor(average),
-      averageRate: Math.round(averageRate),
-    };
-
-    // console.log("🚀 ~ computeAnalytics ~ res:", res);
-    return res;
-  };
+  static CtaText(item: PodcastDto) {
+    return this.IsOngoing(item.datetime)
+      ? "Attend"
+      : this.IsConcluded(item)
+        ? "Listen"
+        : "RSVP";
+  }
 }

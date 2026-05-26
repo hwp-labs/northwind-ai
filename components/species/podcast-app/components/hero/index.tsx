@@ -7,15 +7,18 @@ import {
 //
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
+import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 //
 import { HeroCta } from "./cta";
 
 export const Hero = () => {
+  const E = PodcastHelper.GetPageItem(10);
+  //
   return (
     <section className="px-4">
       <figure className="debug_ relative h-[200px] overflow-hidden rounded-2xl">
         <Image
-          src={`/uploads/podcast/${0 ? "halim.png" : "sony.png"}`}
+          src={`/uploads/podcast/${E.series ? "sony.png" : "halim.png"}`}
           alt=""
           fill
           priority
@@ -30,14 +33,13 @@ export const Hero = () => {
         >
           <div className="debug_ flex-col-se w-[250px] flex-1 gap-2">
             <h1 className="font-[Bebas_Neue] text-[26px] leading-[28px] font-medium tracking-[3px]">
-              {/* Risk Assessment & AI with Tech Bro Wives */}
-              KPIs of World-Class Software Engineers
+              {E.titleSeriesText}
             </h1>
             <div className="flex-row-cs font-[Raleway]_ _font-medium gap-2 text-sm tracking-wide">
               <IconCalendarEventFilled size={18} />
-              <span>Sun, May 17</span>
+              <span>{E.dateTextShort}</span>
               <IconClockHour8Filled size={18} />
-              <time dateTime="2026-05-24t20:00:00">8PM (WAT)</time>
+              <time dateTime={E.datetime}>{E.timeText} (WAT)</time>
             </div>
             <div className="flex-row-cs hidden gap-2">
               <IconMapPinFilled size={18} />
@@ -45,28 +47,24 @@ export const Hero = () => {
             </div>
           </div>
           <div className="flex-row-cb debug_">
-            <HeroCta />
+            <HeroCta episode={E} />
             <AvatarGroup
               count={22 - 3}
-              className="[&>span]:bg-foreground [&>span]:ring-1.5! [&>span]:ring-[#eee]"
+              className="[&>span]:bg-foreground [&>span]:ring-1! [&>span]:ring-[#eee]"
               countClassName="invert"
             >
-              {[
-                "/images/avatar-etugbeh.png",
-                "/uploads/podcast/avatar-polalere.png",
-                "/uploads/podcast/avatar-aosawere.png",
-              ]
-                .slice(0, 3)
-                .map((item, i) => (
-                  <Avatar key={i}>
-                    <AvatarImage src={item} alt="" />
-                  </Avatar>
-                ))}
+              {E.displayAvatars
+                ? E.displayAvatars.slice(0, 3).map((item, i) => (
+                    <Avatar key={i}>
+                      <AvatarImage src={item} alt="" />
+                    </Avatar>
+                  ))
+                : null}
             </AvatarGroup>
           </div>
         </figcaption>
       </figure>
-      <ul className="flex-row-cc mt-4 gap-2 [&_li>div]:size-2 [&_li>div]:rounded-full hidden">
+      <ul className="flex-row-cc mt-4 hidden gap-2 [&_li>div]:size-2 [&_li>div]:rounded-full">
         <li>
           <div className="bg-border" />
         </li>

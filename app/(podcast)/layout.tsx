@@ -3,7 +3,7 @@ import { PageLayout } from "@/types";
 
 export default function PodcastLayout({ children }: PageLayout) {
   return (
-    <div className="dark grid gap-4">
+    <div className="dark">
       {children}
       <Modal />
     </div>

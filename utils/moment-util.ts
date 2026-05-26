@@ -49,6 +49,9 @@ const shortDate = (dt?: InputType) => transform("D MMM YYYY", dt);
 // Sunday, Mar 1st
 const podcastDate = (dt?: InputType) => transform("dddd, MMM Do", dt);
 
+// Sun, Mar 1
+const podcastShortDate = (dt?: InputType) => transform("ddd, MMM D", dt);
+
 // 8PM
 const podcastTime = (dt?: InputType) => transform("hA", dt);
 
@@ -56,8 +59,8 @@ const podcastTime = (dt?: InputType) => transform("hA", dt);
 const podcastDatetime = (dt?: InputType) =>
   transform("dddd, D MMM YYYY | hA", dt);
 
-// Sun, 22 Mar 26 | 9PM
-const podcastDatetimeShort = (dt?: InputType) =>
+// Sun, 22 Mar 2026 | 9PM
+const podcastShortDatetime = (dt?: InputType) =>
   transform("ddd, D MMM YYYY | hA", dt);
 
 export const momentUtil = {
@@ -65,7 +68,8 @@ export const momentUtil = {
   verbose,
   shortDate,
   podcastDate,
+  podcastShortDate,
   podcastTime,
   podcastDatetime,
-  podcastDatetimeShort,
+  podcastShortDatetime,
 };

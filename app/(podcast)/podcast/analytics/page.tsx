@@ -4,7 +4,7 @@ import { IconInfoCircle } from "@tabler/icons-react";
 import { AppBar } from "@/components/species/podcast-app/components/app-bar";
 import { KpiCards } from "@/components/species/podcast-app/components/kpi-cards";
 import { RingChart } from "@/components/species/podcast-app/components/ring-chart";
-import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
+import { computeAnalytics } from "@/lib/supabase/services/podcasts/utils/compute-analytics";
 import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function PodcastAnalyticsPage() {
-  const d = PodcastHelper.ComputeAnalytics();
+  const d = computeAnalytics();
   //
   return (
     <>

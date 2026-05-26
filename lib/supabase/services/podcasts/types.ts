@@ -25,6 +25,7 @@ export interface PodcastDto {
 export interface TransformedPodcastDto extends PodcastDto {
   cover: string;
   dateText: string;
+  dateTextShort: string;
   timeText: string;
   datetimeText: string;
   datetimeTextShort: string;
@@ -38,7 +39,30 @@ export interface TransformedPodcastDto extends PodcastDto {
   // guestUsernameSafe: string[];
   // lastLogoSrc: string;
   guestList?: string[];
+  ctaText: string;
 }
+
+export interface PodcastGuestDto {
+  avatar: string;
+  firstName?: string;
+  surname?: string;
+  displayName: string;
+  email?: string;
+  tel?: string;
+  occupation?: string;
+  website?: string;
+  location?: {
+    city?: string;
+    country?: string;
+    // https://www.worldometers.info/geography/flags-of-the-world/
+    flag?: string;
+  };
+  socials: {
+    x: string;
+    in?: string;
+  };
+}
+
 
 export interface PodcastAnalyticsDto {
   episodes?: {
@@ -65,23 +89,3 @@ export interface PodcastAnalyticsDto {
   };
 }
 
-export interface PodcastGuestDto {
-  avatar: string;
-  firstName?: string;
-  surname?: string;
-  displayName: string;
-  email?: string;
-  tel?: string;
-  occupation?: string;
-  website?: string;
-  location?: {
-    city?: string;
-    country?: string;
-    // https://www.worldometers.info/geography/flags-of-the-world/
-    flag?: string;
-  };
-  socials: {
-    x: string;
-    in?: string;
-  };
-}

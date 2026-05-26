@@ -160,7 +160,7 @@ export const data: PodcastDto[] = [
   },
   {
     id: 10,
-    datetime: "2026-05-27T19:00:00.000Z",
+    datetime: "2026-05-28T19:00:00.000Z",
     title: "Siiqo",
     summary:
       "A design session with <b>Okereke Innocent</b>, creator of <b>Siiqo</b> - <br/>Escrow-based Local Commerce OS for SMEs.",
@@ -196,42 +196,3 @@ export const data: PodcastDto[] = [
     series: "fc",
   },
 ];
-
-/**
-  {
-    id: 10,
-    datetime: "2026-05-24T19:00:00.000Z",
-    title: "Northwind AI Podcast",
-    titleShort: "Risk Assessment & AI",
-    isLongTitle: true,
-    summary: "Risk Assessment & AI with Tech Bro Wives",
-    host: {
-      avatar: "/images/avatar-etugbeh.png",
-      username: "Mr.,Mrs Tugbeh",
-    },
-    guest: [
-      {
-        avatar: "/uploads/podcast/avatar-polalere.png",
-        username: "Mr.,Mrs Uyi",
-      },
-      {
-        avatar: "/uploads/podcast/avatar-aosawere.png",
-        username: "Mr.,Mrs Chimaobi",
-      },
-      {
-        avatar: "/uploads/podcast/avatar-polalere.png",
-        username: "Mr.,Mrs Aluko",
-      },
-      {
-        avatar: "/uploads/podcast/avatar-aosawere.png",
-        username: "Mr.,Mrs Osawere",
-      },
-    ],
-    notionUrl:
-      "https://held-gambler-004.notion.site/KPIs-of-World-Class-Engineers-3486a7cc633c8078980ded890c2c9cc6",
-    spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",
-    listeners: 0,
-    liveListeners: 0,
-    series: "fc",
-  },
- */

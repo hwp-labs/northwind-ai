@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { IconBell, IconHeadphonesFilled } from "@tabler/icons-react";
+import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
 
-export const HeroCta = () => {
+export const HeroCta = ({ episode }: { episode: TransformedPodcastDto }) => {
   const [rsvp, setRsvp] = useState(false);
   //
   return (
