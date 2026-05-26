@@ -4,12 +4,12 @@ import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 import {
   PodcastAnalyticsDto,
   PodcastDto,
-  TransformedPodcastDto,
+  TransformedEpisodeDto,
 } from "./types";
 import { data } from "./data/episodes";
 
 export class PodcastHelper {
-  static _transform = (item: PodcastDto): TransformedPodcastDto => {
+  static _transform = (item: PodcastDto): TransformedEpisodeDto => {
     const titleNobr = item.title.replaceAll("<br/>", " ");
     const summaryNobr = item?.summary
       ? item.summary.replaceAll("<br/>", " ")
@@ -110,10 +110,9 @@ export class PodcastHelper {
         ];
       }
     }
-
   }
 
-  static CtaText(item: PodcastDto) {
+  static CtaText(item: PodcastDto): TransformedEpisodeDto["ctaText"] {
     return this.IsOngoing(item.datetime)
       ? "Attend"
       : this.IsConcluded(item)

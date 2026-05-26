@@ -5,11 +5,11 @@ import clsx from "clsx";
 import { AnchorOutbound } from "@/components/atoms/anchor";
 import {
   PodcastSpeakerDto,
-  TransformedPodcastDto,
+  TransformedEpisodeDto,
 } from "@/lib/supabase/services/podcasts/types";
 
 interface Props extends PropsWithChildren {
-  podcast: TransformedPodcastDto;
+  podcast: TransformedEpisodeDto;
 }
 
 export const Speakers = ({ podcast }: Props) => {

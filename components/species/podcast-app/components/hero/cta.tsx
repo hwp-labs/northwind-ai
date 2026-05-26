@@ -1,23 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { IconBell, IconHeadphonesFilled } from "@tabler/icons-react";
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { IconCaretRightFilled } from "@tabler/icons-react";
+import { usePodcastStore } from "@/store/podcastStore";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
-export const HeroCta = ({ episode }: { episode: TransformedPodcastDto }) => {
-  const [rsvp, setRsvp] = useState(false);
+export const HeroCta = ({ episode }: { episode: TransformedEpisodeDto }) => {
+  const mutateModal = usePodcastStore((s) => s.mutateModal);
+  const handleClick = () => {
+    switch (episode.ctaText) {
+      case "RSVP":
+        mutateModal({ open: true, variant: "rsvp" });
+        break;
+      default:
+        episode.spaceUrl ? window.open(episode.spaceUrl, "_blank") : null;
+    }
+  };
   //
   return (
     <button
-      onClick={() =>
-        window.open("https://x.com/i/spaces/1mGPaLAgERYJN", "_blank")
-      }
-      className="text-podcast border-podcast button-base gap-2 rounded-lg border-2 bg-white px-4 py-1.5 font-medium ring-2 ring-white"
+      onClick={handleClick}
+      className="text-podcast border-podcast button-base gap-0 rounded-md border-2 bg-white pl-3.5 pr-3 py-1 font-medium ring-2 ring-white uppercase_"
     >
-      {/* RSVP|Attend|Listen */}
-      {/* <IconBell size={18} strokeWidth={2.5} /> */}
-      <IconHeadphonesFilled size={18} strokeWidth={2.5} />
-      <span>Listen</span>
+      <strong>{episode.ctaText}</strong>
+      <IconCaretRightFilled size={18} strokeWidth={2.5} />
     </button>
   );
 };

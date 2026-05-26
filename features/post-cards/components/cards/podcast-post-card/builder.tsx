@@ -7,11 +7,11 @@ import { CompanyLogo, Logo } from "@/components/logo";
 import { AvatarGroup } from "@/components/atoms/avatar-builder";
 import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { AnchorOutbound } from "@/components/atoms/anchor";
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
 
 interface Props extends PropsWithChildren {
-  podcast?: TransformedPodcastDto;
+  podcast?: TransformedEpisodeDto;
 }
 
 export const Header = ({ children, podcast }: Props) => {

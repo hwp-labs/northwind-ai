@@ -22,7 +22,7 @@ export interface PodcastDto {
   liveListeners?: number;
   series?: "ds" | "fc" | "cs";
 }
-export interface TransformedPodcastDto extends PodcastDto {
+export interface TransformedEpisodeDto extends PodcastDto {
   cover: string;
   dateText: string;
   dateTextShort: string;
@@ -39,7 +39,7 @@ export interface TransformedPodcastDto extends PodcastDto {
   // guestUsernameSafe: string[];
   // lastLogoSrc: string;
   guestList?: string[];
-  ctaText: string;
+  ctaText: "RSVP" | "Attend" | "Listen";
 }
 
 export interface PodcastGuestDto {
@@ -62,7 +62,6 @@ export interface PodcastGuestDto {
     in?: string;
   };
 }
-
 
 export interface PodcastAnalyticsDto {
   episodes?: {
@@ -88,4 +87,3 @@ export interface PodcastAnalyticsDto {
     averageRate?: number;
   };
 }
-

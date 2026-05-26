@@ -3,13 +3,13 @@
 import { PromptBar } from "@/components/molecules/prompt-bar";
 import { Hero } from "@/components/molecules/hero";
 import { useIsMobile } from "@/hooks/use-is-mobile";
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
 export const PromptBarHero = ({
   isOngoing,
   isConcluded,
   ...item
-}: TransformedPodcastDto) => {
+}: TransformedEpisodeDto) => {
   const isMobile = useIsMobile();
   //
   return (

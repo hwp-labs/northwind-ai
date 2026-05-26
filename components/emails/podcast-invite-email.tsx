@@ -1,10 +1,10 @@
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
 //
 import { Builder } from "./builder";
 
 interface Props {
-  data: TransformedPodcastDto;
+  data: TransformedEpisodeDto;
 }
 
 export const PodcastInviteEmail = ({ data }: Props) => {

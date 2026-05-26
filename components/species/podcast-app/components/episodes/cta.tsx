@@ -1,9 +1,9 @@
 "use client";
 
 import { IconPlayerPlayFilled, IconHeadphonesOff } from "@tabler/icons-react";
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
-export const EpisodeCta = ({ item }: { item: TransformedPodcastDto }) => {
+export const EpisodeCta = ({ item }: { item: TransformedEpisodeDto }) => {
   return (
     <button
       onClick={() =>

@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react";
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
 interface Props extends PropsWithChildren {
-  podcast: TransformedPodcastDto;
+  podcast: TransformedEpisodeDto;
 }
 
 export const Hero = ({ children, podcast }: Props) => (

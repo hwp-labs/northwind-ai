@@ -10,7 +10,7 @@ import { PodcastInviteEmail } from "@/components/emails/podcast-invite-email";
 import { useToast } from "@/hooks/use-toast";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
 import { MOCK } from "@/constants/MOCK";
 
@@ -32,7 +32,9 @@ export const ListenersToolbar = ({ recipients = [] }: Props) => {
       setLoading(true);
 
       const { error } = await sendEmail({
-        recipients: MOCK.sendPodcastInviteEmail.formData ? [APP.ccEmail] : recipients,
+        recipients: MOCK.sendPodcastInviteEmail.formData
+          ? [APP.ccEmail]
+          : recipients,
         podcast: PodcastHelper.GetMostRecentItem(),
       });
 
@@ -55,7 +57,7 @@ const sendEmail = async ({
   podcast,
 }: {
   recipients: string[];
-  podcast: TransformedPodcastDto;
+  podcast: TransformedEpisodeDto;
 }) => {
   const body = await pretty(
     await render(<PodcastInviteEmail data={podcast} />),

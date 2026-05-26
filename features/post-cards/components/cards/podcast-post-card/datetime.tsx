@@ -4,10 +4,10 @@ import { PropsWithChildren, useState } from "react";
 import { CalendarClockIcon } from "lucide-react";
 import clsx from "clsx";
 //
-import { TransformedPodcastDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
 interface Props extends PropsWithChildren {
-  podcast: TransformedPodcastDto;
+  podcast: TransformedEpisodeDto;
 }
 
 export const Datetime = ({ podcast }: Props) => {
