@@ -2,6 +2,19 @@ import { PodcastGuestDto } from "../types";
 
 export const data: PodcastGuestDto[] = [
   {
+    avatar: "/uploads/podcast/avatar-eokene.jpg",
+    firstName: "Emmanuel",
+    surname: "Okene",
+    displayName: "Emmanuel O.",
+    email: "okene_e@yahoo.com",
+    tel: "+2348139543769",
+    occupation: "Scientific Officer",
+    location: { city: "Edo" },
+    socials: {
+      x: "@emmanuelokene44",
+    },
+  },
+  {
     avatar: "/uploads/podcast/avatar-oinnocent.jpg",
     firstName: "Okereke",
     surname: "Innocent",
@@ -43,21 +56,6 @@ export const data: PodcastGuestDto[] = [
     socials: {
       in: "osawereao",
       x: "@workofao",
-    },
-  },
-  {
-    avatar: "/images/avatar-etugbeh2.png",
-    displayName: "Emanuel",
-    firstName: "Emmanuel",
-    surname: "Tugbeh",
-    email: "etugbeh@outlook.com",
-    tel: "+2348169960927",
-    occupation: "AI Product Engineer",
-    website: "northwindai.org",
-    location: { city: "Edo" },
-    socials: {
-      in: "2gbeh",
-      x: "@2gbeh",
     },
   },
   {
@@ -110,4 +108,19 @@ export const data: PodcastGuestDto[] = [
     displayName: "Martins A.",
     socials: { x: "@sanmiAkinbo" },
   },
+  {
+    avatar: "/images/avatar-etugbeh.png",
+    displayName: "Emanuel",
+    firstName: "Emmanuel",
+    surname: "Tugbeh",
+    email: "etugbeh@outlook.com",
+    tel: "+2348169960927",
+    occupation: "AI Product Engineer",
+    website: "northwindai.org",
+    location: { city: "Edo" },
+    socials: {
+      in: "2gbeh",
+      x: "@2gbeh",
+    },
+  },  
 ];

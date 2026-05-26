@@ -150,13 +150,54 @@ export const data: PodcastDto[] = [
         flag: "/uploads/podcast/flag-uk.webp",
       },
     ],
+    displayAvatar: "/uploads/logos/moniepoint.png",
     notionUrl:
       "https://held-gambler-004.notion.site/KPIs-of-World-Class-Engineers-3486a7cc633c8078980ded890c2c9cc6",
     spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",
-    listeners: 17,
+    listeners: 22,
     liveListeners: 14,
     series: "fc",
   },
+  {
+    id: 10,
+    datetime: "2026-05-27T19:00:00.000Z",
+    title: "Siiqo",
+    summary:
+      "A design session with <b>Okereke Innocent</b>, creator of <b>Siiqo</b> - <br/>Escrow-based Local Commerce OS for SMEs.",
+    guest: { username: "@OkerekeChinweo1", avatar: "/uploads/logos/siiqo.png" },
+    displayAvatars: [
+      "/images/avatar-etugbeh2.png",
+      "/uploads/podcast/avatar-oinnocent.jpg",
+      "/uploads/logos/siiqo.png",
+    ],
+    notionUrl:
+      "https://held-gambler-004.notion.site/Tetra-3316a7cc633c81429fabfb80a8601f8d",
+    spaceUrl: "https://x.com/i/spaces/1vKpPPNYPnOKE",
+    listeners: 0,
+    liveListeners: 0,
+  },
+  {
+    id: 11,
+    datetime: "2026-05-30T19:00:00.000Z",
+    title: "Routine Investigations API Modeling",
+    isLongTitle: true,
+    summary:
+      "A fireside chat with <b>Emmanuel Okene</b> (Cardiac Physiologist, UBTH)",
+    guest: {
+      username: "@emmanuelokene44",
+      avatar: "/uploads/podcast/avatar-eokene.jpg",
+    },
+    displayAvatar: "/uploads/logos/ubth.png",
+    notionUrl:
+      "https://held-gambler-004.notion.site/Routine-Investigations-Modeling-36c6a7cc633c8017b911d6266fa82422",
+    spaceUrl: "https://x.com/i/spaces/1RKZzzBwanMKB",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc",
+  },
+];
+
+/**
   {
     id: 10,
     datetime: "2026-05-24T19:00:00.000Z",
@@ -193,4 +234,4 @@ export const data: PodcastDto[] = [
     liveListeners: 0,
     series: "fc",
   },
-];
+ */

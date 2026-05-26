@@ -47,7 +47,7 @@ export const Hero = () => {
           <div className="flex-row-cb debug_">
             <HeroCta />
             <AvatarGroup
-              count={14 - 3}
+              count={19 - 3}
               className="[&>span]:bg-foreground [&>span]:ring-1.5! [&>span]:ring-[#eee]"
               countClassName="invert"
             >

@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ListHeader } from "../list-header";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { data } from "@/lib/supabase/services/podcasts/data/episodes";
-// 
+//
 import { EpisodeCta } from "./cta";
 
 export const Episodes = () => {
@@ -18,8 +18,8 @@ export const Episodes = () => {
         className="scrollbar-hide h-[400px] snap-y snap-mandatory overflow-y-auto scroll-smooth px-4 pb-4"
       >
         {[...data]
-          .filter(({ listeners }) => listeners)
-          .sort((a, b) => b.id - a.id)
+          // .filter(({ listeners }) => listeners)
+          .sort((a, b) => Number(b.id) - Number(a.id))
           .map((episode, i) => {
             const item = PodcastHelper.GetPageItem(episode.id);
             return (
@@ -49,7 +49,7 @@ export const Episodes = () => {
                 </figure>
                 <div className="flex-row-cs gap-4">
                   <small className="font-[Montserrat]_ text-muted-foreground text-sm font-medium whitespace-nowrap">
-                    {item.listeners} L
+                    {item.listeners ? <>{item.listeners} L</> : "TBA"}
                   </small>
                   <EpisodeCta item={item} />
                 </div>
