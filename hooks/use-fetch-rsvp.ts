@@ -20,7 +20,7 @@ export function useFetchRsvp(id?: number) {
 
   useEffect(() => {
     fetcher();
-  }, []);
+  }, [id]);
 
   const fetcher = async () => {
     if (item.listeners) {

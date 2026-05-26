@@ -4,5 +4,18 @@
       "main": true,
       "*": false
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "podcast.northwindai.org"
+        }
+      ],
+      "destination": "https://northwindai.org/podcast",
+      "permanent": true
+    }
+  ]
 }

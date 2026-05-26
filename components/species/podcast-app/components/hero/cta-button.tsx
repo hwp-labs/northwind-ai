@@ -4,8 +4,9 @@ import { IconCaretRightFilled } from "@tabler/icons-react";
 import { usePodcastStore } from "@/store/podcastStore";
 import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
-export const HeroCta = ({ episode }: { episode: TransformedEpisodeDto }) => {
+export const CtaButton = ({ episode }: { episode: TransformedEpisodeDto }) => {
   const mutateModal = usePodcastStore((s) => s.mutateModal);
+  
   const handleClick = () => {
     switch (episode.ctaText) {
       case "RSVP":
