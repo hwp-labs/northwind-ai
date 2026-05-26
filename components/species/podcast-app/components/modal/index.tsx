@@ -31,21 +31,23 @@ import {
   EmptyContent,
 } from "@/components/shadcn/ui/empty";
 import { useIsMobile } from "@/hooks/use-is-mobile";
-import { usePodcastSearchbarStore } from "@/store/podcastSearchbarStore";
+import { usePodcastStore } from "@/store/podcastStore";
 import { sleep } from "@/utils";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 import { COPY } from "@/constants/LOCALE";
 //
 
-export const Footer = () => {
+export const Modal = () => {
   const router = useRouter();
   const isMobile = useIsMobile();
 
+  const modal = usePodcastStore((s) => s.modal);
+  const mutateModal = usePodcastStore((s) => s.mutateModal);
   const [showOPay, setShowOPay] = useState(false);
   const [copying, setCopying] = useState(false);
-  const open = usePodcastSearchbarStore((s) => s.show);
-  const onClose = usePodcastSearchbarStore((s) => s.setShow);
+
+  const onClose = () => mutateModal({ open: false });
 
   const handleCopy = async () => {
     setCopying(true);
@@ -112,7 +114,7 @@ export const Footer = () => {
   );
   //
   return isMobile ? (
-    <Drawer open={open} onOpenChange={onClose}>
+    <Drawer open={modal.open} onOpenChange={onClose}>
       <DrawerContent className="rounded-t-4xl">
         <DrawerHeader>
           <DrawerTitle className="sr-only">Success</DrawerTitle>
@@ -121,7 +123,7 @@ export const Footer = () => {
       </DrawerContent>
     </Drawer>
   ) : (
-    <Dialog open={open} onOpenChange={onClose}>
+    <Dialog open={modal.open} onOpenChange={onClose}>
       <DialogContent className="max-w-sm p-0">
         <DialogHeader>
           <DialogTitle className="sr-only">Success</DialogTitle>

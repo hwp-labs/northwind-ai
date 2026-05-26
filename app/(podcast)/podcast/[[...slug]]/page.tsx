@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 
-import { Header } from "@/components/species/podcast-app/components/header";
+import { AppBar } from "@/components/species/podcast-app/components/app-bar";
 import { Hero } from "@/components/species/podcast-app/components/hero";
 import { Guests } from "@/components/species/podcast-app/components/guests";
 import { Episodes } from "@/components/species/podcast-app/components/episodes";
-import { Footer } from "@/components/species/podcast-app/components/footer";
 
 export const metadata: Metadata = {
   title: "Discover New Episodes",
@@ -12,14 +11,13 @@ export const metadata: Metadata = {
 
 export default async function PodcastPage() {
   return (
-    <main className="grid gap-4">
-      <Header />
-      <div className="mx-auto grid gap-4">
+    <>
+      <AppBar />
+      <main className="mx-auto grid gap-4">
         <Hero />
         <Guests />
         <Episodes />
-      </div>
-      <Footer />
-    </main>
+      </main>
+    </>
   );
 }

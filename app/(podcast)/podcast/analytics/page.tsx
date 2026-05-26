@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { IconInfoCircle } from "@tabler/icons-react";
 //
-import { Header } from "@/components/species/podcast-app/components/header";
+import { AppBar } from "@/components/species/podcast-app/components/app-bar";
 import { KpiCards } from "@/components/species/podcast-app/components/kpi-cards";
 import { RingChart } from "@/components/species/podcast-app/components/ring-chart";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
@@ -15,9 +15,9 @@ export default async function PodcastAnalyticsPage() {
   const d = PodcastHelper.ComputeAnalytics();
   //
   return (
-    <main className="grid gap-4">
-      <Header title="Analytics" fromPath={PATH.podcast} />
-      <div className="debug_ mx-auto flex w-full flex-col flex-wrap gap-4 px-4 md:w-[768px]">
+    <>
+      <AppBar title="Analytics" backTo={PATH.podcast} />
+      <main className="debug_ mx-auto flex w-full flex-col flex-wrap gap-4 px-4 md:w-[768px]">
         <KpiCards data={d} />
         <RingChart
           title="Listeners Overview"
@@ -34,8 +34,7 @@ export default async function PodcastAnalyticsPage() {
             { label: "Avg. Listeners", value: d.listeners?.average },
           ]}
         />
-      </div>
-      <p></p>
-    </main>
+      </main>
+    </>
   );
 }
