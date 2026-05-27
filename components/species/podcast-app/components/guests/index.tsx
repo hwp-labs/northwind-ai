@@ -39,7 +39,7 @@ export const Guests = () => {
                   <img
                     src={item.location.flag}
                     alt=""
-                    width={20}
+                    width={24}
                     className="absolute right-0 bottom-0"
                   />
                 ) : null}

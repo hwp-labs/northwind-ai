@@ -44,6 +44,7 @@ export interface PodcastGuestDto {
   firstName?: string;
   surname?: string;
   displayName: string;
+  sex?: "m" | "f";
   email?: string;
   tel?: string;
   occupation?: string;
@@ -73,10 +74,7 @@ export interface PodcastAnalyticsDto {
     maleRate?: number;
     female?: number;
     femaleRate?: number;
-    location?: {
-      country: string;
-      total: number;
-    }[];
+    location?: Record<string, number>;
   };
   listeners?: {
     total?: number;

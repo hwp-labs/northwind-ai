@@ -2,28 +2,33 @@ import { IconMicrophoneFilled, IconUsers } from "@tabler/icons-react";
 import { PodcastAnalyticsDto } from "@/lib/supabase/services/podcasts/types";
 import { KpiCard } from "./charts/kpi-card";
 
-export const KpiCards = ({ data: d }: { data: PodcastAnalyticsDto }) => {
+interface Props {
+  episodes?: PodcastAnalyticsDto["episodes"];
+  guests?: PodcastAnalyticsDto["guests"];
+}
+
+export const KpiCards = ({ episodes, guests }: Props) => {
   return (
-    <div className="grid sm:grid-cols-2 gap-4">
+    <section className="grid gap-4 sm:grid-cols-2">
       <KpiCard
         Icon={<IconMicrophoneFilled size={14} strokeWidth={2.5} />}
         label="Total Episodes"
-        value={d.episodes?.total}
+        value={episodes?.total}
         keyTitle="Series"
         keys={[
           {
             label: "Design Session",
-            value: d.episodes?.designSession,
+            value: episodes?.designSession,
             color: "bg-chart-3!",
           },
           {
             label: "Fireside Chat",
-            value: d.episodes?.firesideChat,
+            value: episodes?.firesideChat,
             color: "bg-ring!",
           },
           {
             label: "Case Study",
-            value: d.episodes?.caseStudy,
+            value: episodes?.caseStudy,
             color: "bg-chart-2!",
           },
         ]}
@@ -31,22 +36,23 @@ export const KpiCards = ({ data: d }: { data: PodcastAnalyticsDto }) => {
       <KpiCard
         Icon={<IconUsers size={14} strokeWidth={2.5} />}
         label="Total Guests"
-        value={d.guests?.total}
+        value={guests?.total}
         keyTitle="Diversity"
         keys={[
           {
             label: "Male",
-            value: 100,
-            valueText: "100%",
+            value: guests?.maleRate,
+            valueText: `${guests?.maleRate}%`,
             color: "bg-chart-1!",
           },
           {
             label: "Female",
-            value: 0,
+            value: guests?.femaleRate,
+            valueText: `${guests?.femaleRate}%`,
             color: "bg-chart-4!",
           },
         ]}
       />
-    </div>
+    </section>
   );
 };

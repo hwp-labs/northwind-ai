@@ -19,6 +19,7 @@ export const data: PodcastGuestDto[] = [
     firstName: "Linda",
     surname: "Kolapo",
     displayName: "Linda K.",
+    sex: "f",
     email: "ogokolapo@gmail.com",
     tel: "+2349013696053",
     occupation: "Communication Strategist",
@@ -52,7 +53,11 @@ export const data: PodcastGuestDto[] = [
     email: "phil.olalere@gmail.com",
     tel: "+447823518982",
     occupation: "Software Engineer",
-    location: { city: "Colorado", country: "US", flag: "/uploads/podcast/flag-us.webp" },
+    location: {
+      city: "Colorado",
+      country: "US",
+      flag: "/uploads/podcast/flag-us.webp",
+    },
     socials: {
       in: "phillip-olalere-a66929157",
       x: "@philstring93",
@@ -112,7 +117,7 @@ export const data: PodcastGuestDto[] = [
       in: "joshua-uyi",
       x: "@joshuaouyi",
     },
-  },  
+  },
   {
     avatar: "/uploads/podcast/avatar-oifeanyi.png",
     displayName: " Oluchi I.",
@@ -137,5 +142,5 @@ export const data: PodcastGuestDto[] = [
   //     in: "2gbeh",
   //     x: "@2gbeh",
   //   },
-  // },  
+  // },
 ];

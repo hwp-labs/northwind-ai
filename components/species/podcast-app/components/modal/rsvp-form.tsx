@@ -81,7 +81,7 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
   };
   //
   return (
-    <div className="grid w-full gap-4 px-2 pb-8">
+    <div className="grid w-full gap-4 px-4 pb-8">
       <figure className="flex-col-cc gap-4">
         <Image
           src={"/uploads/logos/siiqo.png"}

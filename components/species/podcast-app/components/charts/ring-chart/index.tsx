@@ -25,7 +25,7 @@ export const RingChart = ({
   const { canvasRef } = useRingChart({ progress: value });
   //
   return (
-    <div className="bg-card rounded-2xl px-6 py-5 shadow-2xl">
+    <section className="bg-card rounded-2xl px-6 py-5 shadow-2xl">
       <div className="flex-row-cb">
         <strong className="text-lg">{title}</strong>
         <button className="button-base text-muted-foreground hidden gap-1 rounded-lg border px-4 py-2.5 text-sm font-medium">
@@ -57,6 +57,6 @@ export const RingChart = ({
           ))}
         </ul>
       ) : null}
-    </div>
+    </section>
   );
 };

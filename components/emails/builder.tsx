@@ -151,7 +151,7 @@ const Banner = ({
       <Img
         src={
           variant === "support-podcast"
-            ? "https://northwindai.org/images/support-podcast-banner.png"
+            ? "https://northwindai.org/images/opay-banner.png"
             : APP.socialPreview
         }
         alt=""
