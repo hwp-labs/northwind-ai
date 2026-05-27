@@ -9,7 +9,7 @@ import {
 } from "@tabler/icons-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
-import { sleep } from "@/utils";
+import { isValidEmail, isValidTel, sleep } from "@/utils";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 import { Input } from "@/components/shadcn/ui/input";
@@ -23,7 +23,6 @@ import { createListenerAction } from "@/lib/supabase/services/listeners/actions/
 
 export const M = MOCK.podcastRsvp;
 
-
 interface Props {
   onClose?: () => void;
 }
@@ -34,44 +33,51 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
   const [value, setValue] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState<string|null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const canSubmit =
+    value.trim().length >= 6 && (isValidEmail(value) || isValidTel(value));
+
+  const inputError = value.trim().length > 0 && !canSubmit;
 
   const handleSubmit = async () => {
-    setSuccess(false);
-    setSubmitting(true);
+    if (canSubmit) {
+      setSuccess(false);
+      setSubmitting(true);
 
-    if (M.action) {
-      await sleep();
-    } else {
-      const payload = {
-        podcast_id: 10,
-        username: value,
-      };
+      if (M.action) {
+        await sleep();
+      } else {
+        const payload = {
+          podcast_id: 10,
+          username: value,
+        };
 
-      const { data } = await getListenerByPodcastIdAction(payload);
-      
-      if (data?.length) {
-        setError(ERROR.duplicateListenerUsername);
-        setSubmitting(false);
-        return;
+        const { data } = await getListenerByPodcastIdAction(payload);
+
+        if (data?.length) {
+          setError(ERROR.duplicateListenerUsername);
+          setSubmitting(false);
+          return;
+        }
+
+        const { error } = await createListenerAction(payload, PATH.podcast);
+        if (error) {
+          setError(error);
+          setSubmitting(false);
+          return;
+        }
       }
 
-      const { error } = await createListenerAction(payload, PATH.podcast);
-      if (error) {
-        setError(error);
-        setSubmitting(false);
-        return;
-      }
+      setValue("");
+      setSubmitting(false);
+
+      setSuccess(true);
+      await sleep(1.5);
+      setSuccess(false);
+
+      M.router ? null : onClose();
     }
-
-    setValue('');
-    setSubmitting(false);
-
-    setSuccess(true);
-    await sleep(1.5);
-    setSuccess(false);
-    
-    M.router ? null : onClose();
   };
   //
   return (
@@ -97,14 +103,16 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
           onChange={(ev) => setValue(ev.target.value)}
           disabled={submitting}
           required
+          className={inputError ? "border-destructive" : undefined}
         />
         <Button
-          variant={success ? "success" : "primary"}
+          type="button"
+          variant={success ? "success" : canSubmit ? "primary" : "default"}
           onClick={handleSubmit}
           disabled={submitting}
         >
           {submitting ? <Spinner /> : success ? <IconSparkles /> : null}
-          {success ? "Nice!" : "Done"}
+          {success ? "Alright boss!" : "Notify me!"}
         </Button>
       </form>
     </div>

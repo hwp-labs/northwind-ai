@@ -9,6 +9,7 @@ import { Avatar, AvatarImage } from "@/components/shadcn/ui/avatar";
 import { AnchorOutbound } from "@/components/atoms/anchor";
 import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 import { APP } from "@/constants/APP";
+import { APP_PODCAST } from "@/constants/APP_PODCAST";
 
 interface Props extends PropsWithChildren {
   podcast?: TransformedEpisodeDto;
@@ -106,7 +107,7 @@ export const Venue = ({ podcast }: Props) => {
           href={`/podcast/${podcast?.id}`}
           className="_underline font-f3 text-xs font-bold tracking-[1px] underline-offset-2"
         >
-          podcast.{APP.domain}
+          {APP_PODCAST.domain}
         </AnchorOutbound>
       </div>
     </div>

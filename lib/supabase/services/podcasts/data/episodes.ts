@@ -163,7 +163,7 @@ export const data: PodcastDto[] = [
     datetime: "2026-05-28T19:00:00.000Z",
     title: "Siiqo",
     summary:
-      "An exclusive post-launch interview with the Co-Founders of <br/><b>Siiqo.com</b> - An escrow-based local commerce OS for SMEs.",
+      "An exclusive post-launch interview with the co-founders of <br/><b>Siiqo.com</b> - An escrow-based, crypto-enabled Storefront for SMEs.",
     host: {
       avatar: "/images/avatar-etugbeh.png",
       name: "Emanuel O.",
@@ -172,7 +172,7 @@ export const data: PodcastDto[] = [
     guest: [
       {
         avatar: "/uploads/podcast/avatar-oinnocent.jpg",
-        name: "Okereke I.",
+        name: "Innocent O.",
         username: "@OkerekeChinweo1",
       },
       {

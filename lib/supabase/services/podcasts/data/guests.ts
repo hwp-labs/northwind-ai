@@ -20,9 +20,10 @@ export const data: PodcastGuestDto[] = [
     surname: "Kolapo",
     displayName: "Linda K.",
     email: "ogokolapo@gmail.com",
+    tel: "+2349013696053",
     occupation: "Communication Strategist",
     website: "siiqo.com",
-    location: { city: "Abuja" },
+    location: { city: "Delta" },
     socials: {
       in: "linda-kolapo",
       x: "@kolapo_gemini",
@@ -72,21 +73,21 @@ export const data: PodcastGuestDto[] = [
       x: "@workofao",
     },
   },
-  {
-    avatar: "/uploads/podcast/avatar-aisaac.jpg",
-    displayName: "Aderoju I.",
-    socials: { x: "@Aderoju_isaac9" },
-  },
-  {
-    avatar: "/uploads/podcast/avatar-ceffect.jpg",
-    displayName: "Cody",
-    socials: { x: "@CodyEffect" },
-  },
-  {
-    avatar: "/uploads/podcast/avatar-eafiemo.jpg",
-    displayName: "Edafe A.",
-    socials: { x: "@edafeafiemo" },
-  },
+  // {
+  //   avatar: "/uploads/podcast/avatar-aisaac.jpg",
+  //   displayName: "Aderoju I.",
+  //   socials: { x: "@Aderoju_isaac9" },
+  // },
+  // {
+  //   avatar: "/uploads/podcast/avatar-ceffect.jpg",
+  //   displayName: "Cody",
+  //   socials: { x: "@CodyEffect" },
+  // },
+  // {
+  //   avatar: "/uploads/podcast/avatar-eafiemo.jpg",
+  //   displayName: "Edafe A.",
+  //   socials: { x: "@edafeafiemo" },
+  // },
   {
     avatar: "/uploads/podcast/avatar-iadebiyi.jpg",
     displayName: "Isaac A.",
@@ -122,19 +123,19 @@ export const data: PodcastGuestDto[] = [
     displayName: "Martins A.",
     socials: { x: "@sanmiAkinbo" },
   },
-  {
-    avatar: "/images/avatar-etugbeh.png",
-    displayName: "Emanuel",
-    firstName: "Emmanuel",
-    surname: "Tugbeh",
-    email: "etugbeh@outlook.com",
-    tel: "+2348169960927",
-    occupation: "AI Product Engineer",
-    website: "northwindai.org",
-    location: { city: "Edo" },
-    socials: {
-      in: "2gbeh",
-      x: "@2gbeh",
-    },
-  },  
+  // {
+  //   avatar: "/images/avatar-etugbeh.png",
+  //   displayName: "Emanuel",
+  //   firstName: "Emmanuel",
+  //   surname: "Tugbeh",
+  //   email: "etugbeh@outlook.com",
+  //   tel: "+2348169960927",
+  //   occupation: "AI Product Engineer",
+  //   website: "northwindai.org",
+  //   location: { city: "Edo" },
+  //   socials: {
+  //     in: "2gbeh",
+  //     x: "@2gbeh",
+  //   },
+  // },  
 ];

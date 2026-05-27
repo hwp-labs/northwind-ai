@@ -13,7 +13,7 @@ export default async function PodcastPage() {
   return (
     <>
       <AppBar />
-      <main className="mx-auto grid gap-4">
+      <main className="mx-auto flex flex-col gap-4 w-full sm:w-2xl _debug">
         <Hero />
         <Guests />
         <Episodes />
