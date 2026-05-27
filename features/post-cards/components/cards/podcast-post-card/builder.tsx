@@ -104,7 +104,7 @@ export const Venue = ({ podcast }: Props) => {
         <IconWorldUpload size={16} />
         <AnchorOutbound
           href={`/podcast/${podcast?.id}`}
-          className="_underline font-[Raleway] text-xs font-bold tracking-[1px] underline-offset-2"
+          className="_underline font-f3 text-xs font-bold tracking-[1px] underline-offset-2"
         >
           {APP.domain}/podcast/{podcast?.id}
         </AnchorOutbound>

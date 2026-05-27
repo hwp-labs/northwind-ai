@@ -30,7 +30,7 @@ export default function RootLayout({
           fontMontserrat.variable,
           fontRaleway.variable,
           fontBebasNeue.variable,
-          "font-[Poppins] antialiased",
+          "font-f1 antialiased",
         )}
       >
         {children}

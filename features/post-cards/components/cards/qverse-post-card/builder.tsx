@@ -42,7 +42,7 @@ const Container = ({ children }: PropsWithChildren) => {
 const Hero = () => (
   <hgroup
     className={clsx(
-      "font-[Bebas_Neue] text-[118px] leading-24 font-bold tracking-wide text-transparent italic [&>h1]:bg-clip-text",
+      "font-f4 text-[118px] leading-24 font-bold tracking-wide text-transparent italic [&>h1]:bg-clip-text",
     )}
   >
     <h1 className={classNames.whiteGradient}>Discover</h1>
@@ -59,7 +59,7 @@ interface EventProps {
 
 const Event = ({ date, time, venue }: EventProps) => (
   <div className={clsx("rounded-3xl border px-8 py-4", classNames.glass2)}>
-    <div className="flex-row-cb font-[Montserrat] text-lg tracking-wide [&>div]:grid [&>div]:-space-y-1 [&>div>b]:whitespace-nowrap [&>div>small]:font-semibold">
+    <div className="flex-row-cb font-f2 text-lg tracking-wide [&>div]:grid [&>div]:-space-y-1 [&>div>b]:whitespace-nowrap [&>div>small]:font-semibold">
       <div>
         <small>Date</small>
         <b>Sun, May 3rd</b>
@@ -77,7 +77,7 @@ const Event = ({ date, time, venue }: EventProps) => (
 );
 
 const Address = () => (
-  <address className="font-[Montserrat] text-[10px]">
+  <address className="font-f2 text-[10px]">
     Powered by <b>Bitcoin Verse Ecosystem</b>, and <>{APP.name2}</>.
   </address>
 );

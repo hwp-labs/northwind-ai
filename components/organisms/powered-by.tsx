@@ -6,7 +6,9 @@ export const PoweredBy = () => {
   return (
     <AnchorOutbound href={APP.repositoryUrl}>
       <figure className="flex-row-cc gap-2.5">
-        <figcaption className="font-[Raleway] font-semibold tracking-wide">Powered by</figcaption>
+        <figcaption className="font-f3 font-semibold tracking-wide">
+          Powered by
+        </figcaption>
         <StepperLogo />
       </figure>
     </AnchorOutbound>

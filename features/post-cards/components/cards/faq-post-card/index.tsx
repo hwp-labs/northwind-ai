@@ -32,7 +32,7 @@ export const FAQPostCard = ({ page = 1 }: Props) => {
                   className="block max-h-full max-w-full object-contain"
                 />
               </div>
-              <figcaption className="text-md text-center font-[Raleway] leading-[22px] font-bold tracking-wide">
+              <figcaption className="text-md font-f3 text-center leading-[22px] font-bold tracking-wide">
                 How can {APP.name} help automate{" "}
                 <span className="inline-block">{item.label}</span>?
               </figcaption>

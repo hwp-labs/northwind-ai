@@ -71,12 +71,7 @@ const EventDetails = ({ date }: BlogDto) => (
 );
 
 const Headline = ({ classNames, headline }: BlogDto) => (
-  <h1
-    className={clsx(
-      "mt-2 font-[Raleway] text-[20px] font-bold",
-      classNames?.h1,
-    )}
-  >
+  <h1 className={clsx("font-f3 mt-2 text-[20px] font-bold", classNames?.h1)}>
     {headline}
   </h1>
 );
@@ -88,9 +83,7 @@ const Footer = ({ categories, url, appName }: BlogDto) => (
         <Fragment key={i}>
           {v.startsWith("#") ? (
             <div className="flex-row-cs gap-1 border-r border-gray-500 pr-2">
-              <small className="mr-1 hidden font-[Montserrat] font-semibold">
-                Host
-              </small>
+              <small className="font-f2 mr-1 hidden font-semibold">Host</small>
               <Badge variant="secondary">{v.replace("#", "")}</Badge>
             </div>
           ) : (

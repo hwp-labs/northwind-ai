@@ -23,7 +23,7 @@ export const BlogPostCard = ({ page = 1 }: Props) => {
         <B.Thumbnail {...item} />
         <article
           className={clsx(
-            "absolute bottom-8 w-full px-8 py-4 font-[Montserrat] text-white",
+            "font-f2 absolute bottom-8 w-full px-8 py-4 text-white",
             item.classNames?.hasOpacity ? "" : "bg-background/90",
           )}
           style={{

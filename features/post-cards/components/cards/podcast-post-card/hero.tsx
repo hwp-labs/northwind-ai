@@ -28,7 +28,7 @@ export const Hero = ({ children, podcast }: Props) => (
         </hgroup>
         {podcast?.summary ? (
           <p
-            className="text-foreground p-1 font-[Montserrat] text-sm font-medium tracking-wide"
+            className="text-foreground font-f2 p-1 text-sm font-medium tracking-wide"
             dangerouslySetInnerHTML={{ __html: podcast.summary }}
           />
         ) : null}

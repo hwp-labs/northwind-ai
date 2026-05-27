@@ -19,7 +19,7 @@ const Container = ({ children, h1, time }: ContainerProps) => (
           <Link
             href={PATH.home + "#footer"}
             title="Back"
-            className="debug_ flex-row-cs gap-2.5 font-[Raleway] text-2xl font-semibold text-white"
+            className="debug_ flex-row-cs font-f3 gap-2.5 text-2xl font-semibold text-white"
           >
             <ChevronLeftIcon />
             {h1}

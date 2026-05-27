@@ -48,7 +48,7 @@ export const Episodes = () => {
                   </figcaption>
                 </figure>
                 <div className="flex-row-cs gap-4">
-                  <small className="font-[Montserrat]_ text-muted-foreground text-sm font-medium whitespace-nowrap">
+                  <small className="font-f2_ text-muted-foreground text-sm font-medium whitespace-nowrap">
                     {item.listeners ? <>{item.listeners} L</> : "TBA"}
                   </small>
                   <EpisodeCta item={item} />

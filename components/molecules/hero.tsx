@@ -6,8 +6,8 @@ interface Props {
 
 export const Hero = ({ children, title, subtitle }: Props) => {
   return (
-    <section className="mt-10 space-y-4 px-6 text-center debug_">
-      <h1 className="_border mx-auto w-[320px] font-[Raleway] text-[38px] leading-12 font-semibold text-white md:w-full md:text-6xl md:leading-18">
+    <section className="debug_ mt-10 space-y-4 px-6 text-center">
+      <h1 className="_border font-f3 mx-auto w-[320px] text-[38px] leading-12 font-semibold text-white md:w-full md:text-6xl md:leading-18">
         {children}
       </h1>
       {title ? (

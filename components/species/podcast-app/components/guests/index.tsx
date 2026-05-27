@@ -2,14 +2,21 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ListHeader } from "./list-header";
+import { ListHeader } from "../list-header";
 import { data } from "@/lib/supabase/services/podcasts/data/guests";
 
 export const Guests = () => {
   const [randData, setRandData] = useState(data);
+
   useEffect(() => {
-    setRandData((s) => [...s].sort(() => Math.random() - 0.5));
+    const data = [...randData].sort(() => Math.random() - 0.5);
+    const top10 = data.slice(0, 10);
+    setRandData(top10);
   }, []);
+
+  const handleClick = (username: string) => {
+    window.open(`https://x.com/${username}`, "_blank");
+  };
   //
   return (
     <section className="debug_ max-w-svw">
@@ -17,7 +24,7 @@ export const Guests = () => {
         <ListHeader>Featured Guests</ListHeader>
       </div>
       <ul className="scrollbar-hide gap-4_ mt-4 flex snap-x snap-mandatory items-end overflow-x-auto scroll-smooth pb-4">
-        {randData.slice(0, 10).map((item, i) => (
+        {randData.map((item, i) => (
           <li key={i} className="debug_ max-w-[90px] min-w-[90px]">
             <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
               <div className="relative">
@@ -38,13 +45,10 @@ export const Guests = () => {
                 ) : null}
               </div>
               <figcaption
-                className="flex-col-cc debug_ mt-2 cursor-pointer gap-0.5 truncate text-sm"
-                onClick={() =>
-                  window.open(`https://x.com/${item.socials.x}`, "_blank")
-                }
+                className="flex-col-cc debug_ mt-2 cursor-pointer gap-0.5 truncate text-sm font-medium text-white"
+                onClick={() => handleClick(item.socials.x)}
               >
-                <strong className="text-white">{item.displayName}</strong>
-                {/* <small>{item.username}</small> */}
+                {item.displayName}
               </figcaption>
             </figure>
           </li>

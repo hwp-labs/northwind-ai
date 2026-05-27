@@ -36,7 +36,7 @@ export const Hero = () => {
             <CarouselItem key={i}>
               <Card src={episode.seriesImage}>
                 <div className="debug_ flex-col-se w-[250px] flex-1 gap-2">
-                  <h1 className="font-[Bebas_Neue] text-[26px] leading-[28px] font-medium tracking-[3px]">
+                  <h1 className="font-f4 text-[26px] leading-[28px] font-medium tracking-[3px]">
                     {episode.titleSeriesText}
                   </h1>
                   <Datetime episode={episode} />

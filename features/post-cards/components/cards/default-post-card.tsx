@@ -13,7 +13,7 @@ export const DefaultPostCard = () => {
             width={640}
             className="mx-auto px-4"
           />
-          <figcaption className="mt-1 text-center font-[Raleway] text-[32px] font-bold">
+          <figcaption className="font-f3 mt-1 text-center text-[32px] font-bold">
             {APP.title}
           </figcaption>
         </figure>

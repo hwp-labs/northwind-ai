@@ -30,14 +30,11 @@ export interface TransformedEpisodeDto extends PodcastDto {
   datetimeTextShort: string;
   isOngoing: boolean;
   isConcluded: boolean;
-  // isFiresideChat: boolean;
   titleNobr: string;
   summaryNobr: string;
   seriesText: string;
   seriesImage: string;
   titleSeriesText: string;
-  // guestUsernameSafe: string[];
-  // lastLogoSrc: string;
   guestList?: string[];
   ctaText: "RSVP" | "Attend" | "Listen";
 }

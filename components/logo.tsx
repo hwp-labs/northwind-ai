@@ -21,7 +21,7 @@ export const Logo = ({ size, path, iconOnly }: Props) => {
         <GpuIcon size={size || 14} />
       </span>
       {!iconOnly && (
-        <p className="font-[Raleway] font-semibold text-nowrap">{APP.name}</p>
+        <p className="font-f3 font-semibold text-nowrap">{APP.name}</p>
       )}
     </div>
   );
