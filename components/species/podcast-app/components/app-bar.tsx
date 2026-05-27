@@ -42,7 +42,7 @@ export const AppBar = ({ title, backTo }: Props) => {
             <h1 className="text-lg font-medium">{title}</h1>
           </div>
         ) : (
-          <Logo />
+          <Logo path="/" />
         )}
         <IconButton
           Icon={IconDotsVertical}

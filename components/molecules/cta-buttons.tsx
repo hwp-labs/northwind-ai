@@ -22,12 +22,7 @@ export const CTAButtons = () => {
       <Button size="lg" variant="secondary" onClick={handleBookDemo}>
         Request a demo
       </Button>
-      <Button
-        size="lg"
-        variant="default"
-        onClick={handleTalkSales}
-        className="bg-gray-900"
-      >
+      <Button size="lg" variant="primary" onClick={handleTalkSales}>
         Talk to sales
       </Button>
     </section>
