@@ -23,7 +23,6 @@ export interface PodcastDto {
   series?: "ds" | "fc" | "cs";
 }
 export interface TransformedEpisodeDto extends PodcastDto {
-  cover: string;
   dateText: string;
   dateTextShort: string;
   timeText: string;
@@ -35,6 +34,7 @@ export interface TransformedEpisodeDto extends PodcastDto {
   titleNobr: string;
   summaryNobr: string;
   seriesText: string;
+  seriesImage: string;
   titleSeriesText: string;
   // guestUsernameSafe: string[];
   // lastLogoSrc: string;

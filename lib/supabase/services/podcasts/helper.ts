@@ -1,11 +1,7 @@
 import { momentUtil } from "@/utils/moment-util";
 import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 //
-import {
-  PodcastAnalyticsDto,
-  PodcastDto,
-  TransformedEpisodeDto,
-} from "./types";
+import { PodcastDto, TransformedEpisodeDto } from "./types";
 import { data } from "./data/episodes";
 
 export class PodcastHelper {
@@ -28,7 +24,7 @@ export class PodcastHelper {
       titleNobr,
       summaryNobr,
       seriesText,
-      cover: item.series
+      seriesImage: item.series
         ? "/uploads/podcast/sony.png"
         : "/uploads/podcast/halim.png",
       titleSeriesText: item.isLongTitle
@@ -69,6 +65,22 @@ export class PodcastHelper {
     const i = page - 1;
     const item = (data[i] || data[0]) as PodcastDto;
     return this._transform(item);
+  }
+
+  static GetItemById(id: number) {
+    const item = data.find((row) => row.id === id);
+    if (item) return this._transform(item);
+  }
+
+  static GetItemsById(...ids: number[]) {
+    const items: TransformedEpisodeDto[] = [];
+    
+    ids.map((id) => {
+      const item = this.GetItemById(id);
+      if (item) items.push(item);
+    });
+    
+    return items;
   }
 
   static GetMostRecentItem() {

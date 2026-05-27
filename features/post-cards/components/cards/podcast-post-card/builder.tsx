@@ -82,7 +82,7 @@ export const Background = ({ children, podcast }: Props) => {
   return (
     children || (
       <img
-        src={podcast?.cover}
+        src={podcast?.seriesImage}
         alt=""
         className={clsx(
           "absolute size-full object-cover object-top-right",

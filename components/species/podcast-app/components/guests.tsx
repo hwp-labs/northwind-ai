@@ -17,8 +17,8 @@ export const Guests = () => {
         <ListHeader>Featured Guests</ListHeader>
       </div>
       <ul className="scrollbar-hide gap-4_ mt-4 flex snap-x snap-mandatory items-end overflow-x-auto scroll-smooth pb-4">
-        {randData.map((item, i) => (
-          <li key={i} className="max-w-[90px] min-w-[90px] debug_">
+        {randData.slice(0, 10).map((item, i) => (
+          <li key={i} className="debug_ max-w-[90px] min-w-[90px]">
             <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
               <div className="relative">
                 <Image
