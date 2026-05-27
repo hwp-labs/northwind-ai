@@ -16,6 +16,17 @@
       ],
       "destination": "https://northwindai.org/podcast",
       "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "support.northwindai.org"
+        }
+      ],
+      "destination": "https://northwindai.org/podcast/support",
+      "permanent": true
     }
   ]
 }

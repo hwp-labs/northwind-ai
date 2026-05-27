@@ -14,7 +14,7 @@ export const PodcastInviteEmail = ({ data }: Props) => {
       <Builder.H1>{data.titleSeriesText}</Builder.H1>
       <Builder.P richText={data.summaryNobr} />
       <Builder.P>LIVE: {data.datetimeText} WAT</Builder.P>
-      <Builder.Button href={data.spaceUrl!} color={COLOR.fuchsia}>
+      <Builder.Button href={data.spaceUrl!} color={COLOR.barbie}>
         Listen Now
       </Builder.Button>
       <Builder.P>

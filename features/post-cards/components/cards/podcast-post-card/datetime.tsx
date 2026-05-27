@@ -16,13 +16,13 @@ export const Datetime = ({ podcast }: Props) => {
   return (
     <div className={clsx("flex-row-cs text-sm", tonight ? "ml-6" : "ml-2")}>
       <span
-        className="text-foreground flex-row-cs bg-podcast ml-2 -rotate-3 cursor-default gap-2 px-2 py-2 font-black tracking-wide"
+        className="text-foreground flex-row-cs bg-qverse ml-2 -rotate-3 cursor-default gap-2 px-2 py-2 font-black tracking-wide"
         onClick={() => setTonight((s) => !s)}
       >
         <CalendarClockIcon size={16} />
         {tonight ? "Tonight bro.. 👀" : podcast.dateText}
       </span>
-      <span className="bg-foreground text-podcast -mt-4 -rotate-3 p-2 font-black tracking-wide">
+      <span className="bg-foreground text-qverse -mt-4 -rotate-3 p-2 font-black tracking-wide">
         {podcast.timeText}
         <span className="text-[12px] font-medium tracking-normal"> WAT</span>
       </span>

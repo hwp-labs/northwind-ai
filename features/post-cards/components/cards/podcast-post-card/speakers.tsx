@@ -56,8 +56,8 @@ const Speaker = ({ label, invert, ...speaker }: SpeakerProps) => {
     <div className="flex-col-cc gap-1">
       <div
         className={clsx(
-          "flex-row-cs bg-podcast gap-1 px-1 py-0.5 font-semibold text-white",
-          invert && "bg-foreground! text-podcast!",
+          "flex-row-cs bg-qverse gap-1 px-1 py-0.5 font-semibold text-white",
+          invert && "bg-foreground! text-qverse!",
         )}
       >
         {label}

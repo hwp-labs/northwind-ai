@@ -25,17 +25,8 @@ export const RingChart = ({
   const { canvasRef } = useRingChart({ progress: value });
   //
   return (
-    <section className="bg-card rounded-2xl px-6 py-5 shadow-2xl">
-      <div className="flex-row-cb">
-        <strong className="text-lg">{title}</strong>
-        <button className="button-base text-muted-foreground hidden gap-1 rounded-lg border px-4 py-2.5 text-sm font-medium">
-          {/* all time*,7d,30d,90d,180d,365d */}
-          All time
-          <IconChevronDown stroke={2.5} size={18} />
-        </button>
-      </div>
-
-      <div className="flex-row-cc relative mt-4">
+    <section className="card-podcast">
+      <strong className="text-lg">{title}</strong>      <div className="flex-row-cc relative mt-4">
         <canvas ref={canvasRef} className="size-[250px]" />
         <div className="absolute mt-2 text-center">
           {label ? <div className="text-muted-foreground">{label}</div> : null}

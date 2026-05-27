@@ -1,15 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import {
-  IconClipboard,
-  IconClipboardCheck,
-  IconHeartFilled,
-  IconRocket,
-} from "@tabler/icons-react";
-//
-import { Button } from "@/components/shadcn/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -22,27 +12,13 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/shadcn/ui/drawer";
-import {
-  Empty,
-  EmptyDescription,
-  EmptyHeader,
-  EmptyMedia,
-  EmptyTitle,
-  EmptyContent,
-} from "@/components/shadcn/ui/empty";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 import { usePodcastStore } from "@/store/podcastStore";
-import { sleep } from "@/utils";
-import { APP } from "@/constants/APP";
-import { PATH } from "@/constants/PATH";
-import { COPY } from "@/constants/LOCALE";
-import { Options } from "./options";
-import { RsvpFormWidget } from "@/features/podcasts/components/rsvp-form-widget";
-import { RsvpForm } from "./rsvp-form";
 //
+import { Options } from "./options";
+import { RsvpForm } from "./rsvp-form";
 
 export const Modal = () => {
-  const router = useRouter();
   const isMobile = useIsMobile();
 
   const modal = usePodcastStore((s) => s.modal);
@@ -50,34 +26,32 @@ export const Modal = () => {
 
   const onClose = () => mutateModal({ open: false });
 
-  const renderModalContent = (
-    <Empty className="debug_ p-0">
-      <EmptyContent className="debug2_">
-        {modal.variant === "rsvp" ? (
-          <RsvpForm onClose={onClose}/>
-        ) : (
-          <Options onClose={onClose} />
-        )}
-      </EmptyContent>
-    </Empty>
+  const render = (
+    <>
+      {modal.variant === "rsvp" ? (
+        <RsvpForm onClose={onClose} />
+      ) : (
+        <Options onClose={onClose} />
+      )}
+    </>
   );
   //
   return isMobile ? (
     <Drawer open={modal.open} onOpenChange={onClose}>
-      <DrawerContent className="rounded-t-4xl">
+      <DrawerContent className="rounded-t-4xl px-4">
         <DrawerHeader>
           <DrawerTitle className="sr-only">Success</DrawerTitle>
         </DrawerHeader>
-        {renderModalContent}
+        {render}
       </DrawerContent>
     </Drawer>
   ) : (
     <Dialog open={modal.open} onOpenChange={onClose}>
-      <DialogContent className="max-w-sm p-0">
+      <DialogContent className="max-w-sm pb-0">
         <DialogHeader>
           <DialogTitle className="sr-only">Success</DialogTitle>
         </DialogHeader>
-        {renderModalContent}
+        {render}
       </DialogContent>
     </Dialog>
   );

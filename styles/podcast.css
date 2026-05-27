@@ -1,0 +1,17 @@
+/* absolute bottom-0 w-full */
+
+.container-sm-podcast {
+  @apply mx-auto w-full sm:w-2xl;
+}
+
+.container-md-podcast {
+  @apply mx-auto w-full md:w-3xl;
+}
+
+.card-podcast {
+  @apply bg-card rounded-2xl px-6 py-5 shadow-2xl;
+}
+
+.absolute-bottom {
+  @apply absolute bottom-0 w-full;
+}

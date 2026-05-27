@@ -6,7 +6,7 @@ import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
 export const CtaButton = ({ episode }: { episode: TransformedEpisodeDto }) => {
   const mutateModal = usePodcastStore((s) => s.mutateModal);
-  
+
   const handleClick = () => {
     switch (episode.ctaText) {
       case "RSVP":
@@ -20,7 +20,7 @@ export const CtaButton = ({ episode }: { episode: TransformedEpisodeDto }) => {
   return (
     <button
       onClick={handleClick}
-      className="text-podcast border-podcast button-base gap-0 rounded-md border-2 bg-white pl-3.5 pr-3 py-1 font-medium ring-2 ring-white uppercase_"
+      className="text-qverse border-qverse button-base uppercase_ gap-0 rounded-md border-2 bg-white py-1 pr-3 pl-3.5 font-medium ring-2 ring-white"
     >
       <strong>{episode.ctaText}</strong>
       <IconCaretRightFilled size={18} strokeWidth={2.5} />

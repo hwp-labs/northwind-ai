@@ -13,7 +13,3 @@
 .debug4 {
   @apply border border-yellow-500;
 }
-
-.custom-mono {
-  @apply font-mono leading-4 font-semibold;
-}

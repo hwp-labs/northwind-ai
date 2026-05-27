@@ -1,10 +1,12 @@
 @theme inline {
   --color-brand: #0092dd;
   --color-contrast: #dd4a00;
-  --color-bot: #90c9ca;
-  --color-podcast: #071228;
+  --color-barbie: #D946EF;
+  --color-qverse: #071228;
   --color-opay-green: #1dcf9f;
   --color-opay-blue: #200f5f;
+  --color-chart-bg: #00bc7d26;
+  --color-chart-fg: #00bc7d;
 }
 
 :root,

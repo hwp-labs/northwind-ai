@@ -9,7 +9,7 @@ export const GeolocationChart = ({ title, data = {} }: Props) => {
   const total = Object.values(data).reduce((prev, value) => prev + value, 0);
   //
   return (
-    <section className="bg-card rounded-2xl px-6 py-5 shadow-2xl">
+    <section className="card-podcast">
       <strong className="text-lg">{title}</strong>
       <ul className="mt-4 space-y-4">
         {Object.entries(data).map(([label, value], i) => {
@@ -22,9 +22,9 @@ export const GeolocationChart = ({ title, data = {} }: Props) => {
                 <img src={src} width={24} alt="" />
                 <figcaption className="font-medium">{label}</figcaption>
               </figure>
-              <ol className="h-2 flex-1 overflow-clip rounded-full bg-[#00bc7d26]">
+              <ol className="h-2 flex-1 overflow-clip rounded-full bg-chart-bg">
                 <li
-                  className="h-2 rounded-full bg-[#00bc7d]"
+                  className="h-2 rounded-full bg-chart-fg"
                   style={{ width }}
                 ></li>
               </ol>

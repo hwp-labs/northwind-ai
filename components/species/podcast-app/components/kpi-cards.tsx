@@ -9,7 +9,7 @@ interface Props {
 
 export const KpiCards = ({ episodes, guests }: Props) => {
   return (
-    <section className="grid gap-4 sm:grid-cols-2">
+    <section className="grid gap-5 sm:grid-cols-2">
       <KpiCard
         Icon={<IconMicrophoneFilled size={14} strokeWidth={2.5} />}
         label="Total Episodes"

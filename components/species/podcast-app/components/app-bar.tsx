@@ -10,9 +10,10 @@ import { usePodcastStore } from "@/store/podcastStore";
 interface Props {
   title?: string;
   backTo?: string;
+  noOptions?: boolean;
 }
 
-export const AppBar = ({ title, backTo }: Props) => {
+export const AppBar = ({ title, backTo, noOptions }: Props) => {
   const router = useRouter();
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 
@@ -44,11 +45,15 @@ export const AppBar = ({ title, backTo }: Props) => {
         ) : (
           <Logo path="/" />
         )}
-        <IconButton
-          Icon={IconDotsVertical}
-          onClick={handleOptions}
-          title="Options"
-        />
+
+        {/* ELLIPSIS */}
+        {noOptions ? null : (
+          <IconButton
+            Icon={IconDotsVertical}
+            onClick={handleOptions}
+            title="Options"
+          />
+        )}
       </div>
     </header>
   );

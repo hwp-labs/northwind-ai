@@ -17,8 +17,8 @@ export default async function AnalyticsPage() {
   //
   return (
     <>
-      <AppBar title="Analytics" backTo={PATH.podcast} />
-      <main className="debug_ mx-auto flex w-full flex-col flex-wrap gap-4 px-4 pb-4 md:w-[768px]">
+      <AppBar title="Analytics" backTo={PATH.podcast} noOptions />
+      <main className="debug_ container-md-podcast flex flex-col flex-wrap gap-5 px-4 pb-6 mt-2">
         <KpiCards episodes={episodes} guests={guests} />
         <GeolocationChart title="Guests Location" data={guests?.location} />
         <RingChart

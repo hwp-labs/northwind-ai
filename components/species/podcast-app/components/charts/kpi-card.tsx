@@ -24,9 +24,9 @@ export const KpiCard = ({
   keys = [],
 }: Props) => {
   return (
-    <div className="bg-card rounded-2xl px-6 py-5 shadow-2xl">
-      <div className="flex-row-cs gap-4 font-medium">
-        <div className="flex-row-cc bg-background text-foreground size-[24px] rounded-full">
+    <div className="card-podcast">
+      <div className="flex-row-cs gap-4 font-medium text-lg">
+        <div className="flex-row-cc bg-background text-foreground size-[32px] rounded-full">
           {Icon}
         </div>
         {label}
