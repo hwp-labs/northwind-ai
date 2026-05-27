@@ -53,7 +53,6 @@ export const RsvpFormWidget = () => {
               submitting={submitting}
               success={success}
               successText="Nice!"
-              className="bg-gray-900"
             >
               {isOngoing ? "Attend" : "RSVP"}
             </SubmitButton>

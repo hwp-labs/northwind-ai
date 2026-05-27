@@ -5,6 +5,7 @@ import clsx from "clsx";
 //
 import { CompanyLogo, Logo } from "@/components/logo";
 import { APP } from "@/constants/APP";
+import { COLOR } from "@/constants/COLOR";
 import { COPY } from "@/constants/LOCALE";
 
 const Header = ({ noBorder }: { noBorder?: boolean }) => {
@@ -61,7 +62,7 @@ const CTA = () => (
         <ChevronRightIcon size={16} />
       </span>
       <span className="flex-row-cs gap-2.5">
-        <IconRocket size={20} color={APP.colors.contrast} />
+        <IconRocket size={20} color={COLOR.contrast} />
         {APP.domain}
       </span>
     </div>

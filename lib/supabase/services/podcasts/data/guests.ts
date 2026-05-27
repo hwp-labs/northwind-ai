@@ -15,6 +15,20 @@ export const data: PodcastGuestDto[] = [
     },
   },
   {
+    avatar: "/uploads/podcast/avatar-lkolapo.jpg",
+    firstName: "Linda",
+    surname: "Kolapo",
+    displayName: "Linda K.",
+    email: "ogokolapo@gmail.com",
+    occupation: "Communication Strategist",
+    website: "siiqo.com",
+    location: { city: "Abuja" },
+    socials: {
+      in: "linda-kolapo",
+      x: "@kolapo_gemini",
+    },
+  },
+  {
     avatar: "/uploads/podcast/avatar-oinnocent.jpg",
     firstName: "Okereke",
     surname: "Innocent",

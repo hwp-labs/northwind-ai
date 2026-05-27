@@ -1,5 +1,5 @@
 import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
-import { APP } from "@/constants/APP";
+import { COLOR } from "@/constants/COLOR";
 //
 import { Builder } from "./builder";
 
@@ -14,7 +14,7 @@ export const PodcastInviteEmail = ({ data }: Props) => {
       <Builder.H1>{data.titleSeriesText}</Builder.H1>
       <Builder.P richText={data.summaryNobr} />
       <Builder.P>LIVE: {data.datetimeText} WAT</Builder.P>
-      <Builder.Button href={data.spaceUrl!} color={APP.colors.fuchsia}>
+      <Builder.Button href={data.spaceUrl!} color={COLOR.fuchsia}>
         Listen Now
       </Builder.Button>
       <Builder.P>

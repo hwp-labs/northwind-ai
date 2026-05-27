@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { IconWorldUpload } from "@tabler/icons-react";
 import clsx from "clsx";
-import { APP } from "@/constants/APP";
+import { APP_QVERSE } from "@/constants/APP_QVERSE";
 
 export const classNames = {
   brandBg: "bg-[#0a0a2c]",
@@ -78,7 +78,7 @@ const Event = ({ date, time, venue }: EventProps) => (
 
 const Address = () => (
   <address className="font-f2 text-[10px]">
-    Powered by <b>Bitcoin Verse Ecosystem</b>, and <>{APP.name2}</>.
+    Powered by <b>Bitcoin Verse Ecosystem</b>, and Northstar Analytics.
   </address>
 );
 
@@ -90,7 +90,7 @@ const CtaBtn = ({ children }: PropsWithChildren) => (
       classNames.brandText,
     )}
   >
-    <IconWorldUpload size={16} /> {children || APP.domain2}
+    <IconWorldUpload size={16} /> {children || APP_QVERSE.domainDisplayText}
   </button>
 );
 

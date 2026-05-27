@@ -163,16 +163,28 @@ export const data: PodcastDto[] = [
     datetime: "2026-05-28T19:00:00.000Z",
     title: "Siiqo",
     summary:
-      "A design session with <b>Okereke Innocent</b>, creator of <b>Siiqo</b> - <br/>Escrow-based Local Commerce OS for SMEs.",
-    guest: { username: "@OkerekeChinweo1", avatar: "/uploads/logos/siiqo.png" },
-    displayAvatars: [
-      "/images/avatar-etugbeh2.png",
-      "/uploads/podcast/avatar-oinnocent.jpg",
-      "/uploads/logos/siiqo.png",
+      "An exclusive post-launch interview with the Co-Founders of <br/><b>Siiqo.com</b> - An escrow-based local commerce OS for SMEs.",
+    host: {
+      avatar: "/images/avatar-etugbeh.png",
+      name: "Emanuel O.",
+      username: "@2gbeh",
+    },
+    guest: [
+      {
+        avatar: "/uploads/podcast/avatar-oinnocent.jpg",
+        name: "Okereke I.",
+        username: "@OkerekeChinweo1",
+      },
+      {
+        avatar: "/uploads/podcast/avatar-lkolapo.jpg",
+        name: "Linda K.",
+        username: "@kolapo_gemini",
+      },
     ],
+    displayAvatar: "/uploads/logos/siiqo.png",
     notionUrl:
-      "https://held-gambler-004.notion.site/Tetra-3316a7cc633c81429fabfb80a8601f8d",
-    spaceUrl: "https://x.com/i/spaces/1vKpPPNYPnOKE",
+      "https://held-gambler-004.notion.site/Siiqo-36c6a7cc633c8132842bf67ada4dd93d",
+    spaceUrl: "https://x.com/i/spaces/1qGvvvewvbkGB",
     listeners: 0,
     liveListeners: 0,
   },

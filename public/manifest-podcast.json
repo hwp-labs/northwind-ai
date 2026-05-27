@@ -1,11 +1,11 @@
 {
-  "id": "/",
-  "name": "Northwind AI",
-  "short_name": "Northwind AI",
-  "description": "AI Automation Web Services",
+  "id": "/podcast",
+  "name": "Northwind AI Podcast",
+  "short_name": "Podcast",
+  "description": "Discover New Episodes",
   "background_color": "#120e0d",
   "theme_color": "#120e0d",
-  "start_url": "/",
+  "start_url": "/podcast",
   "display": "standalone",
   "orientation": "portrait",
   "dir": "ltr",
@@ -32,19 +32,19 @@
   ],
   "shortcuts": [
     {
-      "name": "Get started",
-      "short_name": "Get started",
-      "url": "/get-started"
+      "name": "Join the Community",
+      "short_name": "Community",
+      "url": "https://chat.whatsapp.com/HajjJPJ2HkE0rTTITv2FGm"
     },
     {
-      "name": "Log in",
-      "short_name": "Log in",
-      "url": "/login"
+      "name": "Analytics",
+      "short_name": "Analytics",
+      "url": "/analytics"
     },
     {
-      "name": "Podcast",
-      "short_name": "Podcast",
-      "url": "/podcast"
+      "name": "Support",
+      "short_name": "Support",
+      "url": "/support"
     }
   ]
 }

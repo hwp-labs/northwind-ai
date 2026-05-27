@@ -3,7 +3,7 @@ import { IconInfoCircle } from "@tabler/icons-react";
 //
 import { AppBar } from "@/components/species/podcast-app/components/app-bar";
 import { KpiCards } from "@/components/species/podcast-app/components/kpi-cards";
-import { RingChart } from "@/components/species/podcast-app/components/ring-chart";
+import { RingChart } from "@/components/species/podcast-app/components/charts/ring-chart";
 import { computeAnalytics } from "@/lib/supabase/services/podcasts/utils/compute-analytics";
 import { PATH } from "@/constants/PATH";
 

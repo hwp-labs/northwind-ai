@@ -1,6 +1,6 @@
 import { IconMicrophoneFilled, IconUsers } from "@tabler/icons-react";
 import { PodcastAnalyticsDto } from "@/lib/supabase/services/podcasts/types";
-import { KpiCard } from "./kpi-card";
+import { KpiCard } from "./charts/kpi-card";
 
 export const KpiCards = ({ data: d }: { data: PodcastAnalyticsDto }) => {
   return (

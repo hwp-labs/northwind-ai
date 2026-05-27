@@ -14,7 +14,7 @@ export const Datetime = ({ podcast }: Props) => {
   const [tonight, setTonight] = useState(false);
   //
   return (
-    <div className={clsx("flex-row-cs text-sm", tonight ? "ml-6" : "ml-4")}>
+    <div className={clsx("flex-row-cs text-sm", tonight ? "ml-6" : "ml-2")}>
       <span
         className="text-foreground flex-row-cs bg-podcast ml-2 -rotate-3 cursor-default gap-2 px-2 py-2 font-black tracking-wide"
         onClick={() => setTonight((s) => !s)}

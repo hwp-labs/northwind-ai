@@ -13,6 +13,7 @@ import {
 } from "@react-email/components";
 import clsx from "clsx";
 import { APP } from "@/constants/APP";
+import { COLOR } from "@/constants/COLOR";
 
 interface TemplateProps extends PropsWithChildren {
   preview: string;
@@ -97,7 +98,7 @@ const Link = ({ children, href, color }: LinkProps) => (
     target="_blank"
     className="underline underline-offset-2"
     style={{
-      color: color || APP.colors.brand,
+      color: color || COLOR.brand,
     }}
   >
     {children || href}
@@ -114,7 +115,7 @@ const Button = ({ children, href, color }: ButtonProps) => (
       href={href}
       style={{
         color: "white",
-        backgroundColor: color || APP.colors.brand,
+        backgroundColor: color || COLOR.brand,
         borderRadius: 100,
         padding: 10,
         textAlign: "center",

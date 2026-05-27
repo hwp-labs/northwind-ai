@@ -1,30 +1,22 @@
 import type { Metadata, Viewport } from "next";
 import { APP } from "./APP";
-import { COLOR } from "./COLOR";
+import { APP_PODCAST } from "./APP_PODCAST";
 import { COPY } from "./LOCALE";
 
-export const VIEWPORT: Viewport = {
-  colorScheme: "dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: COLOR.white },
-    { media: "(prefers-color-scheme: dark)", color: COLOR.black },
-  ],
-};
-
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
-export const METADATA: Metadata = {
+export const METADATA_PODCAST: Metadata = {
   title: {
-    default: APP.titleVerbose,
-    template: `%s | ${APP.name}`,
+    default: APP_PODCAST.titleVerbose,
+    template: `%s | ${APP_PODCAST.name}`,
   },
-  description: APP.description,
-  keywords: APP.keywords,
+  description: APP_PODCAST.description,
+  keywords: [...APP_PODCAST.keywords, ...APP.keywords],
   creator: APP.creator,
   // META
   generator: "Next.js",
-  applicationName: APP.name,
+  applicationName: APP_PODCAST.name,
   category: "technology",
-  classification: "AI Automation",
+  classification: "Blog",
   referrer: "origin-when-cross-origin",
   publisher: APP.owner,
   formatDetection: {
@@ -32,7 +24,7 @@ export const METADATA: Metadata = {
     telephone: true,
     address: true,
   },
-  metadataBase: new URL(APP.website),
+  metadataBase: new URL(APP_PODCAST.website),
   alternates: {
     canonical: "/",
     languages: {
@@ -41,29 +33,29 @@ export const METADATA: Metadata = {
     },
   },
   // https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest
-  manifest: "/manifest.json",
+  manifest: "/manifest-podcast.json",
   // OPEN GRAPH
   openGraph: {
     type: "website",
-    url: APP.website,
-    siteName: APP.name,
-    title: APP.titleVerbose,
-    description: COPY.transform,
+    url: APP_PODCAST.website,
+    siteName: APP_PODCAST.name,
+    title: APP_PODCAST.titleVerbose,
+    description: APP_PODCAST.description,
     images: {
-      url: APP.socialPreview,
+      url: APP_PODCAST.socialPreview,
       alt: "",
-      width: 1280,
-      height: 640,
+      width: 640,
+      height: 320,
     },
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: APP.titleVerbose,
-    description: COPY.transform,
+    title: APP_PODCAST.titleVerbose,
+    description: APP_PODCAST.description,
     creator: "@2gbeh",
     images: {
-      url: APP.socialPreview,
+      url: APP_PODCAST.socialPreview,
       alt: "",
     },
   },

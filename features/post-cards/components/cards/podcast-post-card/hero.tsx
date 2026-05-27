@@ -20,7 +20,7 @@ export const Hero = ({ children, podcast }: Props) => (
       />
     ) : (
       <>
-        <hgroup className="text-[42px] leading-[42px] font-black text-white uppercase">
+        <hgroup className="text-[48px] leading-[44px] font-black text-white uppercase">
           {podcast?.title ? (
             <h1 dangerouslySetInnerHTML={{ __html: podcast.title }} />
           ) : null}

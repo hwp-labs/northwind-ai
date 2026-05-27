@@ -25,7 +25,7 @@ export const AppBar = ({ title, backTo }: Props) => {
   };
 
   const handleOptions = () => {
-    mutateModal({ open: true });
+    mutateModal({ open: true, variant: "options" });
   };
   //
   return (

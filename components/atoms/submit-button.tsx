@@ -11,7 +11,6 @@ interface Props {
   submittingText?: string;
   success?: boolean;
   successText?: string;
-  className?: string;
 }
 
 export const SubmitButton = ({
@@ -20,14 +19,10 @@ export const SubmitButton = ({
   submittingText,
   success,
   successText,
-  className,
 }: Props) => {
   return (
     <div className="_border flex flex-col justify-end lg:flex-row">
-      <Button
-        type="submit"
-        className={clsx(className, success && "bg-emerald-600")}
-      >
+      <Button type="submit" variant={success ? "success" : "primary"}>
         {submitting ? <Spinner /> : success ? <IconSparkles /> : null}
         {submitting
           ? submittingText || children

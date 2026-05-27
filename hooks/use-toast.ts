@@ -1,6 +1,6 @@
 import { toast } from "sonner";
 import { sleep } from "@/utils";
-import { APP } from "@/constants/APP";
+import { COLOR } from "@/constants/COLOR";
 
 type Payload = string | { title: string; description: string };
 
@@ -15,7 +15,7 @@ export function useToast() {
 
     toast.success(title, {
       description,
-      style: { background: APP.colors.success },
+      style: { background: COLOR.success },
     });
   };
 
@@ -24,7 +24,7 @@ export function useToast() {
 
     toast.warning(title, {
       description,
-      style: { background: APP.colors.danger },
+      style: { background: COLOR.danger },
     });
   };
 
@@ -39,25 +39,25 @@ export function useToast() {
     await sleep(1.5);
     toast.info(title, {
       description,
-      style: { background: APP.colors.info },
+      style: { background: COLOR.info },
     });
 
     await sleep(1.5);
     toast.success(title, {
       description,
-      style: { background: APP.colors.success },
+      style: { background: COLOR.success },
     });
 
     await sleep(1.5);
     toast.warning(title, {
       description,
-      style: { background: APP.colors.warning },
+      style: { background: COLOR.warning },
     });
 
     await sleep(1.5);
     toast.error(title, {
       description,
-      style: { background: APP.colors.danger },
+      style: { background: COLOR.danger },
     });
   };
 

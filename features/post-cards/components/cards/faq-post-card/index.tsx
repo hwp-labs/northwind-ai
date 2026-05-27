@@ -2,6 +2,7 @@ import { IconCircleCheckFilled } from "@tabler/icons-react";
 //
 import { CardBuilder } from "../../card-builder";
 import { APP } from "@/constants/APP";
+import { COLOR } from "@/constants/COLOR";
 import data from "./data.json";
 
 interface Data {
@@ -43,10 +44,7 @@ export const FAQPostCard = ({ page = 1 }: Props) => {
                 .map((text, i) => (
                   <li key={i} className="flex gap-2.5 text-[13px] font-normal">
                     <i className="min-w-[16px] pt-0.5">
-                      <IconCircleCheckFilled
-                        size={16}
-                        color={APP.colors.brand}
-                      />
+                      <IconCircleCheckFilled size={16} color={COLOR.brand} />
                     </i>
                     {text}
                   </li>

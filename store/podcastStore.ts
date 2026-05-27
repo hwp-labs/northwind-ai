@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type ModalVariant = "default" | "rsvp" | "play" | "filter" | "sort";
+type ModalVariant = "options" | "rsvp" | "play" | "filter" | "sort";
 
 interface StoreState {
   search: { show: boolean; typing: boolean };
@@ -17,7 +17,7 @@ type StoreType = StoreState & StoreAction;
 
 const initialState: StoreState = {
   search: { show: false, typing: false },
-  modal: { open: false, variant: "default" },
+  modal: { open: false, variant: "options" },
 };
 
 export const usePodcastStore = create<StoreType>()((set, get) => ({
