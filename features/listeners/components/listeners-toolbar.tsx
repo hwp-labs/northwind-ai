@@ -11,9 +11,9 @@ import { useToast } from "@/hooks/use-toast";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
 import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
-import { APP } from "@/constants/APP";
 import { MOCK } from "@/constants/MOCK";
 
+const M = MOCK.sendPodcastInviteEmail;
 interface Props {
   recipients?: string[];
 }
@@ -32,10 +32,8 @@ export const ListenersToolbar = ({ recipients = [] }: Props) => {
       setLoading(true);
 
       const { error } = await sendEmail({
-        recipients: MOCK.sendPodcastInviteEmail.formData
-          ? [APP.ccEmail]
-          : recipients,
-        podcast: PodcastHelper.GetMostRecentItem(10),
+        recipients: M.formData ? [] : recipients,
+        podcast: PodcastHelper.GetMostRecentItem(),
       });
 
       if (error) toast.error(error);

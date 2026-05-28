@@ -23,7 +23,7 @@ export const data: PodcastDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",
     spaceUrl: "https://x.com/i/spaces/1qGvvkLwDBAGB",
-    listeners: 135,
+    listeners: 139,
     liveListeners: 103,
   },
   {
@@ -50,7 +50,7 @@ export const data: PodcastDto[] = [
       "https://held-gambler-004.notion.site/Izivote-3206a7cc633c807dbd55c6fbb373ff37",
     spaceUrl: "https://x.com/i/spaces/1XGygmPjeMkxM",
     listeners: 92,
-    liveListeners: 84,
+    liveListeners: 33,
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ export const data: PodcastDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
     spaceUrl: "https://x.com/i/spaces/1YxNrZNPNnpxw",
-    listeners: 31,
+    listeners: 33,
     liveListeners: 10,
     series: "cs",
   },
@@ -154,7 +154,7 @@ export const data: PodcastDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/KPIs-of-World-Class-Engineers-3486a7cc633c8078980ded890c2c9cc6",
     spaceUrl: "https://x.com/i/spaces/1mGPaLAgERYJN",
-    listeners: 22,
+    listeners: 24,
     liveListeners: 14,
     series: "fc",
   },
@@ -185,8 +185,8 @@ export const data: PodcastDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Siiqo-36c6a7cc633c8132842bf67ada4dd93d",
     spaceUrl: "https://x.com/i/spaces/1qGvvvewvbkGB",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 42,
+    liveListeners: 42,
   },
   {
     id: 11,
