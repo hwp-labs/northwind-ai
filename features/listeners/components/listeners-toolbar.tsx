@@ -35,7 +35,7 @@ export const ListenersToolbar = ({ recipients = [] }: Props) => {
         recipients: MOCK.sendPodcastInviteEmail.formData
           ? [APP.ccEmail]
           : recipients,
-        podcast: PodcastHelper.GetMostRecentItem(),
+        podcast: PodcastHelper.GetMostRecentItem(10),
       });
 
       if (error) toast.error(error);

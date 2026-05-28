@@ -74,17 +74,17 @@ export class PodcastHelper {
 
   static GetItemsById(...ids: number[]) {
     const items: TransformedEpisodeDto[] = [];
-    
+
     ids.map((id) => {
       const item = this.GetItemById(id);
       if (item) items.push(item);
     });
-    
+
     return items;
   }
 
-  static GetMostRecentItem() {
-    const i = data.length - 1;
+  static GetMostRecentItem(id?: number) {
+    const i = id ? id - 1 : data.length - 1;
     const item = data[i] as PodcastDto;
     return this._transform(item);
   }

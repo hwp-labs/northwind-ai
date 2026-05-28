@@ -166,7 +166,7 @@ export const data: PodcastDto[] = [
       "An exclusive post-launch interview with the co-founders of <br/><b>Siiqo.com</b> - An escrow-based, crypto-enabled Storefront for SMEs.",
     host: {
       avatar: "/images/avatar-etugbeh.png",
-      name: "Emanuel O.",
+      name: "Emanuel T.",
       username: "@2gbeh",
     },
     guest: [

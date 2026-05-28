@@ -101,7 +101,7 @@ export const Venue = ({ podcast }: Props) => {
         <FaMapMarkerAlt size={14} />
         Twitter_X Spaces
       </div>
-      <div className="flex-row-cs -mt-0 -rotate-3 gap-1.5 bg-[#fb085a] px-4 py-2 text-white">
+      <div className="flex-row-cs -mt-0 -rotate-3 gap-1.5 bg-[#fb085a] px-4 py-2 text-white ml-3">
         <IconWorldUpload size={16} />
         <AnchorOutbound
           href={`/podcast/${podcast?.id}`}

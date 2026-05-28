@@ -43,7 +43,7 @@ export function useLoginFormWidget() {
     setSuccess(true);
     await sleep(1.5);
     setSuccess(false);
-    M.router ? null : router.replace(PROTECTED_PATH.visitors);
+    M.router ? null : router.replace(PROTECTED_PATH.listeners);
   };
 
   return {
