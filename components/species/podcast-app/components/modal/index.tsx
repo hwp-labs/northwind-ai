@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+//
 import {
   Dialog,
   DialogContent,
@@ -13,20 +15,37 @@ import {
   DrawerTitle,
 } from "@/components/shadcn/ui/drawer";
 import { Options } from "./options";
-import { RsvpForm } from "./rsvp-form";
 import { Preview } from "./preview";
+import { RsvpForm } from "./rsvp-form";
+import { UnsubForm } from "./unsub-form";
 import { useIsMobile } from "@/hooks/use-is-mobile";
+import { useQueryParams } from "@/hooks/use-query-params";
 import { usePodcastStore } from "@/store/podcastStore";
 
 export const Modal = () => {
   const isMobile = useIsMobile();
+  const { get, remove } = useQueryParams();
 
   const modal = usePodcastStore((s) => s.modal);
+  const mutateModal = usePodcastStore((s) => s.mutateModal);
   const resetModal = usePodcastStore((s) => s.resetModal);
+
+  useEffect(() => {
+    if (Boolean(get({ unsub: "false" }))) {
+      mutateModal({ open: true, variant: "unsub" });
+    }
+  }, []);
 
   const render = (
     <>
-      {modal.variant === "rsvp" ? (
+      {modal.variant === "unsub" ? (
+        <UnsubForm
+          onClose={() => {
+            resetModal();
+            remove("unsub");
+          }}
+        />
+      ) : modal.variant === "rsvp" ? (
         <RsvpForm onClose={resetModal} />
       ) : modal.variant === "preview" ? (
         <Preview onClose={resetModal} />

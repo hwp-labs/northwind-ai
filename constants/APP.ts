@@ -31,8 +31,6 @@ export const APP = {
   website: "https://northwindai.org",
   socialPreview: "https://northwindai.org/social-preview.png",
   email: "no-reply@northwindai.org",
-  ccEmail: "tugbeh.osaretin@gmail.com",
-  bccEmail: "etugbeh@outlook.com",
   tel: "+2348169960927",
   telDisplayText: "(+234)81 6996 0927",
   

@@ -3,6 +3,7 @@ import { usePodcastStore } from "@/store/podcastStore";
 import { getListenerByPodcastIdAction } from "@/lib/supabase/services/listeners/actions/getListenerAction";
 import { createListenerAction } from "@/lib/supabase/services/listeners/actions/createListenerAction";
 import { isValidEmail, isValidTel, sleep } from "@/utils";
+import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 import { MOCK } from "@/constants/MOCK";
 import { ERROR } from "@/constants/ERROR";
@@ -12,16 +13,12 @@ const M = MOCK.podcastRsvp;
 export function useRsvpForm(onClose?: () => void) {
   const episode = usePodcastStore((s) => s.episode);
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(M.formData ? APP.email : "");
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const canSubmit =
-    episode &&
-    value.trim().length >= 6 &&
-    (isValidEmail(value) || isValidTel(value));
-
+  const canSubmit = episode && (isValidEmail(value) || isValidTel(value));
   const inputError = value.trim().length > 0 && !canSubmit;
 
   const handleSubmit = async () => {
@@ -34,7 +31,7 @@ export function useRsvpForm(onClose?: () => void) {
       } else {
         const payload = {
           podcast_id: episode.id,
-          username: value,
+          username: value.trim(),
         };
 
         const { data } = await getListenerByPodcastIdAction(payload);
@@ -73,5 +70,5 @@ export function useRsvpForm(onClose?: () => void) {
     canSubmit,
     inputError,
     handleSubmit,
-  }
+  };
 }

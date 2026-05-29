@@ -13,4 +13,5 @@ export const APP_PODCAST = {
   domain: "podcast.northwindai.org",
   website: "https://podcast.northwindai.org",
   socialPreview: "https://northwindai.org/social-preview-podcast.png",
+  unsubscribeUrl: "https://northwindai.org/podcast/unsubscribe",
 };

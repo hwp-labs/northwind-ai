@@ -12,7 +12,6 @@ export interface ListenerEntity extends BaseEntity {
 export type CreateListenerDto = Required<
   Omit<ListenerEntity, keyof BaseEntity>
 >;
-
 export interface QueryListenerDto extends ApiQueryParams<
   Pick<ListenerEntity, "podcast_id">
 > {

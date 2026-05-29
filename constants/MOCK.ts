@@ -9,7 +9,7 @@ interface MockParams {
   skip?: number | boolean;
 }
 
-const devMode = 0;
+const devMode = 1;
 
 export const MOCK = {
   explorer: {
@@ -36,6 +36,11 @@ export const MOCK = {
     router: 0,
   },
   podcastRsvp: {
+    formData: devMode,
+    action: 0,
+    router: 0,
+  },
+  podcastUnsub: {
     formData: devMode,
     action: 0,
     router: 0,

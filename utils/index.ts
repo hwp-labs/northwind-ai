@@ -26,10 +26,9 @@ export const getStartOfDate = (d?: string) => {
 };
 
 export const isValidEmail = (email: string) =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  /^[^\s@]{1,}@[^\s@]{1,}\.[^\s@]{1,}$/.test(email) && email.length >= 6;
 
-export const isValidTel = (tel: string) =>
-  /^\+?[\d\s\-().]{7,15}$/.test(tel);
+export const isValidTel = (tel: string) => /^\+?[\d\s\-().]{7,15}$/.test(tel);
 
 export const isValidIp = (ip: string) => {
   const ipv4 =

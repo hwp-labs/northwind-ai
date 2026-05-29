@@ -185,7 +185,7 @@ export const data: PodcastDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Siiqo-36c6a7cc633c8132842bf67ada4dd93d",
     spaceUrl: "https://x.com/i/spaces/1qGvvvewvbkGB",
-    listeners: 42,
+    listeners: 64,
     liveListeners: 42,
   },
   {

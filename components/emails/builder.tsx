@@ -14,6 +14,7 @@ import {
 import clsx from "clsx";
 import { APP } from "@/constants/APP";
 import { COLOR } from "@/constants/COLOR";
+import { APP_PODCAST } from "@/constants/APP_PODCAST";
 
 interface TemplateProps extends PropsWithChildren {
   preview: string;
@@ -36,6 +37,16 @@ const Template = ({
           {heading ? <H1>{heading}</H1> : null}
           {children}
           {!hideFooter && <Footer />}
+          <div className="text-center">
+            <a
+              href={`${APP_PODCAST.unsubscribeUrl}?unsub=true`}
+              target="_blank"
+              className="underline underline-offset-2"
+              style={{ color: "#888", fontSize: 12 }}
+            >
+              Unsubscribe (Don't do it, bro 👀)
+            </a>
+          </div>
         </Container>
       </Body>
     </Tailwind>

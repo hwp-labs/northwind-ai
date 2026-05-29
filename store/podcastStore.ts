@@ -1,7 +1,13 @@
 import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 import { create } from "zustand";
 
-type ModalVariant = "options" | "rsvp" | "preview" | "filter" | "sort";
+type ModalVariant =
+  | "options"
+  | "rsvp"
+  | "preview"
+  | "unsub"
+  | "filter"
+  | "sort";
 
 interface StoreState {
   episode: TransformedEpisodeDto | null;
@@ -13,10 +19,10 @@ interface StoreAction {
   reset: () => void;
 
   setEpisode: (payload: TransformedEpisodeDto) => void;
-  
+
   mutateSearch: (payload: Partial<StoreState["search"]>) => void;
   resetModal: () => void;
-  
+
   mutateModal: (payload: Partial<StoreState["modal"]>) => void;
 }
 
@@ -35,8 +41,7 @@ export const usePodcastStore = create<StoreType>()((set, get) => ({
   setEpisode: (p) => set((s) => ({ episode: p })),
 
   mutateModal: (p) => set((s) => ({ modal: { ...s.modal, ...p } })),
-  resetModal: () =>
-    set((s) => ({ modal: initialState.modal })),
+  resetModal: () => set((s) => ({ modal: initialState.modal })),
 
   mutateSearch: (p) => set((s) => ({ search: { ...s.search, ...p } })),
 }));

@@ -4,6 +4,7 @@ import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
 import { TABLE as visitorsTable } from "../../visitors/types";
 import { TABLE as contactsTable } from "../../contacts/types";
+import { data as Guests } from "@/lib/supabase/services/podcasts/data/guests";
 
 type RequestDto = never;
 type ResponseDto = {
@@ -16,7 +17,7 @@ export async function getStatisticsAction(): Promise<ApiResponse<ResponseDto>> {
   const res: ResponseDto = {
     totalVisitors: 0,
     retentionRate: 0,
-    totalContacts: 0,
+    totalContacts: Guests.length,
   };
 
   const [{ data: visitors }, { count: totalContacts }] = await Promise.all([
@@ -24,7 +25,7 @@ export async function getStatisticsAction(): Promise<ApiResponse<ResponseDto>> {
     supabase.from(contactsTable).select("id", { count: "exact" }),
   ]);
 
-  if (totalContacts) res.totalContacts = totalContacts;
+  if (totalContacts) res.totalContacts += totalContacts;
 
   if (visitors?.length) {
     const ipFrequency: Record<string, number> = {};
