@@ -23,7 +23,7 @@ export const UnsubForm = ({ onClose = () => undefined }: Props) => {
   //
   return (
     <div className="grid w-full gap-4 px-4 pb-8">
-      <form className="mt-4 grid gap-4">
+      <form className="mt-4 grid gap-2.5">
         <Input
           type="Search"
           placeholder="Email address"

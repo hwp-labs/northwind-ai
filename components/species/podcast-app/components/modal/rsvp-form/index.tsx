@@ -42,7 +42,7 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
           <Datetime episode={episode} />
         </figcaption>
       </figure>
-      <form className="mt-4 grid gap-4">
+      <form className="mt-4 grid gap-2.5">
         <Input
           type="Search"
           placeholder="Email or telephone"

@@ -11,16 +11,19 @@ import { useToast } from "@/hooks/use-toast";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
 import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
+import { APP } from "@/constants/APP";
 import { MOCK } from "@/constants/MOCK";
 
 const M = MOCK.sendPodcastInviteEmail;
 interface Props {
-  recipients?: string[];
+  emails?: string[];
 }
 
-export const ListenersToolbar = ({ recipients = [] }: Props) => {
+export const ListenersToolbar = ({ emails = [] }: Props) => {
   const toast = useToast();
   const [loading, setLoading] = useState(false);
+
+  const recipients = M.formData ? [APP.email] : emails;
 
   const handleSendEmail = async () => {
     if (!recipients.length) {
@@ -28,11 +31,11 @@ export const ListenersToolbar = ({ recipients = [] }: Props) => {
       return;
     }
 
-    if (confirm("Send email invite?")) {
+    if (confirm(`Send (${recipients.length}) email invites?`)) {
       setLoading(true);
 
       const { error } = await sendEmail({
-        recipients: M.formData ? [] : recipients,
+        recipients,
         podcast: PodcastHelper.GetMostRecentItem(),
       });
 

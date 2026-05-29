@@ -36,7 +36,7 @@ const getDistinctEmails = (data: ListenerEntity[]) => {
 
   data.forEach((item) => {
     const email = item.username;
-    if (isValidEmail(email) && !emails.includes(email)) {
+    if (!item.deleted_at && isValidEmail(email) && !emails.includes(email)) {
       emails.push(email);
       items.push(item);
     }
@@ -66,9 +66,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
       >
         {filtered && (
           <ListenersToolbar
-            recipients={transformedData
-              .filter(({ deleted_at }) => !deleted_at)
-              .map(({ username }) => username)}
+            emails={transformedData.map(({ username }) => username)}
           />
         )}
       </Toolbar>
@@ -116,7 +114,11 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                   <TableUI.TdAmount>
                     {listener.podcast.listeners}
                   </TableUI.TdAmount>
-                  <TdBadge variant={"outline"}>{item.username}</TdBadge>
+                  <TdBadge
+                    variant={item.deleted_at ? "destructive" : "outline"}
+                  >
+                    {item.username}
+                  </TdBadge>
                   <TableCell>{listener.createdAt}</TableCell>
                   <TdActionMenu
                     path={path}

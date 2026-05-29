@@ -31,7 +31,8 @@ export const Modal = () => {
   const resetModal = usePodcastStore((s) => s.resetModal);
 
   useEffect(() => {
-    if (Boolean(get({ unsub: "false" }))) {
+    const q = get({ unsub: "false" });
+    if (q.unsub === "true") {
       mutateModal({ open: true, variant: "unsub" });
     }
   }, []);
