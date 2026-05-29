@@ -21,6 +21,7 @@ export const PATH = {
   //
   podcast: "/podcast",
   podcastAnalytics: "/podcast/analytics",
+  podcastSupport: "/podcast/support",
   PodcastTranscript: (id: unknown) => `/podcast/transcript/${id}`,
   createPodcastTranscript: "/podcast/transcript/create",
 } as const satisfies Record<string, PathType>;

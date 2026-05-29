@@ -9,7 +9,7 @@ import {
 } from "@tabler/icons-react";
 //
 import { AppBar } from "@/components/species/podcast-app/components/app-bar";
-import { CopyOpayWidget } from "@/components/species/podcast-app/components/copy-opay-widget";
+import { OpayWidget } from "@/components/species/podcast-app/components/opay-widget";
 import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
@@ -67,7 +67,7 @@ export default async function SupportPage() {
                   )}
                 >
                   {value}
-                  {i === 2 && <CopyOpayWidget />}
+                  {i === 2 && <OpayWidget />}
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default async function SupportPage() {
       </main>
       <footer className="_debug absolute-bottom">
         <footer className="container-sm-podcast p-4">
-          <CopyOpayWidget variant="button" />
+          <OpayWidget variant="button" />
         </footer>
       </footer>
     </>

@@ -8,17 +8,18 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/shadcn/ui/carousel";
+import { Datetime } from "../datetime";
 import { Card } from "./card";
-import { Datetime } from "./datetime";
 import { CtaButton } from "./cta-button";
 import { RsvpAvatars } from "./rsvp-avatars";
 import { Dots } from "./dots";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
+import { Topic } from "../topic";
 
 const startIndex = 2;
 
 export const Hero = () => {
-  const favorites = PodcastHelper.GetItemsById(4, 6, 10);
+  const favorites = PodcastHelper.GetItemsById(6, 10, 11);
 
   const [selected, setSelected] = useState(startIndex);
 
@@ -35,10 +36,8 @@ export const Hero = () => {
           {favorites.map((episode, i) => (
             <CarouselItem key={i}>
               <Card src={episode.seriesImage}>
-                <div className="debug_ flex-col-se w-[250px] flex-1 gap-2">
-                  <h1 className="font-f4 text-[26px] leading-[28px] font-medium tracking-[3px]">
-                    {episode.titleSeriesText}
-                  </h1>
+                <div className="debug_ flex-col-se w-[280px] flex-1 gap-2">
+                  <Topic episode={episode} variant="hero" />
                   <Datetime episode={episode} />
                 </div>
                 <div className="flex-row-cb debug_">

@@ -1,26 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   IconClipboardCheck,
   IconCopy,
   IconCopyCheck,
   IconHeartFilled,
 } from "@tabler/icons-react";
-// 
+//
 import { Button } from "@/components/shadcn/ui/button";
 import { usePodcastStore } from "@/store/podcastStore";
 import { sleep } from "@/utils";
 import { APP } from "@/constants/APP";
+import { PATH } from "@/constants/PATH";
 
 interface Props {
-  variant?: "icon" | "button" | "toggle";
+  variant?: "icon" | "button" | "toggle" | "link";
+  next?: ()=>void;
 }
 
 const TEL = "8169960927";
 var render: React.ReactNode = null;
 
-export const CopyOpayWidget = ({ variant = "icon" }: Props) => {
+export const OpayWidget = ({ variant = "icon", next }: Props) => {
+  const router = useRouter();
   const modal = usePodcastStore((s) => s.modal);
 
   const [showOPay, setShowOPay] = useState(false);
@@ -64,11 +68,25 @@ export const CopyOpayWidget = ({ variant = "icon" }: Props) => {
       render = modal.open ? null : (
         <button
           onClick={handleCopy}
-          className="button-base bg-opay-green text-opay-blue h-[48px] w-full rounded-full font-medium"
+          className="button-base bg-opay-green text-opay-blue h-[45px] w-full rounded-full font-medium"
         >
           {copying && <IconClipboardCheck />}
-          {copying ? "Copied!" : "Copy"}
+          {copying ? "Copied!" : "Copy Number"}
         </button>
+      );
+      break;
+    case "link":
+      render = (
+        <Button
+          variant="outline"
+          onClick={() => {
+            router.push(PATH.podcastSupport);
+            next?.()
+          }}
+          className="border-muted-foreground text-muted-foreground border-2_"
+        >
+          Support {APP.name}
+        </Button>
       );
       break;
     default:

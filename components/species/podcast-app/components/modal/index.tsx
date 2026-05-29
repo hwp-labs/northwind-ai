@@ -12,11 +12,11 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/shadcn/ui/drawer";
-import { useIsMobile } from "@/hooks/use-is-mobile";
-import { usePodcastStore } from "@/store/podcastStore";
-//
 import { Options } from "./options";
 import { RsvpForm } from "./rsvp-form";
+import { Preview } from "./preview";
+import { useIsMobile } from "@/hooks/use-is-mobile";
+import { usePodcastStore } from "@/store/podcastStore";
 
 export const Modal = () => {
   const isMobile = useIsMobile();
@@ -30,6 +30,8 @@ export const Modal = () => {
     <>
       {modal.variant === "rsvp" ? (
         <RsvpForm onClose={onClose} />
+      ) : modal.variant === "preview" ? (
+        <Preview onClose={onClose} />
       ) : (
         <Options onClose={onClose} />
       )}

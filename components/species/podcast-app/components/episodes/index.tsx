@@ -1,11 +1,10 @@
-import Image from "next/image";
 import clsx from "clsx";
-//
 import { ListHeader } from "../list-header";
+import { Thumbnail } from "./thumbnail";
+import { EpisodeCta } from "./cta";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { data } from "@/lib/supabase/services/podcasts/data/episodes";
-//
-import { EpisodeCta } from "./cta";
+import { Topic } from "../topic";
 
 export const Episodes = () => {
   return (
@@ -31,17 +30,9 @@ export const Episodes = () => {
                 )}
               >
                 <figure className="flex-row-cs gap-4">
-                  <Image
-                    src={item.displayAvatar!}
-                    alt=""
-                    width={56}
-                    height={56}
-                    className="size-[56px] rounded-[12px]"
-                  />
+                  <Thumbnail item={item} />
                   <figcaption className="flex-col-sc gap-1 text-sm">
-                    <strong className="border_ line-clamp-2 min-h-[25px] text-white">
-                      {item.titleShort || item.titleSeriesText}
-                    </strong>
+                    <Topic episode={item} variant="list" />
                     <p className="text-muted-foreground text-[12px]">
                       {item.datetimeTextShort}
                     </p>

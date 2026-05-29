@@ -5,11 +5,13 @@ import { usePodcastStore } from "@/store/podcastStore";
 import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 
 export const CtaButton = ({ episode }: { episode: TransformedEpisodeDto }) => {
+  const setEpisode = usePodcastStore((s) => s.setEpisode);
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 
   const handleClick = () => {
     switch (episode.ctaText) {
       case "RSVP":
+        setEpisode(episode)
         mutateModal({ open: true, variant: "rsvp" });
         break;
       default:

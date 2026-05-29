@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 //
 import { Button } from "@/components/shadcn/ui/button";
-import { CopyOpayWidget } from "../copy-opay-widget";
+import { OpayWidget } from "../opay-widget";
 import { APP } from "@/constants/APP";
 import { PATH } from "@/constants/PATH";
 
@@ -29,7 +29,7 @@ export const Options = ({ onClose = () => undefined }: Props) => {
       <Button variant="secondary" onClick={handleBecomeGuest}>
         Become a Guest
       </Button>
-      <CopyOpayWidget variant="toggle" />
+      <OpayWidget variant="toggle" />
       <Button variant="default" onClick={handleAnalytics}>
         View Analytics
       </Button>
