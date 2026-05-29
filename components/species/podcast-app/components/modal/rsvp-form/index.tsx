@@ -62,7 +62,7 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
           {success ? "Alright boss!" : "Notify me!"}
         </Button>
       </form>
-      <OpayWidget variant="link" next={onClose} />
+      <OpayWidget variant="link" />
     </div>
   ) : null;
 };

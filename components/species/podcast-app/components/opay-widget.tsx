@@ -17,15 +17,15 @@ import { PATH } from "@/constants/PATH";
 
 interface Props {
   variant?: "icon" | "button" | "toggle" | "link";
-  next?: ()=>void;
 }
 
 const TEL = "8169960927";
 var render: React.ReactNode = null;
 
-export const OpayWidget = ({ variant = "icon", next }: Props) => {
+export const OpayWidget = ({ variant = "icon" }: Props) => {
   const router = useRouter();
   const modal = usePodcastStore((s) => s.modal);
+  const resetModal = usePodcastStore((s) => s.resetModal);
 
   const [showOPay, setShowOPay] = useState(false);
   const [copying, setCopying] = useState(false);
@@ -43,7 +43,11 @@ export const OpayWidget = ({ variant = "icon", next }: Props) => {
   switch (variant) {
     case "toggle":
       render = showOPay ? (
-        <Button onClick={handleCopy} className="bg-opay-green! text-opay-blue!">
+        <Button
+          type="button"
+          onClick={handleCopy}
+          className="bg-opay-green! text-opay-blue!"
+        >
           {copying ? (
             <>
               <IconClipboardCheck strokeWidth={2.5} />
@@ -59,7 +63,26 @@ export const OpayWidget = ({ variant = "icon", next }: Props) => {
           )}
         </Button>
       ) : (
-        <Button variant="secondary" onClick={() => setShowOPay(true)}>
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={() => setShowOPay(true)}
+        >
+          Support {APP.name}
+        </Button>
+      );
+      break;
+    case "link":
+      render = (
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => {
+            router.push(PATH.podcastSupport);
+            resetModal();
+          }}
+          className="border-muted-foreground text-muted-foreground border-2_"
+        >
           Support {APP.name}
         </Button>
       );
@@ -73,20 +96,6 @@ export const OpayWidget = ({ variant = "icon", next }: Props) => {
           {copying && <IconClipboardCheck />}
           {copying ? "Copied!" : "Copy Number"}
         </button>
-      );
-      break;
-    case "link":
-      render = (
-        <Button
-          variant="outline"
-          onClick={() => {
-            router.push(PATH.podcastSupport);
-            next?.()
-          }}
-          className="border-muted-foreground text-muted-foreground border-2_"
-        >
-          Support {APP.name}
-        </Button>
       );
       break;
     default:

@@ -1,10 +1,11 @@
 import clsx from "clsx";
 import { ListHeader } from "../list-header";
+import { Topic } from "../topic";
+import { Datetime } from "../datetime";
 import { Thumbnail } from "./thumbnail";
 import { EpisodeCta } from "./cta";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
 import { data } from "@/lib/supabase/services/podcasts/data/episodes";
-import { Topic } from "../topic";
 
 export const Episodes = () => {
   return (
@@ -17,7 +18,6 @@ export const Episodes = () => {
         className="scrollbar-hide h-[400px] snap-y snap-mandatory overflow-y-auto scroll-smooth px-4 pb-4"
       >
         {[...data]
-          // .filter(({ listeners }) => listeners)
           .sort((a, b) => Number(b.id) - Number(a.id))
           .map((episode, i) => {
             const item = PodcastHelper.GetPageItem(episode.id);
@@ -33,9 +33,7 @@ export const Episodes = () => {
                   <Thumbnail item={item} />
                   <figcaption className="flex-col-sc gap-1 text-sm">
                     <Topic episode={item} variant="list" />
-                    <p className="text-muted-foreground text-[12px]">
-                      {item.datetimeTextShort}
-                    </p>
+                    <Datetime episode={item} variant="text" />
                   </figcaption>
                 </figure>
                 <div className="flex-row-cs gap-4">

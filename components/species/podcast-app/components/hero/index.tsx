@@ -8,13 +8,13 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/shadcn/ui/carousel";
+import { Topic } from "../topic";
 import { Datetime } from "../datetime";
 import { Card } from "./card";
 import { CtaButton } from "./cta-button";
 import { RsvpAvatars } from "./rsvp-avatars";
 import { Dots } from "./dots";
 import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
-import { Topic } from "../topic";
 
 const startIndex = 2;
 

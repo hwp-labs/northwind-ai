@@ -15,13 +15,13 @@ export const Options = ({ onClose = () => undefined }: Props) => {
   const router = useRouter();
 
   const handleBecomeGuest = () => {
-    onClose();
     window.open(APP.whatsappGroupUrl, "_blank");
+    onClose();
   };
 
   const handleAnalytics = () => {
-    onClose();
     router.push(PATH.podcastAnalytics);
+    onClose();
   };
   //
   return (
@@ -29,10 +29,10 @@ export const Options = ({ onClose = () => undefined }: Props) => {
       <Button variant="secondary" onClick={handleBecomeGuest}>
         Become a Guest
       </Button>
-      <OpayWidget variant="toggle" />
-      <Button variant="default" onClick={handleAnalytics}>
+      <Button variant="secondary" onClick={handleAnalytics}>
         View Analytics
       </Button>
+      <OpayWidget variant="link" />
     </div>
   );
 };

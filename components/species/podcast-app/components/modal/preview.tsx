@@ -35,13 +35,13 @@ export const Preview = ({ onClose = () => undefined }: Props) => {
           <Datetime episode={episode} />
         </figcaption>
       </figure>
-      <form className="mt-4 grid gap-4">
-        <Button type="button" variant="primary" onClick={handlePlay}>
+      <div className="mt-4 grid gap-4">
+        <Button variant="primary" onClick={handlePlay}>
           <IconHeadphonesFilled size={18} strokeWidth={2.5} />
           Play Recording
         </Button>
-      </form>
-      <OpayWidget variant="link" next={onClose} />
+      </div>
+      <OpayWidget variant="link" />
     </div>
   ) : null;
 };

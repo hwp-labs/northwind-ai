@@ -58,6 +58,7 @@ export interface PodcastGuestDto {
   socials: {
     x: string;
     in?: string;
+    ig?: string;
   };
 }
 

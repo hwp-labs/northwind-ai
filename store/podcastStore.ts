@@ -4,15 +4,19 @@ import { create } from "zustand";
 type ModalVariant = "options" | "rsvp" | "preview" | "filter" | "sort";
 
 interface StoreState {
-  episode: TransformedEpisodeDto|null;
+  episode: TransformedEpisodeDto | null;
   search: { show: boolean; typing: boolean };
   modal: { open: boolean; variant: ModalVariant };
 }
 
 interface StoreAction {
   reset: () => void;
+
   setEpisode: (payload: TransformedEpisodeDto) => void;
+  
   mutateSearch: (payload: Partial<StoreState["search"]>) => void;
+  resetModal: () => void;
+  
   mutateModal: (payload: Partial<StoreState["modal"]>) => void;
 }
 
@@ -27,7 +31,12 @@ const initialState: StoreState = {
 export const usePodcastStore = create<StoreType>()((set, get) => ({
   ...initialState,
   reset: () => set(initialState),
+
   setEpisode: (p) => set((s) => ({ episode: p })),
+
   mutateModal: (p) => set((s) => ({ modal: { ...s.modal, ...p } })),
+  resetModal: () =>
+    set((s) => ({ modal: initialState.modal })),
+
   mutateSearch: (p) => set((s) => ({ search: { ...s.search, ...p } })),
 }));
