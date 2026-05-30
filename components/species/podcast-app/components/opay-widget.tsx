@@ -81,7 +81,7 @@ export const OpayWidget = ({ variant = "icon" }: Props) => {
             router.push(PATH.podcastSupport);
             resetModal();
           }}
-          className="border-muted-foreground text-muted-foreground border-2_"
+          className="border-[#333]! text-secondary"
         >
           Support {APP.name}
         </Button>

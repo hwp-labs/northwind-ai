@@ -6,6 +6,7 @@ import { IconDotsVertical, IconArrowLeft } from "@tabler/icons-react";
 import { Logo } from "@/components/logo";
 import { IconButton } from "@/components/atoms/icon-button";
 import { usePodcastStore } from "@/store/podcastStore";
+import { useVisitTracker } from "@/hooks/use-visit-tracker";
 
 interface Props {
   title?: string;
@@ -14,6 +15,8 @@ interface Props {
 }
 
 export const AppBar = ({ title, backTo, noOptions }: Props) => {
+  useVisitTracker();
+  
   const router = useRouter();
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 

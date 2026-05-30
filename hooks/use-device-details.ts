@@ -42,8 +42,16 @@ export function useDeviceDetails() {
           ip_address: res.ip,
           geolocation: res,
         };
-        setData(data);
-        // console.log("🚀 ~ onload ~ data:", data);
+
+        const [lat, lng] = [
+          Number(process.env.NEXT_PUBLIC_BLACKLIST_LATITUDE || 0),
+          Number(process.env.NEXT_PUBLIC_BLACKLIST_LONGITUDE || 0),
+        ];
+
+        if (res.latitude !== lat && res.longitude !== lng) {
+          // console.log("🚀 ~ onload ~ data:", data);
+          setData(data);
+        }
       })
       .catch((err) => {
         setError(`IpWhoIsError: ${err}`);

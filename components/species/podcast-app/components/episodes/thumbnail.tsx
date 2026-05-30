@@ -9,8 +9,10 @@ export const Thumbnail = ({ item }: { item: TransformedEpisodeDto }) => {
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 
   const handleClick = () => {
-    setEpisode(item);
-    mutateModal({ open: true, variant: "preview" });
+    if (item.listeners) {
+      setEpisode(item);
+      mutateModal({ open: true, variant: "preview" });
+    }
   };
   //
   return (

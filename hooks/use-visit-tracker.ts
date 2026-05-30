@@ -63,7 +63,10 @@ export function useVisitTracker() {
   };
 
   useEffect(() => {
-    if (deviceDetails?.data) onload(deviceDetails.data);
+    if (deviceDetails?.data) {
+      // console.log("🚀 ~ useVisitTracker ~ deviceDetails:", deviceDetails);
+      onload(deviceDetails.data);
+    }
   }, [deviceDetails?.data]);
 
   return {
