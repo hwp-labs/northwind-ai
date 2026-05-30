@@ -25,12 +25,14 @@ export const GuestPanel = ({ data, showHost }: Props) => {
       {safeData.map((item, i) => (
         <figure key={i} className="flex-row-cs gap-3">
           <div className="relative">
+          <div className="p-[1.5px] rounded-full bg-[conic-gradient(from_180deg,yellow,white,red,white)]">
             <img
               src={item.avatar}
               width={40}
               alt=""
-              className="border-[#ddd] rounded-full border-2"
+              className="border-[#ddd]_ rounded-full border-2_"
             />
+          </div>
             {item.flag ? (
               <img
                 src={item.flag}

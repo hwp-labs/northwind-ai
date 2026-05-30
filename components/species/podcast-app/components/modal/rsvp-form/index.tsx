@@ -54,7 +54,7 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
         />
         <Button
           type="button"
-          variant={success ? "success" : canSubmit ? "primary" : "default"}
+          variant={success ? "success" : "primary"}
           onClick={handleSubmit}
           disabled={submitting}
         >

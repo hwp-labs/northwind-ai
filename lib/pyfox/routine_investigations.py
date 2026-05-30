@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Basic Routine Investigations Model.
+Routine Medical Investigations Model
 
 Author: Northwind AI <northwindai.org>
 Date: 2026-05-30
@@ -67,11 +67,14 @@ class RoutineInvestigation(Base):
     
     urine_test: Optional[UrineTest] = None
     blood_test: Optional[BloodTest] = None
-    blood_pressure: Optional[List[BloodPressure]] = None # track over time
+    blood_pressure: Optional[List[BloodPressure]] = None # track history
     x_ray: Optional[List[XRay]] = None # multiple body parts
     ecg: Optional[Electrocardiogram] = None
 
     ai_summary: Optional[str] = None
+
+
+
 
 
 

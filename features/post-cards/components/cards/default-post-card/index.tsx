@@ -25,7 +25,7 @@ export const DefaultPostCard = ({ page = 1 }: Props) => {
         }}
       />
       <main className="absolute z-1 px-6">
-        <header className="mt-10">
+        <header className="flex-row-cb mt-10">
           <Logo />
         </header>
         <Tags list={e.safeTags} />
@@ -35,16 +35,21 @@ export const DefaultPostCard = ({ page = 1 }: Props) => {
             _topic={e.safeTopic}
             topic="Routine Medical Investigations_ API Modeling"
           />
-          <DatetimeVenue episode={e} _tonight />
+          <div className="">
+            <DatetimeVenue episode={e} _tonight />
+            <div className="text-foreground font-f4 bg-black absolute right-0 -bottom-0.5 text-sm tracking-wider">
+              E{String(page).padStart(3, '0')}
+            </div>
+          </div>
         </article>
       </main>
-      <footer className="absolute bottom-0 w-[90%] px-4 py-8">
+      <footer className="absolute bottom-0 px-6 py-8">
         <GuestPanel data={e.safeGuests} showHost />
         <MetaCard
           _meta={{
             src: "/uploads/logos/siiqo.png",
             url: "siiqo.com",
-            title: "Escrow-based, Crypto-enabled, Storefront for SMEs",
+            title: "Escrow-based, Crypto-enabled, Digital Storefront for SMEs",
             cta: "Get Started",
           }}
         />
