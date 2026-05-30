@@ -1,8 +1,10 @@
 export interface PodcastSpeakerDto {
-  name?: string;
   avatar?: string;
+  name?: string;
   username: string;
+  bio?: string;
   flag?: string;
+  host?: boolean;
 }
 
 export interface PodcastDto {
@@ -21,6 +23,7 @@ export interface PodcastDto {
   listeners: number;
   liveListeners?: number;
   series?: "ds" | "fc" | "cs";
+  tags?: string[];
 }
 export interface TransformedEpisodeDto extends PodcastDto {
   dateText: string;
@@ -37,6 +40,9 @@ export interface TransformedEpisodeDto extends PodcastDto {
   titleSeriesText: string;
   guestList?: string[];
   ctaText: "RSVP" | "Attend" | "Listen";
+  safeTags: string[];
+  safeTopic: string;
+  safeGuests: PodcastSpeakerDto[];
 }
 
 export interface PodcastGuestDto {

@@ -37,7 +37,7 @@ export const Hero = () => {
             <CarouselItem key={i}>
               <Card src={episode.seriesImage}>
                 <div className="debug_ flex-col-se w-[280px] flex-1 gap-2">
-                  <Topic episode={episode} variant="hero" />
+                  <Topic topic={episode.safeTopic} variant="hero" />
                   <Datetime episode={episode} />
                 </div>
                 <div className="flex-row-cb debug_">

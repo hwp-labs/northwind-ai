@@ -38,7 +38,7 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
           className="size-[56px] rounded-[12px]"
         />
         <figcaption className="flex-col-cc gap-1">
-          <Topic episode={episode} variant="preview" />
+          <Topic topic={episode.safeTopic} variant="preview" />
           <Datetime episode={episode} />
         </figcaption>
       </figure>

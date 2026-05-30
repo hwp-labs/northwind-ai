@@ -12,6 +12,7 @@ export function useHtmlToImage({
   height,
   scaleTo = 1.5,
 }: UseHtmlToImageParams) {
+  // console.log("🚀 ~ useHtmlToImage ~ width:", width, height, scaleTo);
   const [loading, setLoading] = useState(false);
 
   async function _download(link: string, filename: string) {
@@ -83,11 +84,17 @@ export function useHtmlToImage({
 
         const opts: any = {
           cacheBust: true,
-          width: Math.round(rect.width),
-          height: Math.round(rect.height),
+          width: width || Math.round(rect.width),
+          height: height || Math.round(rect.height),
           pixelRatio: scaleTo,
           style: {
             transform: "none",
+            ...(width && height
+              ? {
+                  width,
+                  height,
+                }
+              : {}),
           },
         };
 

@@ -26,7 +26,7 @@ export default async function PreviewPostCardsPage({
     >
       {
         [
-          <DefaultPostCard />,
+          <DefaultPostCard page={page} />,
           <MonthlyPostCard page={page} />,
           <FAQPostCard page={page} />,
           <PodcastPostCard page={page} />,

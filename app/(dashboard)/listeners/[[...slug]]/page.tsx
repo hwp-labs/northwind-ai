@@ -96,7 +96,9 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                     showBadge={listener.IsCreatedToday()}
                   />
                   <TdBadge
-                    label={listener.podcast.guestList}
+                    label={listener.podcast.safeGuests.map(
+                      ({ username }) => username,
+                    )}
                     variant="secondary"
                   />
                   <TableCell>

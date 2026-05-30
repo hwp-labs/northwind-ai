@@ -91,7 +91,7 @@ export const OpayWidget = ({ variant = "icon" }: Props) => {
       render = modal.open ? null : (
         <button
           onClick={handleCopy}
-          className="button-base bg-opay-green text-opay-blue h-[45px] w-full rounded-full font-medium"
+          className="button-base bg-opay-green text-opay-blue h-[44px] w-full rounded-full font-medium"
         >
           {copying && <IconClipboardCheck />}
           {copying ? "Copied!" : "Copy Number"}

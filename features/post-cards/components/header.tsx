@@ -12,12 +12,14 @@ import { Pager } from "./pager";
 export const Header = () => {
   const { get } = useQueryParams();
   const { tabIndex } = get({ tabIndex: 0 });
-  const { loading, convertToPng } = useHtmlToImage({});
+  const { loading, convertToPng } = useHtmlToImage(
+    tabIndex === "0" ? { width: 360, height: 640 } : {},
+  );
   //
   return (
-    <header className="flex-row-cb px-4 py-4 debug_">
+    <header className="flex-row-cb debug_ px-4 py-4">
       <nav className="flex-row-cs gap-4 text-sm">
-        {["Default", "Monthly", "FAQs", "Podcast","Blog", "Qverse"].map(
+        {["Default", "Monthly", "FAQs", "Podcast", "Blog", "Qverse"].map(
           (item, i) => (
             <Link
               key={i}

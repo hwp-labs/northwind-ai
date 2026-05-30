@@ -139,15 +139,17 @@ export const data: PodcastDto[] = [
     guest: [
       {
         avatar: "/uploads/podcast/avatar-polalere.png",
-        name: "Phillip, O.",
+        name: "Phillip Olalere",
         username: "@philstring93",
         flag: "/uploads/podcast/flag-us.webp",
+        bio:'Software Engineer, Fera Science Ltd.',
       },
       {
         avatar: "/uploads/podcast/avatar-aosawere.png",
-        name: "Anthony, O.",
+        name: "AO",
         username: "@workofao",
         flag: "/uploads/podcast/flag-uk.webp",
+        bio:'Software Engineer, Fera Science Ltd.',
       },
     ],
     displayAvatar: "/uploads/logos/moniepoint.png",
@@ -157,6 +159,7 @@ export const data: PodcastDto[] = [
     listeners: 24,
     liveListeners: 14,
     series: "fc",
+    tags: ["Ownership", "Mentorship", "Scalability"],
   },
   {
     id: 10,
@@ -166,38 +169,44 @@ export const data: PodcastDto[] = [
       "An exclusive post-launch interview with the co-founders of <br/><b>Siiqo.com</b> - An escrow-based, crypto-enabled Storefront for SMEs.",
     host: {
       avatar: "/images/avatar-etugbeh.png",
-      name: "Emanuel T.",
+      name: "Emanuel",
       username: "@2gbeh",
+      bio: "AI Product Engineer, HWP Labs",
     },
     guest: [
       {
         avatar: "/uploads/podcast/avatar-oinnocent.jpg",
-        name: "Innocent O.",
+        name: "Okereke Innocent",
         username: "@OkerekeChinweo1",
+        bio: "Product Engineer, Siiqo",
       },
       {
         avatar: "/uploads/podcast/avatar-lkolapo.jpg",
-        name: "Linda K.",
+        name: "Linda Kolapo",
         username: "@kolapo_gemini",
+        bio: "Communication Strategist, Siiqo",
       },
     ],
     displayAvatar: "/uploads/logos/siiqo.png",
     notionUrl:
       "https://held-gambler-004.notion.site/Siiqo-36c6a7cc633c8132842bf67ada4dd93d",
     spaceUrl: "https://x.com/i/spaces/1qGvvvewvbkGB",
-    listeners: 64,
+    listeners: 67,
     liveListeners: 42,
+    tags: ["Marketplace", "Escrow", "Stablecoin", "#Invoicing"],
   },
   {
     id: 11,
     datetime: "2026-05-30T19:00:00.000Z",
-    title: "Routine Investigations API Modeling",
+    title: "Routine Investigations_ API Modeling",
     isLongTitle: true,
     summary:
       "A fireside chat with <b>Emmanuel Okene</b> (Cardiac Physiologist, UBTH)",
     guest: {
-      username: "@emmanuelokene44",
       avatar: "/uploads/podcast/avatar-eokene.jpg",
+      name: "Emmanuel Okene",
+      username: "@emmanuelokene44",
+      bio: "Scientific Officer/Cardiac Physio..., UBTH",
     },
     displayAvatar: "/uploads/logos/ubth.png",
     notionUrl:
@@ -206,5 +215,6 @@ export const data: PodcastDto[] = [
     listeners: 0,
     liveListeners: 0,
     series: "fc",
+    tags: ["X-Ray", "ECG", "Urinalysis", "Django"],
   },
 ];

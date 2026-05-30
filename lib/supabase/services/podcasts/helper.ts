@@ -11,6 +11,15 @@ export class PodcastHelper {
       ? item.summary.replaceAll("<br/>", " ")
       : "";
     const seriesText = item.series ? "" : "Design Session";
+    const titleSeriesText = item.isLongTitle
+      ? titleNobr
+      : `${item.title} ${seriesText}`;
+
+    const safeGuests = item.guest
+      ? Array.isArray(item.guest)
+        ? item.guest
+        : [item.guest]
+      : [];
 
     return {
       ...item,
@@ -27,17 +36,13 @@ export class PodcastHelper {
       seriesImage: item.series
         ? "/uploads/podcast/sony.png"
         : "/uploads/podcast/halim.png",
-      titleSeriesText: item.isLongTitle
-        ? titleNobr
-        : `${item.title} ${seriesText}`,
       displayAvatar: this.DisplayAvatar(item),
       displayAvatars: this.DisplayAvatars(item),
-      guestList: item.guest
-        ? Array.isArray(item.guest)
-          ? item.guest.map(({ username }) => username)
-          : [item.guest.username]
-        : undefined,
+      safeGuests,
       ctaText: this.CtaText(item),
+      safeTags: item.tags ? item.tags.filter((v) => !v.startsWith("#")) : [],
+      titleSeriesText,
+      safeTopic: item.titleShort || titleSeriesText,
     };
   };
 

@@ -32,13 +32,13 @@ export const Episodes = () => {
                 <figure className="flex-row-cs gap-4">
                   <Thumbnail item={item} />
                   <figcaption className="flex-col-sc gap-1 text-sm">
-                    <Topic episode={item} variant="list" />
+                    <Topic topic={item.safeTopic} variant="list" />
                     <Datetime episode={item} variant="text" />
                   </figcaption>
                 </figure>
                 <div className="flex-row-cs gap-4">
                   <small className="font-f2_ text-muted-foreground text-sm font-medium whitespace-nowrap">
-                    {item.listeners ? <>{item.listeners} L</> : "TBA"}
+                    {item.listeners ? <>{item.listeners}x</> : "TBA"}
                   </small>
                   <EpisodeCta item={item} />
                 </div>
