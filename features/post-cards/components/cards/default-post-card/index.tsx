@@ -38,7 +38,7 @@ export const DefaultPostCard = ({ page = 1 }: Props) => {
           <div className="">
             <DatetimeVenue episode={e} _tonight />
             <div className="text-foreground font-f4 bg-black absolute right-0 -bottom-0.5 text-sm tracking-wider">
-              E{String(page).padStart(3, '0')}
+              {/* E{String(page).padStart(3, '0')} */}
             </div>
           </div>
         </article>

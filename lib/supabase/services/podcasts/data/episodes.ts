@@ -212,8 +212,8 @@ export const data: PodcastDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Routine-Investigations-Modeling-36c6a7cc633c8017b911d6266fa82422",
     spaceUrl: "https://x.com/i/spaces/1RKZzzBwanMKB",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 58,
+    liveListeners: 58,
     series: "fc",
     tags: ["X-Ray", "ECG", "Urinalysis", "Django"],
   },

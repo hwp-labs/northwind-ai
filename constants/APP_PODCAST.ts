@@ -7,7 +7,7 @@ export const APP_PODCAST = {
   titleVerbose: "Discover New Episodes | Northwind AI Podcast",
   keywords: ["north wind ai podcast", "northwind ai podcast", "ai podcast"],
   description:
-    "Promote Ideas, MVPs & Startups. Discuss AI Use Ca... In Your Field",
+    "Promote Ideas, MVPs & Startups. Discuss Uses of AI in Your Field",
   tags: ["Design Session", "Fireside Chat", "Case Study"],
   startData: "2026-05-22T11:00:00.000",
   launchData: "2026-05-27T11:00:00.000",
@@ -15,5 +15,5 @@ export const APP_PODCAST = {
   domain: "podcast.northwindai.org",
   website: "https://podcast.northwindai.org",
   socialPreview: "https://northwindai.org/social-preview-podcast.png",
-  unsubscribeUrl: "https://northwindai.org/podcast/unsubscribe",
+  unsubscribeUrl: "https://northwindai.org/podcast",
 };
