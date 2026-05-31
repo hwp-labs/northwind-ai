@@ -1,13 +1,8 @@
-import type { Metadata } from "next";
+import { AppBar } from "@/features/podcasts/components/app-bar";
+import { Hero } from "@/features/podcasts/components/hero";
+import { Guests } from "@/features/podcasts/components/guests";
+import { Episodes } from "@/features/podcasts/components/episodes";
 
-import { AppBar } from "@/components/species/podcast-app/components/app-bar";
-import { Hero } from "@/components/species/podcast-app/components/hero";
-import { Guests } from "@/components/species/podcast-app/components/guests";
-import { Episodes } from "@/components/species/podcast-app/components/episodes";
-
-export const metadata: Metadata = {
-  title: "Discover New Episodes",
-};
 
 export default async function PodcastPage() {
   return (

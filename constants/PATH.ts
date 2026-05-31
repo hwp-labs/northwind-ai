@@ -13,7 +13,6 @@ export const PATH = {
   previewWelcomeEmail: "/preview/emails/welcome",
   previewPodcastInviteEmail: "/preview/emails/podcast-invite",
   //
-  previewPostCards: "/preview/post-cards",
   previewMonthlyPostCard: "/preview/post-cards?tabIndex=1&page=5",
   previewFAQPostCard: "/preview/post-cards?tabIndex=2&page=1",
   previewPodcastPostCard: "/preview/post-cards?tabIndex=3&page=6",
@@ -22,8 +21,6 @@ export const PATH = {
   podcast: "/podcast",
   podcastAnalytics: "/podcast/analytics",
   podcastSupport: "/podcast/support",
-  PodcastTranscript: (id: unknown) => `/podcast/transcript/${id}`,
-  createPodcastTranscript: "/podcast/transcript/create",
 } as const satisfies Record<string, PathType>;
 
 export const PROTECTED_PATH = {

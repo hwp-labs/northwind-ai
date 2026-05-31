@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase/client";
 import { ApiResponse } from "@/lib/supabase/types";
 import { TABLE as visitorsTable } from "../../visitors/types";
 import { TABLE as contactsTable } from "../../contacts/types";
-import { data as Guests } from "@/lib/supabase/services/podcasts/data/guests";
+import { data as Guests } from "@/lib/podcast/speakers/data";
 
 type RequestDto = never;
 type ResponseDto = {
@@ -37,11 +37,11 @@ export async function getStatisticsAction(): Promise<ApiResponse<ResponseDto>> {
     });
 
     const totalVisitors = (res.totalVisitors = Object.keys(ipFrequency).length);
-    
+
     const duplicateVisitors = Object.values(ipFrequency).filter(
       (count) => count > 1,
     ).length;
-    
+
     res.retentionRate = duplicateVisitors
       ? Math.round((duplicateVisitors * 100) / totalVisitors)
       : 0;

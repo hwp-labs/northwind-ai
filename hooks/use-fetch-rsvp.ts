@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getListenersCountAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
-import { PodcastHelper } from "@/lib/supabase/services/podcasts/helper";
+import { EpisodeHelper } from "@/lib/podcast/episodes/helper";
 
 export function useFetchRsvp(id?: number) {
   const params = useParams();
 
   const _id = Number(params.id || id || 1);
-  const item = PodcastHelper.GetPageItem(_id);
+  const item = EpisodeHelper.GetPageItem(_id);
   const avatars = item.displayAvatars
     ? item.displayAvatars.slice(0, 3)
     : [

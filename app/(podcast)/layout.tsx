@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Modal } from "@/components/species/podcast-app/components/modal";
 import { PageLayout } from "@/types";
+import { Modal } from "@/features/podcasts/components/modal";
 import { METADATA_PODCAST } from "@/constants/META_PODCAST";
 
 export const metadata: Metadata = METADATA_PODCAST;

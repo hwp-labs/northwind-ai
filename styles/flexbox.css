@@ -46,6 +46,10 @@
     @apply flex items-center justify-between;
   }
 
+  .flex-row-sb {
+    @apply flex items-start justify-between;
+  }
+
   .flex-row-eb {
     @apply flex items-end justify-between;
   }

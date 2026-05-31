@@ -2,7 +2,7 @@
   "id": "/podcast",
   "name": "Northwind AI Podcast",
   "short_name": "Podcast",
-  "description": "Discover New Episodes",
+  "description": "Join The Conversation",
   "background_color": "#120e0d",
   "theme_color": "#120e0d",
   "start_url": "/podcast",

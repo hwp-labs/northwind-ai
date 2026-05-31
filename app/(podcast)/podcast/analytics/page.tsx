@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { IconInfoCircle } from "@tabler/icons-react";
 //
-import { AppBar } from "@/components/species/podcast-app/components/app-bar";
-import { KpiCards } from "@/components/species/podcast-app/components/kpi-cards";
-import { GeolocationChart } from "@/components/species/podcast-app/components/charts/geolocation-chart";
-import { RingChart } from "@/components/species/podcast-app/components/charts/ring-chart";
-import { computeAnalytics } from "@/lib/supabase/services/podcasts/utils/compute-analytics";
+import { AppBar } from "@/features/podcasts/components/app-bar";
+import { KpiCards } from "@/features/podcasts/components/kpi-cards";
+import { GeolocationChart } from "@/features/podcasts/components/charts/geolocation-chart";
+import { RingChart } from "@/features/podcasts/components/charts/ring-chart";
+import { computeAnalytics } from "@/lib/podcast/analytics/helper";
 import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default async function AnalyticsPage() {
-  const { episodes, guests, listeners } = computeAnalytics();
+  const {episodes,guests,listeners} = computeAnalytics();
   //
   return (
     <>
       <AppBar title="Analytics" backTo={PATH.podcast} noOptions />
-      <main className="debug_ container-md-podcast flex flex-col flex-wrap gap-5 px-4 pb-6 mt-2">
+      <main className="debug_ container-md-podcast mt-2 flex flex-col flex-wrap gap-5 px-4 pb-6">
         <KpiCards episodes={episodes} guests={guests} />
         <GeolocationChart title="Guests Location" data={guests?.location} />
         <RingChart

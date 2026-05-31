@@ -1,0 +1,43 @@
+import {
+  IconBrandXFilled,
+  IconCalendarEventFilled,
+  IconClockHour8Filled,
+  IconMapPinFilled,
+} from "@tabler/icons-react";
+
+import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
+
+interface Props {
+  episode: TransformedEpisodeDto;
+  variant?: "text" | "icon";
+  tonight?: boolean;
+  _tonight?: any;
+}
+
+export const Datetime = ({ episode, variant = "icon" }: Props) => {
+  return variant === "icon" ? (
+    <div className="flex-row-cs gap-2 text-sm tracking-wide">
+      <IconCalendarEventFilled size={18} />
+      <span>{episode.dateTextShort}</span>
+      <IconClockHour8Filled size={18} />
+      <time dateTime={episode.datetime}>{episode.timeText} (WAT)</time>
+    </div>
+  ) : (
+    <p className="text-muted-foreground text-[12px]">
+      E{String(episode.id).padStart(2, "0")} &bull; {episode.datetimeTextShort}
+    </p>
+  );
+};
+
+export const DatetimeVenue = ({ episode, tonight }: Props) => {
+  return (
+    <div className="flex-row-cs font-medium_ gap-2 text-xs tracking-wide whitespace-nowrap">
+      <IconCalendarEventFilled size={16} />
+      <span>{tonight ? "TONIGHT 🦊" : episode.dateTextShort}</span>
+      <IconClockHour8Filled size={16} />
+      <time dateTime={episode.datetime}>{episode.timeText} (WAT)</time>
+      <IconBrandXFilled size={16} />
+      <span>Spaces</span>
+    </div>
+  );
+};
