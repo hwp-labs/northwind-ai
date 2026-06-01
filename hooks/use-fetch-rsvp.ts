@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getListenersCountAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
-import { EpisodeHelper } from "@/lib/podcast/episodes/helper";
+import { transformEpisode } from "@/lib/podcast/episodes/utils";
 
 export function useFetchRsvp(id?: number) {
   const params = useParams();
 
   const _id = Number(params.id || id || 1);
-  const item = EpisodeHelper.GetPageItem(_id);
-  const avatars = item.displayAvatars
-    ? item.displayAvatars.slice(0, 3)
-    : [
-        "/images/icon-hwp.png",
-        "/images/avatar-etugbeh.png",
-        "/images/avatar.png",
-      ];
+  const episode = transformEpisode(_id);
+  const avatars = episode.displayAvatars.slice(0, 3);
 
   const [total, setTotal] = useState(1);
 
@@ -23,8 +17,8 @@ export function useFetchRsvp(id?: number) {
   }, [id]);
 
   const fetcher = async () => {
-    if (item.listeners) {
-      setTotal(item.listeners);
+    if (episode.listeners) {
+      setTotal(episode.listeners);
       return;
     }
 
@@ -32,7 +26,7 @@ export function useFetchRsvp(id?: number) {
       filterByPodcastId: _id,
     });
     if (total) {
-      const guestsNotInAvatarGroup = avatars.length - 3;
+      const guestsNotInAvatarGroup = episode.displayAvatars.length - 3;
       setTotal(total + guestsNotInAvatarGroup);
     }
   };

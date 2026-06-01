@@ -1,50 +1,36 @@
 import { IconHelicopterLandingFilled } from "@tabler/icons-react";
-import { PodcastSpeakerDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedSpeaker } from "@/lib/podcast/speakers/utils";
 
 interface Props {
-  data: PodcastSpeakerDto[];
-  showHost?: boolean;
+  data: TransformedSpeaker[];
 }
 
-export const GuestPanel = ({ data, showHost }: Props) => {
-  const safeData = showHost
-    ? [
-        {
-          avatar: "/images/avatar-etugbeh.png",
-          name: "Emanuel",
-          username: "@2gbeh",
-          bio: "AI Product Engineer, HWP Labs",
-          host: true,
-        },
-        ...data,
-      ]
-    : data;
-  //
+export const GuestPanel = ({ data }: Props) => {
   return (
     <div className="space-y-4">
-      {safeData.map((item, i) => (
+      {data.map((item, i) => (
         <figure key={i} className="flex-row-cs gap-3">
           <div className="relative">
-          <div className="p-[1.5px] rounded-full bg-[conic-gradient(from_180deg,yellow,white,red,white)]">
-            <img
-              src={item.avatar}
-              width={40}
-              alt=""
-              className="border-[#ddd]_ rounded-full border-2_"
-            />
-          </div>
-            {item.flag ? (
+            <div className="rounded-full bg-[conic-gradient(from_180deg,yellow,white,red,white)] p-[1.5px]">
               <img
-                src={item.flag}
+                src={item.avatar}
+                width={40}
+                alt=""
+                className="border-[#ddd]_ border-2_ rounded-full"
+              />
+            </div>
+            {item.location?.flag ? (
+              <img
+                src={item.location?.flag}
                 width={24}
                 alt=""
-                className="absolute left-1 bottom-0"
+                className="absolute bottom-0 left-1"
               />
             ) : null}
           </div>
           <figcaption className="flex flex-col">
             <div className="flex-row-cs gap-2 font-medium text-white">
-              {item.name}
+              {item?.host ? item.displayName : item.fullName}
               {item?.host ? <IconHelicopterLandingFilled size={12} /> : null}
             </div>
             <small className="text-xs text-[#bbb]">{item.bio}</small>

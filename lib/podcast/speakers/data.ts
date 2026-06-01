@@ -97,8 +97,7 @@ export const data: SpeakerDto[] = [
   },
   {
     id: 6,
-    // avatar: "/uploads/podcast/avatar-iadebiyi.jpg",
-    avatar: "/uploads/podcast/avatar-adiz.png",
+    avatar: "/uploads/podcast/avatar-iadebiyi.png",
     displayName: "Isaac A.",
     firstName: "Isaac",
     surname: "Adebiyi",
@@ -179,5 +178,6 @@ export const data: SpeakerDto[] = [
     location: { city: "Edo" },
     socials: { in: "2gbeh", x: "@2gbeh" },
     hide: true,
+    host: true,
   },
 ];

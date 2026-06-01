@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { PodcastInviteEmail } from "@/components/emails/podcast-invite-email";
-import { EpisodeHelper } from "@/lib/podcast/episodes/helper";
+import { EpisodeHelper } from "@/lib/podcast/episodes/utils";
 
 export const metadata: Metadata = {
   title: "Podcast Invite Email",

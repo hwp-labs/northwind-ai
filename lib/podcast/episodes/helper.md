@@ -1,11 +1,12 @@
+```ts
 import { momentUtil } from "@/utils/moment-util";
 import { CUR_DATE, CUR_HOUR_UTC } from "@/constants";
 //
-import { EpisodeDto, TransformedEpisodeDto } from "./types";
+import { EpisodeDto, EpisodeHelper } from "./types";
 import { data } from "./data";
 
 export class EpisodeHelper {
-  static _transform = (item: EpisodeDto): TransformedEpisodeDto => {
+  static _transform = (item: EpisodeDto): EpisodeHelper => {
     const titleNobr = item.title.replaceAll("<br/>", " ");
     const summaryNobr = item?.summary
       ? item.summary.replaceAll("<br/>", " ")
@@ -21,6 +22,24 @@ export class EpisodeHelper {
         : [item.guest]
       : [];
 
+    // const podcastShortDatetime = (dt?: InputType) =>
+    // transform("ddd, D MMM YYYY | hA", dt);
+    //     return this._.series
+    //       ? "/uploads/podcast/sony.png"
+    //       : "/uploads/podcast/halim.png";
+    // // Sunday, Mar 1st
+    // const podcastDate = (dt?: InputType) => transform("dddd, MMM Do", dt);
+
+    // // Sun, Mar 1
+    // const podcastShortDate = (dt?: InputType) => transform("ddd, MMM D", dt);
+
+    // // 8PM
+    // const podcastTime = (dt?: InputType) => transform("hA", dt);
+
+    // // Sunday, 22 Mar 2026 | 9PM
+    // const podcastDatetime = (dt?: InputType) =>
+    //   transform("dddd, D MMM YYYY | hA", dt);
+    
     return {
       ...item,
       dateText: momentUtil.podcastDate(item.datetime),
@@ -73,14 +92,14 @@ export class EpisodeHelper {
     return this._transform(item);
   }
 
-  static GetItemById(id: number): TransformedEpisodeDto {
+  static GetItemById(id: number): EpisodeHelper {
     const item = data.find((row) => row.id === id);
     if (item) return this._transform(item);
     return this._transform(data[0]);
   }
 
   static GetItemsById(...ids: number[]) {
-    const items: TransformedEpisodeDto[] = [];
+    const items: EpisodeHelper[] = [];
 
     ids.map((id) => {
       const item = this.GetItemById(id);
@@ -131,7 +150,7 @@ export class EpisodeHelper {
     }
   }
 
-  static CtaText(item: EpisodeDto): TransformedEpisodeDto["ctaText"] {
+  static CtaText(item: EpisodeDto): EpisodeHelper["ctaText"] {
     return this.IsOngoing(item.datetime)
       ? "Attend"
       : this.IsConcluded(item)
@@ -139,3 +158,4 @@ export class EpisodeHelper {
         : "RSVP";
   }
 }
+```

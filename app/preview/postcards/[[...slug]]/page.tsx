@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 //
 import { PageParams } from "@/types";
-import { MonthlyPostCard } from "@/features/post-cards/components/cards/monthly-post-card";
-import { FAQPostCard } from "@/features/post-cards/components/cards/faq-post-card";
-import { PodcastPostCard } from "@/features/post-cards/components/cards/podcast-post-card";
-import { BlogPostCard } from "@/features/post-cards/components/cards/blog-post-card";
+import { MonthlyPostCard } from "@/features/postcards/components/cards/monthly-post-card";
+import { FAQPostCard } from "@/features/postcards/components/cards/faq-post-card";
+import { PodcastPostCard } from "@/features/postcards/components/cards/podcast-post-card";
+import { BlogPostCard } from "@/features/postcards/components/cards/blog-post-card";
 
 export const metadata: Metadata = {
   title: "Post Cards",

@@ -30,6 +30,11 @@ export const Modal = () => {
   const mutateModal = usePodcastStore((s) => s.mutateModal);
   const resetModal = usePodcastStore((s) => s.resetModal);
 
+  const onClose = () => {
+    resetModal();
+    modal.variant === "unsub" && remove("unsub");
+  };
+
   useEffect(() => {
     const { unsub } = get({ unsub: "false" });
     if (unsub === "true") {
@@ -40,24 +45,19 @@ export const Modal = () => {
   const render = (
     <>
       {modal.variant === "unsub" ? (
-        <UnsubForm
-          onClose={() => {
-            resetModal();
-            remove("unsub");
-          }}
-        />
+        <UnsubForm onClose={onClose} />
       ) : modal.variant === "rsvp" ? (
-        <RsvpForm onClose={resetModal} />
+        <RsvpForm onClose={onClose} />
       ) : modal.variant === "preview" ? (
-        <Preview onClose={resetModal} />
+        <Preview onClose={onClose} />
       ) : (
-        <Options onClose={resetModal} />
+        <Options onClose={onClose} />
       )}
     </>
   );
   //
   return isMobile ? (
-    <Drawer open={modal.open} onOpenChange={() => resetModal()}>
+    <Drawer open={modal.open} onOpenChange={() => onClose()}>
       <DrawerContent className="rounded-t-4xl px-4">
         <DrawerHeader>
           <DrawerTitle className="sr-only">Success</DrawerTitle>
@@ -66,7 +66,7 @@ export const Modal = () => {
       </DrawerContent>
     </Drawer>
   ) : (
-    <Dialog open={modal.open} onOpenChange={() => resetModal()}>
+    <Dialog open={modal.open} onOpenChange={() => onClose()}>
       <DialogContent className="max-w-sm pb-0">
         <DialogHeader>
           <DialogTitle className="sr-only">Success</DialogTitle>

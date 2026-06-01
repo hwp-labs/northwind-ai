@@ -2,20 +2,20 @@
 
 import { IconCaretRightFilled } from "@tabler/icons-react";
 import { usePodcastStore } from "@/store/podcastStore";
-import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
+import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
 
-export const CtaButton = ({ episode }: { episode: TransformedEpisodeDto }) => {
+export const CtaButton = ({ episode }: { episode: TransformedEpisode }) => {
   const setEpisode = usePodcastStore((s) => s.setEpisode);
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 
   const handleClick = () => {
     switch (episode.ctaText) {
       case "RSVP":
-        setEpisode(episode)
+        setEpisode(episode);
         mutateModal({ open: true, variant: "rsvp" });
         break;
       default:
-        episode.spaceUrl ? window.open(episode.spaceUrl, "_blank") : null;
+        window.open(episode.spaceUrl, "_blank");
     }
   };
   //

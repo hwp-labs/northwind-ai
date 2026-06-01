@@ -1,23 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
 import { usePodcastStore } from "@/store/podcastStore";
+import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
 
-export const Thumbnail = ({ item }: { item: TransformedEpisodeDto }) => {
+interface Props {
+  episode: TransformedEpisode;  
+}
+
+export const Thumbnail = ({ episode }: Props) => {
   const setEpisode = usePodcastStore((s) => s.setEpisode);
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 
   const handleClick = () => {
-    if (item.canPlay) {
-      setEpisode(item);
+    if (episode.canPlay) {
+      setEpisode(episode);
       mutateModal({ open: true, variant: "preview" });
     }
   };
   //
   return (
     <Image
-      src={item.displayAvatar!}
+      src={episode.thumbnail}
       alt=""
       width={56}
       height={56}

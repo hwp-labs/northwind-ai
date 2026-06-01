@@ -14,14 +14,12 @@ import { Card } from "./card";
 import { CtaButton } from "./cta-button";
 import { RsvpAvatars } from "./rsvp-avatars";
 import { Dots } from "./dots";
-import { EpisodeHelper } from "@/lib/podcast/episodes/helper";
+import { transformEpisode } from "@/lib/podcast/episodes/utils";
 
 const startIndex = 2;
+const favorites = 1 ? [6, 10, 12] : Array.from({ length: 11 }, (_, i) => i + 1);
 
 export const Hero = () => {
-  // const favorites = EpisodeHelper.GetItemsById(6, 10, 11);
-  const favorites = EpisodeHelper.GetItemsById(1, 2, 3);
-
   const [selected, setSelected] = useState(startIndex);
 
   const handleSwipe = (api?: EmblaCarouselType) => {
@@ -34,20 +32,24 @@ export const Hero = () => {
     <section className="px-4">
       <Carousel setApi={handleSwipe} opts={{ startIndex }}>
         <CarouselContent>
-          {favorites.map((episode, i) => (
-            <CarouselItem key={i}>
-              <Card src={episode.seriesImage}>
-                <div className="debug_ flex-col-sc w-[280px] flex-1 gap-2">
-                  <Topic topic={episode.safeTopic} variant="hero" />
-                  <Datetime episode={episode} />
-                </div>
-                <div className="flex-row-sb debug_ max-h-[60px] min-h-[60px]">
-                  <CtaButton episode={episode} />
-                  <RsvpAvatars id={episode.id} />
-                </div>
-              </Card>
-            </CarouselItem>
-          ))}
+          {favorites.map((id, i) => {
+            const episode = transformEpisode(id);
+            //
+            return (
+              <CarouselItem key={i}>
+                <Card src={episode.cover}>
+                  <div className="debug_ flex-col-sc w-[280px] flex-1 gap-2">
+                    <Topic topic={episode.topic} variant="hero" />
+                    <Datetime episode={episode} />
+                  </div>
+                  <div className="flex-row-sb debug_ max-h-[60px] min-h-[60px]">
+                    <CtaButton episode={episode} />
+                    <RsvpAvatars id={id} />
+                  </div>
+                </Card>
+              </CarouselItem>
+            );
+          })}
         </CarouselContent>
       </Carousel>
       <Dots selected={selected} />

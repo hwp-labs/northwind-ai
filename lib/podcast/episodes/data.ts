@@ -2,6 +2,19 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   {
+    id: 12,
+    datetime: "2026-06-03T19:00:00.000Z",
+    thumbnail: "/uploads/logos/nvidia.png",
+    topic: "Redefining Jobs' Purpose in the Age of AI",
+    summary:
+      "Keynotes from Madison Huang's speech at Seoul National University (https://youtu.be/dhMPSzedWNQ)",
+    tags: ["X-Ray", "ECG", "Urinalysis", "Django"],
+    spaceUrl: "#https://x.com/i/spaces/1RKZzzBwanMKB",
+    listeners: 0,
+    liveListeners: 0,
+    series: "cs",
+  },
+  {
     id: 11,
     datetime: "2026-05-30T19:00:00.000Z",
     thumbnail: "/uploads/logos/ubth.png",
@@ -35,6 +48,8 @@ export const data: EpisodeDto[] = [
     datetime: "2026-05-17T19:00:00.000Z",
     thumbnail: "/uploads/logos/moniepoint.png",
     topic: "KPIs of World-Class Software Engineers",
+    summary:
+      "Keynotes from Tosin Eniolorunda's speech at The Platform Nigeria (https://youtu.be/OeP5Rs96OGY)",
     tags: ["Ownership", "Mentorship", "Scalability"],
     guests: [11, 10],
     notionUrl:
@@ -50,7 +65,7 @@ export const data: EpisodeDto[] = [
     thumbnail: "/uploads/logos/verse.png",
     topic: "Hype To Adoption: Building Web3 Products",
     _notes: "Hosted on Verse Radio (@realVerseRadio)",
-    guests: [1, 9, 8, 7],
+    guests: [9, 8, 7],
     displayAvatars: [
       "/images/icon-hwp.png",
       "/uploads/logos/btc.png",
@@ -66,8 +81,9 @@ export const data: EpisodeDto[] = [
     datetime: "2026-04-12T19:00:00.000Z",
     thumbnail: "/uploads/logos/grab.png",
     topic: "Grab.com from MVP to Product Market Fit",
+    summary:
+      "Keynotes from Anthony Tan's interview by CNBC Int'l (https://youtu.be/PR2194ddosg)",
     _notes: { username: "@InsideGrab" },
-    guests: [1],
     notionUrl:
       "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
     spaceUrl: "https://x.com/i/spaces/1YxNrZNPNnpxw",
@@ -121,7 +137,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-03-15T19:00:00.000Z",
     thumbnail: "/uploads/logos/bookin.png",
     topic: "Bookin Design Session",
-    summary: "All-in-one booking platform for creative professionals.",
+    summary: "All-in-one booking platform for creative professionals",
     guests: [3],
     notionUrl:
       "https://held-gambler-004.notion.site/Bookin-3226a7cc633c81f1a9d8ebbce7bbc6b3",
@@ -134,7 +150,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-03-08T19:00:00.000Z",
     thumbnail: "/uploads/logos/scupex.png",
     topic: "Scupex Design Session",
-    summary: "Cloud-native, Multi-tenant School Management Solution.",
+    summary: "Cloud-native, Multi-tenant School Management Solution",
     guests: [2],
     notionUrl:
       "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",
@@ -146,8 +162,7 @@ export const data: EpisodeDto[] = [
     id: 1,
     datetime: "2026-03-01T19:00:00.000Z",
     topic: "Northstar Design Session",
-    summary: "AI-native, Cross-platform Product Analytics Solution.",
-    guests: [1],
+    summary: "AI-native, Cross-platform Product Analytics Solution",
     notionUrl:
       "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
     spaceUrl: "#",

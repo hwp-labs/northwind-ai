@@ -8,9 +8,9 @@ import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
 import { PodcastInviteEmail } from "@/components/emails/podcast-invite-email";
 import { useToast } from "@/hooks/use-toast";
-import { EpisodeHelper } from "@/lib/podcast/episodes/helper";
+import { EpisodeHelper } from "@/lib/podcast/episodes/utils";
 import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
-import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
+import { EpisodeHelper } from "@/lib/podcast/episodes/utils";
 import { APP } from "@/constants/APP";
 import { MOCK } from "@/constants/MOCK";
 
@@ -58,7 +58,7 @@ const sendEmail = async ({
   podcast,
 }: {
   recipients: string[];
-  podcast: TransformedEpisodeDto;
+  podcast: EpisodeHelper;
 }) => {
   const body = await pretty(
     await render(<PodcastInviteEmail data={podcast} />),

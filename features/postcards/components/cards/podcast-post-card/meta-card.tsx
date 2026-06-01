@@ -4,7 +4,7 @@ import { APP_PODCAST } from "@/constants/APP_PODCAST";
 interface Props {
   meta?: {
     src: string;
-    title: string;
+    title?: string;
     url: string;
     cta: string;
   };

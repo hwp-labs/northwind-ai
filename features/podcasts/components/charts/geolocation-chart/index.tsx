@@ -1,5 +1,3 @@
-import { Item } from "./item";
-
 interface Props {
   title: string;
   data?: Record<string, number>;
@@ -22,9 +20,9 @@ export const GeolocationChart = ({ title, data = {} }: Props) => {
                 <img src={src} width={24} alt="" />
                 <figcaption className="font-medium">{label}</figcaption>
               </figure>
-              <ol className="h-2 flex-1 overflow-clip rounded-full bg-chart-bg">
+              <ol className="bg-chart-bg h-2 flex-1 overflow-clip rounded-full">
                 <li
-                  className="h-2 rounded-full bg-chart-fg"
+                  className="bg-chart-fg h-2 rounded-full"
                   style={{ width }}
                 ></li>
               </ol>

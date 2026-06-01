@@ -1,6 +1,5 @@
 "use client";
 
-import { IconChevronDown } from "@tabler/icons-react";
 import { useRingChart } from "./hook";
 
 interface Props {
@@ -26,7 +25,8 @@ export const RingChart = ({
   //
   return (
     <section className="card-podcast">
-      <strong className="text-lg">{title}</strong>      <div className="flex-row-cc relative mt-4">
+      <strong className="text-lg">{title}</strong>{" "}
+      <div className="flex-row-cc relative mt-4">
         <canvas ref={canvasRef} className="size-[250px]" />
         <div className="absolute mt-2 text-center">
           {label ? <div className="text-muted-foreground">{label}</div> : null}
@@ -35,7 +35,6 @@ export const RingChart = ({
           </div>
         </div>
       </div>
-
       {keys ? (
         <ul className="mt-6 flex justify-around border-t pt-6">
           {keys.map((item, i) => (

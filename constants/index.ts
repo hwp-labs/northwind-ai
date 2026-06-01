@@ -4,7 +4,7 @@ export const DOLLAR = "$";
 export const ZERO = "0";
 export const EMPTY_STR = "";
 export const HYPHENS = "---";
-export const NOT_APPLICABLE = "N/A";
+export const NA = "N/A";
 export const UNKNOWN = "Unknown";
 //
 export const CUR_DATE = new Date().toISOString().slice(0, 10); // 1970-01-01

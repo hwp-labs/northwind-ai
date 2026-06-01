@@ -1,10 +1,10 @@
-import { TransformedEpisodeDto } from "@/lib/supabase/services/podcasts/types";
+import { EpisodeHelper } from "@/lib/podcast/episodes/helper";
 import { COLOR } from "@/constants/COLOR";
 //
 import { Builder } from "./builder";
 
 interface Props {
-  data: TransformedEpisodeDto;
+  data: EpisodeHelper;
 }
 
 export const PodcastInviteEmail = ({ data }: Props) => {

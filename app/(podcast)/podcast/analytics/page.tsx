@@ -5,7 +5,7 @@ import { AppBar } from "@/features/podcasts/components/app-bar";
 import { KpiCards } from "@/features/podcasts/components/kpi-cards";
 import { GeolocationChart } from "@/features/podcasts/components/charts/geolocation-chart";
 import { RingChart } from "@/features/podcasts/components/charts/ring-chart";
-import { computeAnalytics } from "@/lib/podcast/analytics/helper";
+import { computeAnalytics } from "@/lib/podcast/analytics/utils";
 import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AnalyticsPage() {
-  const {episodes,guests,listeners} = computeAnalytics();
+  const { episodes, guests, listeners } = computeAnalytics();
   //
   return (
     <>

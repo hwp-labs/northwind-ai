@@ -31,14 +31,14 @@ export const RsvpForm = ({ onClose = () => undefined }: Props) => {
     <div className="grid w-full gap-4 px-4 pb-8">
       <figure className="flex-col-cc gap-4">
         <Image
-          src={episode.displayAvatar!}
+          src={episode.thumbnail}
           alt=""
           width={56}
           height={56}
           className="size-[56px] rounded-[12px]"
         />
         <figcaption className="flex-col-cc gap-1">
-          <Topic topic={episode.safeTopic} variant="preview" />
+          <Topic topic={episode.topic} variant="preview" />
           <Datetime episode={episode} />
         </figcaption>
       </figure>

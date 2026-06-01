@@ -1,4 +1,4 @@
-export interface SpeakerDto {
+export interface SpeakerEntity {
   id: number;
   avatar: string;
   firstName?: string;
@@ -22,4 +22,7 @@ export interface SpeakerDto {
     ig?: string;
   };
   hide?: boolean;
+  host?: boolean;
 }
+
+export interface SpeakerDto extends SpeakerEntity {}

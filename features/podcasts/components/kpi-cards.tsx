@@ -1,10 +1,10 @@
 import { IconMicrophoneFilled, IconUsers } from "@tabler/icons-react";
-import { PodcastAnalyticsDto } from "@/lib/supabase/services/podcasts/data/analytics";
 import { KpiCard } from "./charts/kpi-card";
+import { AnalyticsDto } from "@/lib/podcast/analytics/types";
 
 interface Props {
-  episodes?: PodcastAnalyticsDto["episodes"];
-  guests?: PodcastAnalyticsDto["guests"];
+  episodes?: AnalyticsDto["episodes"];
+  guests?: AnalyticsDto["guests"];
 }
 
 export const KpiCards = ({ episodes, guests }: Props) => {
