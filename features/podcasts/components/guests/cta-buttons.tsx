@@ -4,22 +4,23 @@ import {
   IconLinkOff,
 } from "@tabler/icons-react";
 import { AnchorOutbound } from "@/components/atoms/anchor";
-import { TransformedSpeaker } from "@/lib/podcast/speakers/utils";
+import { SpeakerDto } from "@/lib/podcast/speakers/types";
 
 interface Props {
-  speaker: TransformedSpeaker;
+  speaker: SpeakerDto;
 }
 
 export const CtaButtons = ({ speaker }: Props) => {
   return (
     <div className="flex-row-cs gap-4">
       <AnchorOutbound
+        title="WhatsApp"
         href={
           speaker.tel
             ? `https://wa.me/${speaker.tel.replace("+", "")}`
             : undefined
         }
-        className="bg-secondary flex-row-cc size-[32px] rounded-full"
+        className="list-cta-btn size-[32px]"
       >
         {speaker.tel ? (
           <IconBrandWhatsapp size={18} />
@@ -28,8 +29,9 @@ export const CtaButtons = ({ speaker }: Props) => {
         )}
       </AnchorOutbound>
       <AnchorOutbound
+        title="Twitter"
         href={`https://x.com/${speaker.socials.x}`}
-        className="bg-secondary flex-row-cc size-[32px] rounded-full"
+        className="list-cta-btn size-[32px]"
       >
         <IconBrandX size={15} />
       </AnchorOutbound>

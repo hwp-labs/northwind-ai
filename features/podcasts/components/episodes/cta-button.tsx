@@ -10,7 +10,7 @@ export const CtaButton = ({ episode }: Props) => {
   return (
     <AnchorOutbound
       href={episode.canPlay ? episode.spaceUrl : undefined}
-      className="bg-secondary flex-row-cc size-[40px] rounded-full"
+      className="list-cta-btn size-[40px]"
     >
       {episode.canPlay ? (
         <IconPlayerPlayFilled size={18} />

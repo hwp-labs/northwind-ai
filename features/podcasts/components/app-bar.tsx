@@ -9,6 +9,7 @@ import { usePodcastStore } from "@/store/podcastStore";
 import { useVisitTracker } from "@/hooks/use-visit-tracker";
 import { SearchBar } from "./search-bar";
 import { SearchIcon } from "lucide-react";
+import { useEffect } from "react";
 
 interface Props {
   title?: string;
@@ -23,6 +24,12 @@ export const AppBar = ({ title, backTo, noOptions, search }: Props) => {
   const router = useRouter();
   const mutateModal = usePodcastStore((s) => s.mutateModal);
   const toggleSearch = usePodcastStore((s) => s.toggleSearch);
+
+  useEffect(() => {
+    if (search) {
+      toggleSearch();
+    }
+  }, []);
 
   const handleBack = () => {
     if (backTo) {
@@ -70,7 +77,7 @@ export const AppBar = ({ title, backTo, noOptions, search }: Props) => {
           )}
         </div>
       </div>
-      <SearchBar placeholder={search?.placeholder} />
+      {search ? <SearchBar placeholder={search?.placeholder} /> : null}
     </header>
   );
 };

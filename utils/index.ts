@@ -8,6 +8,9 @@ export const isLocalhost = () => {
 export const sleep = (secs: number = 3) =>
   new Promise((resolve) => setTimeout(resolve, secs * 1000));
 
+export const iSearch = (str: string, substr?: string) =>
+  new RegExp(substr || "", "i").test(str);
+
 export const slugify = (s: string) =>
   s
     .toLowerCase()

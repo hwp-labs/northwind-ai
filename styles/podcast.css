@@ -15,3 +15,7 @@
 .absolute-bottom {
   @apply absolute bottom-0 w-full;
 }
+
+.list-cta-btn {
+  @apply bg-secondary rounded-full flex items-center justify-center;
+}

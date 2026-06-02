@@ -1,8 +1,8 @@
 export interface SpeakerEntity {
   id: number;
   avatar: string;
-  firstName?: string;
-  surname?: string;
+  firstName: string;
+  surname: string;
   displayName: string;
   sex?: "m" | "f";
   email?: string;
