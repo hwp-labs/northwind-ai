@@ -58,11 +58,11 @@ const EventDetails = ({ date }: BlogDto) => (
   <>
     <div className="flex-row-cs gap-2">
       <FaCalendarDay className="text-white" />
-      {0 ? momentUtil.podcastDate(date) : "TONIGHT 🦊"}
+      {0 ? momentUtil.fmt("ddd, MMM D", date) : "TONIGHT 🦊"}
     </div>
     <div className="flex-row-cs gap-2">
       <FaClock className="text-white" />
-      {momentUtil.podcastTime(date)} (WAT)
+      {momentUtil.fmt("hA", date)} (WAT)
     </div>
     <div className="flex-row-cs gap-2">
       <FaMapMarkerAlt className="text-white" /> Twitter/X Spaces
