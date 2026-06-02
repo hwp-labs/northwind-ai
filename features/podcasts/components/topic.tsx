@@ -1,17 +1,28 @@
+import { IconExternalLink } from "@tabler/icons-react";
 import clsx from "clsx";
 
 interface Props {
   topic: string;
-  _topic?: any;
+  _topic?: string;
+  summary?: string;
+  _summary?: string;
   variant: "hero" | "list" | "preview" | "snap";
 }
 
-export const Topic = ({ topic, variant }: Props) => {
+export const Topic = ({ topic, summary, variant }: Props) => {
   if (variant === "snap")
     return (
-      <h1 className="font-f3 pr-4 text-[36px] leading-[40px] font-semibold tracking-wide text-white">
-        {topic}
-      </h1>
+      <hgroup className="space-y-2">
+        <h1 className="font-f3 pr-4 text-[32px] leading-[36px] font-semibold tracking-wide text-white">
+          {topic}
+        </h1>
+        {summary ? (
+          <p className="text-[#bbb]_ pr-8 text-xs leading-[18px] text-blue-200 underline underline-offset-2">
+            {summary}
+            <IconExternalLink className="mx-1.5 inline" size={16} />
+          </p>
+        ) : null}
+      </hgroup>
     );
 
   return (
@@ -19,9 +30,11 @@ export const Topic = ({ topic, variant }: Props) => {
       className={clsx(
         variant === "hero" &&
           "font-f4 text-[26px] leading-[28px] font-medium tracking-[3px]",
-        variant === "list" && "line-clamp-2 min-h-[25px] text-white",
+        variant === "list" && "line-clamp-2 min-h-[25px] text-sm text-white",
         variant === "preview" && "text-center text-lg text-white",
       )}
-    >{topic}</strong>
+    >
+      {topic}
+    </strong>
   );
 };

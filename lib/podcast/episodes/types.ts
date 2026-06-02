@@ -15,4 +15,5 @@ export interface EpisodeDto {
   listeners: number;
   liveListeners: number;
   series?: "ds" | "fc" | "cs";
+  favorite?: boolean;
 }

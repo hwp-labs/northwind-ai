@@ -27,15 +27,14 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           <Logo />
         </header>
         <Tags list={e.tags} />
-        <article className="mt-2 space-y-4">
+        <article className="debug_ mt-2.5 space-y-6">
           <Topic
             variant="snap"
             topic={e.topic}
-            _topic="Routine Medical Investigations_ API Modeling"
+            _topic="Design Systems & Finite State Machines"
+            summary={e.summary}
           />
-          <div className="">
-            <DatetimeVenue episode={e} _tonight />
-          </div>
+          <DatetimeVenue episode={e} _tonight />
         </article>
       </main>
       <footer className="absolute bottom-0 px-6 py-8">

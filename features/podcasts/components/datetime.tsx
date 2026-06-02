@@ -11,7 +11,7 @@ interface Props {
   episode: TransformedEpisode;
   variant?: "text" | "icon";
   tonight?: boolean;
-  _tonight?: any;
+  _tonight?: boolean;
 }
 
 export const Datetime = ({ episode, variant = "icon" }: Props) => {

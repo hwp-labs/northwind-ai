@@ -2,13 +2,30 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   {
+    id: 13,
+    datetime: "2026-06-07T19:00:00.000Z",
+    thumbnail: "/uploads/logos/thisdaylive.png",
+    topic: "ACID Traits for AI Workflows Pt.2",
+    summary: "Keynotes from Onyebinamma Ebuka Peter's article by THISDAY",
+    _notes: {
+      url: "https://thisdaylive.com/2026/06/01/from-writing-code-to-designing-systems-how-ai-is-redefining-software-engineering",
+    },
+    tags: ["Prompting", "Architecture", "#Expertise", "Judgement"],
+    guests: [15],
+    spaceUrl: "#https://x.com/i/spaces/1RKZzzBwanMKB",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc",
+  },
+  {
     id: 12,
     datetime: "2026-06-03T19:00:00.000Z",
     thumbnail: "/uploads/logos/nvidia.png",
-    topic: "Redefining Jobs' Purpose in the Age of AI",
+    topic: "ACID Traits for AI Workflows Pt.1",
     summary:
-      "Keynotes from Madison Huang's speech at Seoul National University (https://youtu.be/dhMPSzedWNQ)",
-    tags: ["X-Ray", "ECG", "Urinalysis", "Django"],
+      "Keynotes from Madison Huang's speech at Seoul National University",
+    _notes: { yt: "https://youtu.be/dhMPSzedWNQ" },
+    tags: ["Job Task", "Job Purpose", "AI FOMO"],
     spaceUrl: "#https://x.com/i/spaces/1RKZzzBwanMKB",
     listeners: 0,
     liveListeners: 0,
@@ -19,7 +36,6 @@ export const data: EpisodeDto[] = [
     datetime: "2026-05-30T19:00:00.000Z",
     thumbnail: "/uploads/logos/ubth.png",
     topic: "Routine Medical Investigations_ API Modeling",
-    topicShort: "Routine Investigations API Modeling",
     tags: ["X-Ray", "ECG", "Urinalysis", "Django"],
     guests: [14],
     notionUrl:
@@ -48,8 +64,8 @@ export const data: EpisodeDto[] = [
     datetime: "2026-05-17T19:00:00.000Z",
     thumbnail: "/uploads/logos/moniepoint.png",
     topic: "KPIs of World-Class Software Engineers",
-    summary:
-      "Keynotes from Tosin Eniolorunda's speech at The Platform Nigeria (https://youtu.be/OeP5Rs96OGY)",
+    summary: "Keynotes from Tosin Eniolorunda's speech at The Platform Nigeria",
+    _notes: { yt: "https://youtu.be/OeP5Rs96OGY" },
     tags: ["Ownership", "Mentorship", "Scalability"],
     guests: [11, 10],
     notionUrl:
@@ -64,14 +80,15 @@ export const data: EpisodeDto[] = [
     datetime: "2026-04-18T19:00:00.000Z",
     thumbnail: "/uploads/logos/verse.png",
     topic: "Hype To Adoption: Building Web3 Products",
-    _notes: "Hosted on Verse Radio (@realVerseRadio)",
+    summary: "Hosted by Verse Radio",
+    _notes: { x: "@realVerseRadio" },
     guests: [9, 8, 7],
     displayAvatars: [
       "/images/icon-hwp.png",
       "/uploads/logos/btc.png",
       "/uploads/logos/verse.png",
     ],
-    spaceUrl: "#",
+    spaceUrl: "#https://x.com/i/spaces/1yxBeMlXgZPJN",
     listeners: 243,
     liveListeners: 243,
     series: "fc",
@@ -81,9 +98,8 @@ export const data: EpisodeDto[] = [
     datetime: "2026-04-12T19:00:00.000Z",
     thumbnail: "/uploads/logos/grab.png",
     topic: "Grab.com from MVP to Product Market Fit",
-    summary:
-      "Keynotes from Anthony Tan's interview by CNBC Int'l (https://youtu.be/PR2194ddosg)",
-    _notes: { username: "@InsideGrab" },
+    summary: "Keynotes from Anthony Tan's interview by CNBC Int'l",
+    _notes: { x: "@InsideGrab", yt: "https://youtu.be/PR2194ddosg" },
     notionUrl:
       "https://held-gambler-004.notion.site/Grab-com-from-MVP-to-PMF-3406a7cc633c817aba03ed635c6f6253",
     spaceUrl: "https://x.com/i/spaces/1YxNrZNPNnpxw",
@@ -165,7 +181,7 @@ export const data: EpisodeDto[] = [
     summary: "AI-native, Cross-platform Product Analytics Solution",
     notionUrl:
       "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
-    spaceUrl: "#",
+    spaceUrl: "#https://x.com/i/spaces/1nxnRYRXOgjxO",
     listeners: 31,
     liveListeners: 18,
   },

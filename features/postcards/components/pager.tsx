@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/shadcn/ui/select";
 import { useQueryParams } from "@/hooks/use-query-params";
+import { data } from "@/lib/podcast/episodes/data";
 
 export const Pager = () => {
   const query = useQueryParams();
@@ -20,9 +21,9 @@ export const Pager = () => {
       <SelectTrigger className="max-w-24 bg-transparent">
         <SelectValue placeholder="Page" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="max-h-60">
         <SelectItem value={String(0)}>Reset</SelectItem>
-        {Array.from({ length: 12 }).map((_, i) => {
+        {Array.from({ length: data.length }).map((_, i) => {
           const j = i + 1;
           //
           return (

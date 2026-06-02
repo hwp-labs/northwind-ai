@@ -8,13 +8,13 @@ interface Props {
     url: string;
     cta: string;
   };
-  _meta?: any;
+  _meta?: Record<string, string | undefined>;
 }
 
 export const MetaCard = ({ meta }: Props) => {
   return (
     <section
-      className="mt-4 rounded-sm px-3 py-2.5 mr-4"
+      className="mt-4 mr-4 rounded-sm px-3 py-2.5"
       style={{
         background: "rgba(255,255,255,0.08)",
         backdropFilter: "blur(12px)",
