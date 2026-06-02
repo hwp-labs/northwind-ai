@@ -1,19 +1,19 @@
-import { EpisodeHelper } from "@/lib/podcast/episodes/helper";
+import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
 import { COLOR } from "@/constants/COLOR";
 //
 import { Builder } from "./builder";
 
 interface Props {
-  data: EpisodeHelper;
+  data: TransformedEpisode;
 }
 
 export const PodcastInviteEmail = ({ data }: Props) => {
   return (
-    <Builder.Template preview={`LIVE: ${data.datetimeText} WAT`}>
+    <Builder.Template preview={`LIVE: ${data.datetimeShort} WAT`}>
       <Builder.Banner variant="support-podcast" />
-      <Builder.H1>{data.titleSeriesText}</Builder.H1>
-      <Builder.P richText={data.summaryNobr} />
-      <Builder.P>LIVE: {data.datetimeText} WAT</Builder.P>
+      <Builder.H1>{data.topic}</Builder.H1>
+      {data.summary ? <Builder.P>{data.summary}</Builder.P> : null}
+      <Builder.P>LIVE: {data.datetimeShort} WAT</Builder.P>
       <Builder.Button href={data.spaceUrl!} color={COLOR.barbie}>
         Listen Now
       </Builder.Button>

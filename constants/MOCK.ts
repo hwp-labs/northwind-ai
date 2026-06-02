@@ -9,7 +9,7 @@ interface MockParams {
   skip?: number | boolean;
 }
 
-const devMode = 0;
+const devMode = 1;
 
 export const MOCK = {
   explorer: {

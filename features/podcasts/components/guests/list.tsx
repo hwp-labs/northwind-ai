@@ -1,6 +1,8 @@
 "use client";
 
 import clsx from "clsx";
+import { IconEyeClosed } from "@tabler/icons-react";
+// 
 import { Avatar } from "./avatar";
 import { CtaButtons } from "./cta-buttons";
 import { usePodcastStore } from "@/store/podcastStore";
@@ -31,7 +33,14 @@ export const List = () => {
                   {speaker.fullName}
                 </strong>
                 <p className="text-muted-foreground line-clamp-2 text-[12px]">
-                  {speaker.bio}
+                  {speaker.bio?.replace("#", "")}
+                  {item.bio?.endsWith("#") && (
+                    <IconEyeClosed
+                      size={16}
+                      strokeWidth={2.5}
+                      className="inline"
+                    />
+                  )}
                 </p>
               </figcaption>
             </figure>

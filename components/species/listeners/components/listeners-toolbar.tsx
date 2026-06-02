@@ -8,9 +8,8 @@ import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
 import { PodcastInviteEmail } from "@/components/emails/podcast-invite-email";
 import { useToast } from "@/hooks/use-toast";
-import { EpisodeHelper } from "@/lib/podcast/episodes/utils";
+import { TransformedEpisode, transformEpisode } from "@/lib/podcast/episodes/utils";
 import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
-import { EpisodeHelper } from "@/lib/podcast/episodes/utils";
 import { APP } from "@/constants/APP";
 import { MOCK } from "@/constants/MOCK";
 
@@ -36,7 +35,7 @@ export const ListenersToolbar = ({ emails = [] }: Props) => {
 
       const { error } = await sendEmail({
         recipients,
-        podcast: EpisodeHelper.GetMostRecentItem(),
+        podcast: transformEpisode(),
       });
 
       if (error) toast.error(error);
@@ -58,7 +57,7 @@ const sendEmail = async ({
   podcast,
 }: {
   recipients: string[];
-  podcast: EpisodeHelper;
+  podcast: TransformedEpisode;
 }) => {
   const body = await pretty(
     await render(<PodcastInviteEmail data={podcast} />),
@@ -66,7 +65,7 @@ const sendEmail = async ({
 
   return await sendEmailAction({
     to: recipients,
-    subject: podcast.titleSeriesText,
+    subject: podcast.topic,
     body,
   });
 };

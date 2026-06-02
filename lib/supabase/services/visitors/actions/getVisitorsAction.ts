@@ -15,10 +15,21 @@ export async function getVisitorsAction(
     ...req,
   };
 
-  const { data, error } = await supabase
+  const baseQuery = supabase
     .from(TABLE)
     .select("*")
     .order(sortBy, { ascending: false });
+
+  if (pageSize) {
+    const from = (page - 1) * pageSize;
+    const to = from + pageSize - 1;
+
+    const { data, error } = await baseQuery.range(from, to);
+
+    return { data, error: error?.message };
+  }
+
+  const { data, error } = await baseQuery;
 
   return { data, error: error?.message };
 }

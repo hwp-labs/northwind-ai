@@ -1,4 +1,8 @@
-import { IconHelicopterLandingFilled } from "@tabler/icons-react";
+import {
+  IconHelicopterLandingFilled,
+  IconScanLetterA,
+  IconEyeClosed,
+} from "@tabler/icons-react";
 import { TransformedSpeaker } from "@/lib/podcast/speakers/utils";
 
 interface Props {
@@ -33,7 +37,16 @@ export const GuestPanel = ({ data }: Props) => {
               {item?.host ? item.displayName : item.fullName}
               {item?.host ? <IconHelicopterLandingFilled size={12} /> : null}
             </div>
-            <small className="text-xs text-[#bbb]">{item.bio}</small>
+            <small className="text-xs text-[#bbb]">
+              {item.bio?.replace("#", "")}
+              {item.bio?.endsWith("#") && (
+                <IconEyeClosed
+                  size={16}
+                  strokeWidth={2.5}
+                  className="inline"
+                />
+              )}
+            </small>
           </figcaption>
         </figure>
       ))}

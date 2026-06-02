@@ -127,7 +127,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-03-29T19:00:00.000Z",
     thumbnail: "/uploads/logos/tetra.png",
     topic: "Tetra Design Session",
-    summary: "Virtual Dollar Cards for seamless Int'l transactions.",
+    summary: "Virtual Dollar Cards for Seamless Int'l Transactions",
     guests: [5],
     notionUrl:
       "https://held-gambler-004.notion.site/Tetra-3316a7cc633c81429fabfb80a8601f8d",
@@ -140,7 +140,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-03-22T19:00:00.000Z",
     thumbnail: "/uploads/logos/izivote.png",
     topic: "Izivote Design Session",
-    summary: "Cloud-based voting platform for events and campaigns.",
+    summary: "Cloud-based Voting Platform for Events & Campaigns",
     guests: [4],
     notionUrl:
       "https://held-gambler-004.notion.site/Izivote-3206a7cc633c807dbd55c6fbb373ff37",
@@ -153,7 +153,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-03-15T19:00:00.000Z",
     thumbnail: "/uploads/logos/bookin.png",
     topic: "Bookin Design Session",
-    summary: "All-in-one booking platform for creative professionals",
+    summary: "All-in-one Booking Platform for Creative Professionals",
     guests: [3],
     notionUrl:
       "https://held-gambler-004.notion.site/Bookin-3226a7cc633c81f1a9d8ebbce7bbc6b3",
@@ -166,7 +166,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-03-08T19:00:00.000Z",
     thumbnail: "/uploads/logos/scupex.png",
     topic: "Scupex Design Session",
-    summary: "Cloud-native, Multi-tenant School Management Solution",
+    summary: "Cloud-based, Multi-tenant School Management Solution",
     guests: [2],
     notionUrl:
       "https://held-gambler-004.notion.site/Scupex-31b6a7cc633c81eba6adcdddbe8fa5a1",

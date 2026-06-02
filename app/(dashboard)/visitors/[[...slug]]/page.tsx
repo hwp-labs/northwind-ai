@@ -11,8 +11,8 @@ import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
 import { TdBadge } from "@/components/atoms/tables/td-badge";
 import { TdActionMenu } from "@/components/atoms/tables/td-action-menu";
 import { TableEmpty } from "@/components/atoms/tables/table-empty";
-import { Toolbar } from "@/features/dashboard/components/toolbar";
-import { DeleteMultipleWidget } from "@/features/dashboard/components/delete-multiple-widget";
+import { Toolbar } from "@/components/species/dashboard/components/toolbar";
+import { DeleteMultipleWidget } from "@/components/species/dashboard/components/delete-multiple-widget";
 import { PageParams } from "@/types";
 import { PROTECTED_PATH } from "@/constants/PATH";
 //
@@ -47,6 +47,7 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
 
   const { data, error } = await getVisitorsAction({
     sortBy: "updated_at",
+    pageSize: 25,
   });
 
   const transformedData = data

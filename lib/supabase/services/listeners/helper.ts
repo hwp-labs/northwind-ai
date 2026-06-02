@@ -2,7 +2,7 @@ import { EMPTY_STR, UNKNOWN, HYPHENS, ZERO } from "@/constants";
 //
 import { BaseHelper } from "../base/helper";
 import { ListenerEntity } from "./types";
-import { EpisodeHelper } from "../podcasts/helper";
+import { transformEpisode } from "@/lib/podcast/episodes/utils";
 
 type T = ListenerEntity;
 
@@ -21,6 +21,6 @@ export class ListenerHelper extends BaseHelper {
   // ////////////////////////////////////////////////////////////////////////
 
   get podcast() {
-    return EpisodeHelper.GetPageItem(this.c?.podcast_id);
+    return transformEpisode(this.c?.podcast_id);
   }
 }

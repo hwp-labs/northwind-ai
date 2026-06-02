@@ -13,10 +13,10 @@ export const PATH = {
   previewWelcomeEmail: "/preview/emails/welcome",
   previewPodcastInviteEmail: "/preview/emails/podcast-invite",
   //
-  previewMonthlyPostCard: "/preview/post-cards?tabIndex=1&page=5",
-  previewFAQPostCard: "/preview/post-cards?tabIndex=2&page=1",
-  previewPodcastPostCard: "/preview/post-cards?tabIndex=3&page=6",
-  previewPodcastBlog: "/preview/post-cards?tabIndex=4",
+  previewMonthlyPostCard: "/preview/postcards?tabIndex=1&page=5",
+  previewFAQPostCard: "/preview/postcards?tabIndex=2&page=1",
+  previewPodcastPostCard: "/preview/postcards?tabIndex=3&page=6",
+  previewPodcastBlog: "/preview/postcards?tabIndex=4",
   //
   podcast: "/podcast",
   podcastGuests: "/podcast/guests",

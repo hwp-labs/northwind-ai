@@ -12,12 +12,12 @@ import { TdAvatarBio } from "@/components/atoms/tables/td-avatar-bio";
 import { TdBadge } from "@/components/atoms/tables/td-badge";
 import { TdActionMenu } from "@/components/atoms/tables/td-action-menu";
 import { TableEmpty } from "@/components/atoms/tables/table-empty";
-import { Toolbar } from "@/features/dashboard/components/toolbar";
+import { Toolbar } from "@/components/species/dashboard/components/toolbar";
 import { isValidEmail } from "@/utils";
 import { PageParams } from "@/types";
 import { PROTECTED_PATH } from "@/constants/PATH";
 //
-import { ListenersToolbar } from "@/features/listeners/components/listeners-toolbar";
+import { ListenersToolbar } from "@/components/species/listeners/components/listeners-toolbar";
 import { ListenerHelper } from "@/lib/supabase/services/listeners/helper";
 import { getListenersAction } from "@/lib/supabase/services/listeners/actions/getListenersAction";
 import { ListenerEntity, TABLE } from "@/lib/supabase/services/listeners/types";
@@ -87,17 +87,14 @@ export default async function ListenersPage({ searchParams }: PageParams) {
               return (
                 <TableRow key={item.id}>
                   <TdAvatarBio
-                    src={listener.podcast.displayAvatar}
-                    name={
-                      listener.podcast.titleShort ||
-                      listener.podcast.titleSeriesText
-                    }
-                    email={listener.podcast.datetimeText}
+                    src={listener.podcast.thumbnail}
+                    name={listener.podcast.topic}
+                    email={listener.podcast.datetimeShort}
                     showBadge={listener.IsCreatedToday()}
                   />
                   <TdBadge
-                    label={listener.podcast.safeGuests.map(
-                      ({ username }) => username,
+                    label={listener.podcast.Speakers.map(
+                      ({ socials }) => socials.x,
                     )}
                     variant="secondary"
                   />

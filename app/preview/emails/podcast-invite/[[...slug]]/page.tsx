@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import { PodcastInviteEmail } from "@/components/emails/podcast-invite-email";
-import { EpisodeHelper } from "@/lib/podcast/episodes/utils";
+import { transformEpisode } from "@/lib/podcast/episodes/utils";
 
 export const metadata: Metadata = {
   title: "Podcast Invite Email",
 };
 
 export default async function PreviewPodcastInviteEmailPage() {
-  return <PodcastInviteEmail data={EpisodeHelper.GetMostRecentItem()} />;
+  return <PodcastInviteEmail data={transformEpisode()} />;
 }
