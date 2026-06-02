@@ -1,6 +1,7 @@
 import { AnchorOutbound } from "@/components/atoms/anchor";
 import { ListHeader } from "../list-header";
 import { Avatar } from "./avatar";
+import { urlUtil } from "@/utils/url-util";
 import { PATH } from "@/constants/PATH";
 import { data } from "@/lib/podcast/speakers/data";
 
@@ -24,8 +25,8 @@ export const Guests = () => {
           <li key={item.id} className="debug_ max-w-[90px] min-w-[90px]">
             <figure className="debug3_ flex-col-cc flex-shrink-0 snap-center">
               <Avatar speaker={item} />
-              <figcaption className="flex-col-cc debug mt-2 cursor-pointer gap-0.5 truncate text-sm font-medium text-white">
-                <AnchorOutbound href={item.socials.x}>
+              <figcaption className="flex-col-cc debug_ mt-2 cursor-pointer gap-0.5 truncate text-sm font-medium text-white">
+                <AnchorOutbound href={urlUtil.getXUrl(item.socials.x)}>
                   {item.displayName}
                 </AnchorOutbound>
               </figcaption>

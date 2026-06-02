@@ -124,7 +124,7 @@ export const data: SpeakerDto[] = [
     firstName: "Isaac",
     surname: "Adebiyi",
     email: "theisaacade@gmail.com",
-    tel: "+2349066647986",
+    tel: "+2348125205572",
     occupation: "Brand Strategist",
     bio: "Founder/CEO, Adiz Media",
     location: { city: "Lagos" },

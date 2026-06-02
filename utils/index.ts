@@ -11,13 +11,6 @@ export const sleep = (secs: number = 3) =>
 export const iSearch = (str: string, substr?: string) =>
   new RegExp(substr || "", "i").test(str);
 
-export const slugify = (s: string) =>
-  s
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-
 export const getStartOfDate = (d?: string) => {
   const now = d ? new Date(d) : new Date();
   const utc = Date.UTC(
