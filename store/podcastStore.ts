@@ -20,11 +20,12 @@ interface StoreAction {
 
   setEpisode: (payload: TransformedEpisode) => void;
 
-  mutateSearch: (payload: Partial<StoreState["search"]>) => void;
+  resetSearch: () => void;
   toggleSearch: () => void;
+  mutateSearch: (payload: Partial<StoreState["search"]>) => void;
 
-  mutateModal: (payload: Partial<StoreState["modal"]>) => void;
   resetModal: () => void;
+  mutateModal: (payload: Partial<StoreState["modal"]>) => void;
 }
 
 type StoreType = StoreState & StoreAction;
@@ -41,10 +42,11 @@ export const usePodcastStore = create<StoreType>()((set, get) => ({
 
   setEpisode: (p) => set((s) => ({ episode: p })),
 
-  mutateSearch: (p) => set((s) => ({ search: { ...s.search, ...p } })),
+  resetSearch: () => set((s) => ({ search: initialState.search })),
   toggleSearch: () =>
     set((s) => ({ search: { show: !s.search.show, value: "" } })),
+  mutateSearch: (p) => set((s) => ({ search: { ...s.search, ...p } })),
 
-  mutateModal: (p) => set((s) => ({ modal: { ...s.modal, ...p } })),
   resetModal: () => set((s) => ({ modal: initialState.modal })),
+  mutateModal: (p) => set((s) => ({ modal: { ...s.modal, ...p } })),
 }));

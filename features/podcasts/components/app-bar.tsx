@@ -1,15 +1,15 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { IconDotsVertical, IconArrowLeft } from "@tabler/icons-react";
+import { SearchIcon } from "lucide-react";
 //
 import { Logo } from "@/components/logo";
 import { IconButton } from "@/components/atoms/icon-button";
+import { SearchBar } from "./search-bar";
 import { usePodcastStore } from "@/store/podcastStore";
 import { useVisitTracker } from "@/hooks/use-visit-tracker";
-import { SearchBar } from "./search-bar";
-import { SearchIcon } from "lucide-react";
-import { useEffect } from "react";
 
 interface Props {
   title?: string;
@@ -23,12 +23,11 @@ export const AppBar = ({ title, backTo, noOptions, search }: Props) => {
 
   const router = useRouter();
   const mutateModal = usePodcastStore((s) => s.mutateModal);
+  const resetSearch = usePodcastStore((s) => s.resetSearch);
   const toggleSearch = usePodcastStore((s) => s.toggleSearch);
 
   useEffect(() => {
-    if (search) {
-      toggleSearch();
-    }
+    if (search) resetSearch();
   }, []);
 
   const handleBack = () => {

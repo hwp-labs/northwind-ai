@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { AppBar } from "@/features/podcasts/components/app-bar";
 import { PATH } from "@/constants/PATH";
-import { List } from "@/features/podcasts/components/guests/list";
+import { List } from "@/features/podcasts/components/episodes/list";
 
 export const metadata: Metadata = {
-  title: "Featured Guests",
+  title: "All Episodes",
 };
 
-export default async function GuestsPage() {
+export default async function EpisodesPage() {
+  // "Discover new episodes"
   return (
     <>
       <AppBar
-        title="Featured Guests"
+        title="All Episodes"
         backTo={PATH.podcast}
-        search={{ placeholder: "Search speakers" }}
+        search={{ placeholder: "Search episodes" }}
       />
       <main className="debug_ container-sm-podcast mt-2 flex flex-col flex-wrap gap-5 px-4 pb-6">
         <List />

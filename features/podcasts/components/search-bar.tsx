@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent } from "react";
+import { IconAdjustmentsHorizontal } from "@tabler/icons-react";
 import { SearchIcon, XIcon } from "lucide-react";
 import { IconButton } from "@/components/atoms/icon-button";
 import { usePodcastStore } from "@/store/podcastStore";
@@ -48,7 +49,7 @@ export const SearchBar = ({ placeholder }: Props) => {
             <p className="size-[18px]" />
           )}
           <IconButton
-            Icon={SearchIcon}
+            Icon={IconAdjustmentsHorizontal}
             title="Search"
             compact
             color="var(--ring)"
