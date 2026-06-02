@@ -23,7 +23,7 @@ export const data: SpeakerDto[] = [
     email: "okene_e@yahoo.com",
     tel: "+2348139543769",
     occupation: "Scientific Officer",
-    bio: "Scientific Officer/Cardiac Physio..., UBTH",
+    bio: "Scientific Officer /Cardiac Physiologist, UBTH",
     location: { city: "Edo" },
     socials: { x: "@emmanuelokene44" },
   },

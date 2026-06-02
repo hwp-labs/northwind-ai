@@ -1,41 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent } from "react";
 import { SearchIcon, XIcon } from "lucide-react";
 import { IconButton } from "@/components/atoms/icon-button";
+import { usePodcastStore } from "@/store/podcastStore";
 
-export const SearchBar = () => {
-  const [value, setValue] = useState("");
-  const typing = value.trim().length > 0;
+interface Props {
+  placeholder?: string;
+}
+
+export const SearchBar = ({ placeholder }: Props) => {
+  const search = usePodcastStore((s) => s.search);
+  const mutateSearch = usePodcastStore((s) => s.mutateSearch);
+
+  const typing = search.value.trim().length > 0;
+
+  const handleChange = (
+    ev: ChangeEvent<HTMLInputElement, HTMLInputElement>,
+  ) => {
+    mutateSearch({ value: ev.target.value });
+  };
+
+  const handleReset = () => {
+    mutateSearch({ value: "" });
+  };
   //
-  return (
-    <div className="bg-secondary flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5 focus:outline-none">
-      <input
-        type="text"
-        placeholder="Discover new episodes"
-        value={value}
-        onChange={(ev) => setValue(ev.target.value)}
-        className="debug_ input-base h-[40px] flex-1"
-      />
-      <div className="flex-row-cs gap-2.5">
-        {typing ? (
-          <IconButton
-            Icon={XIcon}
-            onClick={() => setValue("")}
-            title="Clear"
-            size={18}
-            compact
-          />
-        ) : (
-          <p className="size-[18px]" />
-        )}
-        <IconButton
-          Icon={SearchIcon}
-          title="Search"
-          compact
-          color="var(--ring)"
+  return search.show ? (
+    <div className="debug_ px-4 pb-4">
+      <div className="bg-secondary flex-row-ce h-[48px] flex-1 rounded-full pr-5 pl-5 focus:outline-none">
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={search.value}
+          onChange={handleChange}
+          className="debug_ input-base h-[40px] flex-1"
         />
+        <div className="flex-row-cs gap-2.5">
+          {typing ? (
+            <IconButton
+              Icon={XIcon}
+              onClick={handleReset}
+              title="Clear"
+              size={18}
+              compact
+            />
+          ) : (
+            <p className="size-[18px]" />
+          )}
+          <IconButton
+            Icon={SearchIcon}
+            title="Search"
+            compact
+            color="var(--ring)"
+          />
+        </div>
       </div>
     </div>
-  );
+  ) : null;
 };

@@ -19,6 +19,8 @@ export const PATH = {
   previewPodcastBlog: "/preview/post-cards?tabIndex=4",
   //
   podcast: "/podcast",
+  podcastGuests: "/podcast/guests",
+  podcastEpisodes: "/podcast/episodes",
   podcastAnalytics: "/podcast/analytics",
   podcastSupport: "/podcast/support",
 } as const satisfies Record<string, PathType>;

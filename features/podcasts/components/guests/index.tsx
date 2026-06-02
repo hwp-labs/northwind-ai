@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ListHeader } from "../list-header";
 import { DisplayName } from "./display-name";
+import { PATH } from "@/constants/PATH";
 import { data } from "@/lib/podcast/speakers/data";
 
 const transformData = () => {
@@ -11,13 +12,11 @@ const transformData = () => {
 };
 
 export const Guests = () => {
-  const transformedData = transformData(); 
+  const transformedData = transformData();
   //
   return (
     <section className="debug_ max-w-svw">
-      <div className="px-5">
-        <ListHeader>Featured Guests</ListHeader>
-      </div>
+      <ListHeader className="px-5" path={PATH.podcastGuests}>Featured Guests</ListHeader>
       <ul className="scrollbar-hide gap-4_ mt-4 flex snap-x snap-mandatory items-end overflow-x-auto scroll-smooth pb-4">
         {transformedData.map((item, i) => (
           <li key={i} className="debug_ max-w-[90px] min-w-[90px]">
@@ -39,7 +38,7 @@ export const Guests = () => {
                   />
                 ) : null}
               </div>
-              <DisplayName guest={item}/>
+              <DisplayName guest={item} />
             </figure>
           </li>
         ))}
