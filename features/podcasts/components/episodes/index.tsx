@@ -19,12 +19,12 @@ export const Episodes = () => {
         // className="mt-4_ debug grid h-svh overflow-y-auto px-4"
         className="scrollbar-hide h-[400px] snap-y snap-mandatory overflow-y-auto scroll-smooth px-4 pb-4"
       >
-        {data.map((item, i) => {
+        {data.slice(0,10).map((item, i) => {
           const episode = transformEpisode(item.id);
           //
           return (
             <li
-              key={i}
+              key={item.id}
               className={clsx(
                 "flex-row-cb shrink-0 snap-center gap-6 border-b",
                 i < 1 ? "pt-0 pb-4" : "py-4",

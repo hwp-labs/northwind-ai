@@ -8,7 +8,10 @@ import { Button } from "@/components/shadcn/ui/button";
 import { Spinner } from "@/components/shadcn/ui/spinner";
 import { PodcastInviteEmail } from "@/components/emails/podcast-invite-email";
 import { useToast } from "@/hooks/use-toast";
-import { TransformedEpisode, transformEpisode } from "@/lib/podcast/episodes/utils";
+import {
+  TransformedEpisode,
+  transformEpisode,
+} from "@/lib/podcast/episodes/utils";
 import { sendEmailAction } from "@/lib/nodemailer/sendEmailAction";
 import { APP } from "@/constants/APP";
 import { MOCK } from "@/constants/MOCK";
@@ -23,25 +26,29 @@ export const ListenersToolbar = ({ emails = [] }: Props) => {
   const [loading, setLoading] = useState(false);
 
   const recipients = M.formData ? [APP.email] : emails;
+  const totalRecipients = recipients.length;
 
   const handleSendEmail = async () => {
-    if (!recipients.length) {
-      toast.error("No emails selected");
-      return;
-    }
+    const episodeId = prompt(
+      `Send Episode ID __ invite to ${totalRecipients} recipients?`,
+    );
 
-    if (confirm(`Send (${recipients.length}) email invites?`)) {
-      setLoading(true);
+    if (Number(episodeId) > 0) {
+      const episode = transformEpisode(episodeId);
 
-      const { error } = await sendEmail({
-        recipients,
-        podcast: transformEpisode(),
-      });
+      if (confirm(episode.topic)) {
+        setLoading(true);
 
-      if (error) toast.error(error);
-      else toast.success(`${recipients.length} invites sent!`);
+        const { error } = await sendEmail({
+          recipients,
+          episode,
+        });
 
-      setLoading(false);
+        if (error) toast.error(error);
+        else toast.success(`${totalRecipients} invites sent!`);
+
+        setLoading(false);
+      }
     }
   };
   //
@@ -54,18 +61,18 @@ export const ListenersToolbar = ({ emails = [] }: Props) => {
 
 const sendEmail = async ({
   recipients,
-  podcast,
+  episode,
 }: {
   recipients: string[];
-  podcast: TransformedEpisode;
+  episode: TransformedEpisode;
 }) => {
   const body = await pretty(
-    await render(<PodcastInviteEmail data={podcast} />),
+    await render(<PodcastInviteEmail data={episode} />),
   );
 
   return await sendEmailAction({
     to: recipients,
-    subject: podcast.topic,
+    subject: episode.topic,
     body,
   });
 };

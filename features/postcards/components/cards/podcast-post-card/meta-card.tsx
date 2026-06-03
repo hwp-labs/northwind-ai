@@ -2,13 +2,12 @@ import { IconWorldUpload } from "@tabler/icons-react";
 import { APP_PODCAST } from "@/constants/APP_PODCAST";
 
 interface Props {
-  meta?: {
+  meta: {
     src: string;
-    title?: string;
+    title: string;
     url: string;
     cta: string;
   };
-  _meta?: Record<string, string | undefined>;
 }
 
 export const MetaCard = ({ meta }: Props) => {
@@ -23,23 +22,21 @@ export const MetaCard = ({ meta }: Props) => {
     >
       <figure className="flex-row-sx gap-3">
         <img
-          src={meta?.src || "/icon-512.png"}
+          src={meta.src}
           width={40}
           alt=""
           className="rounded-[12px] border-2"
         />
         <figcaption className="flex flex-col gap-0.5">
-          <div className="text-[13.5px] text-white">
-            {meta?.title || APP_PODCAST.summary}
-          </div>
+          <div className="text-[13.5px] text-white line-clamp-2_">{meta.title}</div>
           <div className="flex-row-cs gap-1.5 text-xs text-[#bbb]">
             <IconWorldUpload size={12} className="text-chart-4" />
-            <span>{meta?.url || APP_PODCAST.domain}</span>
+            <span>{meta.url}</span>
           </div>
         </figcaption>
       </figure>
       <button className="text-background flex-row-cc mt-4 h-[36px] w-full gap-2 rounded-sm bg-gradient-to-b from-[#f9f8f9] to-[#d0cdd4] text-sm font-medium">
-        {meta?.cta || "Join the conversation"}
+        {APP_PODCAST.tagline}
       </button>
     </section>
   );

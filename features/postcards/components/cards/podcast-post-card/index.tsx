@@ -30,23 +30,15 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
         <article className="debug_ mt-2.5 space-y-6">
           <Topic
             variant="snap"
-            topic={e.topic}
-            _topic="Design Systems & Finite State Machines"
-            summary={e.summary}
+            // topic="Design Systems & Finite State Machines"
+            episode={e}
           />
-          <DatetimeVenue episode={e} _tonight />
+          <DatetimeVenue episode={e} tonight />
         </article>
       </main>
       <footer className="absolute bottom-0 px-6 py-8">
         <GuestPanel data={e.Speakers} />
-        <MetaCard
-          _meta={{
-            src: e.thumbnail,
-            title: e.summary,
-            url: "siiqo.com",
-            cta: "Get Started",
-          }}
-        />
+        <MetaCard meta={e.meta} />
       </footer>
     </div>
   );

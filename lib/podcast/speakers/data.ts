@@ -2,6 +2,19 @@ import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
   {
+    id: 16,
+    avatar: "/uploads/podcast/avatar-jgodfrey.png",
+    firstName: "Jamiah",
+    surname: "Godfrey",
+    displayName: "Jamiah G.",
+    email: "jamiahgodfrey247@gmail.com",
+    tel: "+2347059476231",
+    occupation: "Gospel Artist",
+    bio: "Musician, Song Writer",
+    location: { city: "Edo" },
+    socials: { x: "@JamiahGodfrey" },
+  },
+  {
     id: 15,
     avatar: "/uploads/podcast/avatar-eonyebinamma.jpg",
     firstName: "Ebuka",

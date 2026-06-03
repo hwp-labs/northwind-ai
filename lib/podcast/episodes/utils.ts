@@ -6,10 +6,11 @@ import { SpeakerDto } from "../speakers/types";
 import { data } from "./data";
 import { data as Speakers } from "../speakers/data";
 import { TransformedSpeaker, transformSpeaker } from "../speakers/utils";
+import { APP_PODCAST } from "@/constants/APP_PODCAST";
 
 export type TransformedEpisode = ReturnType<typeof transformEpisode>;
 
-export const transformEpisode = (id?: number | string) => {
+export const transformEpisode = (id?: number | string | null) => {
   let e: EpisodeDto = data[0]; // last
 
   const row = data.find((row) => row.id === Number(id));
@@ -33,8 +34,14 @@ export const transformEpisode = (id?: number | string) => {
     topic: e?.topicShort || e?.topic || HYPHENS,
     tags: e?.tags?.filter((t) => !t.startsWith("#")) || [],
     Speakers: getSpeakers(e),
-    canPlay: !e?.spaceUrl.startsWith("#"),
+    canPlay: !e?.spaceUrl.startsWith("#") && e?.listeners,
     ctaText: getCtaText(e),
+    meta: e?.meta || {
+      src: "/icon-512.png",
+      title: APP_PODCAST.summary,
+      url: APP_PODCAST.domain,
+      cta: APP_PODCAST.tagline,
+    },
   };
 };
 

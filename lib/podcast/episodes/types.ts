@@ -16,4 +16,10 @@ export interface EpisodeDto {
   liveListeners: number;
   series?: "ds" | "fc" | "cs";
   favorite?: boolean;
+  meta?: {
+    src: string;
+    title: string;
+    url: string;
+    cta: string;
+  };
 }
