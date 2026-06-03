@@ -55,8 +55,8 @@ export const data: EpisodeDto[] = [
     _notes: { yt: "https://youtu.be/dhMPSzedWNQ" },
     tags: ["Job Task", "Job Purpose", "AI FOMO"],
     spaceUrl: "https://x.com/i/spaces/1dGYllLnveLKX",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 3,
+    liveListeners: 3,
     series: "cs",
     meta: {
       src: "/uploads/logos/snu-ri.jpg",
