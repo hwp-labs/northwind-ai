@@ -68,7 +68,7 @@ const getDisplayAvatars = (row?: EpisodeDto) => {
 };
 
 const getCtaText = (row?: EpisodeDto) => {
-  return momentUtil.isAfterDay(row?.datetime)
+  return row?.listeners || momentUtil.isAfterDay(row?.datetime)
     ? "Listen"
     : momentUtil.isOngoing(row?.datetime)
       ? "Attend"

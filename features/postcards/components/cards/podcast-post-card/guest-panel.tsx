@@ -26,7 +26,7 @@ export const GuestPanel = ({ data }: Props) => {
             {item.location?.flag ? (
               <img
                 src={item.location?.flag}
-                width={24}
+                width={20}
                 alt=""
                 className="absolute bottom-0 left-1"
               />

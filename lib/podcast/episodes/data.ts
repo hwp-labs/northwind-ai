@@ -2,14 +2,32 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   {
-    id: 14,
+    id: 15,
     datetime: "2026-06-14T19:00:00.000Z",
+    thumbnail: "/uploads/logos/tan.png",
+    topic: "Youth Politics, Policies & Data",
+    tags: ["Democratic", "Progressive", "Transparent"],
+    guests: [17],
+    spaceUrl: "https://x.com/i/spaces/1AxRnnmzggqxl",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc",
+    meta: {
+      src: "/uploads/logos/tan.png",
+      title: "Independent, Community-Driven Social Empowerment",
+      url: "fb.com/tribeallianceng",
+      cta: "Get Involved",
+    },
+  },
+  {
+    id: 14,
+    datetime: "2026-06-12T19:00:00.000Z",
     thumbnail: "/uploads/logos/distrokid.jpg",
     topic: "Gospel Music & Lossless Audio Compression",
     _notes: {
       url: "https://distrokid.com/hyperfollow/jamiahgodfrey/jesus-you-are-real",
     },
-    tags: ["Distrokid", "Waveforms", "FLAC"],
+    tags: ["Bit Depth", "Waveforms", "FLAC"],
     guests: [16],
     spaceUrl: "https://x.com/i/spaces/1aJbddZzqyaKX",
     listeners: 0,
@@ -51,7 +69,8 @@ export const data: EpisodeDto[] = [
     datetime: "2026-06-03T19:00:00.000Z",
     thumbnail: "/uploads/logos/snu-ri.jpg",
     topic: "ACID Traits for AI Workflows Pt.1",
-    summary: "Keynotes from Madison Huang at Seoul National University Robotics Institute",
+    summary:
+      "Keynotes from Madison Huang at Seoul National University Robotics Institute",
     _notes: { yt: "https://youtu.be/dhMPSzedWNQ" },
     tags: ["Job Task", "Job Purpose", "AI FOMO"],
     spaceUrl: "https://x.com/i/spaces/1dGYllLnveLKX",
@@ -84,7 +103,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-05-28T19:00:00.000Z",
     thumbnail: "/uploads/logos/siiqo.png",
     topic: "Siiqo Design Session",
-    tags: ["Marketplace", "Escrow", "Stablecoin",],
+    tags: ["Marketplace", "Escrow", "Stablecoin"],
     guests: [12, 13],
     notionUrl:
       "https://held-gambler-004.notion.site/Siiqo-36c6a7cc633c8132842bf67ada4dd93d",

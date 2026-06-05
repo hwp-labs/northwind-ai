@@ -11,6 +11,7 @@ export const transformSpeaker = (id?: number | string) => {
 
   return {
     ...e,
+    avatar: e?.avatar || "/icon.png",
     fullName: `${e?.firstName} ${e?.surname}`,
   };
 };

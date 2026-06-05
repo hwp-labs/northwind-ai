@@ -2,6 +2,23 @@ import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
   {
+    id: 17,
+    avatar: "/uploads/podcast/avatar-sgbangbola2.png",
+    firstName: "Seyi",
+    surname: "Gbangbola",
+    displayName: "Seyi G.",
+    email: "hgbangbola@midontario.ca",
+    tel: "+14372433103",
+    occupation: "Politician",
+    bio: "Founder, Tribe Alliance for Nigeria",
+    location: {
+      city: "Toronto",
+      country: "CA",
+      flag: "/uploads/podcast/flag-ca.webp",
+    },
+    socials: { x: "@HGbangbola" },
+  },
+  {
     id: 16,
     avatar: "/uploads/podcast/avatar-jgodfrey.png",
     firstName: "Jamiah",

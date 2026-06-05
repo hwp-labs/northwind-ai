@@ -33,7 +33,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             // topic="Design Systems & Finite State Machines"
             episode={e}
           />
-          <DatetimeVenue episode={e} tonight />
+          <DatetimeVenue episode={e} _tonight />
         </article>
       </main>
       <footer className="absolute bottom-0 px-6 py-8">
