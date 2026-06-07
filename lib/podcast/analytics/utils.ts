@@ -29,8 +29,8 @@ export function computeAnalytics() {
     }
   });
 
-  const listeners = res.listeners?.total || 1;
-  const episodes = res.episodes?.total || 1;
+  const listeners = res.listeners?.total || 0;
+  const episodes = res.episodes?.total || 0;
   const average = listeners / episodes;
   const averageRate = (average * 100) / listeners;
 
@@ -62,8 +62,8 @@ export function computeAnalytics() {
   });
 
   const guests = Guests.length;
-  const maleRate = ((res.guests?.male || 1) * 100) / guests;
-  const femaleRate = ((res.guests?.female || 1) * 100) / guests;
+  const maleRate = ((res.guests?.male || 0) * 100) / guests;
+  const femaleRate = ((res.guests?.female || 0) * 100) / guests;
 
   res.guests = {
     ...res.guests,

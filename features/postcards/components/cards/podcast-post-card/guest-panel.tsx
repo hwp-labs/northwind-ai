@@ -20,7 +20,7 @@ export const GuestPanel = ({ data }: Props) => {
                 src={item.avatar}
                 width={40}
                 alt=""
-                className="border-[#ddd]_ border-2_ rounded-full"
+                className="border-[#ddd]_ border-2_ rounded-full size-[40px] bg-white"
               />
             </div>
             {item.location?.flag ? (
@@ -28,7 +28,7 @@ export const GuestPanel = ({ data }: Props) => {
                 src={item.location?.flag}
                 width={20}
                 alt=""
-                className="absolute bottom-0 left-1"
+                className="absolute -bottom-0.5 left-1"
               />
             ) : null}
           </div>

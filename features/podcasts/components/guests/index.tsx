@@ -6,8 +6,7 @@ import { PATH } from "@/constants/PATH";
 import { data } from "@/lib/podcast/speakers/data";
 
 const transformData = () => {
-  const shown = data.filter(({ hide }) => !hide);
-  const randomized = [...shown].sort(() => Math.random() - 0.5);
+  const randomized = [...data].sort(() => Math.random() - 0.5);
   const top = randomized.slice(0, 10);
   return top;
 };

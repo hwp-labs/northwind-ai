@@ -14,7 +14,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
   const e = transformEpisode(page);
   //
   return (
-    <div className="text-foreground bg-background border_ _mx-auto relative h-[640px] w-[360px] overflow-hidden">
+    <div className="text-foreground bg-background border_ _mx-auto relative h-[640px] w-[370px] overflow-hidden">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{

@@ -13,6 +13,7 @@ import { data } from "@/lib/podcast/episodes/data";
 export const Pager = () => {
   const query = useQueryParams();
   const { page } = query.get({ page: 0 });
+  const { tabIndex } = query.get({ tabIndex: 0 });
   const handleChange = (page: string) =>
     page === "0" ? query.remove("page") : query.add({ page });
   //
@@ -23,15 +24,21 @@ export const Pager = () => {
       </SelectTrigger>
       <SelectContent className="max-h-60">
         <SelectItem value={String(0)}>Reset</SelectItem>
-        {Array.from({ length: data.length }).map((_, i) => {
-          const j = i + 1;
-          //
-          return (
-            <SelectItem key={i} value={String(j)}>
-              Page {j}
-            </SelectItem>
-          );
-        })}
+        {tabIndex === "2"
+          ? data.map(({ id }) => (
+              <SelectItem key={id} value={String(id)}>
+                Episode {id}
+              </SelectItem>
+            ))
+          : Array.from({ length: 12 }).map((_, i) => {
+              const j = i + 1;
+              //
+              return (
+                <SelectItem key={i} value={String(j)}>
+                  Page {j}
+                </SelectItem>
+              );
+            })}
       </SelectContent>
     </Select>
   );
