@@ -29,7 +29,7 @@ export const data: EpisodeDto[] = [
     id: 15,
     datetime: "2026-06-14T19:00:00.000Z",
     thumbnail: "/uploads/logos/tan.png",
-    topic: "Youth Politics, Policies & Data",
+    topic: "Youth Politics, Policies & Data Analytics",
     tags: ["Democratic", "Progressive", "Transparent"],
     guests: [17],
     spaceUrl: "https://x.com/i/spaces/1AxRnnmzggqxl",
@@ -78,7 +78,7 @@ export const data: EpisodeDto[] = [
     tags: ["Prompting", "Architecture", "Judgement"],
     guests: [15],
     spaceUrl: "https://x.com/i/spaces/1lKQRRgNYdyGE",
-    listeners: 12,
+    listeners: 15,
     liveListeners: 12,
     series: "cs",
     meta: {
@@ -133,7 +133,7 @@ export const data: EpisodeDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Siiqo-36c6a7cc633c8132842bf67ada4dd93d",
     spaceUrl: "https://x.com/i/spaces/1qGvvvewvbkGB",
-    listeners: 67,
+    listeners: 68,
     liveListeners: 42,
     meta: {
       src: "/uploads/logos/siiqo.png",

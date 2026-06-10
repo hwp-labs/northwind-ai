@@ -27,7 +27,7 @@ export const data: SpeakerDto[] = [
     email: "jamiahgodfrey247@gmail.com",
     tel: "+2347059476231",
     occupation: "Gospel Artist",
-    bio: "Musician, Song Writer",
+    bio: "Gospel Artist & Song Writer",
     location: { city: "Edo" },
     socials: { x: "@JamiahGodfrey" },
   },

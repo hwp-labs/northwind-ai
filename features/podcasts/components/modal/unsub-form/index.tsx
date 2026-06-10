@@ -40,7 +40,7 @@ export const UnsubForm = ({ onClose = () => undefined }: Props) => {
           disabled={submitting}
         >
           {submitting ? <Spinner /> : null}
-          {success ? "Go away!" : "Unsubscribe"}
+          {success ? "Okay, Bye!" : "Unsubscribe"}
         </Button>
       </form>
       <OpayWidget variant="link" />

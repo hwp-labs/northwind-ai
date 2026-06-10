@@ -5,6 +5,7 @@ import { Tags } from "./tags";
 import { GuestPanel } from "./guest-panel";
 import { MetaCard } from "./meta-card";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
+import Image from "next/image";
 
 interface Props {
   page?: number;
@@ -22,7 +23,14 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           backgroundPosition: e.series ? "52% top" : "85% top",
         }}
       />
-      <main className="absolute z-1 px-6">
+      <main className="debug_ absolute z-1 px-6">
+        <Image
+          src="/images/emblem.png"
+          alt=""
+          width={80}
+          height={80}
+          className="absolute top-4 right-5"
+        />
         <header className="flex-row-cb mt-10">
           <Logo />
         </header>

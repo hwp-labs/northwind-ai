@@ -19,7 +19,7 @@ export const Header = () => {
   return (
     <header className="flex-row-cb debug_ px-4 py-4">
       <nav className="flex-row-cs gap-4 text-sm">
-        {["Monthly", "FAQs", "Podcast", "Blog"].map((item, i) => (
+        {["Monthly", "FAQs", "Podcast", "Qverse"].map((item, i) => (
           <Link
             key={i}
             href={`?tabIndex=${i}`}

@@ -4,7 +4,7 @@ import { PageParams } from "@/types";
 import { MonthlyPostCard } from "@/features/postcards/components/cards/monthly-post-card";
 import { FAQPostCard } from "@/features/postcards/components/cards/faq-post-card";
 import { PodcastPostCard } from "@/features/postcards/components/cards/podcast-post-card";
-import { BlogPostCard } from "@/features/postcards/components/cards/blog-post-card";
+import { QversePostCard } from "@/features/postcards/components/cards/qverse-post-card";
 
 export const metadata: Metadata = {
   title: "Post Cards",
@@ -27,7 +27,7 @@ export default async function PreviewPostCardsPage({
           <MonthlyPostCard page={page} />,
           <FAQPostCard page={page} />,
           <PodcastPostCard page={page} />,
-          <BlogPostCard page={page} />,
+          <QversePostCard page={page} />,
         ][tabIndex]
       }
     </main>
