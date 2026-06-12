@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Routine Medical Investigations Model
+Basic Routine Medical Investigations Data Model
 
 Author: Northwind AI <northwindai.org>
 Date: 2026-05-30

@@ -8,8 +8,8 @@ interface Props {
 }
 
 export const QversePostCard = ({ page = 1 }: Props) => {
-  const e1 = transformEpisode(14);
-  const e2 = transformEpisode(15);
+  const e1 = transformEpisode(16);
+  const e2 = transformEpisode(17);
   const e3 = transformEpisode(18);
   //
   return (
@@ -21,7 +21,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
           <Card
             {...{
               icon: e1.Speakers[1].avatar,
-              name: e1.topic,
+              name: 'Pragmatics & Cryptography',
               verified: true,
               description: e1.Speakers[1].fullName,
               followers: 244,

@@ -5,7 +5,7 @@ import { usePodcastStore } from "@/store/podcastStore";
 import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
 
 interface Props {
-  episode: TransformedEpisode;  
+  episode: TransformedEpisode;
 }
 
 export const Thumbnail = ({ episode }: Props) => {
@@ -13,9 +13,13 @@ export const Thumbnail = ({ episode }: Props) => {
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 
   const handleClick = () => {
-    if (episode.canPlay) {
-      setEpisode(episode);
-      mutateModal({ open: true, variant: "preview" });
+    switch (episode.ctaText) {
+      case "RSVP":
+        setEpisode(episode);
+        mutateModal({ open: true, variant: "rsvp" });
+        break;
+      default:
+        mutateModal({ open: true, variant: "preview" });
     }
   };
   //

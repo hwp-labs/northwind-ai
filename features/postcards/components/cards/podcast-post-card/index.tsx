@@ -40,6 +40,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             variant="snap"
             // topic="Design Systems & Finite State Machines"
             episode={e}
+            // className="text-[30px]!"
           />
           <DatetimeVenue episode={e} _tonight />
         </article>

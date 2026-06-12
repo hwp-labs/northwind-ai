@@ -1,6 +1,22 @@
 import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
+  // {
+  //   id: 18,
+  //   avatar: "/uploads/podcast/avatar-weboselume.png",
+  //   firstName: "Witney",
+  //   surname: "Emmanuel",
+  //   displayName: "Witney E.",
+  //   sex: "f",
+  //   email: "",
+  //   tel: "+2348105471734",
+  //   occupation: "Pragmatist",
+  //   bio: "CEO, Witney Royale Couture",
+  //   location: {
+  //     city: "Edo",
+  //   },
+  //   socials: { x: "", ig: "witney_royalecouture" },
+  // },
   {
     id: 17,
     avatar: "/uploads/podcast/avatar-sgbangbola2.png",

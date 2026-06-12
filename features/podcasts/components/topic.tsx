@@ -3,16 +3,22 @@ import { IconExternalLink } from "@tabler/icons-react";
 import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
 
 interface Props {
+  variant: "hero" | "list" | "preview" | "snap";
   episode?: TransformedEpisode;
   topic?: string;
-  variant: "hero" | "list" | "preview" | "snap";
+  className?: string;
 }
 
-export const Topic = ({ episode, topic, variant }: Props) => {
+export const Topic = ({ variant, episode, topic, className }: Props) => {
   if (variant === "snap")
     return (
       <hgroup className="space-y-2">
-        <h1 className="font-f3 pr-4 text-[32px] leading-[36px] font-semibold tracking-wide text-white">
+        <h1
+          className={clsx(
+            "font-f3 pr-4 text-[32px] leading-[36px] font-semibold tracking-wide text-white",
+            className,
+          )}
+        >
           {topic || episode?.topic}
         </h1>
         {episode?.series === "cs" ? (
