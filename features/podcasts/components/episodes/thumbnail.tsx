@@ -13,9 +13,10 @@ export const Thumbnail = ({ episode }: Props) => {
   const mutateModal = usePodcastStore((s) => s.mutateModal);
 
   const handleClick = () => {
+    setEpisode(episode);
+    
     switch (episode.ctaText) {
       case "RSVP":
-        setEpisode(episode);
         mutateModal({ open: true, variant: "rsvp" });
         break;
       default:
