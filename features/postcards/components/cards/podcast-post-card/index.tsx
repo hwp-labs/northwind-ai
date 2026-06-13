@@ -6,6 +6,7 @@ import { GuestPanel } from "./guest-panel";
 import { MetaCard } from "./meta-card";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
 import Image from "next/image";
+import { APP_PODCAST } from "@/constants/APP_PODCAST";
 
 interface Props {
   page?: number;
@@ -39,15 +40,19 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           <Topic
             variant="snap"
             // topic="Design Systems & Finite State Machines"
+            topic="Youth Politics & Voter Pre-reg Data"
             episode={e}
-            // className="text-[30px]!"
+            // className="text-[31px]!"
           />
           <DatetimeVenue episode={e} _tonight />
         </article>
       </main>
-      <footer className="absolute bottom-0 px-6 py-8">
+      <section className="absolute bottom-12 px-6">
         <GuestPanel data={e.Speakers} />
         <MetaCard meta={e.meta} />
+      </section>
+      <footer className="text-muted font-f4 absolute bottom-4 w-full text-center text-xs tracking-widest">
+        {APP_PODCAST.domain}
       </footer>
     </div>
   );

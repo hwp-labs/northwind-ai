@@ -18,7 +18,7 @@ import { transformEpisode } from "@/lib/podcast/episodes/utils";
 import { data } from "@/lib/podcast/episodes/data";
 
 const startIndex = 2;
-const favorites = 1 ? [6, 10, 14] : Array.from({ length: data.length }, (_, i) => i + 1);
+const favorites = 1 ? [6, 10, 15] : Array.from({ length: data.length }, (_, i) => i + 1);
 
 export const Hero = () => {
   const [selected, setSelected] = useState(startIndex);

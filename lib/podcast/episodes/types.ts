@@ -22,5 +22,6 @@ export interface EpisodeDto {
     title: string;
     url: string;
     cta: string;
+    social?: string;
   };
 }

@@ -2,7 +2,7 @@ import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
   // {
-  //   id: 18,
+  //   id: 19,
   //   avatar: "/uploads/podcast/avatar-weboselume.png",
   //   firstName: "Witney",
   //   surname: "Emmanuel",
@@ -17,6 +17,22 @@ export const data: SpeakerDto[] = [
   //   },
   //   socials: { x: "", ig: "witney_royalecouture" },
   // },
+  {
+    id: 18,
+    avatar: "/uploads/podcast/avatar-tadegoke.png",
+    firstName: "Temi",
+    surname: " Adegoke, PSM",
+    displayName: "Temi A.",
+    sex: "f",
+    email: "adegokeesther03@gmail.com",
+    tel: "+2347036905176",
+    occupation: "Project Manager",
+    bio: "IT Project Manager, Powertech",
+    location: {
+      city: "Lagos",
+    },
+    socials: { x: "@i_amtemiloluwa", ig: "awo_oore", in: "temiloluwadegoke" },
+  },
   {
     id: 17,
     avatar: "/uploads/podcast/avatar-sgbangbola2.png",
