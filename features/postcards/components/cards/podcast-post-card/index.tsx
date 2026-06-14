@@ -5,7 +5,6 @@ import { Tags } from "./tags";
 import { GuestPanel } from "./guest-panel";
 import { MetaCard } from "./meta-card";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
-import Image from "next/image";
 import { APP_PODCAST } from "@/constants/APP_PODCAST";
 
 interface Props {
@@ -25,15 +24,15 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
         }}
       />
       <main className="debug_ absolute z-1 px-6">
-        <Image
-          src="/images/emblem.png"
-          alt=""
-          width={80}
-          height={80}
-          className="absolute top-4 right-5"
-        />
         <header className="flex-row-cb mt-10">
           <Logo />
+          <img
+            src="/images/emblem.png"
+            alt=""
+            width={80}
+            height={80}
+            className="absolute top-4 right-5"
+          />
         </header>
         <Tags list={e.tags} />
         <article className="debug_ mt-2.5 space-y-6">

@@ -24,8 +24,9 @@ export const MetaCard = ({ meta }: Props) => {
         <img
           src={meta!.src}
           width={40}
+          height={40}
           alt=""
-          className="size-[40px] rounded-[12px] border-2"
+          className="rounded-[12px] border-2"
         />
         <figcaption className="flex flex-col gap-0.5">
           <div className="line-clamp-2_ text-[13.5px] text-white">

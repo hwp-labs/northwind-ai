@@ -19,8 +19,9 @@ export const GuestPanel = ({ data }: Props) => {
               <img
                 src={item.avatar}
                 width={40}
+                height={40}
                 alt=""
-                className="border-[#ddd]_ border-2_ rounded-full size-[40px] bg-white"
+                className="border-[#ddd]_ border-2_ rounded-full bg-white"
               />
             </div>
             {item.location?.flag ? (
@@ -40,11 +41,7 @@ export const GuestPanel = ({ data }: Props) => {
             <small className="text-xs text-[#bbb]">
               {item.bio?.replace("#", "")}
               {item.bio?.endsWith("#") && (
-                <IconEyeClosed
-                  size={16}
-                  strokeWidth={2.5}
-                  className="inline"
-                />
+                <IconEyeClosed size={16} strokeWidth={2.5} className="inline" />
               )}
             </small>
           </figcaption>

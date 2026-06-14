@@ -86,7 +86,7 @@ export function useHtmlToImage({
           cacheBust: true,
           width: width || Math.round(rect.width),
           height: height || Math.round(rect.height),
-          pixelRatio: scaleTo,
+          pixelRatio: window.devicePixelRatio * scaleTo,
           style: {
             transform: "none",
             ...(width && height

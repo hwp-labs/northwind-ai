@@ -79,9 +79,9 @@ export const data: EpisodeDto[] = [
     topic: "Youth Politics & Voter Pre-Registration Data",
     tags: ["Democratic", "Progressive", "Transparent"],
     guests: [17],
-    spaceUrl: "https://x.com/i/spaces/1jGXggEvlgBKZ",
-    listeners: 0,
-    liveListeners: 0,
+    spaceUrl: "https://x.com/i/spaces/1pKdRRAwWWNJW",
+    listeners: 8,
+    liveListeners: 8,
     series: "fc",
     meta: {
       src: "/uploads/logos/tan.png",

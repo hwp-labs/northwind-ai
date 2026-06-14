@@ -24,12 +24,17 @@ export const CtaButton = ({ episode }: Props) => {
   };
   //
   return (
-    <button onClick={handleClick} className="list-cta-btn size-[40px]">
-      {episode.canPlay ? (
-        <IconPlayerPlayFilled size={18} />
-      ) : (
-        <IconPlayerPlay size={18} strokeWidth={2.5} />
-      )}
+    <button onClick={handleClick} className="flex-row-cs gap-4">
+      <div className="text-muted-foreground text-sm font-medium whitespace-nowrap">
+        {episode.listeners ? <>{episode.listeners}x</> : "RSVP"}
+      </div>
+      <div className="list-cta-btn size-[40px]">
+        {episode.canPlay ? (
+          <IconPlayerPlayFilled size={18} />
+        ) : (
+          <IconPlayerPlay size={18} strokeWidth={2.5} />
+        )}
+      </div>
     </button>
   );
 };

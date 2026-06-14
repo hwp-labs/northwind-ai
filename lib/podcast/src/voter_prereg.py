@@ -9,56 +9,76 @@ Date: 2026-06-14
 from dataclasses import dataclass, field
 from datetime import date
 from enum import Enum
-from typing import Optional, List
+from typing import Optional, List, Tuple
 import uuid
 
 class Occupation(str, Enum):
-    ARTISAN = "Male"
-    BUSINESS = "Female"
-    CIVIL_SERVANT = "Female"
-    FARMING_FISHING = "Female"
-    HOUSE_WIFE = "Female" # ??? asin Private Chef
-    PUBLIC_SERVANT = "Male"
-    STUDENT = "Male"
-    TRADING = "Male" # Entrepreneurs
-    OTHER = "Female" 
-    # Private Sector Employee ?
+    ARTISAN = "Artisan"
+    BUSINESS = "Business Owner"
+    CIVIL_SERVANT = "Civil Servant"
+    FARMING_FISHING = "Farming/Fishing"
+    HOUSE_WIFE = "House Wife"  # ???
+    PUBLIC_SERVANT = "Public Servant"
+    STUDENT = "Student"
+    TRADING = "Trading"
+    OTHER = "Other" # Private Sector
+
+class OccupationV2(str, Enum):
+    BUSINESS_OWNER = "Business Owner"
+    CIVIL_PUBLIC_SERVANT = "Civil/Public Servant"
+    EMPLOYED = "Employed"
+    FARMER = "Farmer"
+    HOMEMAKER = "Homemaker"
+    MILITARY_SECURITY = "Military/Security"
+    PROFESSIONAL = "Professional"
+    RETIRED = "Retired"
+    SELF_EMPLOYED = "Self-Employed"
+    STUDENT = "Student"
+    UNEMPLOYED = "Unemployed"
+    OTHER = "Other"    
 
 class Disability(str, Enum):
-    NONE = "Female"
-    ALBINISM = "Male"
-    AUTISM = "Female"
-    BLINDNESS = "Female"
-    COGNITIVE = "Female" #
-    DEAFNESS = "Male"
-    DOWNS_SYNDROME = "Male"
-    LITTLE_STATURE = "Male" #
-    PHYSICAL_IMPEDIMENT = "Male"
-    SPINAL_CORD_INJURY = "Male" #
-    OTHERS = "Male"
+    NONE = "None"
+    ALBINISM = "Albinism"
+    AUTISM = "Autism"
+    BLINDNESS = "Blindness"
+    COGNITIVE = "Cognitive or Learning Disabilities"
+    DEAFNESS = "Deafness"
+    DOWNS_SYNDROME = "Downs Syndrome"
+    LITTLE_STATURE = "Little Stature" # Dwarfism
+    PHYSICAL_IMPEDIMENT = "Physical Impediment"
+    SPINAL_CORD_INJURY = "Spinal Cord Injury" # Paralysis
+    OTHERS = "Others"
 
 class Education(str, Enum):
-    NONE = "Female"
-    NOT_SPECIFIED = "Male"
-    PRIMARY = "Female"
-    SECONDARY = "Female"
-    TERTIARY = "Female"
-    OTHERS = "Male"
+    NONE = "None"
+    NOT_SPECIFIED = "Not Specified"
+    PRIMARY = "Primary"
+    SECONDARY = "Secondary"
+    TERTIARY = "Tertiary"
+    OTHERS = "Others"
 
 class DocumentType(str, Enum):
-    COURT_AFFIDAVIT = "Female"
-    EVIDENCE_OF_ADDR = "Female"
-    IDENTITY_DOC = "Female"
-    NAME_CHANGE_PROOF = "Male"
-    OTHER_PROOF = "Female"
-    OTHER_SUPPORT_DOC = "Male"
-    SIGNED_REQUEST = "Male"
+    COURT_AFFIDAVIT = "Court Affidavit"
+    EVIDENCE_OF_ADDR = "Evidence Of Address"
+    IDENTITY_DOC = "Identity Document"
+    NAME_CHANGE_PROOF = "Proof of Name Change"
+    OTHER_SUPPORT_DOC = "Other Supporting Document"
+    SIGNED_REQUEST = "Signed Letter of Request"
+
+    OTHER_PROOF = "Other Proof"
 
 @dataclass
 class DateOfBirth:
     day: int
     month: int
     year: int
+
+    def __post_init__(self):
+        try:
+            date(self.year, self.month, self.day)
+        except ValueError as e:
+            raise ValueError(f"Invalid Date Of Birth: {e}")    
 
 @dataclass
 class Document:
@@ -72,14 +92,12 @@ class Base:
     updated_at: date = field(default_factory=date.today)
     deleted_at: Optional[date] = None
 
-    created_by: Optional[str] = None
+    created_by: Optional[str] = None # uuid
     updated_by: Optional[str] = None
     deleted_by: Optional[str] = None    
 
 @dataclass
 class Applicant(Base):
-    applicant_id: str # Ex. PRE51456257
-
     # BIO DATA
     surname: str
     first_name: str
@@ -93,8 +111,9 @@ class Applicant(Base):
     nationality: int # Country(int, Enum):
     nin: str # National Identification Number (Dial *346#)
     
+
     # ADDITIONAL INFO
-    alias_maiden_name: Optional[str] = None #
+    maiden_name: Optional[str] = None # DocumentType.NAME_CHANGE_PROOF
     disability: Disability # OR List[Disability]
     education: Education
     
@@ -121,7 +140,8 @@ class Applicant(Base):
     polling_unit: int # PollingUnit(int, Enum):
     
     # SUPPORTING DOCS
-    doc_type: Optional[List[Document]] = None
-    photo_url: Optional[str] = None
-    photo_smile_url: Optional[str] = None
+    docs: Optional[List[Document]] = None
+    photo_urls: Tuple[str, str] # ["photo.png", "photo-smile.png"]
+
+    applicant_id: str # Ex. PRE51456257
 

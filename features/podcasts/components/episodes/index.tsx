@@ -3,7 +3,6 @@ import { ListHeader } from "../list-header";
 import { Topic } from "../topic";
 import { Datetime } from "../datetime";
 import { Thumbnail } from "./thumbnail";
-import { Listeners } from "./listeners";
 import { CtaButton } from "./cta-button";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
 import { PATH } from "@/constants/PATH";
@@ -19,7 +18,7 @@ export const Episodes = () => {
         // className="mt-4_ debug grid h-svh overflow-y-auto px-4"
         className="scrollbar-hide h-[400px] snap-y snap-mandatory overflow-y-auto scroll-smooth px-4 pb-4"
       >
-        {data.slice(0,10).map((item, i) => {
+        {data.slice(0, 10).map((item, i) => {
           const episode = transformEpisode(item.id);
           //
           return (
@@ -37,10 +36,7 @@ export const Episodes = () => {
                   <Datetime episode={episode} variant="text" />
                 </figcaption>
               </figure>
-              <div className="flex-row-cs gap-4">
-                <Listeners value={episode.listeners} />
-                <CtaButton episode={episode} />
-              </div>
+              <CtaButton episode={episode} />
             </li>
           );
         })}
