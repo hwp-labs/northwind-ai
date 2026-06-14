@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { Topic } from "../topic";
 import { Datetime } from "../datetime";
 import { Thumbnail } from "./thumbnail";
-import { Listeners } from "./listeners";
 import { CtaButton } from "./cta-button";
 import { usePodcastStore } from "@/store/podcastStore";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
@@ -34,10 +33,7 @@ export const List = () => {
                 <Datetime episode={episode} variant="text" />
               </figcaption>
             </figure>
-            <div className="flex-row-cs gap-4">
-              <Listeners value={episode.listeners} />
               <CtaButton episode={episode} />
-            </div>
           </li>
         ) : null;
       })}
