@@ -8,6 +8,7 @@ import { classNames } from "./builder";
 
 interface Props {
   icon: string;
+  _name?: React.ReactNode;
   name: React.ReactNode;
   description?: string;
   verified?: boolean;
@@ -32,7 +33,7 @@ export const Card = ({
       </div>
       <figcaption>
         <div
-          className="debug_ min-h-5 w-50 leading-4 line-clamp-2"
+          className="debug_ min-h-5 w-47 leading-4 line-clamp-2"
           style={{ textShadow: "-1px 1px 1px #111" }}
         >
           <b>{name}</b>

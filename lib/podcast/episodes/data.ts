@@ -2,7 +2,7 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   // {
-  //   id: 19,
+  //   id: 20,
   //   datetime: "2026-06-28T19:00:00.000Z",
   //   topic: "Study of Pragmatics & Cryptography",
   //   tags: ["Anagram", "Pangram", "Palindrome"],
@@ -13,10 +13,28 @@ export const data: EpisodeDto[] = [
   //   series: "fc",
   // },
   // {
+  //   id: 19,
+  //   datetime: "2026-06-28T19:00:00.000Z",
+  //   thumbnail: "/uploads/logos/inec.png",
+  //   topic: "Government Subcontractors PRD",
+  //   tags: ["Stakeholders", "Scope", "Constraints"],
+  //   guests: [10, 11],
+  //   spaceUrl: "#",
+  //   listeners: 0,
+  //   liveListeners: 0,
+  //   series: "fc",
+  //   meta: {
+  //     src: "/uploads/logos/inec.png",
+  //     title: "Continuous Voter Registration - Independent National Electoral",
+  //     url: "cvr.inecnigeria.org",
+  //     cta: "Register Now",
+  //   },
+  // },
+  // {
   //   id: 18,
   //   datetime: "2026-06-26T19:00:00.000Z",
   //   thumbnail: "/uploads/logos/onlyfans.png",
-  //   topic: "System Design Anti-patterns",
+  //   topic: "System Design Anti-patterns at OnlyFans",
   //   summary: "Keynotes from OnlyFans CEO Keily Blair's interview at WSJ News",
   //   _notes: {
   //     title:
@@ -24,7 +42,7 @@ export const data: EpisodeDto[] = [
   //     yt: "https://youtu.be/TZAzMDcsTfE",
   //   },
   //   tags: ["RADIO", "RE_SHADED", "*Sharding"],
-  //   spaceUrl: "https://x.com/i/spaces/1rxmqqlZDRdxy",
+  //   spaceUrl: "#",
   //   listeners: 0,
   //   liveListeners: 0,
   //   series: "cs",
@@ -57,7 +75,7 @@ export const data: EpisodeDto[] = [
     id: 16,
     datetime: "2026-06-19T19:00:00.000Z",
     thumbnail: "/uploads/logos/awore.png",
-    topic: "ACID Traits for Agile Workflows Pt.1",
+    topic: "ACID Traits for Agile Workflows",
     tags: ["PRD", "Sprints", "Time Estimates"],
     guests: [18],
     spaceUrl: "#",
@@ -80,7 +98,7 @@ export const data: EpisodeDto[] = [
     tags: ["Democratic", "Progressive", "Transparent"],
     guests: [17],
     spaceUrl: "https://x.com/i/spaces/1pKdRRAwWWNJW",
-    listeners: 8,
+    listeners: 9,
     liveListeners: 8,
     series: "fc",
     meta: {

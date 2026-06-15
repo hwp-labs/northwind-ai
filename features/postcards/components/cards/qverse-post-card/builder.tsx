@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
 import { IconWorldUpload } from "@tabler/icons-react";
 import clsx from "clsx";
-import { APP_QVERSE } from "@/constants/APP_QVERSE";
 import { APP_PODCAST } from "@/constants/APP_PODCAST";
 
 export const classNames = {
@@ -32,7 +31,7 @@ const Container = ({ children }: PropsWithChildren) => {
   return (
     <main
       className={clsx(
-        "debug_ text-foreground h-[584px] bg-[url('/uploads/qverse/pod.jpg')] bg-cover px-8 py-6",
+        "debug_ text-foreground h-[584px] bg-[url('/uploads/qverse/sam.webp')] bg-cover px-8 py-6",
         classNames.brandBg,
       )}
       style={{
@@ -52,7 +51,7 @@ const Hero = () => (
   >
     <h1 className={classNames.whiteGradient}>Discover</h1>
     <h1 className={classNames.whiteGradient}>New</h1>
-    <h1 className={classNames.heroGradient2}>Episodes</h1>
+    <h1 className={classNames.heroGradient}>Episodes</h1>
   </hgroup>
 );
 

@@ -21,7 +21,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
           <Card
             {...{
               icon: e1.Speakers[1].avatar,
-              name: 'Pragmatics & Cryptography',
+              name: e1.topic,
               verified: true,
               description: e1.Speakers[1].fullName,
               followers: 244,
@@ -41,14 +41,14 @@ export const QversePostCard = ({ page = 1 }: Props) => {
           <Card
             {...{
               icon: e3.Speakers[0].avatar,
-              name: (
+              _name: (
                 <>
                   {e3.topic}
                   <br />
                   at OnlyFans
                 </>
               ),
-              // name: "Communication Strategy for Startups",
+              name: e3.topic,
               verified: true,
               description: e3.Speakers[0].displayName,
               followers: 86,
