@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="_dark">
+    <html lang="en" className="_dark" data-scroll-behavior="smooth">
       <body
         className={clsx(
           fontPoppins.variable,

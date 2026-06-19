@@ -29,7 +29,7 @@ export const MetaCard = ({ meta }: Props) => {
           className="rounded-[12px] border-2"
         />
         <figcaption className="flex flex-col gap-0.5">
-          <div className="line-clamp-2_ text-[13.5px] text-white">
+          <div className="line-clamp-2_ text-[12.5px] text-white">
             {meta!.title}
           </div>
           <div className="flex-row-cs gap-1.5 text-xs text-[#bbb]">

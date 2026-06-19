@@ -23,7 +23,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           backgroundPosition: e.series ? "52% top" : "85% top",
         }}
       />
-      <main className="debug_ absolute z-1 px-6">
+      <main className="debug_ absolute z-1 pl-6">
         <header className="flex-row-cb mt-10">
           <Logo />
           <img
@@ -38,8 +38,8 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
         <article className="debug_ mt-2.5 space-y-5">
           <Topic
             variant="snap"
-            // topic="Design Systems & Finite State Machines"
             episode={e}
+            // topic="Design Systems & Finite State Machines"
             // className="text-[30px]!"
           />
           <DatetimeVenue episode={e} _tonight />
