@@ -5,7 +5,7 @@ import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
 interface Props {
   variant: "hero" | "list" | "preview" | "snap";
   episode?: TransformedEpisode;
-  topic?: string;
+  topic?: React.ReactNode;
   className?: string;
 }
 

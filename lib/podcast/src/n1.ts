@@ -8,7 +8,7 @@
 import { useState } from "react";
 
 interface IGuest {
-  id: number; // 18
+  id: number; // 15
   displayName: string; // Temi Adegoke, PSM
   bio: string; // IT Project Manager, Powertech
   website?: string; // https://instagram.com/awo_oore
@@ -17,7 +17,7 @@ interface IGuest {
 interface IEpisode {
   id: number; // 16
   topic: string; // ACID Traits for Agile Workflows
-  guestId: number; // 18
+  guestId: number; // 15
   datetime: string; // 2026-06-19T20:00:00.000Z
 }
 

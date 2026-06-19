@@ -79,8 +79,8 @@ export const data: EpisodeDto[] = [
     tags: ["PRD", "Sprints", "Time Estimates"],
     guests: [15],
     spaceUrl: "https://x.com/i/spaces/1yxBeeBWbpWJN",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 6,
+    liveListeners: 6,
     series: "fc",
     meta: {
       src: "/uploads/logos/awore.png",

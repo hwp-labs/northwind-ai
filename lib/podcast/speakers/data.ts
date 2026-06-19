@@ -38,14 +38,14 @@ export const data: SpeakerDto[] = [
   //   surname: "Emmanuel",
   //   displayName: "Witney E.",
   //   sex: "f",
-  //   email: "",
+  //   email: "favoureboselume@gmail.com",
   //   tel: "+2348105471734",
   //   occupation: "Pragmatist",
   //   bio: "CEO, Witney Royale Couture",
   //   location: {
   //     city: "Edo",
   //   },
-  //   socials: { x: "", ig: "witney_royalecouture" },
+  //   socials: { x: "@simplywitney", ig: "witney_royalecouture" },
   // },
   {
     id: 15,
