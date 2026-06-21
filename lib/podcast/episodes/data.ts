@@ -61,8 +61,8 @@ export const data: EpisodeDto[] = [
     tags: ["Clarity", "Alignment ", "Tone"],
     guests: [10],
     spaceUrl: "https://x.com/i/spaces/1DGleemXPqzJL",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 21,
+    liveListeners: 21,
     series: "fc",
     meta: {
       src: "/uploads/logos/siiqo.png",
