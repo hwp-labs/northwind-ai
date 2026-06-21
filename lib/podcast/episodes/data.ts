@@ -58,7 +58,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-06-21T19:00:00.000Z",
     thumbnail: "/uploads/logos/siiqo.png",
     topic: "Comms Strategy for Startups",
-    tags: ["Tone", "Clarity", "Semantics"],
+    tags: ["Clarity", "Alignment ", "Tone"],
     guests: [10],
     spaceUrl: "https://x.com/i/spaces/1DGleemXPqzJL",
     listeners: 0,
@@ -79,7 +79,7 @@ export const data: EpisodeDto[] = [
     tags: ["PRD", "Sprints", "Time Estimates"],
     guests: [15],
     spaceUrl: "https://x.com/i/spaces/1yxBeeBWbpWJN",
-    listeners: 6,
+    listeners: 7,
     liveListeners: 6,
     series: "fc",
     meta: {

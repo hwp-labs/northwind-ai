@@ -24,7 +24,7 @@ export const Datetime = ({ episode, variant = "icon" }: Props) => {
     </div>
   ) : (
     <p className="text-muted-foreground text-[12px] text-sm">
-      E{episode.id0} &bull; {episode.datetimeShort}
+      EP {episode.id0} &bull; {episode.datetimeShort}
     </p>
   );
 };
