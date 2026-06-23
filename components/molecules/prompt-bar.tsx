@@ -15,7 +15,7 @@ export const PromptBar = ({ children }: PropsWithChildren) => {
         )}
       >
         <ThemedTerminalIcon alt />
-        {children || COPY.prompt}
+        {children || COPY.promptShort}
       </div>
     </section>
   );

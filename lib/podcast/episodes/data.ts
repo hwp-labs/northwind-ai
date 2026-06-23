@@ -61,7 +61,7 @@ export const data: EpisodeDto[] = [
     tags: ["Clarity", "Alignment ", "Tone"],
     guests: [10],
     spaceUrl: "https://x.com/i/spaces/1DGleemXPqzJL",
-    listeners: 21,
+    listeners: 22,
     liveListeners: 21,
     series: "fc",
     meta: {
@@ -249,7 +249,7 @@ export const data: EpisodeDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Brand-Led-Growth-Hacking-3336a7cc633c810692e6e80f80946edb",
     spaceUrl: "https://x.com/i/spaces/1rGmqojWqzqGy",
-    listeners: 45,
+    listeners: 46,
     liveListeners: 31,
     series: "fc",
   },
@@ -276,7 +276,7 @@ export const data: EpisodeDto[] = [
     notionUrl:
       "https://held-gambler-004.notion.site/Izivote-3206a7cc633c807dbd55c6fbb373ff37",
     spaceUrl: "https://x.com/i/spaces/1XGygmPjeMkxM",
-    listeners: 92,
+    listeners: 93,
     liveListeners: 33,
   },
   {

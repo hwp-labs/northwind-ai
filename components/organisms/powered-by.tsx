@@ -4,7 +4,7 @@ import { StepperLogo } from "./stepper-logo";
 
 export const PoweredBy = () => {
   return (
-    <AnchorOutbound href={APP.repositoryUrl}>
+    <AnchorOutbound href="https://stepper.io">
       <figure className="flex-row-cc gap-2.5">
         <figcaption className="font-f3 font-semibold tracking-wide">
           Powered by

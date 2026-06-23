@@ -9,6 +9,7 @@ import { APP } from "./APP";
 export const COPY = {
   prompt: `How can ${APP.name} help automate my business?`,
   promptWithHi: `Hi, how can ${APP.name} help automate my business?`,
+  promptShort: `Automate My Business w/${APP.name}`,
   promptWithCool: (
     <>
       We'll reach out shortly to discuss how{" "}
@@ -36,6 +37,17 @@ export const COPY = {
   transformRichTextWithLink: (
     <>
       -transform repetitive business processes into smart, autonomous{" "}
+      <AnchorOutbound
+        href="https://agent.ai/"
+        className="text-brand font-medium underline underline-offset-2"
+      >
+        AI agents.
+      </AnchorOutbound>
+    </>
+  ),
+  TransformRichTextWithLink: (
+    <>
+      Transform repetitive business processes into smart, autonomous{" "}
       <AnchorOutbound
         href="https://agent.ai/"
         className="text-brand font-medium underline underline-offset-2"
