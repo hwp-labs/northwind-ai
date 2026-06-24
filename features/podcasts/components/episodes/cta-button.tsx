@@ -19,7 +19,7 @@ export const CtaButton = ({ episode }: Props) => {
         mutateModal({ open: true, variant: "rsvp" });
         break;
       default:
-        window.open(episode.spaceUrl, "_blank");
+        window.open(episode.virtualLink, "_blank");
     }
   };
   //

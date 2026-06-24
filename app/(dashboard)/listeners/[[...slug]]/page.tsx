@@ -111,7 +111,7 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                     />
                     <TableUI.Url
                       label="Space"
-                      value={listener.podcast.spaceUrl}
+                      value={listener.podcast.virtualLink}
                       icon={<IconBrandX size={16} />}
                     />
                   </TableCell>

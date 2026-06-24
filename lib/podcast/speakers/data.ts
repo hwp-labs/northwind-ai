@@ -18,7 +18,7 @@ export const data: SpeakerDto[] = [
   },
   {
     id: 17,
-    avatar: "/uploads/podcast/avatar-hoshomoh2.png",
+    avatar: "/uploads/podcast/avatar-hoshomoh.png",
     firstName: "H. M.",
     surname: "Oshomoh",
     displayName: "Harrison O.",

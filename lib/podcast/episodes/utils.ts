@@ -34,7 +34,7 @@ export const transformEpisode = (id?: number | string | null) => {
     topic: e?.topicShort || e?.topic || HYPHENS,
     tags: e?.tags?.filter((t) => !t.startsWith("#")) || [],
     Speakers: getSpeakers(e),
-    canPlay: !e?.spaceUrl.startsWith("#") && e?.listeners,
+    canPlay: !e?.virtualLink.startsWith("#") && e?.listeners,
     ctaText: getCtaText(e),
     meta: e?.meta || {
       src: "/icon-512.png",

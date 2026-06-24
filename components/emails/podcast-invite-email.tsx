@@ -14,12 +14,12 @@ export const PodcastInviteEmail = ({ data }: Props) => {
       <Builder.H1>{data.topic}</Builder.H1>
       {data.summary ? <Builder.P>{data.summary}</Builder.P> : null}
       <Builder.P>LIVE: {data.datetimeShort} WAT</Builder.P>
-      <Builder.Button href={data.spaceUrl!} color={COLOR.barbie}>
+      <Builder.Button href={data.virtualLink!} color={COLOR.barbie}>
         Listen Now
       </Builder.Button>
       <Builder.P>
         Or join using the URL below: <br />
-        <Builder.Link href={data.spaceUrl!} />
+        <Builder.Link href={data.virtualLink!} />
       </Builder.P>
     </Builder.Template>
   );

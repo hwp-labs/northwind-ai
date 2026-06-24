@@ -11,7 +11,7 @@ export interface EpisodeDto {
   host?: number;
   guests?: number[];
   notionUrl?: string;
-  spaceUrl: string;
+  virtualLink: string;
   listeners: number;
   liveListeners: number;
   series?: "ds" | "fc" | "cs";

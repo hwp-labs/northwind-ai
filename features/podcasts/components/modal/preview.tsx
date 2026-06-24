@@ -16,7 +16,7 @@ interface Props {
 export const Preview = ({ onClose = () => undefined }: Props) => {
   const episode = usePodcastStore((s) => s.episode);
   const handlePlay = () => {
-    episode?.canPlay ? window.open(episode.spaceUrl, "_blank") : undefined;
+    episode?.canPlay ? window.open(episode.virtualLink, "_blank") : undefined;
     onClose();
   };
   //
