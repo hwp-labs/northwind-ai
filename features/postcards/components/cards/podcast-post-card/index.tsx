@@ -1,6 +1,6 @@
 import { Logo } from "@/components/logo";
-import { Topic } from "@/features/podcasts/components/topic";
-import { DatetimeVenue } from "@/features/podcasts/components/datetime";
+import { Topic } from "@/features/podcast/components/topic";
+import { DatetimeVenue } from "@/features/podcast/components/datetime";
 import { Tags } from "./tags";
 import { GuestPanel } from "./guest-panel";
 import { MetaCard } from "./meta-card";
@@ -23,7 +23,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           backgroundPosition: e.series ? "52% top" : "85% top",
         }}
       />
-      <main className="debug_ absolute z-1 pl-6 pr-6">
+      <main className="debug_ absolute z-1 pr-6 pl-6">
         <header className="flex-row-cb mt-10">
           <Logo />
           <img
@@ -45,7 +45,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           <DatetimeVenue episode={e} _tonight yt />
         </article>
       </main>
-      <section className="absolute bottom-12 px-6 w-[360px]">
+      <section className="absolute bottom-12 w-[360px] px-6">
         <GuestPanel data={e.Speakers} />
         <MetaCard meta={e.meta} />
       </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { AppBar } from "@/features/podcasts/components/app-bar";
+import { AppBar } from "@/features/podcast/components/app-bar";
 import { PATH } from "@/constants/PATH";
-import { List } from "@/features/podcasts/components/episodes/list";
+import { List } from "@/features/podcast/components/episodes/list";
 
 export const metadata: Metadata = {
   title: "All Episodes",

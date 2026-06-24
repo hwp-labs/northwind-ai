@@ -8,8 +8,8 @@ import {
   IconScan,
 } from "@tabler/icons-react";
 //
-import { AppBar } from "@/features/podcasts/components/app-bar";
-import { OpayWidget } from "@/features/podcasts/components/opay-widget";
+import { AppBar } from "@/features/podcast/components/app-bar";
+import { OpayWidget } from "@/features/podcast/components/opay-widget";
 import { PATH } from "@/constants/PATH";
 
 export const metadata: Metadata = {

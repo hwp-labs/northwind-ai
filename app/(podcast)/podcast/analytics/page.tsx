@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { IconInfoCircle } from "@tabler/icons-react";
 //
-import { AppBar } from "@/features/podcasts/components/app-bar";
-import { KpiCards } from "@/features/podcasts/components/kpi-cards";
-import { GeolocationChart } from "@/features/podcasts/components/charts/geolocation-chart";
-import { RingChart } from "@/features/podcasts/components/charts/ring-chart";
+import { AppBar } from "@/features/podcast/components/app-bar";
+import { KpiCards } from "@/features/podcast/components/kpi-cards";
+import { GeolocationChart } from "@/features/podcast/components/charts/geolocation-chart";
+import { RingChart } from "@/features/podcast/components/charts/ring-chart";
 import { computeAnalytics } from "@/lib/podcast/analytics/utils";
 import { PATH } from "@/constants/PATH";
 
