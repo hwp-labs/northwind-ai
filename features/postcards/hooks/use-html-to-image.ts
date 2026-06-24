@@ -10,7 +10,7 @@ interface UseHtmlToImageParams {
 export function useHtmlToImage({
   width,
   height,
-  scaleTo = 1.5,
+  scaleTo = 2,
 }: UseHtmlToImageParams) {
   // console.log("🚀 ~ useHtmlToImage ~ width:", width, height, scaleTo);
   const [loading, setLoading] = useState(false);
@@ -33,7 +33,8 @@ export function useHtmlToImage({
     setLoading(true);
     try {
       await document.fonts.ready;
-
+      window.scrollTo(0, 0);
+      await new Promise((r) => setTimeout(r, 100)); // let layout settle
       // measure the element on the page so output matches its visual size
       const rect = node.getBoundingClientRect();
       // create an off-screen clone to capture fixed/sticky children correctly
@@ -56,6 +57,12 @@ export function useHtmlToImage({
           const o = originals[i];
           const c = clones[i];
           if (!c) continue;
+
+          // Lock every element to its exact rendered width
+          const oRect = o.getBoundingClientRect();
+          c.style.width = `${oRect.width}px`;
+          c.style.boxSizing = "border-box";
+
           const style = window.getComputedStyle(o);
           if (style.position === "fixed" || style.position === "sticky") {
             const oRect = o.getBoundingClientRect();
@@ -86,7 +93,7 @@ export function useHtmlToImage({
           cacheBust: true,
           width: width || Math.round(rect.width),
           height: height || Math.round(rect.height),
-          pixelRatio: window.devicePixelRatio * scaleTo,
+          pixelRatio: scaleTo,
           style: {
             transform: "none",
             ...(width && height

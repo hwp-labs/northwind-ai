@@ -15,7 +15,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
   const e = transformEpisode(page);
   //
   return (
-    <div className="text-foreground bg-background border_ _mx-auto relative h-[640px] w-[367px] overflow-hidden">
+    <div className="text-foreground bg-background border_ _mx-auto relative h-[640px] w-[360px] overflow-hidden">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
@@ -31,7 +31,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             alt=""
             width={80}
             height={80}
-            className="absolute top-4 right-5"
+            className="absolute top-4 right-5 hidden"
           />
         </header>
         <Tags list={e.tags} />
@@ -40,12 +40,12 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             variant="snap"
             episode={e}
             // topic="Design Systems & Finite State Machines"
-            // className="text-[30.5px]!"
+            // className="text-[36px]! leading-[40px]!"
           />
-          <DatetimeVenue episode={e} _tonight />
+          <DatetimeVenue episode={e} _tonight yt />
         </article>
       </main>
-      <section className="absolute bottom-12 px-6">
+      <section className="absolute bottom-12 px-6 w-[360px]">
         <GuestPanel data={e.Speakers} />
         <MetaCard meta={e.meta} />
       </section>

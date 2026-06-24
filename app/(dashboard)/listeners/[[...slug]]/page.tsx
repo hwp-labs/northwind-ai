@@ -89,7 +89,12 @@ export default async function ListenersPage({ searchParams }: PageParams) {
                   <TdAvatarBio
                     src={listener.podcast.thumbnail}
                     name={listener.podcast.topic}
-                    email={listener.podcast.datetimeShort}
+                    email={
+                      <>
+                        EP {listener.podcast.id0} &bull;{" "}
+                        {listener.podcast.datetimeShort}
+                      </>
+                    }
                     showBadge={listener.IsCreatedToday()}
                   />
                   <TdBadge

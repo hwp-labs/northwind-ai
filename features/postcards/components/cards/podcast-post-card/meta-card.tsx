@@ -13,7 +13,7 @@ interface Props {
 export const MetaCard = ({ meta }: Props) => {
   return (
     <div
-      className="mt-4 mr-4 rounded-sm px-3 py-2.5"
+      className="mt-4 rounded-sm px-3 py-2.5"
       style={{
         background: "rgba(255,255,255,0.08)",
         backdropFilter: "blur(12px)",

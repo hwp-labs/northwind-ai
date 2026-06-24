@@ -1,5 +1,6 @@
 import {
   IconBrandXFilled,
+  IconBrandYoutubeFilled,
   IconCalendarEventFilled,
   IconClockHour8Filled,
   IconMapPinFilled,
@@ -12,6 +13,7 @@ interface Props {
   variant?: "text" | "icon";
   tonight?: boolean;
   _tonight?: boolean;
+  yt?: boolean;
 }
 
 export const Datetime = ({ episode, variant = "icon" }: Props) => {
@@ -23,21 +25,30 @@ export const Datetime = ({ episode, variant = "icon" }: Props) => {
       <time dateTime={episode.datetime}>{episode.time} (WAT)</time>
     </div>
   ) : (
-    <p className="text-muted-foreground text-[12px] text-sm">
+    <p className="text-muted-foreground text-sm text-[12px]">
       EP {episode.id0} &bull; {episode.datetimeShort}
     </p>
   );
 };
 
-export const DatetimeVenue = ({ episode, tonight }: Props) => {
+export const DatetimeVenue = ({ episode, tonight, yt }: Props) => {
   return (
     <div className="flex-row-cs font-medium_ gap-2 text-xs tracking-wide whitespace-nowrap">
       <IconCalendarEventFilled size={16} />
       <span>{tonight ? "TONIGHT 🦊" : episode.dateShort}</span>
       <IconClockHour8Filled size={16} />
       <time dateTime={episode.datetime}>{episode.time} (WAT)</time>
-      <IconBrandXFilled size={16} />
-      <span>Spaces</span>
+      {yt ? (
+        <>
+          <IconBrandYoutubeFilled size={16} />
+          <span>YouTube</span>
+        </>
+      ) : (
+        <>
+          <IconBrandXFilled size={16} />
+          <span>Spaces</span>
+        </>
+      )}
     </div>
   );
 };

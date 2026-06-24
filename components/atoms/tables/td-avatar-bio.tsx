@@ -11,7 +11,7 @@ interface Props {
   src?: string;
   srcText?: string | number;
   name?: string;
-  email?: string;
+  email?: React.ReactNode;
   textOnly?: boolean;
   showBadge?: boolean;
 }

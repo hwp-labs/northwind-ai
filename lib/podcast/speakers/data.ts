@@ -19,13 +19,13 @@ export const data: SpeakerDto[] = [
   {
     id: 17,
     avatar: "/uploads/podcast/avatar-hoshomoh2.png",
-    firstName: "Harrison",
+    firstName: "H. M.",
     surname: "Oshomoh",
     displayName: "Harrison O.",
     email: "harrison.oshomoh@gmail.com",
     tel: "+2347066416750",
     occupation: "Software Engineer",
-    bio: "Asst. Lecturer, OAU",
+    bio: "Assistant Lecturer, OAU",
     location: {
       city: "Osun",
     },
