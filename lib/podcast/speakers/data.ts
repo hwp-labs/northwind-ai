@@ -33,7 +33,7 @@ export const data: SpeakerDto[] = [
   },
   {
     id: 16,
-    avatar: "/uploads/podcast/avatar-weboselume.png",
+    avatar: "/uploads/podcast/avatar-wemmanuel.png",
     firstName: "Witney",
     surname: "Emmanuel",
     displayName: "Witney E.",
@@ -65,7 +65,7 @@ export const data: SpeakerDto[] = [
   },
   {
     id: 14,
-    avatar: "/uploads/podcast/avatar-sgbangbola2.png",
+    avatar: "/uploads/podcast/avatar-sgbangbola.png",
     firstName: "Seyi",
     surname: "Gbangbola",
     displayName: "Seyi G.",

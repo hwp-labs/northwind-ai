@@ -24,26 +24,26 @@ export const data: EpisodeDto[] = [
   //     cta: "Watch Now",
   //   },
   // },
-  {
-    id: 20,
-    datetime: "2026-07-01T09:00:00.000Z",
-    thumbnail: "/uploads/logos/oau.jpg",
-    topic: "Event-Driven Programming Pt.1",
-    summary:
-      "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
-    tags: ["Control Structures", "BOM & DOM", "async/await"],
-    virtualLink: "",
-    listeners: 0,
-    liveListeners: 0,
-    series: "cs",
-    meta: {
-      src: "/uploads/logos/oau.jpg",
-      title:
-        "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
-      url: "youtu.be/dhMPSzedWNQ",
-      cta: "Watch Now",
-    },
-  },
+  // {
+  //   id: 20,
+  //   datetime: "2026-07-01T09:00:00.000Z",
+  //   thumbnail: "/uploads/logos/oau.jpg",
+  //   topic: "Event-Driven Programming Pt.1",
+  //   summary:
+  //     "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
+  //   tags: ["Control Structures", "BOM & DOM", "async/await"],
+  //   virtualLink: "",
+  //   listeners: 0,
+  //   liveListeners: 0,
+  //   series: "cs",
+  //   meta: {
+  //     src: "/uploads/logos/oau.jpg",
+  //     title:
+  //       "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
+  //     url: "youtu.be/dhMPSzedWNQ",
+  //     cta: "Watch Now",
+  //   },
+  // },
   {
     id: 19,
     datetime: "2026-06-28T19:00:00.000Z",
