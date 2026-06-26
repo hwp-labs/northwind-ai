@@ -12,7 +12,7 @@ export const data: SpeakerDto[] = [
     occupation: "Systems Engineer",
     bio: "Engineer, SAT Integrated Systems",
     location: {
-      city: "Edo",
+      city: "Edo", 
     },
     socials: { x: "@samaiye2018" },
   },

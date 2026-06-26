@@ -70,8 +70,8 @@ export const data: EpisodeDto[] = [
     tags: ["Anagram", "Pangram", "Palindrome"],
     guests: [16],
     virtualLink: "https://x.com/i/spaces/1pKkOOEXPnXKj",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 6,
+    liveListeners: 6,
     series: "fc",
   },
   {
