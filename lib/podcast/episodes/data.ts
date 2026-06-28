@@ -52,8 +52,8 @@ export const data: EpisodeDto[] = [
     tags: ["Scope", "Deliverables", "Constraints"],
     guests: [17, 18],
     virtualLink: "https://x.com/i/spaces/1wGWjjElmNNKQ",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 17,
+    liveListeners: 17,
     series: "fc",
     meta: {
       src: "/uploads/logos/inec.png",
