@@ -58,7 +58,7 @@ export const data: EpisodeDto[] = [
     meta: {
       src: "/uploads/logos/inec.png",
       title:
-        "Continuous Voter Registration - Independent National Electorial Co...",
+        "Continuous Voter Registration - INEC Independent National Electorial Com...",
       url: "cvr.inecnigeria.org",
       cta: "Register Now",
     },
@@ -70,7 +70,7 @@ export const data: EpisodeDto[] = [
     tags: ["Anagram", "Pangram", "Palindrome"],
     guests: [16],
     virtualLink: "https://x.com/i/spaces/1pKkOOEXPnXKj",
-    listeners: 6,
+    listeners: 7,
     liveListeners: 6,
     series: "fc",
   },

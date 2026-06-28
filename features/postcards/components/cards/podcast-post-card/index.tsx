@@ -31,7 +31,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             alt=""
             width={80}
             height={80}
-            className="absolute top-4 right-5 hidden"
+            className="absolute top-4 right-5 hidden_"
           />
         </header>
         <Tags list={e.tags} />
@@ -42,10 +42,10 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             // topic="Design Systems & Finite State Machines"
             // className="text-[36px]! leading-[40px]!"
           />
-          <DatetimeVenue episode={e} _tonight yt />
+          <DatetimeVenue episode={e} _tonight _yt />
         </article>
       </main>
-      <section className="absolute bottom-12 w-[360px] px-6">
+      <section className="absolute bottom-12 px-6">
         <GuestPanel data={e.Speakers} />
         <MetaCard meta={e.meta} />
       </section>

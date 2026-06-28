@@ -14,6 +14,7 @@ interface Props {
   tonight?: boolean;
   _tonight?: boolean;
   yt?: boolean;
+  _yt?: boolean;
 }
 
 export const Datetime = ({ episode, variant = "icon" }: Props) => {

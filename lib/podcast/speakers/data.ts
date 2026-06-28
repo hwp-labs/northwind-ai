@@ -10,7 +10,7 @@ export const data: SpeakerDto[] = [
     email: "samaiye2018@gmail.com",
     tel: "+234806066696",
     occupation: "Systems Engineer",
-    bio: "Engineer, SAT Integrated Systems",
+    bio: "CEO, SAT Integrated Concepts",
     location: {
       city: "Edo", 
     },

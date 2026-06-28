@@ -20,6 +20,10 @@ interface TemplateProps extends PropsWithChildren {
   preview: string;
   heading?: React.ReactNode;
   hideFooter?: boolean;
+  unsubscribe?: {
+    href: string;
+    text: string;
+  };
 }
 
 const Template = ({
@@ -27,6 +31,7 @@ const Template = ({
   preview,
   heading,
   hideFooter,
+  unsubscribe,
 }: TemplateProps) => (
   <Html>
     <Head />
@@ -37,16 +42,18 @@ const Template = ({
           {heading ? <H1>{heading}</H1> : null}
           {children}
           {!hideFooter && <Footer />}
-          <div className="text-center">
-            <a
-              href={`${APP_PODCAST.unsubscribeUrl}?unsub=true`}
-              target="_blank"
-              className="underline underline-offset-2"
-              style={{ color: "#888", fontSize: 12 }}
-            >
-              Unsubscribe (Don't do it, bro 👀)
-            </a>
-          </div>
+          {unsubscribe ? (
+            <div className="text-center">
+              <a
+                href={unsubscribe.href}
+                target="_blank"
+                className="underline underline-offset-2"
+                style={{ color: "#888", fontSize: 12 }}
+              >
+                {unsubscribe.text}
+              </a>
+            </div>
+          ) : null}
         </Container>
       </Body>
     </Tailwind>
