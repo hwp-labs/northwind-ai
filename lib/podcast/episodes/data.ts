@@ -25,17 +25,36 @@ export const data: EpisodeDto[] = [
   //   },
   // },
   // {
-  //   id: 20,
-  //   datetime: "2026-07-01T09:00:00.000Z",
+  //   id: 23,
+  //   datetime: "2026-07-12T19:00:00.000Z",
+  //   thumbnail: "/uploads/logos/thesinova.png",
+  //   topic: "Empirical Analysis & Decision Making",
+  //   tags: ["#Prediction", "Inference", "Classification", "Forecast"],
+  //   guests: [20],
+  //   virtualLink: "",
+  //   listeners: 0,
+  //   liveListeners: 0,
+  //   series: "fc",
+  //   meta: {
+  //     src: "/uploads/logos/thesinova.png",
+  //     title:
+  //       "High-performance Solutions at the Intersection of Academia & Techno...",
+  //     url: "thesinova.com",
+  //     cta: "Contact Us",
+  //   },
+  // },
+  // {
+  //   id: 22,
+  //   datetime: "2026-07-08T09:00:00.000Z",
   //   thumbnail: "/uploads/logos/oau.jpg",
-  //   topic: "Event-Driven Programming Pt.1",
+  //   topic: "Event-Driven Programming Pt.2",
   //   summary:
   //     "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
   //   tags: ["Control Structures", "BOM & DOM", "async/await"],
   //   virtualLink: "",
   //   listeners: 0,
   //   liveListeners: 0,
-  //   series: "cs",
+  //   series: "fc",
   //   meta: {
   //     src: "/uploads/logos/oau.jpg",
   //     title:
@@ -45,6 +64,44 @@ export const data: EpisodeDto[] = [
   //   },
   // },
   {
+    id: 21,
+    datetime: "2026-07-05T19:00:00.000Z",
+    thumbnail: "/uploads/logos/lani2.png",
+    topic: "LANI Rider Design Session",
+    tags: ["Ride", "Deliver", "Earn"],
+    guests: [19],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/lani2.png",
+      title:
+        "Join the LANI Rider App today! Be Your Own Boss. Earn the Freedom to Ride...",
+      url: "lani.ng/riders",
+      cta: "Apply Now",
+    },
+  },
+  {
+    id: 20,
+    datetime: "2026-07-01T09:00:00.000Z",
+    thumbnail: "/uploads/logos/oau.jpg",
+    topic: "Event-Driven Programming Pt.1",
+    summary:
+      "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
+    tags: ["Control Structures", "BOM & DOM", "async/await"],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc",
+    meta: {
+      src: "/uploads/logos/oau.jpg",
+      title:
+        "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
+      url: "youtu.be/dhMPSzedWNQ",
+      cta: "Watch Now",
+    },
+  },
+  {
     id: 19,
     datetime: "2026-06-28T19:00:00.000Z",
     thumbnail: "/uploads/logos/inec.png",
@@ -52,8 +109,8 @@ export const data: EpisodeDto[] = [
     tags: ["Scope", "Deliverables", "Constraints"],
     guests: [17, 18],
     virtualLink: "https://x.com/i/spaces/1wGWjjElmNNKQ",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 17,
+    liveListeners: 17,
     series: "fc",
     meta: {
       src: "/uploads/logos/inec.png",

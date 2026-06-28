@@ -21,9 +21,9 @@ export const Topic = ({ variant, episode, topic, className }: Props) => {
         >
           {topic || episode?.topic}
         </h1>
-        {episode?.series === "cs" ? (
+        {episode?.summary ? (
           <p className="text-[#bbb]_ pr-8 text-xs leading-[18px] text-blue-200 underline underline-offset-2">
-            {episode?.summary}
+            {episode.summary}
             <IconExternalLink className="mx-1.5 inline" size={16} />
           </p>
         ) : null}

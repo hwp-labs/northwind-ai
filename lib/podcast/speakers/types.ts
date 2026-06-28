@@ -20,6 +20,8 @@ export interface SpeakerEntity {
     x: string;
     in?: string;
     ig?: string;
+    tt?: string;
+    email?: string;
   };
   hide?: boolean;
   host?: boolean;

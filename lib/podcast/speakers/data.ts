@@ -1,6 +1,38 @@
 import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
+  // {
+  //   id: 20,
+  //   avatar: "/uploads/podcast/avatar-fike.png",
+  //   firstName: "Franklin",
+  //   surname: "Ike",
+  //   displayName: "Franklin I.",
+  //   email: "frankline95.ii@gmail.com",
+  //   tel: "+2349038503700",
+  //   occupation: "CEO, Thesinova Consulting",
+  //   bio: "Data Scientist, ML Engineer",
+  //   website: "thesinova.com",
+  //   location: {
+  //     city: "Asaba",
+  //   },
+  //   socials: { x: "@x", in: "franklin-ike", email: "contact@thesinova.com" },
+  // },
+  {
+    id: 19,
+    avatar: "/uploads/podcast/avatar-jusen.jpg",
+    firstName: "Jabulani",
+    surname: "Usen",
+    displayName: "Jabulani U.",
+    email: "jabulanietokakpan@gmail.com",
+    tel: "+2349063525949",
+    occupation: "Software Engineer",
+    bio: "Founder/CEO, Lani.ng",
+    website: "jabulaniusen.com",
+    location: {
+      city: "Oyo",
+    },
+    socials: { x: "@JabulaniUsen", in: "" },
+  },
   {
     id: 18,
     avatar: "/uploads/podcast/avatar-saiyeduyoni.jpg",
@@ -12,7 +44,7 @@ export const data: SpeakerDto[] = [
     occupation: "Systems Engineer",
     bio: "CEO, SAT Integrated Concepts",
     location: {
-      city: "Edo", 
+      city: "Edo",
     },
     socials: { x: "@samaiye2018" },
   },

@@ -8,9 +8,9 @@ interface Props {
 }
 
 export const QversePostCard = ({ page = 1 }: Props) => {
-  const e1 = transformEpisode(18);
-  const e2 = transformEpisode(19);
-  const e3 = transformEpisode(19);
+  const e1 = transformEpisode(20);
+  const e2 = transformEpisode(21);
+  const e3 = transformEpisode(23);
   //
   return (
     <>
@@ -20,35 +20,29 @@ export const QversePostCard = ({ page = 1 }: Props) => {
         <ul className="mt-4">
           <Card
             {...{
-              icon: e1.Speakers[1].avatar,
-              _name: e1.topic,
-              name: "Pragmatics & Cryptography",
+              icon: e1.Speakers[0].avatar,
+              name: e1.topic,
               verified: true,
-              description: e1.Speakers[1].fullName,
-              followers: 244,
+              description: e1.Speakers[0].fullName,
               posted: e1.datetimeShort,
             }}
           />
           <Card
             {...{
               icon: e2.Speakers[1].avatar,
-              _name: e2.topic,
-              name: "SOW: Govt Subcontractors",
+              name: e2.topic,
               verified: true,
               description: e2.Speakers[1].fullName,
-              followers: 57,
               posted: e2.datetimeShort,
             }}
           />
           <Card
             {...{
-              icon: e2.Speakers[2].avatar,
-              _name: e2.topic,
-              name: "SOW: Govt Subcontractors",
+              icon: e3.Speakers[1].avatar,
+              name: e3.topic,
               verified: true,
-              description: e2.Speakers[2].fullName,
-              followers: 57,
-              posted: e2.datetimeShort,
+              description: e3.Speakers[1].fullName,
+              posted: e3.datetimeShort,
             }}
           />
           {/* <Card
@@ -69,9 +63,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
             }}
           /> */}
         </ul>
-        {/* <Builder.Event date="Sunday, May 3rd" /> */}
         <section className="flex-row-ce -mt-10">
-          {/* <Builder.Address /> */}
           <Builder.CtaBtn />
         </section>
       </Builder.Container>

@@ -31,7 +31,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             alt=""
             width={80}
             height={80}
-            className="absolute top-4 right-5 hidden_"
+            className="absolute top-4 right-5 hidden"
           />
         </header>
         <Tags list={e.tags} />
