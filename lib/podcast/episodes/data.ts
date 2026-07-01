@@ -104,7 +104,7 @@ export const data: EpisodeDto[] = [
   {
     id: 19,
     datetime: "2026-06-28T19:00:00.000Z",
-    thumbnail: "/uploads/logos/inec.png",
+    thumbnail: "/uploads/logos/npower.jpg",
     topic: "SOW: Government Subcontractors",
     tags: ["Scope", "Deliverables", "Constraints"],
     guests: [17, 18],
@@ -127,7 +127,7 @@ export const data: EpisodeDto[] = [
     tags: ["Anagram", "Pangram", "Palindrome"],
     guests: [16],
     virtualLink: "https://x.com/i/spaces/1pKkOOEXPnXKj",
-    listeners: 7,
+    listeners: 8,
     liveListeners: 6,
     series: "fc",
   },
