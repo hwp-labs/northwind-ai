@@ -89,7 +89,7 @@ export const data: EpisodeDto[] = [
     summary:
       "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
     tags: ["Control Flow", "BOM & DOM", "async/await"],
-    virtualLink: "https://youtu.be",
+    virtualLink: "https://www.youtube.com/watch?v=cGoyAmGwDog",
     listeners: 0,
     liveListeners: 0,
     series: "fc",
