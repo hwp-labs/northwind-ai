@@ -88,8 +88,8 @@ export const data: EpisodeDto[] = [
     topic: "Event-Driven Programming Pt.1",
     summary:
       "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
-    tags: ["Control Structures", "BOM & DOM", "async/await"],
-    virtualLink: "",
+    tags: ["Control Flow", "BOM & DOM", "async/await"],
+    virtualLink: "https://youtu.be",
     listeners: 0,
     liveListeners: 0,
     series: "fc",
@@ -97,7 +97,7 @@ export const data: EpisodeDto[] = [
       src: "/uploads/logos/oau.jpg",
       title:
         "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
-      url: "youtu.be/dhMPSzedWNQ",
+      url: "oauife.edu.ng",
       cta: "Watch Now",
     },
   },
