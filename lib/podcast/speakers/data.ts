@@ -19,14 +19,14 @@ export const data: SpeakerDto[] = [
   // },
   {
     id: 19,
-    avatar: "/uploads/podcast/avatar-jusen.jpg",
+    avatar: "/uploads/podcast/avatar-jusen.jpeg",
     firstName: "Jabulani",
     surname: "Usen",
     displayName: "Jabulani U.",
     email: "jabulanietokakpan@gmail.com",
     tel: "+2349063525949",
     occupation: "Software Engineer",
-    bio: "Founder/CEO, Lani.ng",
+    bio: "Founder/CEO, LANI",
     website: "jabulaniusen.com",
     location: {
       city: "Oyo",
