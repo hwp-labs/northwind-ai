@@ -2,21 +2,41 @@ import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
   // {
-  //   id: 20,
-  //   avatar: "/uploads/podcast/avatar-fike.png",
-  //   firstName: "Franklin",
-  //   surname: "Ike",
-  //   displayName: "Franklin I.",
-  //   email: "frankline95.ii@gmail.com",
-  //   tel: "+2349038503700",
-  //   occupation: "CEO, Thesinova Consulting",
-  //   bio: "Data Scientist, ML Engineer",
-  //   website: "thesinova.com",
+  //   id: 21,
+  //   avatar: "/uploads/podcast/avatar-vogundowo.png",
+  //   firstName: "Victor",
+  //   surname: "Ogundowo",
+  //   displayName: "Victor I.",
+  //   email: "",
+  //   tel: "+2348060956363",
+  //   occupation: "Software Engineer",
+  //   bio: "Founder, Vicomeg",
+  //   website: "vicomeg.com",
   //   location: {
-  //     city: "Asaba",
+  //     city: "Lagos",
   //   },
-  //   socials: { x: "@x", in: "franklin-ike", email: "contact@thesinova.com" },
+  //   socials: { x: "@x", in: "vicosoft", email: "support@vicomeg.com" },
   // },
+  {
+    id: 20,
+    avatar: "/uploads/podcast/avatar-fike.png",
+    firstName: "Franklin",
+    surname: "Ike",
+    displayName: "Franklin I.",
+    email: "frankline95.ii@gmail.com",
+    tel: "+2349038503700",
+    occupation: "CEO, Thesinova Consulting",
+    bio: "Data Scientist, ML Engineer",
+    website: "thesinova.com",
+    location: {
+      city: "Asaba",
+    },
+    socials: {
+      x: "@bloginfoheap",
+      in: "franklin-ike",
+      email: "anyiglobal95.ii@gmail.com;contact@thesinova.com",
+    },
+  },
   {
     id: 19,
     avatar: "/uploads/podcast/avatar-jusen.jpeg",
@@ -31,7 +51,7 @@ export const data: SpeakerDto[] = [
     location: {
       city: "Oyo",
     },
-    socials: { x: "@JabulaniUsen", in: "" },
+    socials: { x: "@JabulaniUsen" },
   },
   {
     id: 18,

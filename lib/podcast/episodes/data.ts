@@ -2,7 +2,7 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   // {
-  //   id: 20,
+  //   id: 25,
   //   datetime: "2026-06-26T19:00:00.000Z",
   //   thumbnail: "/uploads/logos/onlyfans.png",
   //   topic: "System Design Anti-patterns at OnlyFans",
@@ -25,44 +25,62 @@ export const data: EpisodeDto[] = [
   //   },
   // },
   // {
-  //   id: 23,
-  //   datetime: "2026-07-12T19:00:00.000Z",
-  //   thumbnail: "/uploads/logos/thesinova.png",
-  //   topic: "Empirical Analysis & Decision Making",
-  //   tags: ["#Prediction", "Inference", "Classification", "Forecast"],
-  //   guests: [20],
-  //   virtualLink: "https://x.com/i/spaces/1yGBeeAYNgMKN",
+  //   id: 25,
+  //   datetime: "2026-07-19T19:00:00.000Z",
+  //   thumbnail: "/uploads/logos/edusphere.png",
+  //   topic: "Smart EduSphere Design Session",
+  //   tags: ["AI-Native", "Multi-Tenant", "OIDC Secure"],
+  //   guests: [21],
+  //   virtualLink: "#",
   //   listeners: 0,
   //   liveListeners: 0,
-  //   series: "fc",
   //   meta: {
-  //     src: "/uploads/logos/thesinova.png",
+  //     src: "/uploads/logos/edusphere.png",
   //     title:
-  //       "High-performance Solutions at the Intersection of Academia & Techno...",
-  //     url: "thesinova.com",
-  //     cta: "Contact Us",
+  //       "All-In-One School Management OS. Admissions, Bursary, CBT Exams, Rep...",
+  //     url: "vicomeg.com",
+  //     cta: "Register Now",
   //   },
   // },
-  // {
-  //   id: 22,
-  //   datetime: "2026-07-08T09:00:00.000Z",
-  //   thumbnail: "/uploads/logos/oau.jpg",
-  //   topic: "Event-Driven Programming Pt.2",
-  //   summary:
-  //     "A Virtual Guest Lecture + Vibe Coding Session at the Dept. of Software Engineering, OAU",
-  //   tags: ["Control Flow", "BOM & DOM", "async/await"],
-  //   virtualLink: "",
-  //   listeners: 0,
-  //   liveListeners: 0,
-  //   series: "fc",
-  //   meta: {
-  //     src: "/uploads/logos/oau.jpg",
-  //     title:
-  //       "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
-  //     url: "oauife.edu.ng",
-  //     cta: "Watch Now",
-  //   },
-  // },
+  {
+    id: 23,
+    datetime: "2026-07-12T19:00:00.000Z",
+    thumbnail: "/uploads/logos/thesinova.png",
+    topic: "Empirical Analysis & Decision Making",
+    tags: ["#Prediction", "Inference", "Classification", "Forecast"],
+    guests: [20],
+    virtualLink: "https://x.com/i/spaces/1yGBeeAYNgMKN",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc",
+    meta: {
+      src: "/uploads/logos/thesinova.png",
+      title:
+        "High-performance Solutions at the Intersection of Academia & Techno...",
+      url: "thesinova.com",
+      cta: "Contact Us",
+    },
+  },
+  {
+    id: 22,
+    datetime: "2026-07-08T09:00:00.000Z",
+    thumbnail: "/uploads/logos/oau.jpg",
+    topic: "Event-Driven Programming Pt.2",
+    summary:
+      "A Virtual Guest Lecture + Vibe Coding Session at the Dept. of Software Engineering, OAU",
+    tags: ["Control Flow", "BOM & DOM", "async/await"],
+    virtualLink: "https://youtu.be/cGoyAmGwDog",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc",
+    meta: {
+      src: "/uploads/logos/oau.jpg",
+      title:
+        "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
+      url: "oauife.edu.ng",
+      cta: "Watch Now",
+    },
+  },
   {
     id: 21,
     datetime: "2026-07-05T19:00:00.000Z",
@@ -71,8 +89,8 @@ export const data: EpisodeDto[] = [
     tags: ["Order", "Sell", "Deliver"],
     guests: [19],
     virtualLink: "https://x.com/i/spaces/1dGYllAbQAoKX",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 9,
+    liveListeners: 9,
     meta: {
       src: "/uploads/logos/lani.png",
       title:
@@ -95,7 +113,7 @@ export const data: EpisodeDto[] = [
     summary:
       "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
     tags: ["Control Flow", "BOM & DOM", "async/await"],
-    virtualLink: "https://www.youtube.com/watch?v=cGoyAmGwDog",
+    virtualLink: "https://youtu.be/cGoyAmGwDog",
     listeners: 86,
     liveListeners: 58,
     series: "fc",

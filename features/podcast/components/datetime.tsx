@@ -12,9 +12,6 @@ interface Props {
   episode: TransformedEpisode;
   variant?: "text" | "icon";
   tonight?: boolean;
-  _tonight?: boolean;
-  yt?: boolean;
-  _yt?: boolean;
 }
 
 export const Datetime = ({ episode, variant = "icon" }: Props) => {
@@ -32,14 +29,14 @@ export const Datetime = ({ episode, variant = "icon" }: Props) => {
   );
 };
 
-export const DatetimeVenue = ({ episode, tonight, yt }: Props) => {
+export const DatetimeVenue = ({ episode, tonight }: Props) => {
   return (
     <div className="flex-row-cs font-medium_ gap-2 text-xs tracking-wide whitespace-nowrap">
       <IconCalendarEventFilled size={16} />
       <span>{tonight ? "TONIGHT 🦊" : episode.dateShort}</span>
       <IconClockHour8Filled size={16} />
       <time dateTime={episode.datetime}>{episode.time} (WAT)</time>
-      {yt ? (
+      {episode.virtualLink.includes("yout") ? (
         <>
           <IconBrandYoutubeFilled size={16} />
           <span>YouTube</span>

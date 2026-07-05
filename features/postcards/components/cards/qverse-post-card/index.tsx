@@ -8,9 +8,9 @@ interface Props {
 }
 
 export const QversePostCard = ({ page = 1 }: Props) => {
-  const e1 = transformEpisode(20);
-  const e2 = transformEpisode(21);
-  const e3 = transformEpisode(23);
+  const e1 = transformEpisode(22);
+  const e2 = transformEpisode(23);
+  const e3 = transformEpisode(25);
   //
   return (
     <>
@@ -38,30 +38,13 @@ export const QversePostCard = ({ page = 1 }: Props) => {
           />
           <Card
             {...{
-              icon: e3.Speakers[1].avatar,
-              name: e3.topic,
+              icon: '/uploads/podcast/avatar-vogundowo.png',
+              name: 'Smart EduSphere Design Session',
               verified: true,
-              description: e3.Speakers[1].fullName,
-              posted: e3.datetimeShort,
+              description: 'Victor Ogundowo',
+              posted: 'Sun, 19 Jul 2026 | 8PM',
             }}
           />
-          {/* <Card
-            {...{
-              icon: e3.Speakers[0].avatar,
-              _name: (
-                <>
-                  {e3.topic}
-                  <br />
-                  at OnlyFans
-                </>
-              ),
-              name: e3.topic,
-              verified: true,
-              description: e3.Speakers[0].displayName,
-              followers: 86,
-              posted: e3.datetimeShort,
-            }}
-          /> */}
         </ul>
         <section className="flex-row-ce -mt-10">
           <Builder.CtaBtn />
