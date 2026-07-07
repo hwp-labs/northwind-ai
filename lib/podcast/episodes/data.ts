@@ -89,7 +89,7 @@ export const data: EpisodeDto[] = [
     tags: ["Order", "Sell", "Deliver"],
     guests: [19],
     virtualLink: "https://x.com/i/spaces/1dGYllAbQAoKX",
-    listeners: 9,
+    listeners: 10,
     liveListeners: 9,
     meta: {
       src: "/uploads/logos/lani.png",
