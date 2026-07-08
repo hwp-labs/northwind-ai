@@ -69,9 +69,9 @@ export const data: EpisodeDto[] = [
     summary:
       "A Virtual Guest Lecture + Vibe Coding Session at the Dept. of Software Engineering, OAU",
     tags: ["Control Flow", "BOM & DOM", "async/await"],
-    virtualLink: "https://youtu.be/cGoyAmGwDog",
-    listeners: 0,
-    liveListeners: 0,
+    virtualLink: "https://youtu.be/N8ZCWAtmcF8",
+    listeners: 48,
+    liveListeners: 48,
     series: "fc",
     meta: {
       src: "/uploads/logos/oau.jpg",
