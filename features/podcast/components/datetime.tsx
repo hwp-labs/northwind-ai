@@ -23,7 +23,7 @@ export const Datetime = ({ episode, variant = "icon" }: Props) => {
       <time dateTime={episode.datetime}>{episode.time} (WAT)</time>
     </div>
   ) : (
-    <p className="text-muted-foreground text-sm text-[12px]">
+    <p className="text-muted-foreground text-sm text-[12px] line-clamp-1">
       EP {episode.id0} &bull; {episode.datetimeShort}
     </p>
   );

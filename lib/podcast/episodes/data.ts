@@ -43,6 +43,18 @@ export const data: EpisodeDto[] = [
   //   },
   // },
   {
+    id: 26,
+    datetime: "2026-07-23T18:00:00.000Z",
+    thumbnail: "/uploads/logos/uniben.png",
+    topic: "CS Masters 19/21 Virtual Reunion",
+    tags: ["Leveraging AI", "Prediction", "Decision Making"],
+    guests: [17, 18],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc"
+  },
+  {
     id: 23,
     datetime: "2026-07-12T19:00:00.000Z",
     thumbnail: "/uploads/logos/thesinova.png",
@@ -70,8 +82,8 @@ export const data: EpisodeDto[] = [
       "A Virtual Guest Lecture + Vibe Coding Session at the Dept. of Software Engineering, OAU",
     tags: ["Control Flow", "BOM & DOM", "async/await"],
     virtualLink: "https://youtu.be/N8ZCWAtmcF8",
-    listeners: 48,
-    liveListeners: 48,
+    listeners: 100,
+    liveListeners: 30,
     series: "fc",
     meta: {
       src: "/uploads/logos/oau.jpg",
@@ -114,8 +126,8 @@ export const data: EpisodeDto[] = [
       "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
     tags: ["Control Flow", "BOM & DOM", "async/await"],
     virtualLink: "https://youtu.be/cGoyAmGwDog",
-    listeners: 86,
-    liveListeners: 58,
+    listeners: 147,
+    liveListeners: 60,
     series: "fc",
     meta: {
       src: "/uploads/logos/oau.jpg",
