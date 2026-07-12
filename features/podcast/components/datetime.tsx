@@ -1,9 +1,9 @@
 import {
+  IconBrandTiktokFilled,
   IconBrandXFilled,
   IconBrandYoutubeFilled,
   IconCalendarEventFilled,
   IconClockHour8Filled,
-  IconMapPinFilled,
 } from "@tabler/icons-react";
 
 import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
@@ -23,7 +23,7 @@ export const Datetime = ({ episode, variant = "icon" }: Props) => {
       <time dateTime={episode.datetime}>{episode.time} (WAT)</time>
     </div>
   ) : (
-    <p className="text-muted-foreground text-sm text-[12px] line-clamp-1">
+    <p className="text-muted-foreground line-clamp-1 text-sm text-[12px]">
       EP {episode.id0} &bull; {episode.datetimeShort}
     </p>
   );
@@ -36,10 +36,15 @@ export const DatetimeVenue = ({ episode, tonight }: Props) => {
       <span>{tonight ? "TONIGHT 🦊" : episode.dateShort}</span>
       <IconClockHour8Filled size={16} />
       <time dateTime={episode.datetime}>{episode.time} (WAT)</time>
-      {episode.virtualLink.includes("yout") ? (
+      {episode.virtualPlatform === "yt" ? (
         <>
           <IconBrandYoutubeFilled size={16} />
           <span>YouTube</span>
+        </>
+      ) : episode.virtualPlatform === "tk" ? (
+        <>
+          <IconBrandTiktokFilled size={16} />
+          <span>TikTok LIVE</span>
         </>
       ) : (
         <>

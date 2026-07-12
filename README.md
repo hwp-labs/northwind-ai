@@ -12,17 +12,6 @@ AI Automation Web Services
 ## Setup
 
 ```sh
-mkdir northwind-ai && cd northwind-ai
-
-npx shadcn@latest init
-npm run dev
-
-# http://127.0.0.1:3000
-```
-
-## Usage
-
-```sh
 git clone https://github.com/hwp-labs/northwind-ai.git
 cd northwind-ai
 
@@ -33,73 +22,4 @@ npm install
 npm run dev
 
 # http://127.0.0.1:3000
-```
-
-## Resources
-
-- [Shadcn/ui installation](https://ui.shadcn.com/docs/installation/next)
-- [Next.js metadata](https://nextjs.org/docs/app/api-reference/functions/generate-metadata)
-- [PWA manifest.json API](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest)
-
-## Cheatsheet
-
-```sh
-#
-rm -rf .next package-lock.json node_modules
-npm i
-npm run dev
-
-#
-npm i lodash
-npm install --save-dev @types/lodash
-
-# 
-npm i react-hook-form @hookform/resolvers zod
-
-#
-npm i @supabase/supabase-js @supabase/auth-helpers-nextjs @supabase/ssr 
-npm install --save-dev supabase
-
-#
-npm i -D ts-node typescript
-npx ts-node lib/supabase/seed.ts
-
-# 
-npm i nodemailer
-npm i --save-dev @types/nodemailer
-> https://myaccount.google.com/apppasswords
-
-npm i @react-email/components -E
-npm i @react-email/render
-npm i resend
-
-# 
-```
-
-#### Shadcn/ui ... components.json
-
-```json
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
-  "rsc": false,
-  "tsx": true,
-  "tailwind": {
-    "config": "tailwind.config.ts",
-    "css": "styles/globals.css",
-    "baseColor": "neutral",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "iconLibrary": "lucide",
-  "rtl": false,
-  "aliases": {
-    "components": "@/components/shadcn",
-    "utils": "@/components/shadcn/utils",
-    "ui": "@/components/shadcn/ui",
-    "lib": "@/components/shadcn",
-    "hooks": "@/hooks"
-  },
-  "registries": {}
-}
 ```

@@ -12,6 +12,7 @@ export interface EpisodeDto {
   guests?: number[];
   notionUrl?: string;
   virtualLink: string;
+  virtualPlatform?: "x" | "yt" | "tk";
   listeners: number;
   liveListeners: number;
   series?: "ds" | "fc" | "cs";

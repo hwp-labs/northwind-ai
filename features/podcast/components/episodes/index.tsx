@@ -7,6 +7,7 @@ import { CtaButton } from "./cta-button";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
 import { PATH } from "@/constants/PATH";
 import { data } from "@/lib/podcast/episodes/data";
+import Link from "next/link";
 
 export const Episodes = () => {
   return (
@@ -18,7 +19,7 @@ export const Episodes = () => {
         // className="mt-4_ debug grid h-svh overflow-y-auto px-4"
         className="scrollbar-hide h-[400px] snap-y snap-mandatory overflow-y-auto scroll-smooth px-4 pb-4"
       >
-        {data.slice(0, 10).map((item, i) => {
+        {data.slice(0, 12).map((item, i) => {
           const episode = transformEpisode(item.id);
           //
           return (
@@ -40,6 +41,14 @@ export const Episodes = () => {
             </li>
           );
         })}
+        <li>
+          <Link
+            href={PATH.podcastEpisodes}
+            className="flex-row-cc mt-4 mb-2 h-[40px] w-full rounded-lg border px-12 text-sm"
+          >
+            More Episodes
+          </Link>
+        </li>
       </ul>
     </section>
   );

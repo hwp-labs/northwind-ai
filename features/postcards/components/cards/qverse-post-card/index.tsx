@@ -8,9 +8,9 @@ interface Props {
 }
 
 export const QversePostCard = ({ page = 1 }: Props) => {
-  const e1 = transformEpisode(22);
-  const e2 = transformEpisode(23);
-  const e3 = transformEpisode(25);
+  const e1 = transformEpisode(24);
+  const e2 = transformEpisode(26);
+  const e3 = transformEpisode(26);
   //
   return (
     <>
@@ -20,10 +20,10 @@ export const QversePostCard = ({ page = 1 }: Props) => {
         <ul className="mt-4">
           <Card
             {...{
-              icon: e1.Speakers[0].avatar,
+              icon: e1.Speakers[1].avatar,
               name: e1.topic,
               verified: true,
-              description: e1.Speakers[0].fullName,
+              description: e1.Speakers[1].fullName,
               posted: e1.datetimeShort,
             }}
           />
@@ -38,11 +38,11 @@ export const QversePostCard = ({ page = 1 }: Props) => {
           />
           <Card
             {...{
-              icon: '/uploads/podcast/avatar-vogundowo.png',
-              name: 'Smart EduSphere Design Session',
+              icon: e2.Speakers[2].avatar,
+              name: e2.topic,
               verified: true,
-              description: 'Victor Ogundowo',
-              posted: 'Sun, 19 Jul 2026 | 8PM',
+              description: e2.Speakers[2].fullName,
+              posted: e2.datetimeShort,
             }}
           />
         </ul>

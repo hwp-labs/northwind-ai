@@ -13,6 +13,7 @@ import {
   fontBebasNeue,
 } from "@/constants/FONT";
 import "@/styles/globals.css";
+import { ProgressBar } from "@/components/progress-bar";
 
 export const metadata: Metadata = METADATA;
 export const viewport: Viewport = VIEWPORT;
@@ -34,6 +35,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <ProgressBar />
         {MOCK.explorer.show ? <Explorer /> : null}
         <ToasterClient />
         <ServiceWorker />

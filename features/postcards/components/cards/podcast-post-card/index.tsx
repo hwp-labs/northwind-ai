@@ -39,6 +39,14 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           <Topic
             variant="snap"
             episode={e}
+            topic={
+              page === 26 ? (
+                <>
+                  Binx AI <br />
+                  Design Session
+                </>
+              ) : undefined
+            }
             // topic="Design Systems & Finite State Machines"
             // className="text-[36px]! leading-[40px]!"
           />
