@@ -62,8 +62,8 @@ export const data: EpisodeDto[] = [
     tags: ["#Prediction", "Inference", "Classification", "Forecast"],
     guests: [20],
     virtualLink: "https://x.com/i/spaces/1yGBeeAYNgMKN",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 2,
+    liveListeners: 2,
     series: "fc",
     meta: {
       src: "/uploads/logos/thesinova.png",
