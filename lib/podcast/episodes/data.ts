@@ -46,7 +46,7 @@ export const data: EpisodeDto[] = [
     id: 26,
     datetime: "2026-07-23T18:00:00.000Z",
     thumbnail: "/uploads/logos/uniben.png",
-    topic: "CS Masters 19/21 Virtual Reunion",
+    topic: "MS Comp Sci 19/21 Virtual Reunion",
     tags: ["Leveraging AI", "Prediction", "Decision Making"],
     guests: [17, 18],
     virtualLink: "",
@@ -101,7 +101,7 @@ export const data: EpisodeDto[] = [
     tags: ["Order", "Sell", "Deliver"],
     guests: [19],
     virtualLink: "https://x.com/i/spaces/1dGYllAbQAoKX",
-    listeners: 10,
+    listeners: 11,
     liveListeners: 9,
     meta: {
       src: "/uploads/logos/lani.png",

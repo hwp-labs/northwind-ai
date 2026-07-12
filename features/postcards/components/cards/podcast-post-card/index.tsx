@@ -23,7 +23,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           backgroundPosition: e.series ? "52% top" : "85% top",
         }}
       />
-      <main className="debug_ absolute z-1 pr-6 pl-6">
+      <main className="debug_ absolute z-1 pr-0 pl-6">
         <header className="flex-row-cb mt-10">
           <Logo />
           <img
