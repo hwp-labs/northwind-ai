@@ -58,7 +58,7 @@ export const data: EpisodeDto[] = [
     tags: ["Inference", "Classification", "Forecast"],
     guests: [20],
     virtualLink: "https://x.com/i/spaces/1yGBeeAYNgMKN",
-    listeners: 2,
+    listeners: 4,
     liveListeners: 2,
     series: "fc",
     meta: {
