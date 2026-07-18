@@ -1,6 +1,6 @@
 export const Tags = ({ list }: { list: string[] }) => {
   return (
-    <ul className="flex-row-cs mt-6 gap-1.5">
+    <ul className="flex-row-cs mt-6 gap-1.5 flex-wrap">
       {list.map((item, i) => (
         <li
           key={i}

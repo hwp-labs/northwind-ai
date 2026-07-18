@@ -6,6 +6,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-07-26T19:00:00.000Z",
     thumbnail: "/uploads/logos/binx.jpg",
     topic: "Binx AI Design Session",
+    topicRichText: "Binx AI<br/>Design Session",
     tags: ["AI Chat", "Image Generation", "Voice Transcription"],
     guests: [22, 23],
     virtualLink: "#",
@@ -15,7 +16,7 @@ export const data: EpisodeDto[] = [
     meta: {
       src: "/uploads/logos/binx.jpg",
       title:
-        "WhatsApp AI Agent & Assistant. Web Search, Image Generation & More.",
+        "WhatsApp AI Agent & Assistant | Web Search | Image Generation & More",
       url: "usebinx.com",
       cta: "Get Started",
     },
@@ -24,7 +25,8 @@ export const data: EpisodeDto[] = [
     id: 25,
     datetime: "2026-07-23T18:00:00.000Z",
     thumbnail: "/uploads/logos/uniben.png",
-    topic: "MS Comp Sci 19|21 Virtual Reunion",
+    topic: "MS Comp Sci 19/21 Virtual Reunion",
+    topicRichText: "MS Comp Sci <span>19/21</span><br/>Virtual Reunion",
     tags: ["Leveraging AI", "Prediction", "Decision Making"],
     virtualLink: "#",
     virtualPlatform: "tk",
@@ -58,8 +60,8 @@ export const data: EpisodeDto[] = [
     tags: ["Inference", "Classification", "Forecast"],
     guests: [20],
     virtualLink: "https://x.com/i/spaces/1yGBeeAYNgMKN",
-    listeners: 2,
-    liveListeners: 2,
+    listeners: 4,
+    liveListeners: 4,
     series: "fc",
     meta: {
       src: "/uploads/logos/thesinova.png",
@@ -416,16 +418,5 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1qGvvkLwDBAGB",
     listeners: 139,
     liveListeners: 103,
-  },
-  // {
-  //   id: 1,
-  //   datetime: "2026-03-01T19:00:00.000Z",
-  //   topic: "Northwind Design Session",
-  //   summary: "AI-native, Cross-platform Product Analytics Solution",
-  //   notionUrl:
-  //     "https://held-gambler-004.notion.site/Northwind-AI-31b6a7cc633c8075b78ef30bf30c7ec7",
-  //   virtualLink: "#https://x.com/i/spaces/1nxnRYRXOgjxO",
-  //   listeners: 31,
-  //   liveListeners: 18,
-  // },
+  }
 ];

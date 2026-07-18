@@ -26,19 +26,34 @@ export const transformEpisode = (id?: number | string | null) => {
     dateShort: momentUtil.fmt("ddd, MMM D", e.datetime),
     // 8PM
     time: momentUtil.fmt("hA", e.datetime),
-    cover: e.series
-      ? "/uploads/podcast/sony.png"
-      : "/uploads/podcast/halim.png",
+    cover: {
+      ds: "/uploads/podcast/cover-halim.png",
+      fc: "/uploads/podcast/cover-sony.png",
+      cs: "/uploads/podcast/cover-sony.png",
+      se: "/uploads/podcast/cover-git.png",
+      ml: "/uploads/podcast/cover-forest.png",
+    }[e.series || "ds"],
+    coverPosition: {
+      ds: "85% top",
+      fc: "52% top",
+      cs: "52% top",
+      se: "80% -55px",
+      ml: "bottom left",
+    }[e.series || "ds"],
     thumbnail: e?.thumbnail || "/icon-512.png",
     displayAvatars: getDisplayAvatars(e),
     topic: e?.topicShort || e?.topic || HYPHENS,
-    tags: e?.tags?.filter((t) => !t.startsWith("#")) || [],
+    tags: !e?.tags
+      ? []
+      : (Array.isArray(e.tags) ? e.tags : e.tags.split(" ")).filter(
+          (t) => t && !t.startsWith("_"),
+        ) || [],
     Speakers: getSpeakers(e),
     canPlay: !e?.virtualLink.startsWith("#") && e?.listeners,
     ctaText: getCtaText(e),
     meta: e?.meta || {
       src: "/icon-512.png",
-      title: APP_PODCAST.summary,
+      title: APP_PODCAST.summaryRichText,
       url: APP_PODCAST.domain,
       cta: APP_PODCAST.tagline,
     },

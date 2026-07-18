@@ -1,3 +1,5 @@
+import clsx from "clsx";
+//
 import { Logo } from "@/components/logo";
 import { Topic } from "@/features/podcast/components/topic";
 import { DatetimeVenue } from "@/features/podcast/components/datetime";
@@ -5,7 +7,7 @@ import { Tags } from "./tags";
 import { GuestPanel } from "./guest-panel";
 import { MetaCard } from "./meta-card";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
-import { APP_PODCAST } from "@/constants/APP_PODCAST";
+import { Footer } from "./footer";
 
 interface Props {
   page?: number;
@@ -19,11 +21,14 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8), black), url(${e.cover})`,
-          backgroundPosition: e.series ? "52% top" : "85% top",
+          backgroundImage:
+            e.series === "se"
+              ? `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6), black), url(${e.cover})`
+              : `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8), black), url(${e.cover})`,
+          backgroundPosition: e.coverPosition,
         }}
       />
-      <main className="debug_ absolute z-1 pr-0 pl-6">
+      <main className="debug_ absolute z-1 pr-2 pl-6">
         <header className="flex-row-cb mt-10">
           <Logo />
           <img
@@ -35,31 +40,26 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           />
         </header>
         <Tags list={e.tags} />
-        <article className="debug_ mt-2.5 space-y-5">
+        <article
+          className={clsx(
+            "debug_ space-y-5",
+            e.tags.length > 3 ? "mt-4.5" : "mt-2.5",
+          )}
+        >
           <Topic
             variant="snap"
             episode={e}
-            topic={
-              page === 26 ? (
-                <>
-                  Binx AI <br />
-                  Design Session
-                </>
-              ) : undefined
-            }
             // topic="Design Systems & Finite State Machines"
-            // className="text-[36px]! leading-[40px]!"
+            // className="text-[30px]! leading-[40px]!"
           />
           <DatetimeVenue episode={e} />
         </article>
       </main>
-      <section className="absolute bottom-12 px-6">
+      <section className="w-full_ absolute bottom-12 px-6">
         <GuestPanel data={e.Speakers} />
         <MetaCard meta={e.meta} />
       </section>
-      <footer className="text-muted font-f4 absolute bottom-4 w-full text-center text-xs tracking-widest">
-        {APP_PODCAST.domain}
-      </footer>
+      <Footer />
     </div>
   );
 };

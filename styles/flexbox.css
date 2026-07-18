@@ -62,6 +62,10 @@
     @apply flex items-start;
   }
 
+  .flex-row-xc {
+    @apply flex justify-center;
+  }
+
   /* COLUMN */
   .flex-col-x {
     @apply flex flex-col;

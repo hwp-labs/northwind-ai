@@ -9,6 +9,7 @@ export const APP_PODCAST = {
   keywords: ["northwind", "northwind ai", "northwind ai podcast", "ai podcast"],
   description: "Promote ideas, MVPs and startups. Discuss uses of AI in your field. Join our Guest Panel for a brief Design Session, Fireside Chat, and Case Study episode.",
   summary: "Promote Ideas, MVPs & Startups. Discuss Uses of AI in Your Field",
+  summaryRichText: "Promote Ideas, MVPs & Startups. <br/>Discuss Uses of AI in Your Field",
   tags: ["Design Session", "Fireside Chat", "Case Study"],
   startData: "2026-05-22T11:00:00.000",
   launchData: "2026-05-27T11:00:00.000",

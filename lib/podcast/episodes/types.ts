@@ -5,9 +5,10 @@ export interface EpisodeDto {
   displayAvatars?: string[];
   topic: string;
   topicShort?: string;
+  topicRichText?: string;
   summary?: string;
   _notes?: any;
-  tags?: string[];
+  tags?: string | string[];
   host?: number;
   guests?: number[];
   notionUrl?: string;
@@ -15,14 +16,15 @@ export interface EpisodeDto {
   virtualPlatform?: "x" | "yt" | "tk";
   listeners: number;
   liveListeners: number;
-  series?: "ds" | "fc" | "cs";
+  series?: "ds" | "fc" | "cs" | "se"| "ml";
   favorite?: boolean;
   hide?: boolean;
   meta?: {
     src: string;
     title: string;
     url: string;
-    cta: string;
+    cta?: string;
     social?: string;
+    ctaText?: string;
   };
 }

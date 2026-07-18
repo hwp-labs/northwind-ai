@@ -44,7 +44,7 @@ export const DatetimeVenue = ({ episode, tonight }: Props) => {
       ) : episode.virtualPlatform === "tk" ? (
         <>
           <IconBrandTiktokFilled size={16} />
-          <span>TikTok LIVE</span>
+          <strong>TikTok LIVE</strong>
         </>
       ) : (
         <>

@@ -118,7 +118,13 @@ export const data: SpeakerDto[] = [
     location: {
       city: "Osun",
     },
-    socials: { x: "@mr_oshomoh", in: "harrisonoshomoh", ig: "mr_oshomoh" },
+    socials: {
+      x: "@mr_oshomoh",
+      in: "harrisonoshomoh",
+      ig: "mr_oshomoh",
+      tk: "@harrisonoshomoh",
+      git: "",
+    },
   },
   {
     id: 16,
@@ -349,7 +355,7 @@ export const data: SpeakerDto[] = [
     bio: "AI Product Engineer, HWP Labs",
     website: "northwindai.org",
     location: { city: "Edo" },
-    socials: { in: "2gbeh", x: "@2gbeh" },
+    socials: { in: "2gbeh", x: "@2gbeh", tk: "@2gbeh", git: "2gbeh" },
     host: true,
   },
 ];

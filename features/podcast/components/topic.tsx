@@ -10,17 +10,21 @@ interface Props {
 }
 
 export const Topic = ({ variant, episode, topic, className }: Props) => {
-  if (variant === "snap")
+  const safeTopic = topic || episode?.topic;
+  const h1ClassName =
+    "font-f3 [&>span]:font-f2 pr-4 text-[32px] leading-[36px] font-semibold tracking-wide text-white";
+
+  if (variant === "snap") {
     return (
       <hgroup className="space-y-2">
-        <h1
-          className={clsx(
-            "font-f3 pr-4 text-[32px] leading-[36px] font-semibold tracking-wide text-white",
-            className,
-          )}
-        >
-          {topic || episode?.topic}
-        </h1>
+        {episode?.topicRichText ? (
+          <h1
+            className={clsx(h1ClassName, className)}
+            dangerouslySetInnerHTML={{ __html: episode.topicRichText }}
+          />
+        ) : (
+          <h1 className={clsx(h1ClassName, className)}>{safeTopic}</h1>
+        )}
         {episode?.summary ? (
           <p className="text-[#bbb]_ pr-8 text-xs leading-[18px] text-blue-200 underline underline-offset-2">
             {episode.summary}
@@ -29,6 +33,7 @@ export const Topic = ({ variant, episode, topic, className }: Props) => {
         ) : null}
       </hgroup>
     );
+  }
 
   return (
     <strong
@@ -39,7 +44,7 @@ export const Topic = ({ variant, episode, topic, className }: Props) => {
         variant === "preview" && "text-center text-lg text-white",
       )}
     >
-      {topic || episode?.topic}
+      {safeTopic}
     </strong>
   );
 };
