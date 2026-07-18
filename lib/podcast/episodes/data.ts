@@ -61,7 +61,7 @@ export const data: EpisodeDto[] = [
     guests: [20],
     virtualLink: "https://x.com/i/spaces/1yGBeeAYNgMKN",
     listeners: 4,
-    liveListeners: 4,
+    liveListeners: 2,
     series: "fc",
     meta: {
       src: "/uploads/logos/thesinova.png",
