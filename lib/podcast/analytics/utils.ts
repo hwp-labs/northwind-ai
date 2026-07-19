@@ -22,6 +22,14 @@ export function computeAnalytics() {
           if (res.episodes?.caseStudy) res.episodes.caseStudy += 1;
           else res.episodes = { ...res.episodes, caseStudy: 1 };
         }
+        if (d.series === "se") {
+          if (res.episodes?.softwareEngineering) res.episodes.softwareEngineering += 1;
+          else res.episodes = { ...res.episodes, softwareEngineering: 1 };
+        }
+        if (d.series === "ml") {
+          if (res.episodes?.machineLearning) res.episodes.machineLearning += 1;
+          else res.episodes = { ...res.episodes, machineLearning: 1 };
+        }
       } else {
         if (res.episodes?.designSession) res.episodes.designSession += 1;
         else res.episodes = { ...res.episodes, designSession: 1 };

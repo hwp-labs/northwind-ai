@@ -44,7 +44,7 @@ export const Episodes = () => {
         <li>
           <Link
             href={PATH.podcastEpisodes}
-            className="flex-row-cc mt-4 mb-2 h-[44px] font-medium w-full rounded-lg border px-12 text-sm"
+            className="flex-row-cc mt-4 mb-2 h-[40px] font-medium w-full rounded-lg border px-12 text-sm"
           >
             More Episodes
           </Link>

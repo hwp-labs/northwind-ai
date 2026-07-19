@@ -25,7 +25,7 @@ export const KpiCard = ({
 }: Props) => {
   return (
     <div className="card-podcast">
-      <div className="flex-row-cs gap-4 font-medium text-lg">
+      <div className="flex-row-cs gap-4 text-lg font-medium">
         <div className="flex-row-cc bg-background text-foreground size-[32px] rounded-full">
           {Icon}
         </div>
@@ -45,7 +45,7 @@ export const KpiCard = ({
           {keys.map((item, i) => (
             <div key={i} className="flex-row-cs gap-2.5 whitespace-nowrap">
               <div className={clsx("bg-ring size-2.5 rounded", item.color)} />
-              {item.label} ({item.valueText || item.value})
+              {item.valueText || item.value || 0} {item.label}
             </div>
           ))}
         </div>

@@ -33,7 +33,7 @@ export const List = () => {
                 <Datetime episode={episode} variant="text" />
               </figcaption>
             </figure>
-              <CtaButton episode={episode} />
+            <CtaButton episode={episode} />
           </li>
         ) : null;
       })}
