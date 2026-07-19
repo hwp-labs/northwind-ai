@@ -33,7 +33,7 @@ export const data: EpisodeDto[] = [
     topicRichText: "Fedora Week <span>1/12</span>",
     summary:
       "SDLC Phase 1 - Define Goals, Scope, Budget, and Timelines. Publish PRD.md on GitHub.",
-    tags: "fintech angular csharp postgres azure-devops claude-ai build-in-public",
+    tags: "monorepo angular csharp postgres azure-devops claude-ai build-in-public",
     virtualLink: "#",
     virtualPlatform: "tk",
     listeners: 0,

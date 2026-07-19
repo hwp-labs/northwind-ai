@@ -41,9 +41,9 @@ export const data: EpisodeDto[] = [
     topic: "Smart EduSphere Design Session",
     tags: ["AI-Native", "Multi-Tenant", "OIDC Secure"],
     guests: [21],
-    virtualLink: "https://x.com/i/spaces/1lJQRRPQRWXxE",
-    listeners: 0,
-    liveListeners: 0,
+    virtualLink: "https://x.com/i/spaces/1dKrPPVvdbqJX",
+    listeners: 3,
+    liveListeners: 3,
     meta: {
       src: "/uploads/logos/edusphere.png",
       title:
