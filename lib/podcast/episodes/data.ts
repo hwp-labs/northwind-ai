@@ -2,27 +2,6 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   {
-    id: 30,
-    datetime: "2027-01-01T19:00:00.000Z",
-    thumbnail: "/uploads/logos/fedora.png",
-    topic: "Fedora Week 1/12",
-    topicRichText: "Fedora Week <span>1/12</span>",
-    summary:
-      "SDLC Phase 1 - Define Goals, Scope, Budget, and Timelines. Publish PRD.md on GitHub.",
-    tags: "monorepo angular csharp postgres azure-devops claude-ai build-in-public",
-    virtualLink: "#",
-    virtualPlatform: "tk",
-    listeners: 0,
-    liveListeners: 0,
-    meta: {
-      src: "/uploads/logos/fedora.png",
-      title:
-        "Finance Ledger WebApp | Automate Income & Expense Tracking | Analytics",
-      url: "fedora.azurewebsites.net",
-    },
-    series: "se",
-  },
-  {
     id: 26,
     datetime: "2026-07-26T19:00:00.000Z",
     thumbnail: "/uploads/logos/binx.jpg",
@@ -439,5 +418,5 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1qGvvkLwDBAGB",
     listeners: 139,
     liveListeners: 103,
-  }
+  },
 ];
