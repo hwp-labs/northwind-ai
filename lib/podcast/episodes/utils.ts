@@ -30,8 +30,8 @@ export const transformEpisode = (id?: number | string | null) => {
       ds: "/uploads/podcast/cover-halim.png",
       fc: "/uploads/podcast/cover-sony.png",
       cs: "/uploads/podcast/cover-sony.png",
-      se: "/uploads/podcast/cover-git.png",
-      ml: "/uploads/podcast/cover-forest.png",
+      se: "/uploads/podcast/cover-git.jpg",
+      ml: "/uploads/podcast/cover-lake.jpg",
     }[e.series || "ds"],
     coverPosition: {
       ds: "85% top",

@@ -42,7 +42,7 @@ export const data: EpisodeDto[] = [
     tags: ["AI-Native", "Multi-Tenant", "OIDC Secure"],
     guests: [21],
     virtualLink: "https://x.com/i/spaces/1dKrPPVvdbqJX",
-    listeners: 3,
+    listeners: 4,
     liveListeners: 3,
     meta: {
       src: "/uploads/logos/edusphere.png",
