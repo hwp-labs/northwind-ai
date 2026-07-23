@@ -7,7 +7,7 @@ import { AnchorOutbound } from "@/components/atoms/anchor";
 import { APP } from "./APP";
 
 export const COPY = {
-  teachMe: `Hello ${APP.name}, I'd like to *Learn More* about the ongoing \`AI Product Engineering\` and \`ML Data Engineering\` training..`,
+  teachMe: `Hello ${APP.name}, I'd like to *Learn More* about the on-going training on \`AI Product Engineering\` and \`ML Data Engineering\`.`,
   prompt: `How can ${APP.name} help automate my business?`,
   promptWithHi: `Hi, how can ${APP.name} help automate my business?`,
   promptShort: `Automate My Business w/${APP.name}`,
