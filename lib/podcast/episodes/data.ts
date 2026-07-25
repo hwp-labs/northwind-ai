@@ -3,7 +3,7 @@ import { EpisodeDto } from "./types";
 export const data: EpisodeDto[] = [
   {
     id: 26,
-    datetime: "2026-07-26T19:00:00.000Z",
+    datetime: "2026-07-26T18:00:00.000Z",
     thumbnail: "/uploads/logos/binx.jpg",
     topic: "Binx AI Design Session",
     topicRichText: "Binx AI<br/>Design Session",
@@ -26,11 +26,11 @@ export const data: EpisodeDto[] = [
     datetime: "2026-07-23T20:00:00.000Z",
     thumbnail: "/uploads/logos/uniben.png",
     topic: "MSC CSC 19/20 - Leveraging AI & ML",
-    topicRichText: "MSC CSC <span>19/20</span><br/>Virtual Reunion",
+    topicRichText: "MSC CSC <span>19/20</span><br/>Leveraging AI & ML",
     tags: ["Leveraging AI", "Prediction", "Decision Making"],
     virtualLink: "https://x.com/i/spaces/1nJOLLZqBykxR",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 13,
+    liveListeners: 13,
     series: "fc",
   },
   {

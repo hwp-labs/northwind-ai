@@ -19,7 +19,7 @@ import { data } from "@/lib/podcast/episodes/data";
 
 const startIndex = 2;
 const favorites = 1
-  ? [6, 21, 25]
+  ? [6, 25, 26]
   : Array.from({ length: data.length }, (_, i) => i + 1);
 
 export const Hero = () => {
