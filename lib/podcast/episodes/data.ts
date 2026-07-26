@@ -9,7 +9,7 @@ export const data: EpisodeDto[] = [
     topicRichText: "Binx AI<br/>Design Session",
     tags: ["AI Chat", "Image Generation", "Voice Transcription"],
     guests: [22, 23],
-    virtualLink: "#",
+    virtualLink: "https://youtu.be/DNRfPTblMJA",
     virtualPlatform: "yt",
     listeners: 0,
     liveListeners: 0,
@@ -73,7 +73,7 @@ export const data: EpisodeDto[] = [
   {
     id: 22,
     datetime: "2026-07-08T09:00:00.000Z",
-    thumbnail: "/uploads/logos/oau.jpg",
+    thumbnail: "/uploads/logos/oau.png",
     topic: "Event-Driven Programming Pt.2",
     summary:
       "A Virtual Guest Lecture + Vibe Coding Session at the Dept. of Software Engineering, OAU",
@@ -84,7 +84,7 @@ export const data: EpisodeDto[] = [
     liveListeners: 30,
     series: "fc",
     meta: {
-      src: "/uploads/logos/oau.jpg",
+      src: "/uploads/logos/oau.png",
       title:
         "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
       url: "oauife.edu.ng",
@@ -118,7 +118,7 @@ export const data: EpisodeDto[] = [
   {
     id: 20,
     datetime: "2026-07-01T09:00:00.000Z",
-    thumbnail: "/uploads/logos/oau.jpg",
+    thumbnail: "/uploads/logos/oau.png",
     topic: "Event-Driven Programming Pt.1",
     summary:
       "A Virtual Guest Lecture at the Department of Computer Science & Engineering, OAU",
@@ -129,7 +129,7 @@ export const data: EpisodeDto[] = [
     liveListeners: 60,
     series: "fc",
     meta: {
-      src: "/uploads/logos/oau.jpg",
+      src: "/uploads/logos/oau.png",
       title:
         "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
       url: "oauife.edu.ng",
