@@ -11,8 +11,8 @@ export const data: EpisodeDto[] = [
     guests: [22, 23],
     virtualLink: "https://youtu.be/DNRfPTblMJA",
     virtualPlatform: "yt",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 10,
+    liveListeners: 10,
     meta: {
       src: "/uploads/logos/binx.jpg",
       title:
