@@ -9,10 +9,10 @@ export const data: EpisodeDto[] = [
     topicRichText: "AI/ML Engineering<br/>Course Overview",
     tags: ["Tech Stack", "SDLC & CRISP-DM", "Open Source Guide"],
     guests: [20, 17],
-    virtualLink: "https://vt.tiktok.com/ZS9hSbt3UhtK7-JFhtZ/",
+    virtualLink: "https://vt.tiktok.com/ZS9hSbt3UhtK7-JFhtZ",
     virtualPlatform: "tk",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 13,
+    liveListeners: 13,
     meta: {
       src: "/uploads/logos/expo-cbt.png",
       title:
