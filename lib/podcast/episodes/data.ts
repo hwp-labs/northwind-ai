@@ -2,6 +2,28 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   {
+    id: 27,
+    datetime: "2026-08-02T18:00:00.000Z",
+    thumbnail: "/uploads/logos/expo-cbt.png",
+    topic: "AI/ML Engineering - Course Overview",
+    topicRichText: "AI/ML Engineering<br/>Course Overview",
+    tags: ["Tech Stack", "SDLC & CRISP-DM", "Open Source Guide"],
+    guests: [20, 17],
+    virtualLink: "#",
+    virtualPlatform: "tk",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/expo-cbt.png",
+      title:
+        "Open-source CBT WebApp | Dept. of<br/>Computer Science & Engineering, OAU",
+      url: "github.com/expo-cbt",
+      ctaText: "Become a contributor",
+      social: "git",
+    },
+    series: "se",
+  },
+  {
     id: 26,
     datetime: "2026-07-26T18:00:00.000Z",
     thumbnail: "/uploads/logos/binx.jpg",
@@ -11,7 +33,7 @@ export const data: EpisodeDto[] = [
     guests: [22, 23],
     virtualLink: "https://youtu.be/DNRfPTblMJA",
     virtualPlatform: "yt",
-    listeners: 32,
+    listeners: 58,
     liveListeners: 10,
     meta: {
       src: "/uploads/logos/binx.jpg",
@@ -25,9 +47,9 @@ export const data: EpisodeDto[] = [
     id: 25,
     datetime: "2026-07-23T20:00:00.000Z",
     thumbnail: "/uploads/logos/uniben.png",
-    topic: "MSC CSC 19/20 - Leveraging AI & ML",
-    topicRichText: "MSC CSC <span>19/20</span><br/>Leveraging AI & ML",
-    tags: ["Leveraging AI", "Prediction", "Decision Making"],
+    topic: "MSC CSC 19/20 - Virtual Reunion",
+    topicRichText: "MSC CSC <span>19/20</span><br/>Virtual Reunion",
+    tags: ["Leveraging AI", "ML Prediction", "Decision Making"],
     virtualLink: "https://x.com/i/spaces/1nJOLLZqBykxR",
     listeners: 13,
     liveListeners: 13,
@@ -80,7 +102,7 @@ export const data: EpisodeDto[] = [
     tags: ["Control Flow", "BOM & DOM", "async/await"],
     virtualLink: "https://youtu.be/N8ZCWAtmcF8",
     virtualPlatform: "yt",
-    listeners: 100,
+    listeners: 111,
     liveListeners: 30,
     series: "fc",
     meta: {
@@ -125,7 +147,7 @@ export const data: EpisodeDto[] = [
     tags: ["Control Flow", "BOM & DOM", "async/await"],
     virtualLink: "https://youtu.be/cGoyAmGwDog",
     virtualPlatform: "yt",
-    listeners: 147,
+    listeners: 163,
     liveListeners: 60,
     series: "fc",
     meta: {

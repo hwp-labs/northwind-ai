@@ -17,14 +17,11 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
   const e = transformEpisode(page);
   //
   return (
-    <div className="text-foreground bg-background border_ _mx-auto relative h-[640px] w-[360px] overflow-hidden">
+    <div className="text-foreground bg-background border_ _mx-auto relative h-[640px] w-[365px] overflow-hidden">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            e.series === "se"
-              ? `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6), black), url(${e.cover})`
-              : `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8), black), url(${e.cover})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8), black), url(${e.cover})`,
           backgroundPosition: e.coverPosition,
         }}
       />
@@ -50,7 +47,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             variant="snap"
             episode={e}
             // topic="Design Systems & Finite State Machines"
-            // className="text-[30px]! leading-[40px]!"
+            // className="text-[27.5px]! _leading-[40px]!"
           />
           <DatetimeVenue episode={e} />
         </article>

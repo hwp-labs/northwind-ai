@@ -61,7 +61,7 @@ export const MonthlyPostCard = ({ page }: Props) => {
           </div>
           <figcaption
             className={clsx(
-              "font-f3 -ml-2 bg-clip-text text-center text-[340px] leading-72 font-bold text-transparent uppercase",
+              "font-f3 -ml-8 bg-clip-text text-center text-[340px] leading-72 font-bold text-transparent uppercase",
               "from-[#90c9ca] bg-gradient-to-b",
               isMay && "-mt-8 -ml-12",
             )}
