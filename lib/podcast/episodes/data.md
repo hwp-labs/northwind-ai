@@ -44,7 +44,7 @@ export const data: EpisodeDto[] = [
         "Finance Ledger WebApp | Automate Income & Expense Tracking | Analytics",
       url: "fedora.azurewebsites.net",
     },
-    series: "se",
+    series: "ai",
   },
   {
     id: 29,
@@ -65,7 +65,7 @@ export const data: EpisodeDto[] = [
         "Frozen Foods & Drinks | Order Online | Pay On Delivery | 25% Discount In-App",
       url: "vividfoods.com",
     },
-    series: "se",
+    series: "ai",
   },
   {
     id: 28,
@@ -88,7 +88,7 @@ export const data: EpisodeDto[] = [
       ctaText: "Become a contributor",
       social: "git",
     },
-    series: "se",
+    series: "ai",
   },
   {
     id: 27,
@@ -112,7 +112,7 @@ export const data: EpisodeDto[] = [
       ctaText: "Become a contributor",
       social: "git",
     },
-    series: "se",
+    series: "ai",
   },
   {
     id: 1,

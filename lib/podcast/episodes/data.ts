@@ -21,7 +21,7 @@ export const data: EpisodeDto[] = [
       ctaText: "Become a contributor",
       social: "git",
     },
-    series: "se",
+    series: "ai",
   },
   {
     id: 26,

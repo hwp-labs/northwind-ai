@@ -16,7 +16,7 @@ export interface EpisodeDto {
   virtualPlatform?: "x" | "yt" | "tk";
   listeners: number;
   liveListeners: number;
-  series?: "ds" | "fc" | "cs" | "se"| "ml";
+  series?: "ds" | "fc" | "cs" | "ai"| "ml";
   favorite?: boolean;
   hide?: boolean;
   meta?: {

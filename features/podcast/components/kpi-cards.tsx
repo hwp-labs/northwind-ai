@@ -32,14 +32,14 @@ export const KpiCards = ({ episodes, guests }: Props) => {
             color: "bg-chart-2!",
           },
           {
-            label: "#BuildInPublic",
-            value: episodes?.softwareEngineering,
-            color: "bg-chart-5!",
+            label: "AI Engineering",
+            value: episodes?.ai,
+            color: "bg-zima!",
           },
           {
-            label: "ML",
-            value: episodes?.machineLearning,
-            color: "bg-kaggle!",
+            label: "ML Engineering",
+            value: episodes?.ml,
+            color: "bg-flamingo!",
           },
         ]}
       />

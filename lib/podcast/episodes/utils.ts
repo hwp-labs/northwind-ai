@@ -2,7 +2,6 @@ import { momentUtil } from "@/utils/moment-util";
 import { HYPHENS } from "@/constants";
 //
 import { EpisodeDto } from "./types";
-import { SpeakerDto } from "../speakers/types";
 import { data } from "./data";
 import { data as Speakers } from "../speakers/data";
 import { TransformedSpeaker, transformSpeaker } from "../speakers/utils";
@@ -30,14 +29,14 @@ export const transformEpisode = (id?: number | string | null) => {
       ds: "/uploads/podcast/cover-halim.png",
       fc: "/uploads/podcast/cover-sony.png",
       cs: "/uploads/podcast/cover-sony.png",
-      se: "/uploads/podcast/cover-flamingo.jpg",
+      ai: "/uploads/podcast/cover-flamingo.jpg",
       ml: "/uploads/podcast/cover-flamingo.jpg",
     }[e.series || "ds"],
     coverPosition: {
       ds: "85% top",
       fc: "52% top",
       cs: "52% top",
-      se: "-30% bottom",
+      ai: "-30% bottom",
       ml: "-30% bottom",
     }[e.series || "ds"],
     thumbnail: e?.thumbnail || "/icon-512.png",

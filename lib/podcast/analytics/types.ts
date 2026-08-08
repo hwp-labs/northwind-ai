@@ -4,8 +4,8 @@ export interface AnalyticsDto {
     designSession?: number;
     firesideChat?: number;
     caseStudy?: number;
-    softwareEngineering?: number;
-    machineLearning?: number;
+    ai?: number;
+    ml?: number;
   };
   guests?: {
     total?: number;

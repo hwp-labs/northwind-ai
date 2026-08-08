@@ -61,7 +61,7 @@ const Template = ({
 );
 
 const H1 = ({ children }: PropsWithChildren) => (
-  <Heading className="font-semibold text-white" style={{ fontSize: 24 }}>
+  <Heading className="font-semibold" style={{ fontSize: 24 }}>
     {children}
   </Heading>
 );
