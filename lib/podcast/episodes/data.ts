@@ -1,25 +1,36 @@
 import { EpisodeDto } from "./types";
+import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
+  {
+    id: 28,
+    datetime: "2026-08-16T18:00:00.000Z",
+    thumbnail: "/uploads/logos/expo-cbt.png",
+    topic: "AI/ML Engineering - Week 1 Q&A",
+    topicRichText: "AI/ML Engineering<br/>Week <span>1</span> Q&A",
+    summary:
+      "SDLC Phase 1 - Define Goals, Scope, Budget, and Timelines. Publish PRD.md, SRS.md on GitHub.",
+    tags: "_oau typescript python csharp postgres azure-devops claude-ai _open-source build-in-public",
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: EpisodeMeta.expo,
+    series: "ai",
+  },
   {
     id: 27,
     datetime: "2026-08-09T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
     topic: "AI/ML Engineering - Course Overview",
     topicRichText: "AI/ML Engineering<br/>Course Overview",
-    tags: ["Tech Stack", "SDLC & CRISP-DM", "Open Source Guide"],
-    // guests: [20, 17],
+    summary:
+      "Design & Develop ExpoCBT using Claude AI. Train & Deploy ML Model to Detect Exam Malpractice",
+    tags: "_oau typescript python csharp postgres azure-devops claude-ai _open-source build-in-public",
+    guests: [20, 17],
     virtualLink: "https://x.com/i/spaces/1OGwbnlzNlmKB",
     listeners: 0,
     liveListeners: 13,
-    meta: {
-      src: "/uploads/logos/expo-cbt.png",
-      title:
-        "Open-source CBT WebApp | Dept. of<br/>Computer Science & Engineering, OAU",
-      url: "github.com/expo-cbt",
-      ctaText: "Become a contributor",
-      social: "git",
-    },
+    meta: EpisodeMeta.expo,
     series: "ai",
   },
   {
@@ -104,13 +115,7 @@ export const data: EpisodeDto[] = [
     listeners: 111,
     liveListeners: 30,
     series: "fc",
-    meta: {
-      src: "/uploads/logos/oau.png",
-      title:
-        "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
-      url: "oauife.edu.ng",
-      cta: "Watch Now",
-    },
+    meta: EpisodeMeta.oau,
   },
   {
     id: 21,
@@ -149,13 +154,7 @@ export const data: EpisodeDto[] = [
     listeners: 163,
     liveListeners: 60,
     series: "fc",
-    meta: {
-      src: "/uploads/logos/oau.png",
-      title:
-        "SEN106/SEN216 - Introduction to Web Technology | Obafemi Awolowo Uni...",
-      url: "oauife.edu.ng",
-      cta: "Watch Now",
-    },
+    meta: EpisodeMeta.oau,
   },
   {
     id: 19,
@@ -198,12 +197,7 @@ export const data: EpisodeDto[] = [
     listeners: 22,
     liveListeners: 21,
     series: "fc",
-    meta: {
-      src: "/uploads/logos/siiqo.png",
-      title: "Escrow-based, Crypto-enabled, Digital Storefront for SMEs",
-      url: "siiqo.com",
-      cta: "Get Started",
-    },
+    meta: EpisodeMeta.siiqo,
   },
   {
     id: 16,
@@ -335,12 +329,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1qGvvvewvbkGB",
     listeners: 68,
     liveListeners: 42,
-    meta: {
-      src: "/uploads/logos/siiqo.png",
-      title: "Escrow-based, Crypto-enabled, Digital Storefront for SMEs",
-      url: "siiqo.com",
-      cta: "Get Started",
-    },
+    meta: EpisodeMeta.siiqo,
   },
   {
     id: 9,
