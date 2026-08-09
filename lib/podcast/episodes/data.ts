@@ -28,7 +28,7 @@ export const data: EpisodeDto[] = [
     tags: "_oau typescript python csharp postgres azure-devops claude-ai _open-source build-in-public",
     guests: [20, 17],
     virtualLink: "https://x.com/i/spaces/1OGwbnlzNlmKB",
-    listeners: 0,
+    listeners: 24,
     liveListeners: 13,
     meta: EpisodeMeta.expo,
     series: "ai",
