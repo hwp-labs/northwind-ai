@@ -3,15 +3,14 @@ import { EpisodeDto } from "./types";
 export const data: EpisodeDto[] = [
   {
     id: 27,
-    datetime: "2026-08-02T18:00:00.000Z",
+    datetime: "2026-08-09T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
     topic: "AI/ML Engineering - Course Overview",
     topicRichText: "AI/ML Engineering<br/>Course Overview",
     tags: ["Tech Stack", "SDLC & CRISP-DM", "Open Source Guide"],
-    guests: [20, 17],
-    virtualLink: "https://vt.tiktok.com/ZS9hSbt3UhtK7-JFhtZ",
-    virtualPlatform: "tk",
-    listeners: 13,
+    // guests: [20, 17],
+    virtualLink: "https://x.com/i/spaces/1OGwbnlzNlmKB",
+    listeners: 0,
     liveListeners: 13,
     meta: {
       src: "/uploads/logos/expo-cbt.png",
