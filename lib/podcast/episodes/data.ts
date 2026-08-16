@@ -10,8 +10,8 @@ export const data: EpisodeDto[] = [
     topicRichText: "AI/ML Engineering<br/>Week <span>1</span> Q&A",
     summary:
       "SDLC Phase 1 - Define Goals, Scope, Budget, and Timelines. Publish PRD.md, SRS.md on GitHub.",
-    tags: "_oau typescript python csharp postgres azure-devops claude-ai _open-source build-in-public",
-    virtualLink: "",
+    tags: EpisodeMeta.expo.tags,
+    virtualLink: "https://x.com/i/spaces/1dKrPrloYvAJX",
     listeners: 0,
     liveListeners: 0,
     meta: EpisodeMeta.expo,
@@ -25,7 +25,7 @@ export const data: EpisodeDto[] = [
     topicRichText: "AI/ML Engineering<br/>Course Overview",
     summary:
       "Design & Develop ExpoCBT using Claude AI. Train & Deploy ML Model to Detect Exam Malpractice",
-    tags: "_oau typescript python csharp postgres azure-devops claude-ai _open-source build-in-public",
+    tags: EpisodeMeta.expo.tags,
     guests: [20, 17],
     virtualLink: "https://x.com/i/spaces/1OGwbnlzNlmKB",
     listeners: 24,

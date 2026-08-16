@@ -8,6 +8,7 @@ export const EpisodeMeta = {
     url: "github.com/expo-cbt",
     ctaText: "Become a contributor",
     social: "git",
+    tags: "_oau typescript python csharp postgres azure-devops claude-ai _open-source build-in-public",
   },
   oau: {
     src: "/uploads/logos/oau.png",
@@ -22,4 +23,4 @@ export const EpisodeMeta = {
     url: "siiqo.com",
     cta: "Get Started",
   },
-} satisfies Record<string, EpisodeDto["meta"]>;
+} satisfies Record<string, EpisodeDto["meta"] & { tags?: EpisodeDto["tags"] }>;
