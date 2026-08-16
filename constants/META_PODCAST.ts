@@ -6,7 +6,7 @@ import { COPY } from "./LOCALE";
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const METADATA_PODCAST: Metadata = {
   title: {
-    default: APP_PODCAST.titleVerbose,
+    default: APP_PODCAST.titleLong,
     template: `%s | ${APP_PODCAST.name}`,
   },
   description: APP_PODCAST.description,
@@ -39,7 +39,7 @@ export const METADATA_PODCAST: Metadata = {
     type: "website",
     url: APP_PODCAST.website,
     siteName: APP_PODCAST.name,
-    title: APP_PODCAST.titleVerbose,
+    title: APP_PODCAST.titleLong,
     description: APP_PODCAST.description,
     images: {
       url: APP_PODCAST.socialPreview,
@@ -51,7 +51,7 @@ export const METADATA_PODCAST: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: APP_PODCAST.titleVerbose,
+    title: APP_PODCAST.titleLong,
     description: APP_PODCAST.description,
     creator: "@2gbeh",
     images: {

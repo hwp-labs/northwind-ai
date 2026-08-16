@@ -14,7 +14,7 @@ export const VIEWPORT: Viewport = {
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const METADATA: Metadata = {
   title: {
-    default: APP.titleVerbose,
+    default: APP.titleLong,
     template: `%s | ${APP.name}`,
   },
   description: APP.description,
@@ -47,7 +47,7 @@ export const METADATA: Metadata = {
     type: "website",
     url: APP.website,
     siteName: APP.name,
-    title: APP.titleVerbose,
+    title: APP.titleLong,
     description: COPY.transform,
     images: {
       url: APP.socialPreview,
@@ -59,7 +59,7 @@ export const METADATA: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: APP.titleVerbose,
+    title: APP.titleLong,
     description: COPY.transform,
     creator: "@2gbeh",
     images: {

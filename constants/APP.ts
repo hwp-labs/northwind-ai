@@ -4,7 +4,7 @@ export const APP = {
   slug: "northwind-ai",
   //
   title: "AI Automation Web Services",
-  titleVerbose: "Northwind AI - AI Automation Web Services",
+  titleLong: "Northwind AI - AI Automation Web Services",
   keywords: [
     "north wind",
     "northwind",
@@ -33,13 +33,11 @@ export const APP = {
   email: "no-reply@northwindai.org",
   tel: "+2348169960927",
   telDisplayText: "(+234)81 6996 0927",
-  
+  //
   whatsappSalesUrl: "https://wa.me/2348169960927",
   whatsappGroupUrl: "https://chat.whatsapp.com/HajjJPJ2HkE0rTTITv2FGm",
   whatsappCommunityUrl: "https://chat.whatsapp.com/Id9WYTRrbxAHcTUfr3F5jv",
-  
-  repositoryName: "hwp-labs/northwind-ai-app",
-  repositoryUrl: "https://github.com/hwp-labs/northwind-ai-app",
-  repositoryApiName: "hwp-labs/northwind-ai",
-  repositoryApiUrl: "https://github.com/hwp-labs/northwind-ai"
+  //
+  repositoryName: "hwp-labs/northwind-ai",
+  repositoryUrl: "https://github.com/hwp-labs/northwind-ai",
 };
