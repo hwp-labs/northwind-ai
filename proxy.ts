@@ -1,10 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getAuthUserMiddlewareAction } from "./lib/supabase/services/auth/actions/getAuthUserAction";
-import { PATH, PROTECTED_PATH } from "./constants/PATH";
+import { PATH, PATH_PROTECTED } from "./constants/PATH";
 
 export async function proxy(req: NextRequest) {
   const pathname = req.nextUrl.pathname;
-  const pathnameIsProtected = Object.values(PROTECTED_PATH).some((p) =>
+  const pathnameIsProtected = Object.values(PATH_PROTECTED).some((p) =>
     pathname.startsWith(p),
   );
 

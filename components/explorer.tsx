@@ -11,9 +11,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/shadcn/ui/dropdown-menu";
-import { type PathType, PATH, PROTECTED_PATH } from "@/constants/PATH";
+import { type PathType, PATH, PATH_PROTECTED } from "@/constants/PATH";
 
-const paths = { ...PATH, ...PROTECTED_PATH };
+const paths = { ...PATH, ...PATH_PROTECTED };
 
 export const Explorer = () => {
   const router = useRouter();

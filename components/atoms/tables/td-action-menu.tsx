@@ -59,7 +59,7 @@ export const TdActionMenu = ({
       const { data, error } = await deleteAction({ path, table, id });
 
       if (error) toast.error(error);
-      if (data) toast.success(`Row ID ${id} deleted!`);
+      else if (data) toast.success(`Row ID ${id} deleted!`);
 
       setLoading(false);
     }

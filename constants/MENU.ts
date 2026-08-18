@@ -1,6 +1,6 @@
 import { HomeIcon, type LucideIcon } from "lucide-react";
 import { MenuItem } from "@/types";
-import { PATH, PROTECTED_PATH } from "./PATH";
+import { PATH, PATH_PROTECTED } from "./PATH";
 
 export const MENU = [
   { label: "Home", path: PATH.home },
@@ -9,9 +9,10 @@ export const MENU = [
 
 export const DASHBOARD_MENU = [
   { label: "Home", path: PATH.home, Icon: HomeIcon },
-  // { label: "Dashboard", path: PROTECTED_PATH.dashboard },
-  { label: "Visitors", path: PROTECTED_PATH.visitors },
-  { label: "Listeners", path: PROTECTED_PATH.listeners },
-  // { label: "Contacts", path: PROTECTED_PATH.contacts },
-  // { label: "Industries", path: PROTECTED_PATH.industries },
+  // { label: "Dashboard", path: PATH_PROTECTED.dashboard },
+  { label: "Visitors", path: PATH_PROTECTED.visitors },
+  { label: "Listeners", path: PATH_PROTECTED.listeners },
+  // { label: "Contacts", path: PATH_PROTECTED.contacts },
+  // { label: "Industries", path: PATH_PROTECTED.industries },
+  { label: "Seed Portal", path: PATH_PROTECTED.seedPortal },
 ] as const satisfies MenuItem[];

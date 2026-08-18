@@ -6,7 +6,7 @@ import clsx from "clsx";
 //
 import { DASHBOARD_MENU } from "@/constants/MENU";
 import { MenuItem } from "@/types";
-import { PATH, PROTECTED_PATH } from "@/constants/PATH";
+import { PATH, PATH_PROTECTED } from "@/constants/PATH";
 //
 import { useNav } from "./hook";
 
@@ -18,10 +18,10 @@ export const Nav = () => {
       {DASHBOARD_MENU.map((item, i) => {
         const props = item as MenuItem;
 
-        if (item.path === PROTECTED_PATH.visitors)
+        if (item.path === PATH_PROTECTED.visitors)
           props.badgeValue = totaled.visitors;
 
-        if (item.path === PROTECTED_PATH.listeners)
+        if (item.path === PATH_PROTECTED.listeners)
           props.badgeValue = totaled.listeners;
 
         return <NavItem key={i} {...props} />;

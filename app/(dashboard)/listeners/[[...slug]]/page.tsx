@@ -15,7 +15,7 @@ import { TableEmpty } from "@/components/atoms/tables/table-empty";
 import { Toolbar } from "@/components/species/dashboard/components/toolbar";
 import { isValidEmail } from "@/utils";
 import { PageParams } from "@/types";
-import { PROTECTED_PATH } from "@/constants/PATH";
+import { PATH_PROTECTED } from "@/constants/PATH";
 //
 import { ListenersToolbar } from "@/components/species/listeners/components/listeners-toolbar";
 import { ListenerHelper } from "@/lib/supabase/services/listeners/helper";
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Manage Listeners",
 };
 
-const path = PROTECTED_PATH.listeners;
+const path = PATH_PROTECTED.listeners;
 const table = TABLE;
 const listener = new ListenerHelper();
 

@@ -14,7 +14,7 @@ import { TableEmpty } from "@/components/atoms/tables/table-empty";
 import { Toolbar } from "@/components/species/dashboard/components/toolbar";
 import { DeleteMultipleWidget } from "@/components/species/dashboard/components/delete-multiple-widget";
 import { PageParams } from "@/types";
-import { PROTECTED_PATH } from "@/constants/PATH";
+import { PATH_PROTECTED } from "@/constants/PATH";
 //
 import { VisitorHelper } from "@/lib/supabase/services/visitors/helper";
 import { getVisitorsAction } from "@/lib/supabase/services/visitors/actions/getVisitorsAction";
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "Manage Visitors",
 };
 
-const path = PROTECTED_PATH.visitors;
+const path = PATH_PROTECTED.visitors;
 const table = TABLE;
 const visitor = new VisitorHelper();
 
@@ -67,7 +67,7 @@ export default async function VisitorsPage({ searchParams }: PageParams) {
       >
         {filtered && (
           <DeleteMultipleWidget
-            path={PROTECTED_PATH.visitors}
+            path={PATH_PROTECTED.visitors}
             table={TABLE}
             ids={transformedData.map(({ id }) => id)}
           />

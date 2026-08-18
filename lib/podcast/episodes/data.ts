@@ -3,6 +3,21 @@ import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
   {
+    id: 29,
+    datetime: "2026-08-23T18:00:00.000Z",
+    thumbnail: "/uploads/logos/expo-cbt.png",
+    topic: "AI/ML Engineering - Week 2 Q&A",
+    topicRichText: "AI/ML Engineering<br/>Week <span>2</span> Q&A",
+    summary:
+      "SDLC Phase 2 - Define Core Modules, Data Models and Relationships. Publish ERD.md on GitHub.",
+    tags: EpisodeMeta.expo.tags,
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: EpisodeMeta.expo,
+    series: "ai",
+  },
+  {
     id: 28,
     datetime: "2026-08-16T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",

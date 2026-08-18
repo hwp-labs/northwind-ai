@@ -22,3 +22,17 @@ export async function createListenerAction(
 
   return { data, error: error?.message };
 }
+
+export async function createListenersAction(
+  body: RequestDto[],
+  path?: string,
+): Promise<ApiResponse<ResponseDto[]>> {
+  const { data, error } = await supabase
+    .from(TABLE)
+    .insert(body)
+    .select();
+
+  if (data && path) revalidatePath(path);
+
+  return { data, error: error?.message };
+}
