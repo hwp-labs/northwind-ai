@@ -6,12 +6,12 @@ export const data: EpisodeDto[] = [
     id: 29,
     datetime: "2026-08-23T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
-    topic: "AI/ML Engineering - Week 2 Q&A",
-    topicRichText: "AI/ML Engineering<br/>Week <span>2</span> Q&A",
+    topic: "ExpoCBT Week 2 Q&A",
+    topicRichText: "ExpoCBT Week <span>2</span><br/>Q&A Session",
     summary:
       "SDLC Phase 2 - Define Core Modules, Data Models and Relationships. Publish ERD.md on GitHub.",
     tags: EpisodeMeta.expo.tags,
-    virtualLink: "",
+    virtualLink: "https://x.com/i/spaces/1oKMvNnXVrzGQ",
     listeners: 0,
     liveListeners: 0,
     meta: EpisodeMeta.expo,
@@ -21,8 +21,8 @@ export const data: EpisodeDto[] = [
     id: 28,
     datetime: "2026-08-16T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
-    topic: "AI/ML Engineering - Week 1 Q&A",
-    topicRichText: "AI/ML Engineering<br/>Week <span>1</span> Q&A",
+    topic: "ExpoCBT Week 1 Q&A",
+    topicRichText: "ExpoCBT Week <span>1</span><br/>Q&A Session",
     summary:
       "SDLC Phase 1 - Define Goals, Scope, Budget, and Timelines. Publish PRD.md, SRS.md on GitHub.",
     tags: EpisodeMeta.expo.tags,
@@ -35,7 +35,7 @@ export const data: EpisodeDto[] = [
   {
     id: 27,
     datetime: "2026-08-09T18:00:00.000Z",
-    thumbnail: "/uploads/logos/expo-cbt.png",
+    thumbnail: "/uploads/logos/flamingo.png",
     topic: "AI/ML Engineering - Course Overview",
     topicRichText: "AI/ML Engineering<br/>Course Overview",
     summary:
@@ -46,7 +46,7 @@ export const data: EpisodeDto[] = [
     listeners: 24,
     liveListeners: 13,
     meta: EpisodeMeta.expo,
-    series: "ai",
+    series: "ml",
   },
   {
     id: 26,

@@ -8,7 +8,7 @@ export const EpisodeMeta = {
     url: "github.com/expo-cbt",
     ctaText: "Become a contributor",
     social: "git",
-    tags: "_oau typescript python csharp postgres azure-devops claude-ai _open-source build-in-public",
+    tags: "_oau #typescript #python #csharp #postgres #azuredevops #claudeai _#opensource #buildinpublic",
   },
   oau: {
     src: "/uploads/logos/oau.png",

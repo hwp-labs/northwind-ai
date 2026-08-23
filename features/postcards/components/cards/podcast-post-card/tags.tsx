@@ -4,7 +4,7 @@ export const Tags = ({ list }: { list: string[] }) => {
       {list.map((item, i) => (
         <li
           key={i}
-          className="rounded-full px-3 py-0.5 text-[10px] text-white"
+          className="rounded-full px-3 py-0.5 text-[10px] text-white tracking-wide"
           style={{
             background:
               "linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.1))",
