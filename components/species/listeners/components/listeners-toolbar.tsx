@@ -74,5 +74,6 @@ const sendEmail = async ({
     to: recipients,
     subject: episode.topic,
     body,
+    incognito: true,
   });
 };

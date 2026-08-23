@@ -24,13 +24,16 @@ export async function sendEmailAction(args: {
   to: string | string[];
   subject: string;
   body: string;
+  incognito?: boolean;
 }): Promise<ApiResponse<string>> {
+  const to = args.incognito ? process.env.SMTP_BCC : args.to;
+  const bcc = args.incognito ? args.to : process.env.SMTP_BCC;
+
   try {
     const info = await transporter.sendMail({
       from: `${APP.name} <${APP.email}>`,
-      bcc: process.env.SMTP_BCC,
-      //
-      to: args.to,
+      bcc,
+      to,
       subject: args.subject,
       html: args.body,
     });
@@ -41,3 +44,39 @@ export async function sendEmailAction(args: {
   }
 }
 
+export async function sendBatchEmailAction(args: {
+  to: string | string[];
+  subject: string;
+  body: string;
+}): Promise<ApiResponse<string>> {
+  const BATCH_SIZE = 50;
+
+  try {
+    const recipients = Array.isArray(args.to) ? args.to : [args.to];
+    const messageIds: string[] = [];
+
+    for (let i = 0; i < recipients.length; i += BATCH_SIZE) {
+      const batch = recipients.slice(i, i + BATCH_SIZE);
+
+      const info = await transporter.sendMail({
+        from: `${APP.name} <${APP.email}>`,
+        bcc: batch,
+        to: process.env.SMTP_BCC,
+        subject: args.subject,
+        html: args.body,
+      });
+
+      messageIds.push(info.messageId);
+    }
+
+    return {
+      data: messageIds.join(","),
+      error: undefined,
+    };
+  } catch (err: any) {
+    return {
+      data: null,
+      error: err?.message || "NodemailerUnknownError",
+    };
+  }
+}
