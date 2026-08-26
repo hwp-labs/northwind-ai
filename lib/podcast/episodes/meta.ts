@@ -19,7 +19,7 @@ export const EpisodeMeta = {
   },
   siiqo: {
     src: "/uploads/logos/siiqo.png",
-    title: "Escrow-based, Crypto-enabled, Digital Storefront for SMEs",
+    title: "Escrow-based, Crypto-enabled,<br/>Digital Storefront for SMEs | Siiqo",
     url: "siiqo.com",
     cta: "Get Started",
   },

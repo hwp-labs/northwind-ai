@@ -3,6 +3,19 @@ import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
   {
+    id: 30,
+    datetime: "2026-08-30T18:00:00.000Z",
+    thumbnail: "/uploads/logos/siiqo.png",
+    topic: "Distribution Hacks For Tech Founders",
+    tags: ["Go-To-Market", "Partnerships", "Community"],
+    guests: [9],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: EpisodeMeta.siiqo,
+    series: "fc",
+  },
+  {
     id: 29,
     datetime: "2026-08-23T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",

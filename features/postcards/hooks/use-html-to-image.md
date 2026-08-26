@@ -1,30 +1,33 @@
+```ts
 import { useState } from "react";
 import { toPng } from "html-to-image";
 
 interface UseHtmlToImageParams {
-  width?: number;
-  height?: number;
-  scaleTo?: number;
+width?: number;
+height?: number;
+scaleTo?: number;
 }
 
 export function useHtmlToImage({
-  width,
-  height,
-  scaleTo = 2,
+width,
+height,
+scaleTo = 2,
 }: UseHtmlToImageParams) {
-  const [loading, setLoading] = useState(false);
+// console.log("🚀 ~ useHtmlToImage ~ width:", width, height, scaleTo);
+const [loading, setLoading] = useState(false);
 
-  async function _download(link: string, filename: string) {
-    const anchor = document.createElement("a");
-    anchor.href = link;
-    anchor.download = filename;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-  }
+async function _download(link: string, filename: string) {
+const anchor = document.createElement("a");
+anchor.href = link;
+anchor.download = filename;
+// append to DOM to ensure click works in all browsers
+document.body.appendChild(anchor);
+anchor.click();
+document.body.removeChild(anchor);
+}
 
-  async function convertToPng(id: string, filename?: string) {
-    const node = document.getElementById(id);
+async function convertToPng(id: string, filename?: string) {
+const node = document.getElementById(id);
 
     if (!node) throw new Error(`Element with id="${id}" not found`);
 
@@ -33,9 +36,9 @@ export function useHtmlToImage({
       await document.fonts.ready;
       window.scrollTo(0, 0);
       await new Promise((r) => setTimeout(r, 100)); // let layout settle
-
+      // measure the element on the page so output matches its visual size
       const rect = node.getBoundingClientRect();
-
+      // create an off-screen clone to capture fixed/sticky children correctly
       const clone = node.cloneNode(true) as HTMLElement;
       const wrapper = document.createElement("div");
       wrapper.style.position = "absolute";
@@ -47,47 +50,32 @@ export function useHtmlToImage({
       wrapper.appendChild(clone);
       document.body.appendChild(wrapper);
 
+      // convert fixed/sticky children in the clone to absolute positioned elements
       try {
         const originals = node.querySelectorAll<HTMLElement>("*");
-
-        // Single pass: compute style once per element, only act if needed
         const clones = clone.querySelectorAll<HTMLElement>("*");
-        let hasFixedOrSticky = false;
-
         for (let i = 0; i < originals.length; i++) {
           const o = originals[i];
           const c = clones[i];
           if (!c) continue;
 
-          const style = window.getComputedStyle(o);
-          const isFixedOrSticky =
-            style.position === "fixed" || style.position === "sticky";
+          // Lock every element to its exact rendered width
+          const oRect = o.getBoundingClientRect();
+          c.style.width = `${oRect.width}px`;
+          c.style.boxSizing = "border-box";
 
-          if (isFixedOrSticky) {
-            hasFixedOrSticky = true;
+          const style = window.getComputedStyle(o);
+          if (style.position === "fixed" || style.position === "sticky") {
             const oRect = o.getBoundingClientRect();
             c.style.position = "absolute";
             c.style.left = `${oRect.left - rect.left}px`;
             c.style.top = `${oRect.top - rect.top}px`;
             c.style.width = `${oRect.width}px`;
             c.style.height = `${oRect.height}px`;
-            c.style.boxSizing = "border-box";
           }
         }
 
-        // Only relevant if you actually need every element locked to
-        // its rendered width (uncomment if layout breaks without it):
-        // if (hasFixedOrSticky) {
-        //   for (let i = 0; i < originals.length; i++) {
-        //     const o = originals[i];
-        //     const c = clones[i];
-        //     if (!c) continue;
-        //     const oRect = o.getBoundingClientRect();
-        //     c.style.width = `${oRect.width}px`;
-        //     c.style.boxSizing = "border-box";
-        //   }
-        // }
-
+        // wait for images inside clone to load (handles external images)
         const imgs = Array.from(
           clone.querySelectorAll<HTMLImageElement>("img"),
         );
@@ -109,7 +97,12 @@ export function useHtmlToImage({
           pixelRatio: scaleTo,
           style: {
             transform: "none",
-            ...(width && height ? { width, height } : {}),
+            ...(width && height
+              ? {
+                  width,
+                  height,
+                }
+              : {}),
           },
         };
 
@@ -117,12 +110,14 @@ export function useHtmlToImage({
         const downloadFilename = filename || `${Date.now()}.png`;
         await _download(downloadLink, downloadFilename);
       } finally {
+        // remove the off-screen clone
         if (wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
       }
     } finally {
       setLoading(false);
     }
-  }
 
-  return { loading, convertToPng };
+}
+
+return { loading, convertToPng };
 }
