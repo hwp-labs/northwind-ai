@@ -26,7 +26,7 @@ export async function sendEmailAction(args: {
   body: string;
   incognito?: boolean;
 }): Promise<ApiResponse<string>> {
-  const to = args.incognito ? process.env.SMTP_BCC : args.to;
+  const to = args.incognito ? undefined : args.to;
   const bcc = args.incognito ? args.to : process.env.SMTP_BCC;
 
   try {
