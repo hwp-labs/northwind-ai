@@ -9,7 +9,7 @@ export const data: EpisodeDto[] = [
     topic: "Distribution Hacks For Tech Founders",
     tags: ["Go-To-Market", "Partnerships", "Community"],
     guests: [9],
-    virtualLink: "",
+    virtualLink: "https://x.com/i/spaces/1rGmqplenOZGy",
     listeners: 0,
     liveListeners: 0,
     meta: EpisodeMeta.siiqo,
