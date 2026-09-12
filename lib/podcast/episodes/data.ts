@@ -3,6 +3,39 @@ import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
   {
+    id: 33,
+    datetime: "2026-10-01T18:00:00.000Z",
+    thumbnail: "/uploads/logos/wale.png",
+    topic: "Shaping Young Minds For Future Nigeria",
+    tags: ["Indigenous Research", "STEM", "#KidsCanCode"],
+    guests: [24],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/wale.png",
+      title: "The Nexus of Innovation and Real World Applications | WALE University",
+      url: "lab.wale.university",
+      cta: "Get Started",
+    },
+    series: "fc",
+  },
+  {
+    id: 31,
+    datetime: "2026-09-13T18:00:00.000Z",
+    thumbnail: "/uploads/logos/expo-cbt.png",
+    topic: "ExpoCBT Week 3 Q&A",
+    topicRichText: "ExpoCBT Week <span>3</span><br/>Q&A Session",
+    summary:
+      "SDLC Phase 2 - Define Core Modules, Data Models and Relationships. Publish ERD.md on GitHub.",
+    tags: EpisodeMeta.expo.tags,
+    virtualLink: "https://x.com/i/spaces/1OxwbnYPqEdJB",
+    listeners: 0,
+    liveListeners: 0,
+    meta: EpisodeMeta.expo,
+    series: "ai",
+  },  
+  {
     id: 30,
     datetime: "2026-08-30T18:00:00.000Z",
     thumbnail: "/uploads/logos/siiqo.png",
@@ -48,7 +81,7 @@ export const data: EpisodeDto[] = [
   {
     id: 27,
     datetime: "2026-08-09T18:00:00.000Z",
-    thumbnail: "/uploads/logos/flamingo.png",
+    // thumbnail: "/uploads/logos/flamingo.png",
     topic: "AI/ML Engineering - Course Overview",
     topicRichText: "AI/ML Engineering<br/>Course Overview",
     summary:

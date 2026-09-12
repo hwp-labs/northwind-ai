@@ -14,6 +14,7 @@ export const MonthlyPostCard = ({ page }: Props) => {
   const [i, setCounter] = useState(page || 1);
 
   const isMay = i === 5;
+  const isSept = i === 9;
   const displayMonth = MONTH_SHORT[i - 1];
   const mutateCounter = () => setCounter((prev) => (prev < 12 ? prev + 1 : 1));
 
@@ -61,12 +62,14 @@ export const MonthlyPostCard = ({ page }: Props) => {
           </div>
           <figcaption
             className={clsx(
-              "font-f3 -ml-8 bg-clip-text text-center text-[340px] leading-72 font-bold text-transparent uppercase",
-              "from-[#90c9ca] bg-gradient-to-b",
+              "font-f3 -ml-4 bg-clip-text text-center text-[340px] leading-72 font-bold text-transparent uppercase",
+              "bg-gradient-to-b from-[#90c9ca]",
               isMay && "-mt-8 -ml-12",
+              isSept && "-ml-14 text-[310px]!",
             )}
           >
             {displayMonth}
+            {isSept && "t"}
           </figcaption>
         </figure>
         <CardBuilder.Description />

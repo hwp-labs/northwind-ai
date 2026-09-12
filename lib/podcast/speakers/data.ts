@@ -2,6 +2,23 @@ import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
   {
+    id: 24,
+    avatar: "/uploads/podcast/avatar-molawale.jpg",
+    firstName: "Matthew",
+    surname: "Olawale",
+    displayName: "Matthew O.",
+    email: "admin@wale.university",
+    tel: "+2348088818372",
+    occupation: "Research Mentor",
+    bio: "Vice President, Wale University",
+    website: "lab.wale.university",
+    location: { city: "Rivers" },
+    socials: {
+      x: "",
+      in: "matthew-olawale-79043a22b",
+    },
+  },
+  {
     id: 23,
     avatar: "/uploads/podcast/avatar-tuvietobore.jpg",
     firstName: "Treasure",
