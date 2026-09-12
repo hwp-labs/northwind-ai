@@ -14,7 +14,8 @@ export const data: EpisodeDto[] = [
     liveListeners: 0,
     meta: {
       src: "/uploads/logos/wale.png",
-      title: "The Nexus of Innovation and Real World Applications | WALE University",
+      title:
+        "The Nexus of Innovation and Real World Applications | WALE University",
       url: "lab.wale.university",
       cta: "Get Started",
     },
@@ -24,17 +25,16 @@ export const data: EpisodeDto[] = [
     id: 31,
     datetime: "2026-09-13T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
-    topic: "ExpoCBT Week 3 Q&A",
-    topicRichText: "ExpoCBT Week <span>3</span><br/>Q&A Session",
-    summary:
-      "SDLC Phase 2 - Define Core Modules, Data Models and Relationships. Publish ERD.md on GitHub.",
+    topic: "ExpoCBT Week 2b Q&A",
+    topicRichText: "ExpoCBT Week <span>2b</span><br/>Q&A Session",
+    summary: "Define Roles & Permissions Schema (R-RBAC)",
     tags: EpisodeMeta.expo.tags,
     virtualLink: "https://x.com/i/spaces/1OxwbnYPqEdJB",
     listeners: 0,
     liveListeners: 0,
     meta: EpisodeMeta.expo,
     series: "ai",
-  },  
+  },
   {
     id: 30,
     datetime: "2026-08-30T18:00:00.000Z",
