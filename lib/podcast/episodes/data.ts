@@ -26,7 +26,7 @@ export const data: EpisodeDto[] = [
     datetime: "2026-09-13T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
     topic: "Roles & Permissions Schema (R-RBAC)",
-    summary: "ExpoCBT WebApp Weekly Q&A Session",
+    summary: "ExpoCBT Weekly Q&A Session",
     tags: EpisodeMeta.expo.tags,
     virtualLink: "https://x.com/i/spaces/1OxwbnYPqEdJB",
     listeners: 0,
@@ -51,7 +51,7 @@ export const data: EpisodeDto[] = [
     id: 29,
     datetime: "2026-08-23T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
-    topic: "Core Modules & Data Models (SRS)",
+    topic: "SRS Core Modules & Data Models",
     summary:
       "SDLC Phase 2 - Define Core Modules, Data Models and Relationships. Publish ERD.md on GitHub.",
     tags: EpisodeMeta.expo.tags,
@@ -65,7 +65,7 @@ export const data: EpisodeDto[] = [
     id: 28,
     datetime: "2026-08-16T18:00:00.000Z",
     thumbnail: "/uploads/logos/expo-cbt.png",
-    topic: "Scope, Budget & Timelines (PRD)",
+    topic: "PRD Scope, Budget & Timelines",
     summary:
       "SDLC Phase 1 - Define Goals, Scope, Budget, and Timelines. Publish PRD.md, SRS.md on GitHub.",
     tags: EpisodeMeta.expo.tags,
