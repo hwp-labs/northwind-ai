@@ -25,21 +25,23 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
           backgroundPosition: e.coverPosition,
         }}
       />
-      <main className="debug_ absolute z-1 pr-0 pl-6">
-        <header className="flex-row-cb mt-10">
-          <Logo />
-          <img
-            src="/images/emblem.png"
-            alt=""
-            width={80}
-            height={80}
-            className="absolute top-4 right-5 hidden"
-          />
-        </header>
-        <Tags list={e.tags} />
+      <main className="debug_ absolute z-1">
+        <div className="px-6">
+          <header className="flex-row-cb mt-10">
+            <Logo />
+            <img
+              src="/images/emblem.png"
+              alt=""
+              width={80}
+              height={80}
+              className="absolute top-4 right-5 hidden"
+            />
+          </header>
+          <Tags list={e.tags} />
+        </div>
         <article
           className={clsx(
-            "debug_ space-y-5",
+            "debug_ space-y-5 pl-6",
             e.tags.length > 3 ? "mt-4.5" : "mt-2.5",
           )}
         >
@@ -47,7 +49,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
             variant="snap"
             episode={e}
             // topic="Design Systems & Finite State Machines"
-            // className="text-[27.5px]! _leading-[40px]!"
+            className="text-[31px]! _leading-[40px]!"
           />
           <DatetimeVenue episode={e} />
         </article>

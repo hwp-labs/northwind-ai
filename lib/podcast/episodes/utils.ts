@@ -44,7 +44,7 @@ export const transformEpisode = (id?: number | string | null) => {
     topic: e?.topicShort || e?.topic || HYPHENS,
     tags: !e?.tags
       ? []
-      : (Array.isArray(e.tags) ? e.tags : e.tags.split(" ")).filter(
+      : (Array.isArray(e.tags) ? e.tags : e.tags.split(",")).filter(
           (t) => t && !t.startsWith("_"),
         ) || [],
     Speakers: getSpeakers(e),
