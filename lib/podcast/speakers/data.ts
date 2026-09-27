@@ -9,9 +9,8 @@ export const data: SpeakerDto[] = [
     displayName: "Kenneth E.",
     email: "",
     tel: "+2348033795507",
-    occupation: "Information Security Analyst",
+    occupation: "Information Security Analyst, Bilfinger UK",
     bio: "Information Security Analyst, #",
-    // bio: "Security Analyst, Bilfinger UK",
     location: {
       city: "Cheshire",
       country: "UK",

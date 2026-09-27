@@ -7,11 +7,18 @@ export const data: EpisodeDto[] = [
     datetime: "2026-10-04T18:00:00.000Z",
     thumbnail: "/uploads/logos/bilfinger.jfif",
     topic: "GRC - Governance, Risk & Compliance",
-    tags: 'ISO 27001, COBIT 5, NIST CSF, GDPR',
+    tags: "ISO 27001, COBIT 5, NIST CSF, GDPR",
     guests: [25],
     virtualLink: "",
     listeners: 0,
     liveListeners: 0,
+    // meta: {
+    //   src: "/uploads/logos/bilfinger.jfif",
+    //   title:
+    //     "Int'l Industrial Services Provider for<br/>the Process Industry | Bilfinger",
+    //   url: "bilfinger.com/en",
+    //   cta: "Learn More",
+    // },
     series: "fc",
   },
   {
@@ -39,7 +46,7 @@ export const data: EpisodeDto[] = [
     thumbnail: "/uploads/logos/expo-cbt.png",
     topic: "Security Compliance and Data Privacy",
     summary: "ExpoCBT Weekly Q&A Session",
-    tags: 'SOC 2 Type II, PCI DSS, HIPAA, FERPA',
+    tags: "SOC 2 Type II, PCI DSS, HIPAA, FERPA",
     virtualLink: "https://x.com/i/spaces/1wGWjlOywaeKQ",
     listeners: 5,
     liveListeners: 5,
