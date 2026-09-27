@@ -3,6 +3,18 @@ import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
   {
+    id: 34,
+    datetime: "2026-10-04T18:00:00.000Z",
+    thumbnail: "/uploads/logos/bilfinger.jfif",
+    topic: "GRC - Governance, Risk & Compliance",
+    tags: 'ISO 27001, COBIT 5, NIST CSF, GDPR',
+    guests: [25],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    series: "fc",
+  },
+  {
     id: 33,
     datetime: "2026-10-01T18:00:00.000Z",
     thumbnail: "/uploads/logos/wale.png",

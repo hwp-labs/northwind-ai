@@ -2,6 +2,27 @@ import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
   {
+    id: 25,
+    avatar: "/uploads/podcast/avatar-kenajuke.jpg",
+    firstName: "Kenneth",
+    surname: "Enajuke",
+    displayName: "Kenneth E.",
+    email: "",
+    tel: "+2348033795507",
+    occupation: "Information Security Analyst",
+    bio: "Information Security Analyst, #",
+    // bio: "Security Analyst, Bilfinger UK",
+    location: {
+      city: "Cheshire",
+      country: "UK",
+      flag: "/uploads/podcast/flag-uk.webp",
+    },
+    socials: {
+      x: "kenneth_Ena",
+      in: "kenneth-enajuke-a80588152",
+    },
+  },
+  {
     id: 24,
     avatar: "/uploads/podcast/avatar-molawale.jpg",
     firstName: "Matthew",
@@ -213,8 +234,8 @@ export const data: SpeakerDto[] = [
     displayName: "Ebuka O.",
     email: "ebukapeter143@gmail.com",
     tel: "+2348164633970",
-    occupation: "Software Engineer",
-    bio: "Tech Lead, #",
+    occupation: "Tech Lead",
+    bio: "Software Engineer, #",
     location: { city: "Edo" },
     socials: { x: "@peterdbrainy5" },
   },
