@@ -5,7 +5,7 @@ export const data: EpisodeDto[] = [
   {
     id: 34,
     datetime: "2026-10-04T18:00:00.000Z",
-    thumbnail: "/uploads/logos/bilfinger.jfif",
+    thumbnail: "/uploads/logos/bilfinger.png",
     topic: "GRC - Governance, Risk & Compliance",
     tags: "ISO 27001, COBIT 5, NIST CSF, GDPR",
     guests: [25],
@@ -13,7 +13,7 @@ export const data: EpisodeDto[] = [
     listeners: 0,
     liveListeners: 0,
     // meta: {
-    //   src: "/uploads/logos/bilfinger.jfif",
+    //   src: "/uploads/logos/bilfinger.png",
     //   title:
     //     "Int'l Industrial Services Provider for<br/>the Process Industry | Bilfinger",
     //   url: "bilfinger.com/en",
