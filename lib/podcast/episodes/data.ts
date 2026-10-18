@@ -31,8 +31,8 @@ export const data: EpisodeDto[] = [
     tags: "_Personas, User Journey, Wallet Onboarding, Tokenization",
     guests: [24],
     virtualLink: "https://x.com/i/spaces/1qxvveQZDWqxB",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 7,
+    liveListeners: 7,
     meta: {
       src: "/uploads/logos/brightson.png",
       title:
