@@ -26,7 +26,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
         }}
       />
       <main className="debug_ absolute z-1">
-        <div className="px-6">
+        <div className="pl-6">
           <header className="flex-row-cb mt-10">
             <Logo />
             <img

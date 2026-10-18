@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { IconHeadphonesFilled } from "@tabler/icons-react";
+import { IconHeadphonesFilled, IconHeadphonesOff } from "@tabler/icons-react";
 //
 import { Button } from "@/components/shadcn/ui/button";
 import { Topic } from "../topic";
@@ -37,8 +37,12 @@ export const Preview = ({ onClose = () => undefined }: Props) => {
       </figure>
       <div className="mt-4 grid gap-4">
         <Button variant="primary" onClick={handlePlay}>
-          <IconHeadphonesFilled size={18} strokeWidth={2.5} />
-          Play Recording
+          {episode?.brokenLink ? (
+            <IconHeadphonesOff size={18} strokeWidth={2.5} />
+          ) : (
+            <IconHeadphonesFilled size={18} strokeWidth={2.5} />
+          )}
+          {episode.brokenLink ? "No" : "Play"} Recording
         </Button>
       </div>
       <OpayWidget variant="link" />

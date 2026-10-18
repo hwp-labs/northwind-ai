@@ -45,10 +45,11 @@ export const transformEpisode = (id?: number | string | null) => {
     tags: !e?.tags
       ? []
       : (Array.isArray(e.tags) ? e.tags : e.tags.split(",")).filter(
-          (t) => t && !t.startsWith("_"),
+          (t) => t && !t.startsWith("_") && !t.startsWith(" _"),
         ) || [],
     Speakers: getSpeakers(e),
     canPlay: !e?.virtualLink.startsWith("#") && e?.listeners,
+    brokenLink: e?.virtualLink.startsWith("#"),
     ctaText: getCtaText(e),
     meta: e?.meta || {
       src: "/icon-512.png",

@@ -30,7 +30,11 @@ export const CtaButtons = ({ speaker }: Props) => {
         href={urlUtil.getXUrl(speaker.socials.x)}
         className="list-cta-btn size-[32px]"
       >
-        <IconBrandX size={15} />
+        {speaker.socials.x ? (
+          <IconBrandX size={15} />
+        ) : (
+          <IconLinkOff size={16} strokeWidth={2.5} />
+        )}
       </AnchorOutbound>
     </div>
   );

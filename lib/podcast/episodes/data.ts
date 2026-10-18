@@ -2,23 +2,43 @@ import { EpisodeDto } from "./types";
 import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
+
   {
-    id: 34,
-    datetime: "2026-10-04T18:00:00.000Z",
-    thumbnail: "/uploads/logos/bilfinger.png",
-    topic: "GRC - Governance, Risk & Compliance",
-    tags: "ISO 27001, COBIT 5, NIST CSF, GDPR",
+    id: 35,
+    datetime: "2026-11-15T18:00:00.000Z",
+    thumbnail: "/uploads/logos/vivid.png",
+    topic: "Scrum Ceremonies, Jollof Rice & Beans",
+    tags: "Sprint Planning, Time Estimates, Story Points",
     guests: [25],
     virtualLink: "",
     listeners: 0,
     liveListeners: 0,
-    // meta: {
-    //   src: "/uploads/logos/bilfinger.png",
-    //   title:
-    //     "Int'l Industrial Services Provider for<br/>the Process Industry | Bilfinger",
-    //   url: "bilfinger.com/en",
-    //   cta: "Learn More",
-    // },
+    meta: {
+      src: "/uploads/logos/vivid.png",
+      title:
+        "Vivid Foods App | Order Online | Pay On Delivery | Apply 25% Discount Voucher",
+      url: "github.com/vivid-foods",
+    },
+    series: "fc",
+  },
+  {
+    id: 34,
+    datetime: "2026-10-18T19:00:00.000Z",
+    thumbnail: "/uploads/logos/brightson.png",
+    topic: "Product Design Thinking in Web3",
+    topicRichText: "Product Design Thinking in <span>Web3</span>",
+    tags: "_Personas, User Journey, Wallet Onboarding, Tokenization",
+    guests: [24],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/brightson.png",
+      title:
+        "Premium Automobile Sales & Services | Transparent Pricing | Brightson Autos",
+      url: "brightsonautos.com",
+      cta: "Contact Sales",
+    },
     series: "fc",
   },
   {
@@ -27,8 +47,8 @@ export const data: EpisodeDto[] = [
     thumbnail: "/uploads/logos/wale.png",
     topic: "Shaping Young Minds For Future Nigeria",
     tags: ["Indigenous Research", "STEM", "#KidsCanCode"],
-    guests: [24],
-    virtualLink: "",
+    guests: [14],
+    virtualLink: "#",
     listeners: 0,
     liveListeners: 0,
     meta: {
@@ -142,18 +162,6 @@ export const data: EpisodeDto[] = [
       url: "usebinx.com",
       cta: "Get Started",
     },
-  },
-  {
-    id: 25,
-    datetime: "2026-07-23T20:00:00.000Z",
-    thumbnail: "/uploads/logos/uniben.png",
-    topic: "MSC CSC 19/20 - Virtual Reunion",
-    topicRichText: "MSC CSC <span>19/20</span><br/>Virtual Reunion",
-    tags: ["Leveraging AI", "ML Prediction", "Decision Making"],
-    virtualLink: "https://x.com/i/spaces/1nJOLLZqBykxR",
-    listeners: 13,
-    liveListeners: 13,
-    series: "fc",
   },
   {
     id: 24,

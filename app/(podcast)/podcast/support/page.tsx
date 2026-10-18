@@ -4,6 +4,7 @@ import clsx from "clsx";
 import {
   IconAbc,
   IconBuildingBank,
+  IconHttpQue,
   IconNumber123,
   IconScan,
 } from "@tabler/icons-react";
@@ -37,6 +38,11 @@ export default async function SupportPage() {
               Icon: <IconNumber123 />,
               label: "Account Number",
               value: "81 6996 0927",
+            },
+            {
+              Icon: <IconHttpQue />,
+              label: "Routing Number",
+              value: "999992",
             },
             {
               Icon: <IconScan size={22} className="mt-2" />,
