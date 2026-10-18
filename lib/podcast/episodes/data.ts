@@ -29,7 +29,7 @@ export const data: EpisodeDto[] = [
     topicRichText: "Product Design Thinking in <span>Web3</span>",
     tags: "_Personas, User Journey, Wallet Onboarding, Tokenization",
     guests: [24],
-    virtualLink: "",
+    virtualLink: "https://x.com/i/spaces/1oKMvNwLwjYGQ",
     listeners: 0,
     liveListeners: 0,
     meta: {

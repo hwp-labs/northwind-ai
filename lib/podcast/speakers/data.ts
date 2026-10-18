@@ -3,7 +3,7 @@ import { SpeakerDto } from "./types";
 export const data: SpeakerDto[] = [
   {
     id: 25,
-    avatar: "/uploads/podcast/avatar-toluwawemimo.jfif",
+    avatar: "/uploads/podcast/avatar-toluwawemimo.png",
     firstName: "Tolulope",
     surname: "Oluwawemimo",
     displayName: "Tolulope O.",
