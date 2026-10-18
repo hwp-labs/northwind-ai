@@ -21,6 +21,7 @@ export const data: EpisodeDto[] = [
       url: "mx2bdi.com",
     },
     series: "fc",
+    favorite: true,
   },
   {
     id: 34,
@@ -31,8 +32,8 @@ export const data: EpisodeDto[] = [
     tags: "_Personas, User Journey, Wallet Onboarding, Tokenization",
     guests: [24],
     virtualLink: "https://x.com/i/spaces/1qxvveQZDWqxB",
-    listeners: 7,
-    liveListeners: 7,
+    listeners: 10,
+    liveListeners: 10,
     meta: {
       src: "/uploads/logos/brightson.png",
       title:
@@ -41,6 +42,7 @@ export const data: EpisodeDto[] = [
       cta: "Contact Sales",
     },
     series: "fc",
+    favorite: true,
   },
   {
     id: 33,
@@ -73,6 +75,7 @@ export const data: EpisodeDto[] = [
     liveListeners: 5,
     meta: EpisodeMeta.expo,
     series: "ai",
+    favorite: true,
   },
   {
     id: 31,
@@ -86,6 +89,7 @@ export const data: EpisodeDto[] = [
     liveListeners: 3,
     meta: EpisodeMeta.expo,
     series: "ai",
+    favorite: true,
   },
   {
     id: 30,
@@ -99,6 +103,7 @@ export const data: EpisodeDto[] = [
     liveListeners: 5,
     meta: EpisodeMeta.siiqo,
     series: "fc",
+    favorite: true,
   },
   {
     id: 29,
@@ -131,7 +136,6 @@ export const data: EpisodeDto[] = [
   {
     id: 27,
     datetime: "2026-08-09T18:00:00.000Z",
-    // thumbnail: "/uploads/logos/flamingo.png",
     topic: "AI/ML Engineering - Course Overview",
     topicRichText: "AI/ML Engineering<br/>Course Overview",
     summary:
@@ -143,6 +147,7 @@ export const data: EpisodeDto[] = [
     liveListeners: 13,
     meta: EpisodeMeta.expo,
     series: "ml",
+    favorite: true,
   },
   {
     id: 26,
@@ -163,6 +168,7 @@ export const data: EpisodeDto[] = [
       url: "usebinx.com",
       cta: "Get Started",
     },
+    favorite: true,
   },
   {
     id: 24,
@@ -215,6 +221,7 @@ export const data: EpisodeDto[] = [
     liveListeners: 30,
     series: "fc",
     meta: EpisodeMeta.oau,
+    favorite: true,
   },
   {
     id: 21,
@@ -239,6 +246,7 @@ export const data: EpisodeDto[] = [
         "https://play.google.com/store/apps/details?id=com.lanieats.merchants",
       rider: "https://play.google.com/store/apps/details?id=com.lanieats.rider",
     },
+    favorite: true,
   },
   {
     id: 20,
@@ -273,6 +281,7 @@ export const data: EpisodeDto[] = [
       url: "cvr.inecnigeria.org",
       cta: "Register Now",
     },
+    favorite: true,
   },
   {
     id: 18,
@@ -284,6 +293,7 @@ export const data: EpisodeDto[] = [
     listeners: 8,
     liveListeners: 6,
     series: "fc",
+    favorite: true,
   },
   {
     id: 17,
@@ -356,6 +366,7 @@ export const data: EpisodeDto[] = [
       url: "distrokid.com",
       cta: "Play Now",
     },
+    favorite: true,
   },
   {
     id: 13,
@@ -381,6 +392,7 @@ export const data: EpisodeDto[] = [
       url: "thisdaylive.com",
       cta: "Learn More",
     },
+    favorite: true,
   },
   {
     id: 12,
@@ -415,6 +427,7 @@ export const data: EpisodeDto[] = [
     listeners: 66,
     liveListeners: 58,
     series: "fc",
+    favorite: true,
   },
   {
     id: 10,
@@ -429,6 +442,7 @@ export const data: EpisodeDto[] = [
     listeners: 68,
     liveListeners: 42,
     meta: EpisodeMeta.siiqo,
+    favorite: true,
   },
   {
     id: 9,
@@ -445,6 +459,7 @@ export const data: EpisodeDto[] = [
     listeners: 24,
     liveListeners: 14,
     series: "cs",
+    favorite: true,
   },
   {
     id: 7,
@@ -459,6 +474,7 @@ export const data: EpisodeDto[] = [
     listeners: 33,
     liveListeners: 10,
     series: "cs",
+    favorite: true,
   },
   {
     id: 6,
@@ -474,6 +490,7 @@ export const data: EpisodeDto[] = [
     listeners: 46,
     liveListeners: 31,
     series: "fc",
+    favorite: true,
   },
   {
     id: 5,
@@ -487,6 +504,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1nxeLyZOkXLJX",
     listeners: 41,
     liveListeners: 21,
+    favorite: true,
   },
   {
     id: 4,
@@ -500,6 +518,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1XGygmPjeMkxM",
     listeners: 93,
     liveListeners: 33,
+    favorite: true,
   },
   {
     id: 3,
@@ -513,6 +532,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1DxleEjawjlKL",
     listeners: 136,
     liveListeners: 112,
+    favorite: true,
   },
   {
     id: 2,

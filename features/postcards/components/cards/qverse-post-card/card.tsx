@@ -25,7 +25,7 @@ export const Card = ({
   posted,
   verified,
 }: Props) => (
-  <li className="debug_ border-foreground/15 w-70 border-t px-2 py-3">
+  <li className="debug_ border-foreground/15 _w-70 border-t px-2 py-3">
     <figure className="flex-row-sx gap-4 text-xs">
       <div className="relative">
         {renderAvatar(icon)}
@@ -33,16 +33,11 @@ export const Card = ({
       </div>
       <figcaption>
         <div
-          className="debug_ min-h-5 w-47 leading-4 line-clamp-2"
+          className="debug_ line-clamp-2 flex min-h-5 _w-47 flex-col gap-1 leading-4"
           style={{ textShadow: "-1px 1px 1px #111" }}
         >
-          <b>{name}</b>
-          {description ? (
-            <>
-              {" "}
-              - <span dangerouslySetInnerHTML={{ __html: description }} />
-            </>
-          ) : null}
+          <b dangerouslySetInnerHTML={{ __html: name as string }} />
+          <p>- {description}</p>
         </div>
         <div className="flex-row-cs mt-1 gap-1.5">
           {rating ? (

@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link from "next/link";
 import { ListHeader } from "../list-header";
 import { Topic } from "../topic";
 import { Datetime } from "../datetime";
@@ -7,7 +8,6 @@ import { CtaButton } from "./cta-button";
 import { transformEpisode } from "@/lib/podcast/episodes/utils";
 import { PATH } from "@/constants/PATH";
 import { data } from "@/lib/podcast/episodes/data";
-import Link from "next/link";
 
 export const Episodes = () => {
   return (
@@ -19,32 +19,34 @@ export const Episodes = () => {
         // className="mt-4_ debug grid h-svh overflow-y-auto px-4"
         className="scrollbar-hide h-[400px] snap-y snap-mandatory overflow-y-auto scroll-smooth px-4 pb-4"
       >
-        {data.slice(0, 12).map((item, i) => {
-          const episode = transformEpisode(item.id);
-          //
-          return (
-            <li
-              key={item.id}
-              className={clsx(
-                "flex-row-cb shrink-0 snap-center gap-6 border-b",
-                i < 1 ? "pt-0 pb-4" : "py-4",
-              )}
-            >
-              <figure className="flex-row-cs gap-4">
-                <Thumbnail episode={episode} />
-                <figcaption className="flex-col-sc gap-1">
-                  <Topic topic={episode.topic} variant="list" />
-                  <Datetime episode={episode} variant="text" />
-                </figcaption>
-              </figure>
-              <CtaButton episode={episode} />
-            </li>
-          );
-        })}
+        {data
+          .filter(({ favorite }) => favorite)
+          .map((item, i) => {
+            const episode = transformEpisode(item.id);
+            //
+            return (
+              <li
+                key={item.id}
+                className={clsx(
+                  "flex-row-cb shrink-0 snap-center gap-6 border-b",
+                  i < 1 ? "pt-0 pb-4" : "py-4",
+                )}
+              >
+                <figure className="flex-row-cs gap-4">
+                  <Thumbnail episode={episode} />
+                  <figcaption className="flex-col-sc gap-1">
+                    <Topic topic={episode.topic} variant="list" />
+                    <Datetime episode={episode} variant="text" />
+                  </figcaption>
+                </figure>
+                <CtaButton episode={episode} />
+              </li>
+            );
+          })}
         <li>
           <Link
             href={PATH.podcastEpisodes}
-            className="flex-row-cc mt-4 mb-2 h-[40px] font-medium w-full rounded-lg border px-12 text-sm"
+            className="flex-row-cc mt-4 mb-2 h-[40px] w-full rounded-lg border px-12 text-sm font-medium"
           >
             More Episodes
           </Link>
