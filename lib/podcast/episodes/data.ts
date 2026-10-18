@@ -2,22 +2,23 @@ import { EpisodeDto } from "./types";
 import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
-
   {
     id: 35,
-    datetime: "2026-11-15T18:00:00.000Z",
-    thumbnail: "/uploads/logos/vivid.png",
-    topic: "Scrum Ceremonies, Jollof Rice & Beans",
-    tags: "Sprint Planning, Time Estimates, Story Points",
+    datetime: "2026-10-25T18:00:00.000Z",
+    thumbnail: "/uploads/logos/bdi.png",
+    topic: "Catalyzing Sustainable Economic Growth",
+    summary:
+      "Economic Transformation, Investment Promotion, and Sustainable Development in Bauchi State",
+    tags: "Transparent, Self-Sufficient, #FindOneCampus",
     guests: [25],
     virtualLink: "",
     listeners: 0,
     liveListeners: 0,
     meta: {
-      src: "/uploads/logos/vivid.png",
+      src: "/uploads/logos/bdi.png",
       title:
-        "Vivid Foods App | Order Online | Pay On Delivery | Apply 25% Discount Voucher",
-      url: "github.com/vivid-foods",
+        "Land Mapping & Digital Structuring | FindOneCampus | ELI7 Foundation | BDI",
+      url: "mx2bdi.com",
     },
     series: "fc",
   },

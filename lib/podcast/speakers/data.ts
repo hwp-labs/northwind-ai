@@ -3,19 +3,19 @@ import { SpeakerDto } from "./types";
 export const data: SpeakerDto[] = [
   {
     id: 25,
-    avatar: "/uploads/podcast/avatar-toluwawemimo.png",
-    firstName: "Tolulope",
-    surname: "Oluwawemimo",
-    displayName: "Tolulope O.",
-    sex: "f",
-    email: "",
-    tel: "+2348061583213",
-    occupation: "Project Manager",
-    bio: "Founder, The PM & Ops Lab",
-    location: {
-      city: "Lagos",
+    avatar: "/uploads/podcast/avatar-cking.jpg",
+    firstName: "Chinemerem",
+    surname: "King",
+    displayName: "King C.",
+    email: "nwankpachinemerem@gmail.com",
+    tel: "+2348149193063",
+    occupation: "Product Manager",
+    bio: "Founder, Bauchi Development Initiative",
+    location: { city: "Bauchi" },
+    socials: {
+      x: "@Chinemerem57508",
+      in: "chinemerem-king-67a982248",
     },
-    socials: { x: "@faithlope4real", in: "lorpe-faith" },
   },
   {
     id: 24,

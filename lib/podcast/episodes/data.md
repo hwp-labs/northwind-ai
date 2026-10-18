@@ -3,6 +3,24 @@ import { EpisodeDto } from "./types";
 
 export const data: EpisodeDto[] = [
   {
+    id: 36,
+    datetime: "2026-11-15T18:00:00.000Z",
+    thumbnail: "/uploads/logos/vivid.png",
+    topic: "Scrum Ceremonies, Jollof Rice & Beans",
+    tags: "Sprint Planning, Time Estimates, Story Points",
+    guests: [26],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/vivid.png",
+      title:
+        "Vivid Foods App | Order Online | Pay On Delivery | Apply 25% Discount Voucher",
+      url: "github.com/vivid-foods",
+    },
+    series: "fc",
+  },
+  {
     id: 37,
     datetime: "2026-11-15T18:00:00.000Z",
     thumbnail: "/uploads/logos/vivid.png",
