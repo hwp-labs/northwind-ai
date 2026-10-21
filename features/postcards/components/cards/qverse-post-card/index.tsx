@@ -26,10 +26,11 @@ export const QversePostCard = ({ page = 1 }: Props) => {
           />
           <Card
             {...{
-              icon: "/uploads/podcast/avatar-kenajuke.jpg",
-              name: "GRC - Governance, Risk & Compliance",
-              description: "Kenneth Enajuke",
+              icon: "/uploads/podcast/avatar-aalebiowu.jpg",
+              name: "Health Ed Policies & Promotion",
+              description: "Ayomide Alebiowu",
               posted: "Sun, 1 Nov 2026 | 7PM",
+              verified: true,
             }}
           />
           <Card
@@ -37,7 +38,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
               icon: "/uploads/podcast/avatar-toluwawemimo.png",
               name: "Scrum Ceremonies, Jollof Rice & Beans",
               description: "Tolulope Oluwawemimo",
-              posted: "Sun, 8 Nov 2026 | 7PM",
+              posted: "Sun, 15 Nov 2026 | 7PM",
             }}
           />
         </ul>

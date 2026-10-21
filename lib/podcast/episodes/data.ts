@@ -2,6 +2,45 @@ import { EpisodeDto } from "./types";
 import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
+  // {
+  //   id: 37,
+  //   datetime: "2026-11-29T18:00:00.000Z",
+  //   thumbnail: "/uploads/logos/RAIMZEAL.png",
+  //   topic: "RAIMZEAL App Design Session",
+  //   topicRichText: "RAIMZEAL App<br/>Design Session",
+  //   tags: "AI Coach, Nutrition & Wellness, Women's Health",
+  //   guests: [28],
+  //   virtualLink: "",
+  //   listeners: 0,
+  //   liveListeners: 0,
+  //   meta: {
+  //     src: "/uploads/logos/RAIMZEAL.png",
+  //     title:
+  //       "FREE AI-enabled Health App created by the RAIMZEAL Health Foundation, Inc.",
+  //     url: "raimzeal.com",
+  //   },
+  //   favorite: true,
+  // },
+  {
+    id: 36,
+    datetime: "2026-11-01T18:00:00.000Z",
+    thumbnail: "/uploads/logos/ncdc.jpg",
+    topic: "Health Ed Policies & Promotion",
+    topicRichText: "Health Education, Policies & Promotion",
+    tags: "Epidemiology, MEAL, Infodemic, Ebola II",
+    guests: [26, 11],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/ncdc.jpg",
+      title:
+        "Case Definitions for Ebola Viral Disease | Nigeria Centre for Disease Control NCDC",
+      url: "ncdc.gov.ng",
+    },
+    series: "fc",
+    favorite: true,
+  },
   {
     id: 35,
     datetime: "2026-10-25T18:00:00.000Z",
