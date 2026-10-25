@@ -51,8 +51,8 @@ export const data: EpisodeDto[] = [
     tags: "Transparent, Self-Sufficient, #FindOneCampus",
     guests: [25],
     virtualLink: "https://x.com/i/spaces/1kKzDPYqDkoJv",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 11,
+    liveListeners: 11,
     meta: {
       src: "/uploads/logos/bdi.png",
       title:
