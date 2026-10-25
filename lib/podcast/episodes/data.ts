@@ -50,7 +50,7 @@ export const data: EpisodeDto[] = [
       "Economic Transformation, Investment Promotion, and Sustainable Development in Bauchi State",
     tags: "Transparent, Self-Sufficient, #FindOneCampus",
     guests: [25],
-    virtualLink: "",
+    virtualLink: "https://x.com/i/spaces/1vKpPNyqyqZKE",
     listeners: 0,
     liveListeners: 0,
     meta: {
