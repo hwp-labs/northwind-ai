@@ -43,7 +43,7 @@ export const data: SpeakerDto[] = [
     email: "misteralebiowu@gmail.com",
     tel: "+2348033852776",
     occupation: "Public Health Professional",
-    bio: "Public Health Professional, UI",
+    bio: "Public Health Professional, UCH",
     location: { city: "Edo" },
     socials: {
       x: "@manuelalebiowu",
