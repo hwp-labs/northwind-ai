@@ -22,12 +22,31 @@ export const data: EpisodeDto[] = [
   //   favorite: true,
   // },
   {
+    id: 37,
+    datetime: "2026-11-08T18:00:00.000Z",
+    thumbnail: "/uploads/logos/devnull.png",
+    topic: "Open-source Software & Licensing",
+    tags: "MIT, Apache 2.0, BDFL, dev-null.sh",
+    guests: [7],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/devnull.png",
+      title:
+        "A Social Network for Devs. Sign In with GitHub. Commit Messages to the Log.",
+      url: "dev-null.sh",
+    },
+    series: "fc",
+    favorite: true,
+  },
+  {
     id: 36,
     datetime: "2026-11-01T18:00:00.000Z",
     thumbnail: "/uploads/logos/ncdc.jpg",
     topic: "Health Ed Policies & Promotion",
     topicRichText: "Health Education, Policies & Promotion",
-    tags: "Epidemiology, MEAL, Infodemic, Ebola II",
+    tags: "Epidemiology, Infodemic, MEAL, Ebola II",
     guests: [26, 11],
     virtualLink: "",
     listeners: 0,
@@ -35,7 +54,7 @@ export const data: EpisodeDto[] = [
     meta: {
       src: "/uploads/logos/ncdc.jpg",
       title:
-        "Case Definitions for Ebola Viral Disease | Nigeria Centre for Disease Control NCDC",
+        "Case Definitions for Ebola Virus | Nigeria Centre for Disease Control | NCDC",
       url: "ncdc.gov.ng",
     },
     series: "fc",
@@ -60,7 +79,6 @@ export const data: EpisodeDto[] = [
       url: "mx2bdi.com",
     },
     series: "fc",
-    favorite: true,
   },
   {
     id: 34,

@@ -16,16 +16,7 @@ export const QversePostCard = ({ page = 1 }: Props) => {
         <Builder.Hero />
         <ul className="mt-4 flex flex-col items-start">
           <Card
-            {...{
-              icon: "/uploads/podcast/avatar-cking.jpg",
-              name: "Catalyzing Sustainable Economic Growth",
-              description: "Chinemerem King",
-              posted: "Sun, 25 Oct 2026 | 7PM",
-              verified: true,
-            }}
-          />
-          <Card
-            {...{
+         {...{
               icon: "/uploads/podcast/avatar-aalebiowu.jpg",
               name: "Health Ed Policies & Promotion",
               description: "Ayomide Alebiowu",
@@ -35,10 +26,20 @@ export const QversePostCard = ({ page = 1 }: Props) => {
           />
           <Card
             {...{
-              icon: "/uploads/podcast/avatar-toluwawemimo.png",
-              name: "Scrum Ceremonies, Jollof Rice & Beans",
-              description: "Tolulope Oluwawemimo",
-              posted: "Sun, 15 Nov 2026 | 7PM",
+              icon: "/uploads/podcast/avatar-eokene.jpg",
+              name: "Health Ed Policies & Promotion",
+              description: "Emmanuel Okene",
+              posted: "Sun, 1 Nov 2026 | 7PM",
+              verified: true,
+            }}
+          />
+          <Card
+            {...{
+              icon: "/uploads/podcast/avatar-aosawere.png",
+              name: "Open-source Software & Licensing",
+              description: "Anthony Osawere",
+              posted: "Sun, 8 Nov 2026 | 7PM",
+              verified: true,
             }}
           />
         </ul>

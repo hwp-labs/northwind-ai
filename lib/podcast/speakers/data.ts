@@ -59,7 +59,7 @@ export const data: SpeakerDto[] = [
     email: "nwankpachinemerem@gmail.com",
     tel: "+2348149193063",
     occupation: "Product Manager",
-    bio: "Founder, Bauchi Development Initiative",
+    bio: "Founder, Bauchi State Development Initiative (BDI)",
     location: { city: "Bauchi" },
     socials: {
       x: "@Chinemerem57508",
