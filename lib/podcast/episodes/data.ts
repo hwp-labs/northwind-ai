@@ -49,9 +49,9 @@ export const data: EpisodeDto[] = [
     topicRichText: "Health Education, Policies & Promotion",
     tags: "Epidemiology, Infodemic, MEAL, Ebola II",
     guests: [26, 11],
-    virtualLink: "",
-    listeners: 0,
-    liveListeners: 0,
+    virtualLink: "https://x.com/i/spaces/1LPLVeXnJLPgBZ",
+    listeners: 14,
+    liveListeners: 14,
     meta: {
       src: "/uploads/logos/ncdc.jpg",
       title:
