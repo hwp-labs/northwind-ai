@@ -42,7 +42,7 @@ export const PodcastPostCard = ({ page = 1 }: Props) => {
         <article
           className={clsx(
             "debug_ space-y-5 pl-6",
-            e.tags.length > 3 ? "mt-4.5" : "mt-2.5",
+            e.tags.length > 4 ? "mt-4.5" : "mt-2.5",
           )}
         >
           <Topic

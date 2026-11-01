@@ -2,25 +2,26 @@ import { EpisodeDto } from "./types";
 import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
-  // {
-  //   id: 37,
-  //   datetime: "2026-11-29T18:00:00.000Z",
-  //   thumbnail: "/uploads/logos/RAIMZEAL.png",
-  //   topic: "RAIMZEAL App Design Session",
-  //   topicRichText: "RAIMZEAL App<br/>Design Session",
-  //   tags: "AI Coach, Nutrition & Wellness, Women's Health",
-  //   guests: [28],
-  //   virtualLink: "",
-  //   listeners: 0,
-  //   liveListeners: 0,
-  //   meta: {
-  //     src: "/uploads/logos/RAIMZEAL.png",
-  //     title:
-  //       "FREE AI-enabled Health App created by the RAIMZEAL Health Foundation, Inc.",
-  //     url: "raimzeal.com",
-  //   },
-  //   favorite: true,
-  // },
+  {
+    id: 38,
+    datetime: "2026-11-15T18:00:00.000Z",
+    thumbnail: "/uploads/logos/vivid.png",
+    topic: "Scrum Ceremonies, Jollof Rice & Beans",
+    summary:
+      "LIVE Sprint Planning session on Vivid Foods App",
+    tags: "Discovery, Scoping, Timelines, Story Points",
+    guests: [27],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/vivid.png",
+      title:
+        "Vivid Foods App | Order Online | Pay On Delivery | Apply 25% Discount Voucher",
+      url: "github.com/vivid-foods",
+    },
+    series: "fc",
+  },
   {
     id: 37,
     datetime: "2026-11-08T18:00:00.000Z",
