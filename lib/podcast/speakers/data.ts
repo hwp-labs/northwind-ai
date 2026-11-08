@@ -353,7 +353,7 @@ export const data: SpeakerDto[] = [
     bio: "Software Engineer, Oe2i Inc.",
     website: "osawere.com",
     location: { country: "UK", flag: "/uploads/podcast/flag-uk.webp" },
-    socials: { in: "osawereao", x: "@workofao" },
+    socials: { in: "osawereao", x: "@osawereao" },
   },
   {
     id: 6,

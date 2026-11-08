@@ -20,6 +20,7 @@ export const data: EpisodeDto[] = [
       url: "github.com/vivid-foods",
     },
     series: "fc",
+    favorite: true,
   },
   {
     id: 37,
@@ -28,7 +29,7 @@ export const data: EpisodeDto[] = [
     tags: `MIT, Apache 2.0, GPL-3.0, *BDFL, _dev-null.sh`,
     topic: "Open-Source Software & Licensing",
     guests: [7],
-    virtualLink: "",
+    virtualLink: "https://x.com/i/spaces/1KoXdkjbOVpMaz",
     listeners: 0,
     liveListeners: 0,
     meta: {
