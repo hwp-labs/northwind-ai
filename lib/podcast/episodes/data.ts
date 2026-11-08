@@ -30,8 +30,8 @@ export const data: EpisodeDto[] = [
     topic: "Open-Source Software & Licensing",
     guests: [7],
     virtualLink: "https://x.com/i/spaces/1KoXdkjbOVpMaz",
-    listeners: 0,
-    liveListeners: 0,
+    listeners: 8,
+    liveListeners: 8,
     meta: {
       src: "/uploads/logos/devnull.png",
       title:
