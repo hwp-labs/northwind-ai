@@ -6,10 +6,9 @@ export const data: EpisodeDto[] = [
     id: 38,
     datetime: "2026-11-15T18:00:00.000Z",
     thumbnail: "/uploads/logos/vivid.png",
-    topic: "Scrum Ceremonies, Jollof Rice & Beans",
-    summary:
-      "LIVE Sprint Planning session on Vivid Foods App",
     tags: "Discovery, Scoping, Timelines, Story Points",
+    topic: "Scrum Ceremonies, Jollof Rice & Beans",
+    summary: "LIVE Sprint Planning session on Vivid Foods App",
     guests: [27],
     virtualLink: "",
     listeners: 0,
@@ -24,10 +23,10 @@ export const data: EpisodeDto[] = [
   },
   {
     id: 37,
-    datetime: "2026-11-08T18:00:00.000Z",
+    datetime: "2026-11-08T19:00:00.000Z",
     thumbnail: "/uploads/logos/devnull.png",
-    topic: "Open-source Software & Licensing",
-    tags: "MIT, Apache 2.0, BDFL, dev-null.sh",
+    tags: `MIT, Apache 2.0, GPL-3.0, *BDFL, _dev-null.sh`,
+    topic: "Open-Source Software & Licensing",
     guests: [7],
     virtualLink: "",
     listeners: 0,
@@ -40,6 +39,7 @@ export const data: EpisodeDto[] = [
     },
     series: "fc",
     favorite: true,
+    _notes: { nunomaduro: "https://youtu.be/fNPkdMt2Eqw" },
   },
   {
     id: 36,
@@ -59,7 +59,6 @@ export const data: EpisodeDto[] = [
       url: "ncdc.gov.ng",
     },
     series: "fc",
-    favorite: true,
   },
   {
     id: 35,
@@ -147,7 +146,6 @@ export const data: EpisodeDto[] = [
     liveListeners: 3,
     meta: EpisodeMeta.expo,
     series: "ai",
-    favorite: true,
   },
   {
     id: 30,
