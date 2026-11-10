@@ -1,23 +1,22 @@
 import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
-  // {
-  //   id: 28,
-  //   avatar: "/uploads/podcast/avatar-eoviawe.jpg",
-  //   firstName: "Dr. Ephraim",
-  //   surname: "Oviawe",
-  //   displayName: "Dr. Ephraim",
-  //   email: "",
-  //   tel: "+16462011615",
-  //   occupation: "Project Manager",
-  //   bio: "Founder, ECONTEUR LLC",
-  //   location: {
-  //     city: "Georgia",
-  //     country: "US",
-  //     flag: "/uploads/podcast/flag-us.webp",
-  //   },
-  //   socials: { x: "", in: "" },
-  // },
+  {
+    id: 28,
+    avatar: "/uploads/podcast/avatar-cijere.jpg",
+    firstName: "Chiamaka ",
+    surname: "Ijere",
+    displayName: "Amaka I.",
+    sex: "f",
+    email: "",
+    tel: "+2349137965370",
+    occupation: "Hiring Manager",
+    bio: "HR Associate, SIAO Partners",
+    location: {
+      city: "Lagos",
+    },
+    socials: { x: "@", in: "chiamaka-ijere-" },
+  },
   {
     id: 27,
     avatar: "/uploads/podcast/avatar-toluwawemimo.png",
@@ -37,7 +36,7 @@ export const data: SpeakerDto[] = [
   {
     id: 26,
     avatar: "/uploads/podcast/avatar-aalebiowu.jpg",
-    firstName: "Emmanuel `Ayo`",
+    firstName: "Ayomide",
     surname: "Alebiowu",
     displayName: "Ayomide A.",
     email: "misteralebiowu@gmail.com",

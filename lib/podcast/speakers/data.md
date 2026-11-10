@@ -2,7 +2,23 @@
 import { SpeakerDto } from "./types";
 
 export const data: SpeakerDto[] = [
-
+  {
+    id: 28,
+    avatar: "/uploads/podcast/avatar-eoviawe.jpg",
+    firstName: "Dr. Ephraim",
+    surname: "Oviawe",
+    displayName: "Dr. Ephraim",
+    email: "",
+    tel: "+16462011615",
+    occupation: "Project Manager",
+    bio: "Founder, ECONTEUR LLC",
+    location: {
+      city: "Georgia",
+      country: "US",
+      flag: "/uploads/podcast/flag-us.webp",
+    },
+    socials: { x: "", in: "" },
+  },
 
   {
     id: 24,

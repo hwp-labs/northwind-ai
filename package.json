@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "rm -rf .next && next dev",
+    "dev": "rimraf .next && next dev",
     "build": "rm -rf .next && next build",
     "start": "next start",
     "lint": "eslint",
@@ -69,6 +69,7 @@
     "eslint-config-next": "16.1.6",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "rimraf": "^6.1.4",
     "supabase": "^2.75.5",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",

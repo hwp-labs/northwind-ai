@@ -3,6 +3,25 @@ import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
   {
+    id: 39,
+    datetime: "2026-11-22T18:00:00.000Z",
+    thumbnail: "/uploads/logos/5n6s.png",
+    tags: "ATS Screening, Soft Skills, Cultural Fit",
+    topic: "AI-Enabled Hiring & Human Judgement",
+    guests: [28],
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/5n6s.png",
+      title:
+        "Corporate Wears | Asoebi | Two-Piece | Hair Accessories | Bonnets | Scrunchies",
+      url: "5and6_stitches",
+      social: "ig",
+    },
+    series: "fc",
+  },
+  {
     id: 38,
     datetime: "2026-11-15T18:00:00.000Z",
     thumbnail: "/uploads/logos/vivid.png",
@@ -20,6 +39,7 @@ export const data: EpisodeDto[] = [
       url: "github.com/vivid-foods",
     },
     series: "fc",
+    favorite: true,
   },
   {
     id: 37,
@@ -28,9 +48,9 @@ export const data: EpisodeDto[] = [
     tags: `MIT, Apache 2.0, GPL-3.0, *BDFL, _dev-null.sh`,
     topic: "Open-Source Software & Licensing",
     guests: [7],
-    virtualLink: "",
-    listeners: 0,
-    liveListeners: 0,
+    virtualLink: "https://x.com/i/spaces/1KoXdkjbOVpMaz",
+    listeners: 8,
+    liveListeners: 8,
     meta: {
       src: "/uploads/logos/devnull.png",
       title:
