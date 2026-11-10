@@ -15,7 +15,7 @@ export const data: SpeakerDto[] = [
     location: {
       city: "Lagos",
     },
-    socials: { x: "@", in: "chiamaka-ijere-" },
+    socials: { x: "", in: "chiamaka-ijere-" },
   },
   {
     id: 27,

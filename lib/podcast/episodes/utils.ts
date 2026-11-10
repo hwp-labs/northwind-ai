@@ -6,6 +6,7 @@ import { data } from "./data";
 import { data as Speakers } from "../speakers/data";
 import { TransformedSpeaker, transformSpeaker } from "../speakers/utils";
 import { APP_PODCAST } from "@/constants/APP_PODCAST";
+import { is } from "zod/v4/locales";
 
 export type TransformedEpisode = ReturnType<typeof transformEpisode>;
 
@@ -48,8 +49,9 @@ export const transformEpisode = (id?: number | string | null) => {
           (t) => t && !t.startsWith("_") && !t.startsWith(" _"),
         ) || [],
     Speakers: getSpeakers(e),
-    canPlay: !e?.virtualLink.startsWith("#") && e?.listeners,
     brokenLink: e?.virtualLink.startsWith("#"),
+    canPlay: Boolean(!e?.virtualLink.startsWith("#") && e?.listeners),
+    isLive: Boolean(e?.virtualLink && momentUtil.isOngoing(e?.datetime)),
     ctaText: getCtaText(e),
     meta: e?.meta || {
       src: "/icon-512.png",

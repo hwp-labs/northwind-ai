@@ -8,6 +8,7 @@ import {
 import { usePodcastStore } from "@/store/podcastStore";
 import { TransformedEpisode } from "@/lib/podcast/episodes/utils";
 import { HYPHENS } from "@/constants";
+import { momentUtil } from "@/utils/moment-util";
 
 interface Props {
   episode: TransformedEpisode;
@@ -19,7 +20,7 @@ export const CtaButton = ({ episode }: Props) => {
 
   const handleClick = () => {
     if (episode.brokenLink) return;
-    
+
     switch (episode.ctaText) {
       case "RSVP":
         setEpisode(episode);
@@ -37,6 +38,8 @@ export const CtaButton = ({ episode }: Props) => {
           "--"
         ) : episode.listeners ? (
           <>{episode.listeners}x</>
+        ) : episode.isLive ? (
+          "LIVE"
         ) : (
           "RSVP"
         )}
