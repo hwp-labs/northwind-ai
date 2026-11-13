@@ -3,6 +3,25 @@ import { EpisodeMeta } from "./meta";
 
 export const data: EpisodeDto[] = [
   {
+    id: 40,
+    datetime: "2026-11-27T19:00:00.000Z",
+    thumbnail: "/uploads/logos/nla.png",
+    tags: "RAG, NL2SQL, LangGraph, _SQL Engine, pgvector",
+    topic: "Smart Libraries: Integrating RAG & NL2SQL Techniques",
+    topicRichText: "Smart Libraries: Integrating RAG & <span>NL2SQL</span> Techniques",
+    summary: "Keynotes from NLA Conference 2026, Edo State",
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/nla.png",
+      title:
+        "Information Management for National Enlightenment & Development | NLA",
+      url: "nla.org.ng",
+    },
+    series: "ai",
+  },
+  {
     id: 39,
     datetime: "2026-11-22T18:00:00.000Z",
     thumbnail: "/uploads/logos/5n6s.png",
