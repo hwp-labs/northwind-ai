@@ -4,26 +4,7 @@ import { EpisodeMeta } from "./meta";
 export const data: EpisodeDto[] = [
   {
     id: 40,
-    datetime: "2026-11-27T19:00:00.000Z",
-    thumbnail: "/uploads/logos/nla.png",
-    tags: "RAG, NL2SQL, LangGraph, _SQL Engine, pgvector",
-    topic: "Smart Libraries: Integrating RAG & NL2SQL Techniques",
-    topicRichText: "Smart Libraries: Integrating RAG & <span>NL2SQL</span> Techniques",
-    summary: "Keynotes from NLA Conference 2026, Edo State",
-    virtualLink: "",
-    listeners: 0,
-    liveListeners: 0,
-    meta: {
-      src: "/uploads/logos/nla.png",
-      title:
-        "Information Management for National Enlightenment & Development | NLA",
-      url: "nla.org.ng",
-    },
-    series: "ai",
-  },
-  {
-    id: 39,
-    datetime: "2026-11-22T18:00:00.000Z",
+    datetime: "2026-12-06T18:00:00.000Z",
     thumbnail: "/uploads/logos/5n6s.png",
     tags: "ATS Screening, Soft Skills, Cultural Fit",
     topic: "AI-Enabled Hiring & Human Judgement",
@@ -41,8 +22,27 @@ export const data: EpisodeDto[] = [
     series: "fc",
   },
   {
+    id: 39,
+    datetime: "2026-11-29T18:00:00.000Z",
+    thumbnail: "/uploads/logos/nla.png",
+    tags: "RAG, NL2SQL, LangGraph, _SQL Engine, pgvector",
+    topic: "Smart Libraries: Integrating RAG & NL2SQL Techniques",
+    topicRichText: "Smart Libraries: Integrating RAG & <span>NL2SQL</span> Techniques",
+    summary: "Keynotes from NLA Conference 2026, Edo State",
+    virtualLink: "",
+    listeners: 0,
+    liveListeners: 0,
+    meta: {
+      src: "/uploads/logos/nla.png",
+      title:
+        "Information Management for National Enlightenment & Development | NLA",
+      url: "nla.org.ng",
+    },
+    series: "kn",
+  },
+  {
     id: 38,
-    datetime: "2026-11-15T18:00:00.000Z",
+    datetime: "2026-11-22T18:00:00.000Z",
     thumbnail: "/uploads/logos/vivid.png",
     tags: "Discovery, Scoping, Timelines, Story Points",
     topic: "Scrum Ceremonies, Jollof Rice & Beans",
@@ -58,7 +58,6 @@ export const data: EpisodeDto[] = [
       url: "github.com/vivid-foods",
     },
     series: "fc",
-    favorite: true,
   },
   {
     id: 37,
@@ -170,7 +169,7 @@ export const data: EpisodeDto[] = [
     listeners: 5,
     liveListeners: 5,
     meta: EpisodeMeta.expo,
-    series: "ai",
+    series: "cs",
     favorite: true,
   },
   {
@@ -184,7 +183,7 @@ export const data: EpisodeDto[] = [
     listeners: 4,
     liveListeners: 3,
     meta: EpisodeMeta.expo,
-    series: "ai",
+    series: "cs",
   },
   {
     id: 30,
@@ -212,7 +211,7 @@ export const data: EpisodeDto[] = [
     listeners: 2,
     liveListeners: 2,
     meta: EpisodeMeta.expo,
-    series: "ai",
+    series: "cs",
   },
   {
     id: 28,
@@ -226,7 +225,7 @@ export const data: EpisodeDto[] = [
     listeners: 5,
     liveListeners: 3,
     meta: EpisodeMeta.expo,
-    series: "ai",
+    series: "cs",
   },
   {
     id: 27,
@@ -241,7 +240,7 @@ export const data: EpisodeDto[] = [
     listeners: 24,
     liveListeners: 13,
     meta: EpisodeMeta.expo,
-    series: "ml",
+    series: "cs",
     favorite: true,
   },
   {
@@ -314,7 +313,7 @@ export const data: EpisodeDto[] = [
     virtualPlatform: "yt",
     listeners: 111,
     liveListeners: 30,
-    series: "fc",
+    series: "cs",
     meta: EpisodeMeta.oau,
     favorite: true,
   },
@@ -355,7 +354,7 @@ export const data: EpisodeDto[] = [
     virtualPlatform: "yt",
     listeners: 163,
     liveListeners: 60,
-    series: "fc",
+    series: "cs",
     meta: EpisodeMeta.oau,
   },
   {
@@ -479,7 +478,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1lKQRRgNYdyGE",
     listeners: 15,
     liveListeners: 12,
-    series: "cs",
+    series: "fc",
     meta: {
       src: "/uploads/logos/thisday.png",
       title:
@@ -501,7 +500,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1dGYllLnveLKX",
     listeners: 3,
     liveListeners: 3,
-    series: "cs",
+    series: "kn",
     meta: {
       src: "/uploads/logos/snu-ri.jpg",
       title: "Madison Huang's Non-Linear Career | NVIDIA at SNU Robotics",
@@ -553,7 +552,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1mGPaLAgERYJN",
     listeners: 24,
     liveListeners: 14,
-    series: "cs",
+    series: "fc",
     favorite: true,
   },
   {
@@ -568,7 +567,7 @@ export const data: EpisodeDto[] = [
     virtualLink: "https://x.com/i/spaces/1YxNrZNPNnpxw",
     listeners: 33,
     liveListeners: 10,
-    series: "cs",
+    series: "kn",
     favorite: true,
   },
   {

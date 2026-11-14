@@ -22,14 +22,10 @@ export function computeAnalytics() {
           if (res.episodes?.caseStudy) res.episodes.caseStudy += 1;
           else res.episodes = { ...res.episodes, caseStudy: 1 };
         }
-        if (d.series === "ai") {
-          if (res.episodes?.ai)
-            res.episodes.ai += 1;
-          else res.episodes = { ...res.episodes, ai: 1 };
-        }
-        if (d.series === "ml") {
-          if (res.episodes?.ml) res.episodes.ml += 1;
-          else res.episodes = { ...res.episodes, ml: 1 };
+        if (d.series === "kn") {
+          if (res.episodes?.keynotes)
+            res.episodes.keynotes += 1;
+          else res.episodes = { ...res.episodes, keynotes: 1 };
         }
       } else {
         if (res.episodes?.designSession) res.episodes.designSession += 1;

@@ -29,16 +29,11 @@ export const KpiCards = ({ episodes, guests }: Props) => {
           {
             label: "Case Study",
             value: episodes?.caseStudy,
-            color: "bg-chart-2!",
-          },
-          {
-            label: "AI Engineering",
-            value: episodes?.ai,
             color: "bg-zima!",
           },
           {
-            label: "ML Engineering",
-            value: episodes?.ml,
+            label: "Keynotes",
+            value: episodes?.keynotes,
             color: "bg-flamingo!",
           },
         ]}

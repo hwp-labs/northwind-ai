@@ -6,7 +6,6 @@ import { data } from "./data";
 import { data as Speakers } from "../speakers/data";
 import { TransformedSpeaker, transformSpeaker } from "../speakers/utils";
 import { APP_PODCAST } from "@/constants/APP_PODCAST";
-import { is } from "zod/v4/locales";
 
 export type TransformedEpisode = ReturnType<typeof transformEpisode>;
 
@@ -29,16 +28,14 @@ export const transformEpisode = (id?: number | string | null) => {
     cover: {
       ds: "/uploads/podcast/cover-halim.png",
       fc: "/uploads/podcast/cover-sony.png",
-      cs: "/uploads/podcast/cover-sony.png",
-      ai: "/uploads/podcast/cover-lake.jpg",
-      ml: "/uploads/podcast/cover-flamingo.jpg",
+      cs: "/uploads/podcast/cover-lake.jpg",
+      kn: "/uploads/podcast/cover-flamingo.jpg",
     }[e.series || "ds"],
     coverPosition: {
       ds: "85% top",
       fc: "52% top",
-      cs: "52% top",      
-      ai: "",
-      ml: "",
+      cs: "",
+      kn: "",
     }[e.series || "ds"],
     thumbnail: e?.thumbnail || "/icon-512.png",
     displayAvatars: getDisplayAvatars(e),
